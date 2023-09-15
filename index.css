@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-size: small;
+}
+h2 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: large;
+}
+h3 {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 2px;
+  padding-bottom: 0px;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 40px;
+}
+
+ul.is-bullet {
+  list-style: disc;
+  margin-left: 2rem;
+}
+
+body .sidebar, body .sidebar.sidebar-touch {
+  background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));
+  border: 0 !important;
+  border-radius: 0 !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+body .sidebar-tabs {
+  background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));
+
+}
+body .sidebar-tabs > ul > li {
+  position: relative;
+  color: #fff;
+}
+
+.filterGroup {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.button.is-activated {
+  border-color: transparent;
+}
+
+svg {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+body .sidebar .sidebar-header {
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  /* background-image: url('https://www.carbon4pur.eu/wp-content/themes/carbon4pur/images/gradient-line-min.png'); */
+  background: linear-gradient(to left, var(--ptx-primary-color), var(--ptx-secondary-color));
+}
+
+body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
+  background-color: var(--ptx-fourth-color) !important;
+}
+.svgicon {
+  margin: 7px;
+  width: 30px;
+  height: 30px;
+}
+.svgicon > use {
+  width: 30px;
+  height: 30px;
+}
+.svgicon-small {
+  margin: 2px 2px 0 0;
+  width: 1rem;
+  height: 1rem;
+}
+.svgicon-small > use {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* NACE categories */
+/*
+.nace-iron {
+  background: #ff0000;
+  color: #000;
+}
+.nace-inorganic {
+  background: rgb(214,70,111);
+  color: #000;
+}
+.nace-electricity {
+  background: rgb(190,85,153);
+  color: #000;
+}
+.nace-ng {
+  background: rgb(151,133,176);
+  color: #000;
+}
+.nace-petroleum {
+  background: rgb(103,155,186);
+  color: #000;
+}
+.nace-cement {
+  background: #5a6067;
+  color: #fff;
+}
+.nace-lime {
+  background: #000000;
+  color: #fff;
+}
+.nace-fertilisers {
+  background: #938e99;
+  color: #000;
+}
+
+.emitters-aluminium {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-steel {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-cement {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-cellulose {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-refinery {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-ammonia {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-methanol {
+  background: #938e99;
+  color: #938e99;
+}
+.emitters-etileno {
+  background: xxxx;
+  color: #938e99;
+} */
+/* popup */
+.popup-em {
+  display: inline-block;
+  padding: 0.5rem;  
+}
+
+/* intro tour */
+#set-cookie-no-tour {
+  margin-right: 0px;
+  margin-left: auto;
+  display: block;
+}
+
+.introjs-tooltipbuttons > .introjs-skipbutton {
+  color: #333;
+}
+
+/* Size legend styling */
+#scale {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1.5px solid rgba(0,0,0,.2);
+  z-index: 1000;
+  right: 10px;
+  bottom: 20px;
+  padding: 3px;
+  font: 10px sans-serif;
+}
+.legend path,
+.legend line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  opacity: 1;
+}
+.circle-legend line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.circle-legend circle {
+  stroke: #ccc;
+  stroke-dasharray: 4, 2;
+  fill: none;
+}

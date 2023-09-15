@@ -1,0 +1,1605 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.92954422,-46.78713825 ]
+   },
+   "properties": {
+   "Name":"Fabrica Pico Truncado",
+   "Company":"PCR",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Pico Truncado",
+   "Provincia":"Santa Cruz"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.44427712,-45.81390612 ]
+   },
+   "properties": {
+   "Name":"CT PATAGONICAS SA",
+   "Company":"CENTRALES TERMICAS PATAGONICAS SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 27712 ",
+   "source":"Industrial point source",
+   "Location (city)":"Comodoro Rivadavia",
+   "Provincia":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.4236816,-45.80214455 ]
+   },
+   "properties": {
+   "Name":"Fabrica Comodoro Rivadavia",
+   "Company":"PCR",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Comodoro Rivadavia",
+   "Provincia":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.04839927,-42.7438848 ]
+   },
+   "properties": {
+   "Name":"ALUAR SA - GENERADOR",
+   "Company":"Aluar",
+   "industry":"Thermal power plant",
+   "Tonnes":" 210445 ",
+   "source":"Industrial point source",
+   "Location (city)":"Puerto Madryn",
+   "Provincia":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.1028453,-42.63615141 ]
+   },
+   "properties": {
+   "Name":"Fabrica de aluminio de Aluar",
+   "Company":"Aluar",
+   "industry":"Aluminium",
+   "Tonnes":" 612058 ",
+   "source":"Industrial point source",
+   "Location (city)":"Puerto Madryn",
+   "Provincia":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.02174487,-38.95161594 ]
+   },
+   "properties": {
+   "Name":"CTERMICA ALTO VALLE",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 198282 ",
+   "source":"Industrial point source",
+   "Location (city)":"Neuquan",
+   "Provincia":"Neuquan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.35746075,-38.93531878 ]
+   },
+   "properties": {
+   "Name":"CT AGUA DEL CAJON",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 1108638 ",
+   "source":"Industrial point source",
+   "Location (city)":"Neuquan",
+   "Provincia":"Neuquan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -70.03773085,-38.89661841 ]
+   },
+   "properties": {
+   "Name":"Fabrica Zapala",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Zapala",
+   "Provincia":"Neusaquan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.25607271,-38.78482523 ]
+   },
+   "properties": {
+   "Name":"CENTRAL PIEDRA BUENA SA",
+   "Company":"Pampa Energaa",
+   "industry":"Thermal power plant",
+   "Tonnes":" 243763 ",
+   "source":"Industrial point source",
+   "Location (city)":"Ingeniero White",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.28168815,-38.78424491 ]
+   },
+   "properties": {
+   "Name":"Profertil Bahia Blanca",
+   "Company":"Profertil SA",
+   "industry":"Ammonia",
+   "Tonnes":" 710621 ",
+   "source":"Industrial point source",
+   "Location (city)":"Bahia Blanca",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.60637825,-38.51178974 ]
+   },
+   "properties": {
+   "Name":"CT LOMA DE LA LATA SA",
+   "Company":"CT LOMA DE LA LATA SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 1779653 ",
+   "source":"Industrial point source",
+   "Location (city)":"Neuquan",
+   "Provincia":"Neuquan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.54553583,-38.04949391 ]
+   },
+   "properties": {
+   "Name":"CT 9 de JULIO C Cost ATLANTICA",
+   "Company":"Centrales de la Costa Atlantica SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 221258 ",
+   "source":"Industrial point source",
+   "Location (city)":"Mar del Plata",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.388828,-37.68283558 ]
+   },
+   "properties": {
+   "Name":"Fabrica Barker",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Benito Juarez",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.4506657,-37.54858826 ]
+   },
+   "properties": {
+   "Name":"CT BARKER CIERRE CC",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 636102 ",
+   "source":"Industrial point source",
+   "Location (city)":"Benito Juarez",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.29810249,-37.03607735 ]
+   },
+   "properties": {
+   "Name":"Fabrica L'Amala",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Olavarraa",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.16503118,-36.9383899 ]
+   },
+   "properties": {
+   "Name":"Fabrica Sierras Bayas",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Sierras Bayas",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.16484634,-36.93725544 ]
+   },
+   "properties": {
+   "Name":"Fabrica Olavarraa",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Olavarraa",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.4520892,-35.13711789 ]
+   },
+   "properties": {
+   "Name":"Planta Siderurgica ACERBRAG",
+   "Company":"Acerbrag SA (grupo brasileao Votorantim)",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Bragado",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.43241426,-35.13651396 ]
+   },
+   "properties": {
+   "Name":"CT BRAGADO 2 - GENNEIA",
+   "Company":"Genneia",
+   "industry":"Thermal power plant",
+   "Tonnes":" 79138 ",
+   "source":"Industrial point source",
+   "Location (city)":"Bragado",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.43241426,-35.13651396 ]
+   },
+   "properties": {
+   "Name":"CT BRAGADO 3 - GENNEIA",
+   "Company":"Genneia",
+   "industry":"Thermal power plant",
+   "Tonnes":" 92453 ",
+   "source":"Industrial point source",
+   "Location (city)":"Bragado",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.64295248,-34.95797683 ]
+   },
+   "properties": {
+   "Name":"Fabrica LomaSer",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Vicente Casares",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.01640058,-34.9338664 ]
+   },
+   "properties": {
+   "Name":"CT LA PLATA - SULLAIR",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 14048 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Carlos",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.61692333,-34.90274362 ]
+   },
+   "properties": {
+   "Name":"CT EZEIZA ETAPA1 G MEDITERRANE",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 56618 ",
+   "source":"Industrial point source",
+   "Location (city)":"Carlos Spegazzini",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.61692333,-34.90274362 ]
+   },
+   "properties": {
+   "Name":"CT EZEIZA ETAPA2 G MEDITERRANE",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 32456 ",
+   "source":"Industrial point source",
+   "Location (city)":"Carlos Spegazzini",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.93335436,-34.88987358 ]
+   },
+   "properties": {
+   "Name":"CENTRAL DIQUE SA",
+   "Company":"CENTRAL DIQUE SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 478 ",
+   "source":"Industrial point source",
+   "Location (city)":"Ensenada",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.95577403,-34.85965751 ]
+   },
+   "properties": {
+   "Name":"CT BARRAGAN - ENARSA",
+   "Company":"ENARSA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 319657 ",
+   "source":"Industrial point source",
+   "Location (city)":"Ensenada",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.52070383,-34.85716731 ]
+   },
+   "properties": {
+   "Name":"CT LINCOLN",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 5898 ",
+   "source":"Industrial point source",
+   "Location (city)":"Lincoln",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.40568505,-34.83766034 ]
+   },
+   "properties": {
+   "Name":"CT ALMIRANTE BROWN",
+   "Company":"Excell Power SRL",
+   "industry":"Thermal power plant",
+   "Tonnes":" 7094 ",
+   "source":"Industrial point source",
+   "Location (city)":"Burazco",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.92924997,-34.80606584 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Ensenada",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.51610678,-34.79942658 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Canning",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.18102379,-34.72722318 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Florencio Varela",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.54186997,-34.69235624 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris SA / Siderca SAIC",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Villa Mercedes",
+   "Provincia":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.40681255,-34.66288154 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris SA / Siderca SAIC",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Valentin Alsina",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.34352059,-34.65327861 ]
+   },
+   "properties": {
+   "Name":"CENTRAL DOCK SUD",
+   "Company":"Central Dock Sud",
+   "industry":"Thermal power plant",
+   "Tonnes":" 2101890 ",
+   "source":"Industrial point source",
+   "Location (city)":"Dock Sud",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.63146321,-34.58262707 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Haedo",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.00184583,-34.16978546 ]
+   },
+   "properties": {
+   "Name":"Planta Campana",
+   "Company":"Cementos Avellaneda",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Campana",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.977388,-34.152554 ]
+   },
+   "properties": {
+   "Name":"Planta siderargica TenarisSiderca",
+   "Company":"Ternaris SA / Siderca SAIC",
+   "industry":"Steel",
+   "Tonnes":" 650000 ",
+   "source":"Industrial point source",
+   "Location (city)":"Campana",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.02034634,-34.14560719 ]
+   },
+   "properties": {
+   "Name":"Planta Holcim Campana",
+   "Company":"HOLCIM",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Campana",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.00465275,-34.09354048 ]
+   },
+   "properties": {
+   "Name":"Bunge Campana",
+   "Company":"Bunge Argentina SA",
+   "industry":"Ammonia",
+   "Tonnes":" 27027 ",
+   "source":"Industrial point source",
+   "Location (city)":"Campana",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.09709894,-33.73201213 ]
+   },
+   "properties": {
+   "Name":"CT COLON BSAS - SULLAIR",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 5222 ",
+   "source":"Industrial point source",
+   "Location (city)":"Colan",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.62774924,-33.7216403 ]
+   },
+   "properties": {
+   "Name":"Papel Prensa SAICF",
+   "Company":"Papel Prensa SAICF",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 421763 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Pedro",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.46444205,-33.72087734 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Villa Mercedes",
+   "Provincia":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.28090222,-33.45541478 ]
+   },
+   "properties": {
+   "Name":"CT GENERAL ROJO CIERRE CC",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 619957 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Nicolas de Los Arroyos",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.15325117,-33.38022978 ]
+   },
+   "properties": {
+   "Name":"Planta Ramallo",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Ramallo",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -63.71712134,-33.36537538 ]
+   },
+   "properties": {
+   "Name":"Promaaz",
+   "Company":"Promaiz SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Alejandro Roca",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.17476179,-33.35809074 ]
+   },
+   "properties": {
+   "Name":"CTERMICA SAN NICOLAS",
+   "Company":"AES",
+   "industry":"Thermal power plant",
+   "Tonnes":" 2158549 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Nicolas de Los Arroyos",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.25863236,-33.34700797 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"San Nicolas",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -66.36372385,-33.32563333 ]
+   },
+   "properties": {
+   "Name":"Diaser",
+   "Company":"Derivados San Luis",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"San Luis",
+   "Provincia":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.15945416,-33.32260493 ]
+   },
+   "properties": {
+   "Name":"Planta siderargica Ternium Siderar",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":" 5286272 ",
+   "source":"Industrial point source",
+   "Location (city)":"Ramallo/San Nicolas",
+   "Provincia":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.89151146,-33.3133564 ]
+   },
+   "properties": {
+   "Name":"CT ANCHORIS - METHAX",
+   "Company":"EMESA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 50825 ",
+   "source":"Industrial point source",
+   "Location (city)":"Tupungato",
+   "Provincia":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.292472,-33.256309 ]
+   },
+   "properties": {
+   "Name":"Planta siderargia ArcelorMittal Acindar",
+   "Company":"Acindar Industria Argentina de Aceros SA",
+   "industry":"Steel",
+   "Tonnes":" 1015000 ",
+   "source":"Industrial point source",
+   "Location (city)":"Villa Constitucian",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.31761739,-33.23981167 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris SA / Siderca SAIC",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Villa Constitucian",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.38329425,-33.17998671 ]
+   },
+   "properties": {
+   "Name":"Bio IV",
+   "Company":"Bioetanol Rio Cuarto AA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Rao Cuarto",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.98071723,-33.05433167 ]
+   },
+   "properties": {
+   "Name":"CENTRAL PUERTO SA",
+   "Company":"Central Puerto SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 3481800 ",
+   "source":"Industrial point source",
+   "Location (city)":"Lujan de Cuyo",
+   "Provincia":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.7588733,-32.9912336 ]
+   },
+   "properties": {
+   "Name":"Planta siderargica Gerdau Sipar Parez",
+   "Company":"Gerdau SA",
+   "industry":"Steel",
+   "Tonnes":" 103031 ",
+   "source":"Industrial point source",
+   "Location (city)":"Parez",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.72206377,-32.97077123 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Rosario",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.70918231,-32.88917097 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Rosario",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.41843352,-32.78187222 ]
+   },
+   "properties": {
+   "Name":"CT CAaADA DE GOMEZ - SECCO",
+   "Company":"Secco",
+   "industry":"Thermal power plant",
+   "Tonnes":" 105744 ",
+   "source":"Industrial point source",
+   "Location (city)":"Caaada de Gamez",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.83721964,-32.7406102 ]
+   },
+   "properties": {
+   "Name":"Planta Holcim Capdeville Mendoza",
+   "Company":"HOLCIM",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Las Heras",
+   "Provincia":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.70218034,-32.73646168 ]
+   },
+   "properties": {
+   "Name":"Celulosa Argentina SA",
+   "Company":"Celulosa Argentina SA",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 416400 ",
+   "source":"Industrial point source",
+   "Location (city)":"Capitan Bermudez",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.68583225,-32.61039562 ]
+   },
+   "properties": {
+   "Name":"CT BELL VILLE - SULLAIR",
+   "Company":"SULLAIR ARGENTINA SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 6459 ",
+   "source":"Industrial point source",
+   "Location (city)":"Bell Ville",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -63.16162482,-32.41597156 ]
+   },
+   "properties": {
+   "Name":"ACA",
+   "Company":"Aca Bio Cooperativa Ltda",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Villa Maraa",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.77930021,-31.71284154 ]
+   },
+   "properties": {
+   "Name":"CT BRIGADIER LOPEZ",
+   "Company":"Central Puerto SA",
+   "industry":"Thermal power plant",
+   "Tonnes":" 64572 ",
+   "source":"Industrial point source",
+   "Location (city)":"Santa Fe",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.71499331,-31.62099492 ]
+   },
+   "properties": {
+   "Name":"Vicentin",
+   "Company":"Vicentin SAIC",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Avellaneda",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.67430483,-31.54717154 ]
+   },
+   "properties": {
+   "Name":"Fabrica San Juan",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Rivadavia",
+   "Provincia":"San Juan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.35835512,-31.47714495 ]
+   },
+   "properties": {
+   "Name":"Planta Holcim Malagueao",
+   "Company":"HOLCIM",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Malagueao",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.18185929,-31.37191425 ]
+   },
+   "properties": {
+   "Name":"Maaz Energaa",
+   "Company":"MAaZ ENERGaA SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Ciudad de Cardoba",
+   "Provincia":"Cardoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.27345715,-29.15821641 ]
+   },
+   "properties": {
+   "Name":"CT GOYA - SECCO",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 4754 ",
+   "source":"Industrial point source",
+   "Location (city)":"Goya",
+   "Provincia":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.50746666,-29.15733701 ]
+   },
+   "properties": {
+   "Name":"CT CHILECITO - SECCO",
+   "Company":"Secco",
+   "industry":"Thermal power plant",
+   "Tonnes":" 4810 ",
+   "source":"Industrial point source",
+   "Location (city)":"Chilecito",
+   "Provincia":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.39684115,-28.48761165 ]
+   },
+   "properties": {
+   "Name":"Bioenergaas Agropecuarias SA",
+   "Company":"BIOENERGaASAGROPECUARIAS SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"General Obligado",
+   "Provincia":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.21491434,-28.46620076 ]
+   },
+   "properties": {
+   "Name":"Fabrica Catamarca",
+   "Company":"Loma Negra",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"El Alto",
+   "Provincia":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.85560319,-28.44584131 ]
+   },
+   "properties": {
+   "Name":"CT AaATUYA - SULLAIR",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 11557 ",
+   "source":"Industrial point source",
+   "Location (city)":"Aaatuya",
+   "Provincia":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.85560319,-28.44584131 ]
+   },
+   "properties": {
+   "Name":"CT AaATUYA II - SULLAIR",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 4840 ",
+   "source":"Industrial point source",
+   "Location (city)":"Aaatuya",
+   "Provincia":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.60985513,-27.4571049 ]
+   },
+   "properties": {
+   "Name":"Energaas Ecolagicas de Tucuman",
+   "Company":"Energaas Ecolagicas de Tucuman - Grupo Colombres",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Aguilares",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.60294134,-27.3548157 ]
+   },
+   "properties": {
+   "Name":"Bioenergaa la Corona",
+   "Company":"Bioenergia La Corona SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Concepcian",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.51695443,-27.22139848 ]
+   },
+   "properties": {
+   "Name":"Ingenio Santa Rosa",
+   "Company":"Bioenergaa Santa Rosa SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Monteros",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -54.86344241,-27.09123769 ]
+   },
+   "properties": {
+   "Name":"CT ARISTOBUDEL VALLE-SOENERGY",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 24495 ",
+   "source":"Industrial point source",
+   "Location (city)":"Aristabulo del Valle",
+   "Provincia":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.30157927,-27.0235712 ]
+   },
+   "properties": {
+   "Name":"Fronterita Energaa SA",
+   "Company":"Fronterita Energia SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Juan XXIII",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -55.11980442,-26.93561856 ]
+   },
+   "properties": {
+   "Name":"Papel Misionero",
+   "Company":"Papel Misionero",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 272138 ",
+   "source":"Industrial point source",
+   "Location (city)":"Puerto Leoni",
+   "Provincia":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.22182861,-26.866966 ]
+   },
+   "properties": {
+   "Name":"CT INDEPEND ETAPA1 G MEDITERR",
+   "Company":"Grupo Albanesi",
+   "industry":"Thermal power plant",
+   "Tonnes":" 10088 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Miguel de Tucuman",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.22182861,-26.866966 ]
+   },
+   "properties": {
+   "Name":"CT INDEPEND ETAPA2 G MEDITERR",
+   "Company":"Grupo Albanesi",
+   "industry":"Thermal power plant",
+   "Tonnes":" 9463 ",
+   "source":"Industrial point source",
+   "Location (city)":"San Miguel de Tucuman",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.14264897,-26.84424771 ]
+   },
+   "properties": {
+   "Name":"Bioenergatica Leales SA",
+   "Company":"Bioenergatica Leales SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Cevil Pozo",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.15279485,-26.83469939 ]
+   },
+   "properties": {
+   "Name":"Bio Atar SA",
+   "Company":"Bio Atar SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Alderetes",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.20884372,-26.82826317 ]
+   },
+   "properties": {
+   "Name":"Biotrinidad",
+   "Company":"Biotrinidad SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"San Miguel de Tucuman",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.08538766,-26.81731107 ]
+   },
+   "properties": {
+   "Name":"Compaaaa Bioenergatica La Florida",
+   "Company":"Compaaaa Bioenergatica La Florida SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"La Florida",
+   "Provincia":"Tucuman"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -54.63376934,-25.97573961 ]
+   },
+   "properties": {
+   "Name":"Arauco Argentina SA ",
+   "Company":"Arauco Argentina SA ",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 875000 ",
+   "source":"Industrial point source",
+   "Location (city)":"Puerto Esperanza",
+   "Provincia":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.65198658,-25.37919283 ]
+   },
+   "properties": {
+   "Name":"Austin Powder",
+   "Company":"Austin Powder",
+   "industry":"Ammonia",
+   "Tonnes":" 54600 ",
+   "source":"Industrial point source",
+   "Location (city)":"El Galpan",
+   "Provincia":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.25915073,-25.12695055 ]
+   },
+   "properties": {
+   "Name":"CT LAGUNA BLANCA - SECCO",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 4457 ",
+   "source":"Industrial point source",
+   "Location (city)":"Laguna Blanca",
+   "Provincia":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.05151496,-24.74271171 ]
+   },
+   "properties": {
+   "Name":"CT SALTA (TERMOANDES)",
+   "Company":"AES",
+   "industry":"Thermal power plant",
+   "Tonnes":" 1004183 ",
+   "source":"Industrial point source",
+   "Location (city)":"Cobos",
+   "Provincia":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.09802875,-24.6810765 ]
+   },
+   "properties": {
+   "Name":"Bio San Isidro",
+   "Company":"Bio San Isidro SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Campo Santo",
+   "Provincia":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.9570812,-24.49038325 ]
+   },
+   "properties": {
+   "Name":"Planta Holcim Puesto Viejo",
+   "Company":"HOLCIM",
+   "industry":"Cement",
+   "Tonnes":" -   ",
+   "source":"Industrial point source",
+   "Location (city)":"Puesto Viejo",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.9683694,-24.31258742 ]
+   },
+   "properties": {
+   "Name":"Ingenio Rao Grande",
+   "Company":"Rio Grande Energia SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"La Mendieta",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.19816083,-24.2460988 ]
+   },
+   "properties": {
+   "Name":"Aceros Zapla",
+   "Company":"Aceros Zapla SA",
+   "industry":"Steel",
+   "Tonnes":"",
+   "source":"Industrial point source",
+   "Location (city)":"Palpala",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.23014529,-24.23195846 ]
+   },
+   "properties": {
+   "Name":"Papelera del NOA SA",
+   "Company":"Papelera del NOA SA",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 85425 ",
+   "source":"Industrial point source",
+   "Location (city)":"Rao Blanco",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.83150245,-23.90901687 ]
+   },
+   "properties": {
+   "Name":"CT ING JUAREZ - SECCO",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 2692 ",
+   "source":"Industrial point source",
+   "Location (city)":"Ingeniero Juarez",
+   "Provincia":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.79551334,-23.82765684 ]
+   },
+   "properties": {
+   "Name":"Fabrica de Papel Ledesma",
+   "Company":"Fabrica de Papel Ledesma",
+   "industry":"Cellulose and paper",
+   "Tonnes":" 212250 ",
+   "source":"Industrial point source",
+   "Location (city)":"Libertador General San Martan",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.78800974,-23.82436777 ]
+   },
+   "properties": {
+   "Name":"Ingenio Ledesma",
+   "Company":"Bio Ledesma SA",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Libertador General San Martin",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.61399317,-23.73226891 ]
+   },
+   "properties": {
+   "Name":"CT CAIMANCITO -SULLAIR",
+   "Company":"",
+   "industry":"Thermal power plant",
+   "Tonnes":" 62571 ",
+   "source":"Industrial point source",
+   "Location (city)":"Libertador Gral San Martan",
+   "Provincia":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.29616772,-23.2022408 ]
+   },
+   "properties": {
+   "Name":"Seaboard Energaa Renovables y Alimentos",
+   "Company":"Seaboard Energaa Renovables y Alimentos",
+   "industry":"Bioethanol",
+   "Tonnes":" -   ",
+   "source":"Biogenic point source",
+   "Location (city)":"Oran",
+   "Provincia":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -63.76700533,-22.35004604 ]
+   },
+   "properties": {
+   "Name":"CENTRAL TERMICA PIQUIRENDA",
+   "Company":"Pampa Energaa",
+   "industry":"Thermal power plant",
+   "Tonnes":" 25963 ",
+   "source":"Industrial point source",
+   "Location (city)":"Piquirenda",
+   "Provincia":"Salta"
+   }
+ }
+]
+}
