@@ -54,10 +54,10 @@ function addGeoJSONLayer(filterProperty, filterValue) {
         });
     }
 
-// Add event listener to the button
-document.getElementById('show-geojson-button').addEventListener('click', function() {
-    addGeoJSONLayer();
-});
+// // Add event listener to the button
+// document.getElementById('show-geojson-button').addEventListener('click', function() {
+//     addGeoJSONLayer();
+// });
 
 // Add event listener to the button
 document.getElementById('industrial-CO2-button').addEventListener('click', function() {
