@@ -8,18 +8,18 @@
 	<meta name="Description" content="An interactive map to show CO/CO2 emissions from different processes and a non-exhaustive number of chemical parks and polyol plants.
 	Allows the user to interactively filter the data to conclude on possible replication sites for the Carbon4PUR technology to transform CO and CO2 streams to polyurethanes.">
 	<!-- Load Leaflet: instructions at http://leafletjs.com/download.html -->
-	<link href="vendor/leaflet.css" rel="stylesheet" />
-	<link rel="stylesheet" href="vendor/leaflet-sidebar2.min.css" />
+	<link href="assets/leaflet.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/leaflet-sidebar2.min.css" />
 	<!-- A CSS framework for easy styling -->
-	<link href="vendor/bulma.min.css" rel="stylesheet" />
-	<link href="vendor/bulma-slider.min.css" rel="stylesheet" />
+	<link href="assets/bulma.min.css" rel="stylesheet" />
+	<link href="assets/bulma-slider.min.css" rel="stylesheet" />
 
 	<!-- <link href="vendor/introjs.min.css" rel="stylesheet" /> -->
 	<!-- Boring layer selection <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.min.css" integrity="sha256-2nki7eLxn91r/RI3QQq+ArnIltknk6gz4wSoQHFrJnA=" crossorigin="anonymous" /> -->
-	<link href="styles.css" rel="stylesheet">
-	<link href="index.css" rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<!-- <link href="index.css" rel="stylesheet"> -->
 
-	<script src="jquery-3.7.1.min.js"></script>
+	<script src="assets/jquery-3.7.1.min.js"></script>
 	<script> 
         $(function(){
             $("#ToIncludeIntroduction").load("introduction.html"); 
@@ -270,17 +270,17 @@
 						not all emissions are compatible with the Carbon4PUR cleaning steps. Please find more
 						information <a href="#nace-description" onclick="map.sidebar.open('legal-content')">in the data section.</a></div>
 				</div>
-				<button class="button is-small btn-block"  id="CO2-global-button">Punkt-Darstellung</button>
-				<button class="button is-small btn-block"  id="CO2-argentina-button">ARGENTINIEN TEST</button>
+				<!-- <button class="button is-small btn-block"  id="CO2-global-button">Punkt-Darstellung</button> -->
+				<!-- <button class="button is-small btn-block"  id="CO2-argentina-button">ARGENTINIEN TEST</button> -->
+				<!-- <button class="button is-small btn-block"  id="show-geojson-button">DDT TEST</button> -->
 
 				<h2>Or manually filter</h2>
 				<div class="filterGroup">
 					Emission type:
 					<div class="buttons" id="gas-type-buttons">
-						<a id="pollutant-filter-CO2-button"
-							class="button is-activated is-small">
+						<a id="industrial-CO2-button" class="button is-activated is-small">
 							<span>industrial CO<sub>2</sub> sources</span></a>
-						<a id="pollutant-filter-CO-button" class="button is-activated is-small">
+						<a id="biogenic-CO2-button" class="button is-activated is-small">
 							<span>biogenic CO<sub>2</sub> sources</span></a>
 					</div>
 				</div>
@@ -592,15 +592,16 @@
 	</div>
 
 	<!-- <script src="vendor/leaflet.js" defer></script> -->
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-	<script type="text/javascript" src="leaflet.ajax.js"></script>
+	<script src="assets/leaflet.js"></script>
+	<script type="text/javascript" src="assets/leaflet.ajax.js"></script>
 
-	<script src="vendor/d3.min.js" defer></script>
-	<script src="vendor/bulma-slider.min.js" defer></script>
-	<script src="vendor/leaflet-sidebar2.min.js" defer></script>
+	<script src="assets/d3.min.js" defer></script>
+	<script src="assets/bulma-slider.min.js" defer></script>
+	<script src="assets/leaflet-sidebar2.min.js" defer></script>
 	<!-- <script src="vendor/intro.min.js" defer></script> -->
+	<script src="geojson.js"></script>
 
-	<script src="color_palette_ptxpathways.js"></script>
+	<script src="assets/color_palette_ptxpathways.js"></script>
 	<script src="main.js"></script>
 </body>
 
