@@ -137,14 +137,14 @@
 		<!-- Nav tabs -->
 		<div class="sidebar-tabs">
 			<ul role="tablist" id="maintablist">
-				<li class="active" id="info-tab-li">
+				<li class="" id="info-tab-li">
 					<a href="#info-content" role="tab" aria-label="Information about the tool">
 						<svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-info"></use>
 						</svg>
 					</a>
 				</li>
-				<li class="" id="emitter-tab-li">
+				<li class="active" id="emitter-tab-li">
 					<a href="#emitter-content" role="tab" aria-label="Filter by emitter type">
 						<svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-emitter"></use>
@@ -186,7 +186,7 @@
 
 		<!-- Tab panes -->
 		<div class="sidebar-content" id="sidebarcontent">
-			<div class="sidebar-pane active" id="info-content">
+			<div class="sidebar-pane" id="info-content">
 				<h1 class="sidebar-header">
 					PtX Pathways - CO<sub>2</sub> emissions in Argentina aaaaaa
 					<span class="sidebar-close" id="sidebar-close-info-span"><svg class="svgicon" viewbox="0 0 32 32">
@@ -248,7 +248,7 @@
 				</div> 
 			-->
 			</div>
-			<div class="sidebar-pane " id="emitter-content">
+			<div class="sidebar-pane active" id="emitter-content">
 
 				<h1 class="sidebar-header">
 					CO<sub>2</sub> emitters in Argentina
@@ -258,11 +258,11 @@
 				</h1>
 				<h2 style="color: red;">Filter by compatibility with Carbon4PUR cleaning step</h2>
 				<div class="filterGroup">
-					<div class="buttons has-addons">
+					<!-- <div class="buttons has-addons">
 						<a id="compat-filter-loop-button" class="button is-info is-small">chemical looping</a>
 						<a id="compat-filter-cat-button" class="button is-small">catalytic cleaning</a>
-						<a id="compat-filter-manual-button" class="button is-small">Manual</a>
-					</div>
+						<a id="compat-filter-manual-button" class="button is-small">Manual</a> 
+					</div> -->
 					<div class="is-size-7" style="color: red;">&#9432; Each chemical route tolerates different levels and kinds of impurities  and is therefore
 						suited to treating different industrial processes. Emissions from each process are identified and presented based on their <a
 							href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2&StrLanguageCode=EN&StrLayoutCode=HIERARCHIC&IntPcKey="
@@ -278,9 +278,9 @@
 				<div class="filterGroup">
 					Emission type:
 					<div class="buttons" id="gas-type-buttons">
-						<a id="industrial-CO2-button" class="button is-activated is-small">
+						<a id="toggle-industrial-button" class="button is-activated is-small">
 							<span>industrial CO<sub>2</sub> sources</span></a>
-						<a id="biogenic-CO2-button" class="button is-activated is-small">
+						<a id="toggle-biogenic-button" class="button is-activated is-small">
 							<span>biogenic CO<sub>2</sub> sources</span></a>
 					</div>
 				</div>
@@ -288,7 +288,7 @@
 					<div>
 						<span class="is-pulled-left">Only selected plant types: </span>
 						<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;"><a
-								class="button is-small" id="nace-deselect-all">Deselect all</a></span>
+								class="button is-small" id="toggle-all-button">Deselect all</a></span>
 						<span class=" is-clearfix"></span>
 					</div>
 					<!-- <div class="buttons" id="nace-categories"></div> -->

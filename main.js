@@ -9,12 +9,192 @@ var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
 
-// function load_home(){
-//     document.getElementById("ToIncludeIntroduction").innerHTML'<object type="type/html" data="home.html" ></object>';
-// }
+// Group layers by source type
+var industrialLayers = ["Aluminium", "Steel", "Cement", "Cellulose and paper", "Thermal power plant", "Refinery", "Ammonia", "Methanol", "Etileno"];
+var biogenicLayers = ["Biogas", "Bioethanol"];
+
+var allLayersVisible = true; // Initial state, all layers are visible
+var biogenicLayersVisible = true; // Initial state, biogenic layers are visible
+var industrialLayersVisible = true; // Initial state, industrial layers are visible
+
+// Add a button to the HTML and set its click event to toggleAllLayers
+var toggleAllButton = document.getElementById('toggle-all-button'); // Replace with your button's ID
+toggleAllButton.addEventListener('click', toggleAllLayers);
+
+var toggleBiogenicButton = document.getElementById('toggle-biogenic-button'); // Replace with your button's ID
+toggleBiogenicButton.addEventListener('click', toggleBiogenicLayers);
+toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
+toggleBiogenicButton.style.color="white";
+
+var toggleIndustrialButton = document.getElementById('toggle-industrial-button'); // Replace with your button's ID
+toggleIndustrialButton.addEventListener('click', toggleIndustrialLayers);
+toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+toggleIndustrialButton.style.color="white";
+
+// Specify the property you want to find the maximum value for
+var propertyToFindMax = 'Tonnes';
+
+// Initialize a variable to store the maximum value
+// var maxPropertyValue = -Infinity; // Start with negative infinity as an initial value
+var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
+var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
+
+// Function to add the GeoJSON layer to the map
+function addGeoJSONLayer(industryType, filterValue) {
+    fetch(geojsonURL)
+        .then(response => response.json())
+        .then(data => {
+            // Filter the GeoJSON data based on the specified property and value
+            // TO DO DDT
+            // fertig (?): filterProperty - industry type oder point source type
+            if(industryType=="industrial") {
+                industryType="industry";
+            } else {
+                industryType="biogenic";
+            }
+            var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
+            // console.log(filterValue);
+            // console.log(emissionTypeColors_D[filterValue]);
+
+            // TO DO DDT
+            // filterProperty - industry type oder point source type
+            // filter value --> Farben
+
+            // Create a GeoJSON layer and add it to the map
+            geojsonLayer = L.geoJSON(filteredData, {
+                pointToLayer: function (feature, latlng) {
+                    // check, ob die geojson überhaupt Koordinaten UND bekannte Emissionen haben
+                    // console.log(feature.geometry)
+                    if (feature.geometry && parseFloat(feature.properties.Tonnes) >0 && feature.geometry.coordinates ) {
+                        return L.circleMarker(latlng, {
+                            // radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+                            radius: Math.sqrt(feature.properties.Tonnes / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+                            color: emissionTypeColors_D[filterValue],
+                            /*fillColor: feature.properties.color,*/
+                            fillColor: emissionTypeColors_D[filterValue],
+                            weight: 1,
+                            opacity: 0.7,
+                            fillOpacity: 0.4
+                        }).bindPopup(addCO2argentinaPopupHandler(feature));
+                    } else {
+                        if (!parseFloat(feature.properties.Tonnes)>0) {
+                            console.log(feature.properties.Name, "(Company: ",feature.properties.Company,  ")"," does not contain information about CO2 emissions")
+                        } else if (!feature.geometry) {
+                            console.error(feature.properties.Name, "(Company: ",feature.properties.Company,  ")","does not contain valid coordinates");
+                        }            
+                    }
+            }}) // .addTo(map);
 
 
+            // Assign the layer to the layers object with the filterValue as the key
+            layers[filterValue] = geojsonLayer;
+            geojsonLayer.addTo(map);
+        })
+        .catch(error => {
+            console.error(`Error loading GeoJSON data: ${error}`);
+        });
+    }
 
+// Function to toggle all layers
+function toggleAllLayers() {
+    // wenn nur ein Teil oder kein Layer zu sehen ist, dann alle einschalten
+    if(!allLayersVisible) {  
+        if(!industrialLayersVisible) {
+            toggleIndustrialLayers();
+        }
+        if(!biogenicLayersVisible) {
+            toggleBiogenicLayers();
+        }
+    } else 
+    // wenn alle bereits zu sehen sind (und nicht nur ein Teil), dann alle ausschalten
+    if(allLayersVisible) {  
+        if(industrialLayersVisible) {
+            toggleIndustrialLayers();
+        }
+        if(biogenicLayersVisible) {
+            toggleBiogenicLayers();
+        }
+    }
+}
+
+function toggleIndustrialLayers() {
+    // Filter and show layers with industrial source
+    if (industrialLayersVisible) {
+        industrialLayers.forEach(function (layerName) {
+            if (map.hasLayer(layers[layerName])) {
+                map.removeLayer(layers[layerName]);
+            } else {
+                map.addLayer(layers[layerName]);
+            }
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+        });
+        toggleIndustrialButton.style.backgroundColor="white";
+        toggleIndustrialButton.style.color="black";
+
+        document.getElementById('toggle-all-button').text = 'Select all';
+        allLayersVisible = false;
+        // TO DO DDT
+        // TOGGLE SELECT ALL BUTTON and the STATE 
+        // Also for the select all button
+    } else {
+        industrialLayers.forEach(function (layerName) {
+            map.addLayer(layers[layerName]);
+                document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = emissionTypeColors_D[layerName];
+        });
+        toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+        toggleIndustrialButton.style.color="white";
+    }
+    industrialLayersVisible = !industrialLayersVisible; // Toggle the state
+
+    if (!biogenicLayersVisible || !industrialLayersVisible) {
+        allLayersVisible = false;
+    } else if (biogenicLayersVisible && industrialLayersVisible) {
+        allLayersVisible = true;
+        document.getElementById('toggle-all-button').text = 'Deselect all';
+    }
+
+    // console.log('industrialLayersVisible: ',industrialLayersVisible);
+    // console.log('biogenicLayersVisible: ',biogenicLayersVisible);
+    // console.log('allLayersVisible: ',allLayersVisible);
+}
+function toggleBiogenicLayers() {
+    // Filter and show layers with industrial source
+    if (biogenicLayersVisible) {
+        biogenicLayers.forEach(function (layerName) {
+            if (map.hasLayer(layers[layerName])) {
+                map.removeLayer(layers[layerName]);
+            } else {
+                map.addLayer(layers[layerName]);
+            }
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+        });
+        toggleBiogenicButton.style.backgroundColor="white";
+        toggleBiogenicButton.style.color="black";
+        // TO DO DDT
+        allLayersVisible = false;
+        document.getElementById('toggle-all-button').text = 'Select all';
+        // TOGGLE SELECT ALL BUTTON and the STATE
+    } else {
+        biogenicLayers.forEach(function (layerName) {
+            map.addLayer(layers[layerName]);
+                document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = emissionTypeColors_D[layerName];
+        });
+        toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
+        toggleBiogenicButton.style.color="white";
+    }
+    biogenicLayersVisible = !biogenicLayersVisible; // Toggle the state
+
+    if (!biogenicLayersVisible || !industrialLayersVisible) {
+        allLayersVisible = false;
+    } else if (biogenicLayersVisible && industrialLayersVisible) {
+        allLayersVisible = true;
+        document.getElementById('toggle-all-button').text = 'Deselect all';
+    }
+
+    // console.log('industrialLayersVisible: ',industrialLayersVisible);
+    // console.log('biogenicLayersVisible: ',biogenicLayersVisible);
+    // console.log('allLayersVisible: ',allLayersVisible);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // OLLI
@@ -46,7 +226,8 @@ function showMap() {
         center: [-38.45155, -63.5988853], // show Argentina
         zoom: 5, // roughly show Europe from 1 to 18 -- decrease to zoom out, increase to zoom in)
         scrollWheelZoom: false,
-        zoomControl: false // to put the zoom butons on the right
+        zoomControl: false, // to put the zoom butons on the right
+        minZoom: 4 // damit man nicht zu weit rauszoomen kann
     })
 
     L.control.zoom({
@@ -123,23 +304,25 @@ function loadGlobalDefs() {
 
 /* create scale for the index.html */
 let createScale = () => {
-	var height = 75;
-	var width = 130;
+	var height = 100;
+	var width = 150;
 	var svg = d3.select("#scale")
 		.append("svg")
 		.attr("width", width)
 		.attr("height", height);
 
 	// The scale you use for bubble size
+    // console.log('creating scale. Max emissions (in tonnes): '+ maxEmissionsArgentina);
+    // console.log('creating scale. Max emissions (in Mtonnes): '+ maxEmissionsArgentina_Mt);
 	var size = d3.scaleSqrt()
-		.domain([0, 100]) // What's in the data, min-max
-		.range([0, 50]) // Size in pixel
+		.domain([0, maxEmissionsArgentina_Mt]) // What's in the data, min-max
+		.range([0, 45]) // Size in pixel
 	;
 	// Add legend: circles
-	var valuesToShow = [2, 10, 50]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
-	var xCircle = 38;
-	var xLabel = 100;
-	var yCircle = 74;
+	var valuesToShow = [maxEmissionsArgentina_Mt/100, maxEmissionsArgentina_Mt/2.5, maxEmissionsArgentina_Mt]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
+	var xCircle = 55;
+	var xLabel = 120;
+	var yCircle = 100;
 	svg
 		.selectAll("legend")
 		.data(valuesToShow)
@@ -253,7 +436,7 @@ var CO2_global = new L.GeoJSON.AJAX(['emissions_global-points.geojson'], {
 	pointToLayer: function(feature, latlng) {
 		return L.circleMarker(latlng, {
 			radius: feature.properties.MTonnes, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-			color: "black",
+            color: "black",
 			/*fillColor: feature.properties.color,*/
 			fillColor: "black",
 			weight: 1,
@@ -481,17 +664,17 @@ function addCO2argentinaPopupHandler(feature) {
 
 // Define a list of button names
 const buttonData = [
-    { name: 'Aluminium', id: 'emitters-aluminium', industry: 'industrial'},
-    { name: 'Steel', id: 'emitters-steel', industry: 'industrial'},
-    { name: 'Cement', id: 'emitters-cement', industry: 'industrial'},
-    { name: 'Cellulose and paper', id: 'emitters-cellulose', industry: 'industrial'},
-    { name: 'Thermal power plant', id: 'emitters-thermal', industry: 'industrial'},
-    { name: 'Refinery', id: 'emitters-refinery', industry: 'industrial'},
-    { name: 'Biogas', id: 'emitters-biogas', industry: 'biogenic'},
-    { name: 'Bioethanol', id: 'emitters-bioethanol', industry: 'biogenic'},
-    { name: 'Ammonia', id: 'emitters-ammonia', industry: 'industrial'},
-    { name: 'Methanol', id: 'emitters-methanol', industry: 'industrial'},
-    { name: 'Etileno', id: 'emitters-etileno', industry: 'industrial'},
+    { name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+    { name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+    { name: 'Cement', id: 'button-cement', industry: 'industrial'},
+    { name: 'Cellulose and paper', id: 'button-cellulose', industry: 'industrial'},
+    { name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+    { name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+    { name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+    { name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+    { name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+    { name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
 ];
 
 // Get a reference to the container element
@@ -537,119 +720,62 @@ buttonData.forEach(data => {
 });
 
 
-// Function to add the GeoJSON layer to the map
-    // Function to add the GeoJSON layer to the map
-    function addGeoJSONLayer(industryType, filterValue) {
-        fetch(geojsonURL)
-            .then(response => response.json())
-            .then(data => {
-                // Filter the GeoJSON data based on the specified property and value
-                // TO DO DDT
-                // filterProperty - industry type oder point source type
-                if(industryType=="industrial") {
-                    industryType="industry";
-                } else {
-                    industryType="biogenic";
-                }
-                var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
-                // console.log(filterValue);
-                // console.log(emissionTypeColors_D[filterValue]);
-    
-                // TO DO DDT
-                // filterProperty - industry type oder point source type
-                // filter value --> Farben
-                
-                // Create a GeoJSON layer and add it to the map
-                geojsonLayer = L.geoJSON(filteredData, {
-                    pointToLayer: function (feature, latlng) {
-                        return L.circleMarker(latlng, {
-                            radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-                            color: emissionTypeColors_D[filterValue],
-                            /*fillColor: feature.properties.color,*/
-                            fillColor: emissionTypeColors_D[filterValue],
-                            weight: 1,
-                            opacity: 0.7,
-                            fillOpacity: 0.4
-                        }).bindPopup(addCO2argentinaPopupHandler(feature));
-                }}) // .addTo(map);
-   
-    
-                // Assign the layer to the layers object with the filterValue as the key
-                layers[filterValue] = geojsonLayer;
-                geojsonLayer.addTo(map);
-            })
-            .catch(error => {
-                console.error(`Error loading GeoJSON data: ${error}`);
-            });
-        }
-    
-    // Add event listener to the button
-    // document.getElementById('show-geojson-button').addEventListener('click', function() {
-    //     addGeoJSONLayer();
-    // });
-    
-    // Add event listener to the button
-    document.getElementById('industrial-CO2-button').addEventListener('click', function() {
-        addGeoJSONLayer('source', 'Industrial point source');
-    });
-    document.getElementById('biogenic-CO2-button').addEventListener('click', function() {
-        addGeoJSONLayer('source', 'Biogenic point source');
-    });
-    
-    // Function to toggle layer visibility
-    function toggleLayer(layer, layerName, button_id) {
-        button=button_id;
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            button.style.backgroundColor="white";
-        } else {
-            layer.addTo(map);
-            button.style.backgroundColor = emissionTypeColors_D[layerName];
-        }
-        }
-    
-    
-    // Add event listeners to toggle buttons
-    var toggleButtons = document.querySelectorAll('.toggle-layer-button');
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function () {
-    
-            var layerName = button.getAttribute('data-layer');
-            var industryType = button.getAttribute('industry-type');
-            // console.log(layerName);
-            // console.log(industryType);
-            // addGeoJSONLayer(industryType, layerName);
-            var layer = layers[layerName];
-            if (layer) {
-                toggleLayer(layer, layerName, button);
-            } 
-            
 
-            // if (layerName === 'Aluminium') {
-            //     toggleLayer(aluminiumLayer);
-            // } else if (layerName === 'Steel') {
-            //     toggleLayer(steelLayer);
-            // } else if (layerName === 'Cement') {
-            //     toggleLayer(cementLayer);
-            // } else if (layerName === 'Cellulose') {
-            //     toggleLayer(celluloseLayer);
-            // } else if (layerName === 'Thermal') {
-            //     toggleLayer(thermalLayer);
-            // } else if (layerName === 'Refinery') {
-            //     toggleLayer(refineryLayer);            
-            // } else if (layerName === 'Biogas') {
-            //     toggleLayer(biogasLayer);    
-            // } else if (layerName === 'Bioethanol') {
-            //     toggleLayer(bioethanolLayer);    
-            // } else if (layerName === 'Ammonia') {
-            //     toggleLayer(ammoniaLayer);    
-            // } else if (layerName === 'Methanol') {
-            //     toggleLayer(methanolLayer);  
-            // } else if (layerName === 'Etileno') {
-            //     toggleLayer(etilenoLayer);  
-            // }// Add more conditions for other layer buttons
-        });
+
+// Add event listener to the button
+// document.getElementById('show-geojson-button').addEventListener('click', function() {
+//     addGeoJSONLayer();
+// });
+
+// Add event listener to the button
+// To Do DDT
+// document.getElementById('industrial-CO2-button').addEventListener('click', function() {
+//     addGeoJSONLayer('source', 'Industrial point source');
+// });
+// document.getElementById('biogenic-CO2-button').addEventListener('click', function() {
+//     addGeoJSONLayer('source', 'Biogenic point source');
+// });
+
+// Function to toggle layer visibility
+function toggleLayer(layer, layerName, button_id, industryType) {
+    button=button_id;
+    if (map.hasLayer(layer)) {
+        map.removeLayer(layer);
+        console.log(layer)
+        button.style.backgroundColor="white";
+        if (industryType=="industrial") {
+            industrialLayersVisible = false;
+            toggleIndustrialButton.style.backgroundColor="white";
+            toggleIndustrialButton.style.color="black";
+        } else if (industryType=="biogenic") {
+            biogenicLayersVisible = false;
+            toggleBiogenicButton.style.backgroundColor="white";
+            toggleBiogenicButton.style.color="black";            
+        }
+        allLayersVisible = false;
+        document.getElementById('toggle-all-button').text = 'Select all';
+    } else {
+        layer.addTo(map);
+        button.style.backgroundColor = emissionTypeColors_D[layerName];
+    }
+    }
+
+// Add event listeners to toggle buttons
+var toggleButtons = document.querySelectorAll('.toggle-layer-button');
+toggleButtons.forEach(button => {
+    button.addEventListener('click', function () {
+
+        var layerName = button.getAttribute('data-layer');
+        var industryType = button.getAttribute('industry-type');
+        // console.log(layerName);
+        // console.log(industryType);
+        // addGeoJSONLayer(industryType, layerName);
+        var layer = layers[layerName];
+        if (layer) {
+            toggleLayer(layer, layerName, button, industryType);
+        } 
     });
+});
     
 
 /*********************************************************/
@@ -662,10 +788,10 @@ let globalEmissionData, globalChemicalData
 
 /*****************/
 /* Emissions tab */
-let compatFilterManualButton = document.getElementById('compat-filter-manual-button'),
-    compatFilterLoopButton = document.getElementById('compat-filter-loop-button'),
-    compatFilterCatButton = document.getElementById('compat-filter-cat-button'),
-    compatFilterButtons = [compatFilterManualButton, compatFilterLoopButton, compatFilterCatButton]
+// let compatFilterManualButton = document.getElementById('compat-filter-manual-button'),
+//     compatFilterLoopButton = document.getElementById('compat-filter-loop-button'),
+//     compatFilterCatButton = document.getElementById('compat-filter-cat-button'),
+//     compatFilterButtons = [compatFilterManualButton, compatFilterLoopButton, compatFilterCatButton]
 
 let pollutantFilterCO2biogasButton = document.getElementById('pollutant-filter-CO2-button'),
     pollutantFilterCO2industrialButton = document.getElementById('pollutant-filter-CO-button')
@@ -676,7 +802,7 @@ let co2FilteredSumOutput = document.getElementById('sumCO2'),
     co2CombinedFilteredSumOutput = document.getElementById('sumCO2combined'),
     coCombinedFilteredSumOutput = document.getElementById('sumCOcombined')
 
-let naceDeselectButton = document.getElementById('nace-deselect-all')
+// let naceDeselectButton = document.getElementById('nace-deselect-all')
 
 /* styling */
 // pollutantFilterCO2biogasButton.style.background = emissionColors_D.biogas
@@ -727,16 +853,16 @@ function toggleCompatFilter(event) {
     }
     updateEmissionsFilter()
 }
-for (var i = 0; i < compatFilterButtons.length; i++) {
-    compatFilterButtons[i].addEventListener('click', toggleCompatFilter)
-}
+// for (var i = 0; i < compatFilterButtons.length; i++) {
+//     compatFilterButtons[i].addEventListener('click', toggleCompatFilter)
+// }
 
-function activateCompatButton(button) {
-    for (var i = 0; i < compatFilterButtons.length; i++) {
-        compatFilterButtons[i].classList.remove('is-info')
-    }
-    button.classList.add('is-info')
-}
+// function activateCompatButton(button) {
+//     for (var i = 0; i < compatFilterButtons.length; i++) {
+//         compatFilterButtons[i].classList.remove('is-info')
+//     }
+//     button.classList.add('is-info')
+// }
 
 function returnTogglePollutantFilter(button) {
     return function () {
@@ -798,27 +924,27 @@ function getFilteredTotals() {
     coCombinedFilteredSumOutput.textContent = format1Dec(cosumCombined) + ' Megatonnes/year'
 }
 
-function toggleAllNaceFilter() {
-    let nace = globalModel.emissions.categories.naceCategories
-    if (naceDeselectButton.text == "Deselect all") {
-        activateCompatButton(compatFilterManualButton)
-        naceDeselectButton.text = "Select all"
-        for (name in nace.items) {
-            nace.items[name].active = false
-            nace.items[name].button.classList.remove('is-activated')
-        }
-    } else {
-        activateCompatButton(compatFilterLoopButton)
-        naceDeselectButton.text = "Deselect all"
-        for (name in nace.items) {
-            nace.items[name].active = true
-            nace.items[name].button.classList.add('is-activated')
-        }
-    }
-    updateEmissionsFilter()
+// function toggleAllNaceFilter() {
+//     let nace = globalModel.emissions.categories.naceCategories
+//     if (naceDeselectButton.text == "Deselect all") {
+//         activateCompatButton(compatFilterManualButton)
+//         naceDeselectButton.text = "Select all"
+//         for (name in nace.items) {
+//             nace.items[name].active = false
+//             nace.items[name].button.classList.remove('is-activated')
+//         }
+//     } else {
+//         activateCompatButton(compatFilterLoopButton)
+//         naceDeselectButton.text = "Deselect all"
+//         for (name in nace.items) {
+//             nace.items[name].active = true
+//             nace.items[name].button.classList.add('is-activated')
+//         }
+//     }
+//     updateEmissionsFilter()
 
-}
-naceDeselectButton.addEventListener('click', toggleAllNaceFilter)
+// }
+// naceDeselectButton.addEventListener('click', toggleAllNaceFilter)
 
 
 
@@ -1817,8 +1943,47 @@ if (!mapLayoutLight.classList.contains('is-info') && url.searchParams.get("style
 /*************************************************/
 document.addEventListener('DOMContentLoaded', (event) => {
     showMap()
-    loadGlobalDefs()
-    createScale();
+
+    // Fetch the GeoJSON data from the URL
+    fetch(geojsonURL)
+    .then(response => response.json())
+    .then(data => {
+    // Check if the GeoJSON data contains features
+        // Loop through the features to find the maximum value
+        // only consider those geojson features, which actually have coordinates.
+        data.features.forEach(function (feature) {
+            var propertyValue = parseFloat(feature.properties[propertyToFindMax]);
+            // console.log(feature.properties.Name+feature.properties.Tonnes)
+        
+            if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
+                maxEmissionsArgentina = propertyValue;
+            }
+            // console.log('current Max Emissions: '+maxEmissionsArgentina)
+        });
+        // console.log("Maximum value of '" + propertyToFindMax + "': " + maxEmissionsArgentina);
+        maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
+        // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
+        loadGlobalDefs()
+        createScale(); 
+    })
+    .catch(error => {
+        console.error(`Error loading GeoJSON data: ${error}`);
+    });
+    
+    addGeoJSONLayer('industrial', 'Aluminium');
+    addGeoJSONLayer('industrial', 'Steel');
+    addGeoJSONLayer('industrial', 'Cement');
+    addGeoJSONLayer('industrial', 'Cellulose and paper');
+    addGeoJSONLayer('industrial', 'Thermal power plant');
+    addGeoJSONLayer('industrial', 'Refinery');
+    addGeoJSONLayer('biogenic', 'Biogas');
+    addGeoJSONLayer('biogenic', 'Bioethanol');
+    addGeoJSONLayer('industrial', 'Ammonia');
+    addGeoJSONLayer('industrial', 'Methanol');
+    addGeoJSONLayer('industrial', 'Etileno');
+    addGeoJSONLayer('industrial', 'Initially add the layer to the map');
+  
+
     // fetch('emissions.json')
     //     .then((response) => {
     //             return response.json()
@@ -1834,6 +1999,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //     // .then(loadSteelMillsAsChemicalParks)
     //     // .then(checkIfIntro)
     //     // .then(getActiveChemPlants)
+
+
+
 })
 
 /***********************************/
@@ -1949,15 +2117,3 @@ function clone(obj) {
 
 /////////
 
-addGeoJSONLayer('industrial', 'Aluminium');
-addGeoJSONLayer('industrial', 'Steel');
-addGeoJSONLayer('industrial', 'Cement');
-addGeoJSONLayer('industrial', 'Cellulose and paper');
-addGeoJSONLayer('industrial', 'Thermal power plant');
-addGeoJSONLayer('industrial', 'Refinery');
-addGeoJSONLayer('biogenic', 'Biogas');
-addGeoJSONLayer('biogenic', 'Bioethanol');
-addGeoJSONLayer('industrial', 'Ammonia');
-addGeoJSONLayer('industrial', 'Methanol');
-addGeoJSONLayer('industrial', 'Etileno');
-addGeoJSONLayer('industrial', 'Initially add the layer to the map');

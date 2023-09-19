@@ -33,7 +33,7 @@ let baseColors = {
 emissionColors_D = {
     // "CO2, AIR": 'rgb(241, 177, 48)',
     // "CO, AIR": 'rgb(234,110,57)'
-    "biogas": "rgb(84, 114, 155)",
+    "biogenic": "rgb(84, 114, 155)",
     "industrial": "rgb(57, 137, 126)" 
 },
 emissionTypeColors_D = {
