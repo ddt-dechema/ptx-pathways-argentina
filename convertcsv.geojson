@@ -5,1600 +5,4675 @@
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.1028453,-42.63615141 ]
+      "coordinates":  [ -65.102845300067,-42.636151405294 ]
    },
    "properties": {
-   "Name":"Fabrica de aluminio de Aluar",
+   "Name":"F�brica de aluminio de Aluar",
    "Company":"Aluar",
-   "industry":"Aluminium",
-   "Tonnes":" 612058 ",
-   "source":"Industrial point source",
-   "Location (city)":"Puerto Madryn",
-   "Provincia":"Chubut"
+   "Industry":"Aluminium",
+   "CO2_emissions_t":612057.6,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Puerto Madryn",
+   "Province":"Chubut"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -62.28168815,-38.78424491 ]
-   },
-   "properties": {
-   "Name":"Profertil Bahia Blanca",
-   "Company":"Profertil SA",
-   "industry":"Ammonia",
-   "Tonnes":" 710621 ",
-   "source":"Industrial point source",
-   "Location (city)":"Bahia Blanca",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -59.00465275,-34.09354048 ]
+      "coordinates":  [ -59.004652749122,-34.093540477338 ]
    },
    "properties": {
    "Name":"Bunge Campana",
-   "Company":"Bunge Argentina SA",
-   "industry":"Ammonia",
-   "Tonnes":" 27027 ",
-   "source":"Industrial point source",
-   "Location (city)":"Campana",
-   "Provincia":"Buenos Aires"
+   "Company":"Bunge Argentina S.A",
+   "Industry":"Ammonia",
+   "CO2_emissions_t":27027,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Campana",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -64.65198658,-25.37919283 ]
+      "coordinates":  [ -62.281688152983,-38.784244912389 ]
+   },
+   "properties": {
+   "Name":"Profertil Bahia Blanca",
+   "Company":"Profertil S.A.",
+   "Industry":"Ammonia",
+   "CO2_emissions_t":710621,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://rs.profertil.com.ar/",
+   "City":"Bahia Blanca",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.651986584188,-25.379192832399 ]
    },
    "properties": {
    "Name":"Austin Powder",
    "Company":"Austin Powder",
-   "industry":"Ammonia",
-   "Tonnes":" 54600 ",
-   "source":"Industrial point source",
-   "Location (city)":"El Galpan",
-   "Provincia":"Salta"
+   "Industry":"Ammonia",
+   "CO2_emissions_t":54600,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"El Galp�n",
+   "Province":"Salta"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -63.71712134,-33.36537538 ]
+      "coordinates":  [ -65.602941337606,-27.354815697666 ]
    },
    "properties": {
-   "Name":"Promaaz",
-   "Company":"Promaiz SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Alejandro Roca",
-   "Provincia":"Cardoba"
+   "Name":"Bioenerg�a la Corona",
+   "Company":"Bioenergia La Corona S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":24300,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Concepci�n",
+   "Province":"Tucum�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -66.36372385,-33.32563333 ]
+      "coordinates":  [ -59.396841152866,-28.487611654481 ]
+   },
+   "properties": {
+   "Name":"Bioenerg�as Agropecuarias S.A.",
+   "Company":"BIOENERG�ASAGROPECUARIAS S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":24750,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"General Obligado",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.516954427435,-27.221398484002 ]
+   },
+   "properties": {
+   "Name":"Ingenio Santa Rosa",
+   "Company":"Bioenerg�a Santa Rosa S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":24300,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Monteros",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.788009742716,-23.824367770667 ]
+   },
+   "properties": {
+   "Name":"Ingenio Ledesma",
+   "Company":"Bio Ledesma S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":74250,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Libertador General San Martin",
+   "Province":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.098028752545,-24.681076499462 ]
+   },
+   "properties": {
+   "Name":"Bio San Isidro",
+   "Company":"Bio San Isidro S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":10125,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Campo Santo",
+   "Province":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.208843723293,-26.828263171350 ]
+   },
+   "properties": {
+   "Name":"Biotrinidad",
+   "Company":"Biotrinidad S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":21600,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"San Miguel de Tucum�n",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.085387664602,-26.817311067583 ]
+   },
+   "properties": {
+   "Name":"Compa��a Bioenerg�tica La Florida",
+   "Company":"Compa��a Bioenerg�tica La Florida S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":93750,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"La Florida",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.609855130089,-27.457104897341 ]
+   },
+   "properties": {
+   "Name":"Energ�as Ecol�gicas de Tucum�n",
+   "Company":"Energ�as Ecol�gicas de Tucum�n - Grupo Colombres",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":24750,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Aguilares",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.301579272432,-27.023571204313 ]
+   },
+   "properties": {
+   "Name":"Fronterita Energ�a S.A.",
+   "Company":"Fronterita Energia S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":24000,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Juan XXIII",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.968369396614,-24.312587422242 ]
+   },
+   "properties": {
+   "Name":"Ingenio R�o Grande",
+   "Company":"Rio Grande Energia S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":16200,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"La Mendieta",
+   "Province":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -63.161624819303,-32.415971563824 ]
+   },
+   "properties": {
+   "Name":"ACA",
+   "Company":"Aca Bio Cooperativa Ltda.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":93750,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Villa Mar�a",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -64.383294247291,-33.179986705747 ]
+   },
+   "properties": {
+   "Name":"Bio IV",
+   "Company":"Bioetanol Rio Cuarto A.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":75000,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"R�o Cuarto",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -66.363723848115,-33.325633327674 ]
    },
    "properties": {
    "Name":"Diaser",
    "Company":"Derivados San Luis",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"San Luis",
-   "Provincia":"San Luis"
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":69300,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"San Luis",
+   "Province":"San Luis"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -64.38329425,-33.17998671 ]
+      "coordinates":  [ -64.181859290108,-31.371914251034 ]
    },
    "properties": {
-   "Name":"Bio IV",
-   "Company":"Bioetanol Rio Cuarto AA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Rao Cuarto",
-   "Provincia":"Cardoba"
+   "Name":"Ma�z Energ�a",
+   "Company":"MA�Z ENERG�A S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":44100,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Ciudad de C�rdoba",
+   "Province":"C�rdoba"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -63.16162482,-32.41597156 ]
+      "coordinates":  [ -63.717121341109,-33.365375379094 ]
    },
    "properties": {
-   "Name":"ACA",
-   "Company":"Aca Bio Cooperativa Ltda",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Villa Maraa",
-   "Provincia":"Cardoba"
+   "Name":"Proma�z",
+   "Company":"Promaiz S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":165000,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Alejandro Roca",
+   "Province":"C�rdoba"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.71499331,-31.62099492 ]
+      "coordinates":  [ -60.714993309701,-31.620994924442 ]
    },
    "properties": {
    "Name":"Vicentin",
-   "Company":"Vicentin SAIC",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Avellaneda",
-   "Provincia":"Santa Fe"
+   "Company":"Vicentin S.A.I.C.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":86250,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Avellaneda",
+   "Province":"Santa Fe"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -64.18185929,-31.37191425 ]
+      "coordinates":  [ -64.296167721715,-23.202240802675 ]
    },
    "properties": {
-   "Name":"Maaz Energaa",
-   "Company":"MAaZ ENERGaA SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Ciudad de Cardoba",
-   "Provincia":"Cardoba"
+   "Name":"Seaboard Energ�a Renovables y Alimentos",
+   "Company":"Seaboard Energ�a Renovables y Alimentos",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":185625,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Or�n",
+   "Province":"Salta"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -59.39684115,-28.48761165 ]
+      "coordinates":  [ -65.142648974133,-26.844247714198 ]
    },
    "properties": {
-   "Name":"Bioenergaas Agropecuarias SA",
-   "Company":"BIOENERGaASAGROPECUARIAS SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"General Obligado",
-   "Provincia":"Santa Fe"
+   "Name":"Bioenerg�tica Leales S.A.",
+   "Company":"Bioenerg�tica Leales S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":31500,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Cevil Pozo",
+   "Province":"Tucum�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.60985513,-27.4571049 ]
+      "coordinates":  [ -65.152794845918,-26.834699386014 ]
    },
    "properties": {
-   "Name":"Energaas Ecolagicas de Tucuman",
-   "Company":"Energaas Ecolagicas de Tucuman - Grupo Colombres",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Aguilares",
-   "Provincia":"Tucuman"
+   "Name":"Bio Atar S.A.",
+   "Company":"Bio Atar S.A.",
+   "Industry":"Bioethanol",
+   "CO2_emissions_t":49500,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"Carbio",
+   "City":"Alderetes",
+   "Province":"Tucum�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.60294134,-27.3548157 ]
+      "coordinates":  [ -54.633769337301,-25.975739607496 ]
    },
    "properties": {
-   "Name":"Bioenergaa la Corona",
-   "Company":"Bioenergia La Corona SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Concepcian",
-   "Provincia":"Tucuman"
+   "Name":"Arauco Argentina S.A. ",
+   "Company":"Arauco Argentina S.A. ",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":875000,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Puerto Esperanza",
+   "Province":"Misiones"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.51695443,-27.22139848 ]
+      "coordinates":  [ -60.702180344178,-32.736461684818 ]
    },
    "properties": {
-   "Name":"Ingenio Santa Rosa",
-   "Company":"Bioenergaa Santa Rosa SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Monteros",
-   "Provincia":"Tucuman"
+   "Name":"Celulosa Argentina S.A.",
+   "Company":"Celulosa Argentina S.A.",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":416400,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Capitan Bermudez",
+   "Province":"Santa Fe"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.30157927,-27.0235712 ]
+      "coordinates":  [ -59.627749242683,-33.721640302338 ]
    },
    "properties": {
-   "Name":"Fronterita Energaa SA",
-   "Company":"Fronterita Energia SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Juan XXIII",
-   "Provincia":"Tucuman"
+   "Name":"Papel Prensa S.A.I.C.F.",
+   "Company":"Papel Prensa S.A.I.C.F.",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":421762.5,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Pedro",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.14264897,-26.84424771 ]
-   },
-   "properties": {
-   "Name":"Bioenergatica Leales SA",
-   "Company":"Bioenergatica Leales SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Cevil Pozo",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.15279485,-26.83469939 ]
-   },
-   "properties": {
-   "Name":"Bio Atar SA",
-   "Company":"Bio Atar SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Alderetes",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.20884372,-26.82826317 ]
-   },
-   "properties": {
-   "Name":"Biotrinidad",
-   "Company":"Biotrinidad SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"San Miguel de Tucuman",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.08538766,-26.81731107 ]
-   },
-   "properties": {
-   "Name":"Compaaaa Bioenergatica La Florida",
-   "Company":"Compaaaa Bioenergatica La Florida SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"La Florida",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.09802875,-24.6810765 ]
-   },
-   "properties": {
-   "Name":"Bio San Isidro",
-   "Company":"Bio San Isidro SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Campo Santo",
-   "Provincia":"Salta"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.9683694,-24.31258742 ]
-   },
-   "properties": {
-   "Name":"Ingenio Rao Grande",
-   "Company":"Rio Grande Energia SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"La Mendieta",
-   "Provincia":"Jujuy"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.78800974,-23.82436777 ]
-   },
-   "properties": {
-   "Name":"Ingenio Ledesma",
-   "Company":"Bio Ledesma SA",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Libertador General San Martin",
-   "Provincia":"Jujuy"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.29616772,-23.2022408 ]
-   },
-   "properties": {
-   "Name":"Seaboard Energaa Renovables y Alimentos",
-   "Company":"Seaboard Energaa Renovables y Alimentos",
-   "industry":"Bioethanol",
-   "Tonnes":" -   ",
-   "source":"Biogenic point source",
-   "Location (city)":"Oran",
-   "Provincia":"Salta"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -59.62774924,-33.7216403 ]
-   },
-   "properties": {
-   "Name":"Papel Prensa SAICF",
-   "Company":"Papel Prensa SAICF",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 421763 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Pedro",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.70218034,-32.73646168 ]
-   },
-   "properties": {
-   "Name":"Celulosa Argentina SA",
-   "Company":"Celulosa Argentina SA",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 416400 ",
-   "source":"Industrial point source",
-   "Location (city)":"Capitan Bermudez",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -55.11980442,-26.93561856 ]
+      "coordinates":  [ -55.119804415065,-26.935618555667 ]
    },
    "properties": {
    "Name":"Papel Misionero",
    "Company":"Papel Misionero",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 272138 ",
-   "source":"Industrial point source",
-   "Location (city)":"Puerto Leoni",
-   "Provincia":"Misiones"
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":272137.5,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Puerto Leoni",
+   "Province":"Misiones"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -54.63376934,-25.97573961 ]
+      "coordinates":  [ -65.230145288909,-24.231958460070 ]
    },
    "properties": {
-   "Name":"Arauco Argentina SA ",
-   "Company":"Arauco Argentina SA ",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 875000 ",
-   "source":"Industrial point source",
-   "Location (city)":"Puerto Esperanza",
-   "Provincia":"Misiones"
+   "Name":"Papelera del NOA S.A.",
+   "Company":"Papelera del NOA S.A.",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":85425,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"R�o Blanco",
+   "Province":"Jujuy"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.23014529,-24.23195846 ]
+      "coordinates":  [ -64.795513340677,-23.827656844375 ]
    },
    "properties": {
-   "Name":"Papelera del NOA SA",
-   "Company":"Papelera del NOA SA",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 85425 ",
-   "source":"Industrial point source",
-   "Location (city)":"Rao Blanco",
-   "Provincia":"Jujuy"
+   "Name":"F�brica de Papel Ledesma",
+   "Company":"F�brica de Papel Ledesma",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":212250,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Libertador General San Mart�n",
+   "Province":"Jujuy"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -64.79551334,-23.82765684 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"Fabrica de Papel Ledesma",
-   "Company":"Fabrica de Papel Ledesma",
-   "industry":"Cellulose and paper",
-   "Tonnes":" 212250 ",
-   "source":"Industrial point source",
-   "Location (city)":"Libertador General San Martan",
-   "Provincia":"Jujuy"
+   "Name":"Fana Qu�mica SA",
+   "Company":"Fana Qu�mica SA",
+   "Industry":"Cellulose and paper",
+   "CO2_emissions_t":4000,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Jos�",
+   "Province":"Entre R�os"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -67.92954422,-46.78713825 ]
+      "coordinates":  [ -60.298102492056,-37.036077350579 ]
    },
    "properties": {
-   "Name":"Fabrica Pico Truncado",
-   "Company":"PCR",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Pico Truncado",
-   "Provincia":"Santa Cruz"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -67.4236816,-45.80214455 ]
-   },
-   "properties": {
-   "Name":"Fabrica Comodoro Rivadavia",
-   "Company":"PCR",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Comodoro Rivadavia",
-   "Provincia":"Chubut"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -70.03773085,-38.89661841 ]
-   },
-   "properties": {
-   "Name":"Fabrica Zapala",
+   "Name":"F�brica L'Amal�",
    "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Zapala",
-   "Provincia":"Neusaquan"
+   "Industry":"Cement",
+   "CO2_emissions_t":2442352.94,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Olavarr�a",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -59.388828,-37.68283558 ]
+      "coordinates":  [ -60.164846338630,-36.937255440162 ]
    },
    "properties": {
-   "Name":"Fabrica Barker",
+   "Name":"F�brica Olavarr�a",
    "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Benito Juarez",
-   "Provincia":"Buenos Aires"
+   "Industry":"Cement",
+   "CO2_emissions_t":1144852.94,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Olavarr�a",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.29810249,-37.03607735 ]
+      "coordinates":  [ -60.165031183490,-36.938389904003 ]
    },
    "properties": {
-   "Name":"Fabrica L'Amala",
+   "Name":"F�brica Sierras Bayas",
    "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Olavarraa",
-   "Provincia":"Buenos Aires"
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Sierras Bayas",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.16503118,-36.9383899 ]
+      "coordinates":  [ -59.388828000000,-37.682835584301 ]
    },
    "properties": {
-   "Name":"Fabrica Sierras Bayas",
+   "Name":"F�brica Barker",
    "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Sierras Bayas",
-   "Provincia":"Buenos Aires"
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Benito Juarez",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.16484634,-36.93725544 ]
-   },
-   "properties": {
-   "Name":"Fabrica Olavarraa",
-   "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Olavarraa",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.64295248,-34.95797683 ]
-   },
-   "properties": {
-   "Name":"Fabrica LomaSer",
-   "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Vicente Casares",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -59.00184583,-34.16978546 ]
-   },
-   "properties": {
-   "Name":"Planta Campana",
-   "Company":"Cementos Avellaneda",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Campana",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -59.02034634,-34.14560719 ]
-   },
-   "properties": {
-   "Name":"Planta Holcim Campana",
-   "Company":"HOLCIM",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Campana",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.15325117,-33.38022978 ]
+      "coordinates":  [ -60.153251169315,-33.380229777465 ]
    },
    "properties": {
    "Name":"Planta Ramallo",
    "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Ramallo",
-   "Provincia":"Buenos Aires"
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Ramallo",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.83721964,-32.7406102 ]
+      "coordinates":  [ -65.214914338630,-28.466200759561 ]
+   },
+   "properties": {
+   "Name":"F�brica Catamarca",
+   "Company":"Loma Negra",
+   "Industry":"Cement",
+   "CO2_emissions_t":1373823.53,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"El Alto",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.674304830685,-31.547171537679 ]
+   },
+   "properties": {
+   "Name":"F�brica San Juan",
+   "Company":"Loma Negra",
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Rivadavia",
+   "Province":"San Juan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -70.037730846574,-38.896618405611 ]
+   },
+   "properties": {
+   "Name":"F�brica Zapala",
+   "Company":"Loma Negra",
+   "Industry":"Cement",
+   "CO2_emissions_t":305294.12,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Zapala",
+   "Province":"Neusaqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.642952483835,-34.957976832627 ]
+   },
+   "properties": {
+   "Name":"F�brica LomaSer",
+   "Company":"Loma Negra",
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.lomanegra.com/nuestras-unidades/",
+   "City":"Vicente Casares",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.837219638630,-32.740610196833 ]
    },
    "properties": {
    "Name":"Planta Holcim Capdeville Mendoza",
    "Company":"HOLCIM",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Las Heras",
-   "Provincia":"Mendoza"
+   "Industry":"Cement",
+   "CO2_emissions_t":534264.71,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Las Heras",
+   "Province":"Mendoza"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.67430483,-31.54717154 ]
+      "coordinates":  [ -64.358355119461,-31.477144950888 ]
    },
    "properties": {
-   "Name":"Fabrica San Juan",
-   "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Rivadavia",
-   "Provincia":"San Juan"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.35835512,-31.47714495 ]
-   },
-   "properties": {
-   "Name":"Planta Holcim Malagueao",
+   "Name":"Planta Holcim Malague�o",
    "Company":"HOLCIM",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Malagueao",
-   "Provincia":"Cardoba"
+   "Industry":"Cement",
+   "CO2_emissions_t":2366029.41,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Malague�o",
+   "Province":"C�rdoba"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.21491434,-28.46620076 ]
-   },
-   "properties": {
-   "Name":"Fabrica Catamarca",
-   "Company":"Loma Negra",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"El Alto",
-   "Provincia":"Catamarca"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.9570812,-24.49038325 ]
+      "coordinates":  [ -64.957081198592,-24.490383251894 ]
    },
    "properties": {
    "Name":"Planta Holcim Puesto Viejo",
    "Company":"HOLCIM",
-   "industry":"Cement",
-   "Tonnes":" -   ",
-   "source":"Industrial point source",
-   "Location (city)":"Puesto Viejo",
-   "Provincia":"Jujuy"
+   "Industry":"Cement",
+   "CO2_emissions_t":763235.29,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Puesto Viejo",
+   "Province":"Jujuy"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.4520892,-35.13711789 ]
+      "coordinates":  [ -59.020346338249,-34.145607191599 ]
+   },
+   "properties": {
+   "Name":"Planta Holcim Campana",
+   "Company":"HOLCIM",
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Campana",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.001845830862,-34.169785456995 ]
+   },
+   "properties": {
+   "Name":"Planta Campana",
+   "Company":"Cementos Avellaneda",
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Campana",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"San Jacinto",
+   "Company":"Cementos Avellaneda",
+   "Industry":"Cement",
+   "CO2_emissions_t":1831764.71,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Olavarr�a",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"El Grande",
+   "Company":"Cementos Avellaneda",
+   "Industry":"Cement",
+   "CO2_emissions_t":839558.82,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"La Calera",
+   "Province":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.423681602394,-45.802144551281 ]
+   },
+   "properties": {
+   "Name":"F�brica Comodoro Rivadavia",
+   "Company":"PCR",
+   "Industry":"Cement",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Comodoro Rivadavia",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.929544215843,-46.787138248615 ]
+   },
+   "properties": {
+   "Name":"F�brica Pico Truncado",
+   "Company":"PCR",
+   "Industry":"Cement",
+   "CO2_emissions_t":457941.18,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Pico Truncado",
+   "Province":"Santa Cruz"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.159454163788,-33.322604930395 ]
+   },
+   "properties": {
+   "Name":"Planta sider�rgica Ternium Siderar",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":5286272,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.gem.wiki/Planta_sider%C3%BArgica_Ternium_Siderar",
+   "City":"Ramallo/San Nicolas",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.929249968328,-34.806065837331 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ensenada",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.631463214818,-34.582627072485 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Haedo",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.516106776976,-34.799426580998 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Canning",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.181023790864,-34.727223181628 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Florencio Varela",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.709182306915,-32.889170966540 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternium Argentina S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Rosario",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.977388000000,-34.152554000000 ]
+   },
+   "properties": {
+   "Name":"Planta sider�rgica TenarisSiderca",
+   "Company":"Ternaris S.A. / Siderca S.A.I.C.",
+   "Industry":"Steel",
+   "CO2_emissions_t":650000,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.gem.wiki/Planta_sider%C3%BArgica_TenarisSiderca",
+   "City":"Campana",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.406812550802,-34.662881539407 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris S.A. / Siderca S.A.I.C.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Valentin Alsina",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.317617387344,-33.239811665751 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris S.A. / Siderca S.A.I.C.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Villa Constituci�n",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.541869973801,-34.692356244145 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Ternaris S.A. / Siderca S.A.I.C.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Villa Mercedes",
+   "Province":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.292472000000,-33.256309000000 ]
+   },
+   "properties": {
+   "Name":"Planta sider�rgia ArcelorMittal Acindar",
+   "Company":"Acindar Industria Argentina de Aceros S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":1015000,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.gem.wiki/Planta_sider%C3%BArgica_ArcelorMittal_Acindar",
+   "City":"Villa Constituci�n",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.722063773338,-32.970771234367 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Rosario",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"La Tablada",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.258632357077,-33.347007971105 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Nicolas",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.464442052362,-33.720877342117 ]
+   },
+   "properties": {
+   "Name":"",
+   "Company":"Acindar Industria Argentina de Aceros S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Villa Mercedes",
+   "Province":"San Luis"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.452089199364,-35.137117891147 ]
    },
    "properties": {
    "Name":"Planta Siderurgica ACERBRAG",
-   "Company":"Acerbrag SA (grupo brasileao Votorantim)",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Bragado",
-   "Provincia":"Buenos Aires"
+   "Company":"Acerbrag S.A. (grupo brasile�o Votorantim)",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bragado",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -57.92924997,-34.80606584 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Ensenada",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.51610678,-34.79942658 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Canning",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.18102379,-34.72722318 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Florencio Varela",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.54186997,-34.69235624 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternaris SA / Siderca SAIC",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Villa Mercedes",
-   "Provincia":"San Luis"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.40681255,-34.66288154 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternaris SA / Siderca SAIC",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Valentin Alsina",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.63146321,-34.58262707 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Haedo",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.977388,-34.152554 ]
-   },
-   "properties": {
-   "Name":"Planta siderargica TenarisSiderca",
-   "Company":"Ternaris SA / Siderca SAIC",
-   "industry":"Steel",
-   "Tonnes":" 650000 ",
-   "source":"Industrial point source",
-   "Location (city)":"Campana",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.46444205,-33.72087734 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Acindar Industria Argentina de Aceros SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Villa Mercedes",
-   "Provincia":"San Luis"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.25863236,-33.34700797 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Acindar Industria Argentina de Aceros SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"San Nicolas",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.15945416,-33.32260493 ]
-   },
-   "properties": {
-   "Name":"Planta siderargica Ternium Siderar",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":" 5286272 ",
-   "source":"Industrial point source",
-   "Location (city)":"Ramallo/San Nicolas",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.292472,-33.256309 ]
-   },
-   "properties": {
-   "Name":"Planta siderargia ArcelorMittal Acindar",
-   "Company":"Acindar Industria Argentina de Aceros SA",
-   "industry":"Steel",
-   "Tonnes":" 1015000 ",
-   "source":"Industrial point source",
-   "Location (city)":"Villa Constitucian",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.31761739,-33.23981167 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternaris SA / Siderca SAIC",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Villa Constitucian",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.7588733,-32.9912336 ]
-   },
-   "properties": {
-   "Name":"Planta siderargica Gerdau Sipar Parez",
-   "Company":"Gerdau SA",
-   "industry":"Steel",
-   "Tonnes":" 103031 ",
-   "source":"Industrial point source",
-   "Location (city)":"Parez",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.72206377,-32.97077123 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Acindar Industria Argentina de Aceros SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Rosario",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.70918231,-32.88917097 ]
-   },
-   "properties": {
-   "Name":"",
-   "Company":"Ternium Argentina SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Rosario",
-   "Provincia":"Santa Fe"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.19816083,-24.2460988 ]
+      "coordinates":  [ -65.198160832031,-24.246098800446 ]
    },
    "properties": {
    "Name":"Aceros Zapla",
-   "Company":"Aceros Zapla SA",
-   "industry":"Steel",
-   "Tonnes":"",
-   "source":"Industrial point source",
-   "Location (city)":"Palpala",
-   "Provincia":"Jujuy"
+   "Company":"Aceros Zapla S.A.",
+   "Industry":"Steel",
+   "CO2_emissions_t":null,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"http://www.aceroszapla.com.ar/empresa.php",
+   "City":"Palpal�",
+   "Province":"Jujuy"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -67.44427712,-45.81390612 ]
+      "coordinates":  [ -60.758873300000,-32.991233600000 ]
    },
    "properties": {
-   "Name":"CT PATAGONICAS SA",
-   "Company":"CENTRALES TERMICAS PATAGONICAS SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 27712 ",
-   "source":"Industrial point source",
-   "Location (city)":"Comodoro Rivadavia",
-   "Provincia":"Chubut"
+   "Name":"Planta sider�rgica Gerdau Sipar P�rez",
+   "Company":"Gerdau SA",
+   "Industry":"Steel",
+   "CO2_emissions_t":103031,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"https://www.gem.wiki/Planta_sider%C3%BArgica_Gerdau_Sipar_P%C3%A9rez",
+   "City":"P�rez",
+   "Province":"Santa Fe"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -65.04839927,-42.7438848 ]
+      "coordinates":  [ -65.048399271627,-42.743884803272 ]
    },
    "properties": {
    "Name":"ALUAR SA - GENERADOR",
    "Company":"Aluar",
-   "industry":"Thermal power plant",
-   "Tonnes":" 210445 ",
-   "source":"Industrial point source",
-   "Location (city)":"Puerto Madryn",
-   "Provincia":"Chubut"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":210445,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Puerto Madryn",
+   "Province":"Chubut"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.02174487,-38.95161594 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CTERMICA ALTO VALLE",
+   "Name":"ARCOR MARIO SEVESO ARROYITO",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 198282 ",
-   "source":"Industrial point source",
-   "Location (city)":"Neuquan",
-   "Provincia":"Neuquan"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":93267,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.35746075,-38.93531878 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CT AGUA DEL CAJON",
+   "Name":"C. TERMICAS MENDOZA PLUS",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 1108638 ",
-   "source":"Industrial point source",
-   "Location (city)":"Neuquan",
-   "Provincia":"Neuquan"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":788702,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Mendoza"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -62.25607271,-38.78482523 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CENTRAL PIEDRA BUENA SA",
-   "Company":"Pampa Energaa",
-   "industry":"Thermal power plant",
-   "Tonnes":" 243763 ",
-   "source":"Industrial point source",
-   "Location (city)":"Ingeniero White",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -68.60637825,-38.51178974 ]
-   },
-   "properties": {
-   "Name":"CT LOMA DE LA LATA SA",
-   "Company":"CT LOMA DE LA LATA SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 1779653 ",
-   "source":"Industrial point source",
-   "Location (city)":"Neuquan",
-   "Provincia":"Neuquan"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -57.54553583,-38.04949391 ]
-   },
-   "properties": {
-   "Name":"CT 9 de JULIO C Cost ATLANTICA",
-   "Company":"Centrales de la Costa Atlantica SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 221258 ",
-   "source":"Industrial point source",
-   "Location (city)":"Mar del Plata",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -59.4506657,-37.54858826 ]
-   },
-   "properties": {
-   "Name":"CT BARKER CIERRE CC",
+   "Name":"C. TERMICAS MENDOZA SA",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 636102 ",
-   "source":"Industrial point source",
-   "Location (city)":"Benito Juarez",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":297745,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Mendoza"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.43241426,-35.13651396 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CT BRAGADO 2 - GENNEIA",
-   "Company":"Genneia",
-   "industry":"Thermal power plant",
-   "Tonnes":" 79138 ",
-   "source":"Industrial point source",
-   "Location (city)":"Bragado",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -60.43241426,-35.13651396 ]
-   },
-   "properties": {
-   "Name":"CT BRAGADO 3 - GENNEIA",
-   "Company":"Genneia",
-   "industry":"Thermal power plant",
-   "Tonnes":" 92453 ",
-   "source":"Industrial point source",
-   "Location (city)":"Bragado",
-   "Provincia":"Buenos Aires"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.01640058,-34.9338664 ]
-   },
-   "properties": {
-   "Name":"CT LA PLATA - SULLAIR",
+   "Name":"C.COSTA ATLANTICA",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 14048 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Carlos",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":509899,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -58.61692333,-34.90274362 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CT EZEIZA ETAPA1 G MEDITERRANE",
+   "Name":"C.T. AES PARANA",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 56618 ",
-   "source":"Industrial point source",
-   "Location (city)":"Carlos Spegazzini",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1717893,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -58.61692333,-34.90274362 ]
+      "coordinates":  [ -68.357460746867,-38.935318779054 ]
    },
    "properties": {
-   "Name":"CT EZEIZA ETAPA2 G MEDITERRANE",
+   "Name":"C.T. AGUA DEL CAJON",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 32456 ",
-   "source":"Industrial point source",
-   "Location (city)":"Carlos Spegazzini",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1108638,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Neuqu�n",
+   "Province":"Neuqu�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -57.93335436,-34.88987358 ]
+      "coordinates":  [ -58.405685047387,-34.837660337743 ]
    },
    "properties": {
-   "Name":"CENTRAL DIQUE SA",
-   "Company":"CENTRAL DIQUE SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 478 ",
-   "source":"Industrial point source",
-   "Location (city)":"Ensenada",
-   "Provincia":"Buenos Aires"
+   "Name":"C.T. ALMIRANTE BROWN",
+   "Company":"Excell Power S.R.L.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7094,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Burazco",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -57.95577403,-34.85965751 ]
+      "coordinates":  [ -68.606378253807,-38.511789741886 ]
    },
    "properties": {
-   "Name":"CT BARRAGAN - ENARSA",
-   "Company":"ENARSA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 319657 ",
-   "source":"Industrial point source",
-   "Location (city)":"Ensenada",
-   "Provincia":"Buenos Aires"
+   "Name":"C.T. LOMA DE LA LATA S.A.",
+   "Company":"C.T. LOMA DE LA LATA S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1779653,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Neuqu�n",
+   "Province":"Neuqu�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -61.52070383,-34.85716731 ]
+      "coordinates":  [ -67.444277117473,-45.813906117753 ]
    },
    "properties": {
-   "Name":"CT LINCOLN",
+   "Name":"C.T. PATAGONICAS SA",
+   "Company":"CENTRALES TERMICAS PATAGONICAS S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":27712,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Comodoro Rivadavia",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.051514960853,-24.742711706449 ]
+   },
+   "properties": {
+   "Name":"C.T. SALTA (TERMOANDES)",
+   "Company":"AES",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1004183,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Cobos",
+   "Province":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.021744873854,-38.951615939006 ]
+   },
+   "properties": {
+   "Name":"C.TERMICA ALTO VALLE",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 5898 ",
-   "source":"Industrial point source",
-   "Location (city)":"Lincoln",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":198282,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Neuqu�n",
+   "Province":"Neuqu�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -58.40568505,-34.83766034 ]
+      "coordinates":  { }
    },
    "properties": {
-   "Name":"CT ALMIRANTE BROWN",
-   "Company":"Excell Power SRL",
-   "industry":"Thermal power plant",
-   "Tonnes":" 7094 ",
-   "source":"Industrial point source",
-   "Location (city)":"Burazco",
-   "Provincia":"Buenos Aires"
+   "Name":"C.TERMICA GUEMES S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":139062,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Salta"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -58.34352059,-34.65327861 ]
+      "coordinates":  [ -60.174761787322,-33.358090736896 ]
+   },
+   "properties": {
+   "Name":"C.TERMICA SAN NICOLAS",
+   "Company":"AES",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2158549,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Nicol�s de Los Arroyos",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"C.TERMICA SORRENTO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":20821,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CAPEX S.A. AUTOGENERADOR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1075683,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.933354360518,-34.889873579663 ]
+   },
+   "properties": {
+   "Name":"CENTRAL DIQUE S.A.",
+   "Company":"CENTRAL DIQUE S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":478,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ensenada",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.343520587515,-34.653278614482 ]
    },
    "properties": {
    "Name":"CENTRAL DOCK SUD",
    "Company":"Central Dock Sud",
-   "industry":"Thermal power plant",
-   "Tonnes":" 2101890 ",
-   "source":"Industrial point source",
-   "Location (city)":"Dock Sud",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2101890,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Dock Sud",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -61.09709894,-33.73201213 ]
+      "coordinates":  [ -62.256072711436,-38.784825227476 ]
    },
    "properties": {
-   "Name":"CT COLON BSAS - SULLAIR",
+   "Name":"CENTRAL PIEDRA BUENA S.A.",
+   "Company":"Pampa Energ�a",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":243763,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ingeniero White",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.980717231873,-33.054331672917 ]
+   },
+   "properties": {
+   "Name":"CENTRAL PUERTO SA",
+   "Company":"Central Puerto S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3481800,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Luj�n de Cuyo",
+   "Province":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CENTRAL T�RMICA LOMITA AUTOG.",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 5222 ",
-   "source":"Industrial point source",
-   "Location (city)":"Colan",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":59300,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.28090222,-33.45541478 ]
+      "coordinates":  [ -63.767005329713,-22.350046037543 ]
    },
    "properties": {
-   "Name":"CT GENERAL ROJO CIERRE CC",
+   "Name":"CENTRAL TERMICA PIQUIRENDA",
+   "Company":"Pampa Energ�a",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":25963,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Piquirenda",
+   "Province":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"COOP. MNO. MORENO BS. AS.GENER",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 619957 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Nicolas de Los Arroyos",
-   "Provincia":"Buenos Aires"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":668,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.17476179,-33.35809074 ]
+      "coordinates":  [ -57.545535829713,-38.049493905321 ]
    },
    "properties": {
-   "Name":"CTERMICA SAN NICOLAS",
-   "Company":"AES",
-   "industry":"Thermal power plant",
-   "Tonnes":" 2158549 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Nicolas de Los Arroyos",
-   "Provincia":"Buenos Aires"
+   "Name":"CT 9 de JULIO C Cost ATLANTICA",
+   "Company":"Centrales de la Costa Atl�ntica S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":221258,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Mar del Plata",
+   "Province":"Buenos Aires"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.89151146,-33.3133564 ]
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ACONCAGUA ENERG�A AUTOGENER",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":17,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ALEM - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":35577,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -68.891511462424,-33.313356395358 ]
    },
    "properties": {
    "Name":"CT ANCHORIS - METHAX",
    "Company":"EMESA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 50825 ",
-   "source":"Industrial point source",
-   "Location (city)":"Tupungato",
-   "Provincia":"Mendoza"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":50825,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Tupungato",
+   "Province":"Mendoza"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -68.98071723,-33.05433167 ]
+      "coordinates":  [ -62.855603190138,-28.445841312266 ]
    },
    "properties": {
-   "Name":"CENTRAL PUERTO SA",
-   "Company":"Central Puerto SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 3481800 ",
-   "source":"Industrial point source",
-   "Location (city)":"Lujan de Cuyo",
-   "Provincia":"Mendoza"
+   "Name":"CT A�ATUYA - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":11557,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"A�atuya",
+   "Province":"Santiago del Estero"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -61.41843352,-32.78187222 ]
+      "coordinates":  [ -62.855603190138,-28.445841312266 ]
    },
    "properties": {
-   "Name":"CT CAaADA DE GOMEZ - SECCO",
-   "Company":"Secco",
-   "industry":"Thermal power plant",
-   "Tonnes":" 105744 ",
-   "source":"Industrial point source",
-   "Location (city)":"Caaada de Gamez",
-   "Provincia":"Santa Fe"
+   "Name":"CT A�ATUYA II - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4840,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"A�atuya",
+   "Province":"Santiago del Estero"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -62.68583225,-32.61039562 ]
+      "coordinates":  [ -54.863442406587,-27.091237692973 ]
+   },
+   "properties": {
+   "Name":"CT ARISTOBU.DEL VALLE-SOENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":24495,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Arist�bulo del Valle",
+   "Province":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ARRECIFES-AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":8081,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BANDERA SgoEstero - ENARSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4539,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BARILOCHE",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1392,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"R�o Negro"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.450665699447,-37.548588257877 ]
+   },
+   "properties": {
+   "Name":"CT BARKER CIERRE CC",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":636102,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Benito Ju�rez",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -57.955774029837,-34.859657508680 ]
+   },
+   "properties": {
+   "Name":"CT BARRAGAN - ENARSA",
+   "Company":"ENARSA",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":319657,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ensenada",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BARRANQUERAS Chaco",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3373,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -62.685832245260,-32.610395618647 ]
    },
    "properties": {
    "Name":"CT BELL VILLE - SULLAIR",
-   "Company":"SULLAIR ARGENTINA SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 6459 ",
-   "source":"Industrial point source",
-   "Location (city)":"Bell Ville",
-   "Provincia":"Cardoba"
+   "Company":"SULLAIR ARGENTINA S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":6459,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bell Ville",
+   "Province":"C�rdoba"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -60.77930021,-31.71284154 ]
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BRACHO CIERRE CC- Y-GEN S.A",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1242878,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BRAGADO - EMGASUD",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7559,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.432414256814,-35.136513955612 ]
+   },
+   "properties": {
+   "Name":"CT BRAGADO 2 - GENNEIA",
+   "Company":"Genneia",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":79138,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bragado",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.432414256814,-35.136513955612 ]
+   },
+   "properties": {
+   "Name":"CT BRAGADO 3 - GENNEIA",
+   "Company":"Genneia",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":92453,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bragado",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.779300214608,-31.712841542501 ]
    },
    "properties": {
    "Name":"CT BRIGADIER LOPEZ",
-   "Company":"Central Puerto SA",
-   "industry":"Thermal power plant",
-   "Tonnes":" 64572 ",
-   "source":"Industrial point source",
-   "Location (city)":"Santa Fe",
-   "Provincia":"Santa Fe"
+   "Company":"Central Puerto S.A.",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":64572,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Santa Fe",
+   "Province":"Santa Fe"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -59.27345715,-29.15821641 ]
-   },
-   "properties": {
-   "Name":"CT GOYA - SECCO",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 4754 ",
-   "source":"Industrial point source",
-   "Location (city)":"Goya",
-   "Provincia":"Corrientes"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -67.50746666,-29.15733701 ]
-   },
-   "properties": {
-   "Name":"CT CHILECITO - SECCO",
-   "Company":"Secco",
-   "industry":"Thermal power plant",
-   "Tonnes":" 4810 ",
-   "source":"Industrial point source",
-   "Location (city)":"Chilecito",
-   "Provincia":"La Rioja"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -62.85560319,-28.44584131 ]
-   },
-   "properties": {
-   "Name":"CT AaATUYA - SULLAIR",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 11557 ",
-   "source":"Industrial point source",
-   "Location (city)":"Aaatuya",
-   "Provincia":"Santiago del Estero"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -62.85560319,-28.44584131 ]
-   },
-   "properties": {
-   "Name":"CT AaATUYA II - SULLAIR",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 4840 ",
-   "source":"Industrial point source",
-   "Location (city)":"Aaatuya",
-   "Provincia":"Santiago del Estero"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -54.86344241,-27.09123769 ]
-   },
-   "properties": {
-   "Name":"CT ARISTOBUDEL VALLE-SOENERGY",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 24495 ",
-   "source":"Industrial point source",
-   "Location (city)":"Aristabulo del Valle",
-   "Provincia":"Misiones"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.22182861,-26.866966 ]
-   },
-   "properties": {
-   "Name":"CT INDEPEND ETAPA1 G MEDITERR",
-   "Company":"Grupo Albanesi",
-   "industry":"Thermal power plant",
-   "Tonnes":" 10088 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Miguel de Tucuman",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.22182861,-26.866966 ]
-   },
-   "properties": {
-   "Name":"CT INDEPEND ETAPA2 G MEDITERR",
-   "Company":"Grupo Albanesi",
-   "industry":"Thermal power plant",
-   "Tonnes":" 9463 ",
-   "source":"Industrial point source",
-   "Location (city)":"San Miguel de Tucuman",
-   "Provincia":"Tucuman"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -58.25915073,-25.12695055 ]
-   },
-   "properties": {
-   "Name":"CT LAGUNA BLANCA - SECCO",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 4457 ",
-   "source":"Industrial point source",
-   "Location (city)":"Laguna Blanca",
-   "Provincia":"Formosa"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -65.05151496,-24.74271171 ]
-   },
-   "properties": {
-   "Name":"CT SALTA (TERMOANDES)",
-   "Company":"AES",
-   "industry":"Thermal power plant",
-   "Tonnes":" 1004183 ",
-   "source":"Industrial point source",
-   "Location (city)":"Cobos",
-   "Provincia":"Salta"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -61.83150245,-23.90901687 ]
-   },
-   "properties": {
-   "Name":"CT ING JUAREZ - SECCO",
-   "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 2692 ",
-   "source":"Industrial point source",
-   "Location (city)":"Ingeniero Juarez",
-   "Provincia":"Formosa"
-   }
- },
- {
-   "type": "Feature",
-   "geometry": {
-      "type": "Point",
-      "coordinates":  [ -64.61399317,-23.73226891 ]
+      "coordinates":  [ -64.613993172527,-23.732268910377 ]
    },
    "properties": {
    "Name":"CT CAIMANCITO -SULLAIR",
    "Company":"",
-   "industry":"Thermal power plant",
-   "Tonnes":" 62571 ",
-   "source":"Industrial point source",
-   "Location (city)":"Libertador Gral San Martan",
-   "Provincia":"Jujuy"
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":62571,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Libertador Gral San Mart�n",
+   "Province":"Jujuy"
    }
  },
  {
    "type": "Feature",
    "geometry": {
       "type": "Point",
-      "coordinates":  [ -63.76700533,-22.35004604 ]
+      "coordinates":  [ -61.418433516418,-32.781872219229 ]
    },
    "properties": {
-   "Name":"CENTRAL TERMICA PIQUIRENDA",
-   "Company":"Pampa Energaa",
-   "industry":"Thermal power plant",
-   "Tonnes":" 25963 ",
-   "source":"Industrial point source",
-   "Location (city)":"Piquirenda",
-   "Provincia":"Salta"
+   "Name":"CT CA�ADA DE GOMEZ - SECCO",
+   "Company":"Secco",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":105744,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ca�ada de G�mez",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CAPITAN SARMIENTO - SECCO",
+   "Company":"Secco",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10205,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CASTELLI - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":9440,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CATAMARCA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10013,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CERES - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3924,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CHARATA - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7334,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -67.507466658118,-29.157337009257 ]
+   },
+   "properties": {
+   "Name":"CT CHILECITO - SECCO",
+   "Company":"Secco",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4810,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Chilecito",
+   "Province":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CIPOLLETI - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":501,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"R�o Negro"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.097098943922,-33.732012128137 ]
+   },
+   "properties": {
+   "Name":"CT COLON BS.AS - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":5222,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Col�n",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT CORRIENTES - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7204,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.616923331727,-34.902743617093 ]
+   },
+   "properties": {
+   "Name":"CT EZEIZA ETAPA1 G MEDITERRANE",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":56618,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Carlos Spegazzini",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.616923331727,-34.902743617093 ]
+   },
+   "properties": {
+   "Name":"CT EZEIZA ETAPA2 G MEDITERRANE",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":32456,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Carlos Spegazzini",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT FORMOSA - APR ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":5006,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -60.280902224428,-33.455414780766 ]
+   },
+   "properties": {
+   "Name":"CT GENERAL ROJO CIERRE CC",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":619957,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Nicol�s de Los Arroyos",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -59.273457149072,-29.158216405042 ]
+   },
+   "properties": {
+   "Name":"CT GOYA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4754,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Goya",
+   "Province":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT GRAL. VILLEGAS - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":14209,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.221828614766,-26.866965997646 ]
+   },
+   "properties": {
+   "Name":"CT INDEPEND. ETAPA1 G MEDITERR",
+   "Company":"Grupo Albanesi",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10088,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Miguel de Tucum�n",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -65.221828614766,-26.866965997646 ]
+   },
+   "properties": {
+   "Name":"CT INDEPEND. ETAPA2 G MEDITERR",
+   "Company":"Grupo Albanesi",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":9463,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Miguel de Tucum�n",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.831502449431,-23.909016867446 ]
+   },
+   "properties": {
+   "Name":"CT ING JUAREZ - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2692,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Ingeniero Ju�rez",
+   "Province":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT INTA CATAMARCA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3559,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ISLA VERDE - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7670,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ITATI - TURBODISEL",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1498,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT JUNIN",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":14479,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LA PAZ Entre Rios - ENARSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2674,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Entre R�os"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.016400581537,-34.933866404668 ]
+   },
+   "properties": {
+   "Name":"CT LA PLATA - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":14048,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"San Carlos",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LA RIOJA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7688,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LA RIOJA SUR- SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3506,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -58.259150732006,-25.126950545234 ]
+   },
+   "properties": {
+   "Name":"CT LAGUNA BLANCA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4457,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Laguna Blanca",
+   "Province":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LAS ARMAS II - EMGASUD",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":606,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"#NV"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LAS PALMAS 2 - ARAUCARIA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":100667,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LAS PALMAS -TURBODISEL",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":543,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LIBERTADOR GSM - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3331,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  [ -61.520703831684,-34.857167311038 ]
+   },
+   "properties": {
+   "Name":"CT LINCOLN",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":5898,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Lincoln",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LOBOS BS.AS - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":23328,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LOMA CAMPANA 1 -YPF",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":93992,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LOMA CAMPANA 2 -Y-GEN ELECT",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":164946,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LOMA DE LA LATA II(NEUQEUN)",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":228867,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT LUJAN II - ARAUCARIA ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":68363,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT MAGDALENA - APR ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4433,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT MATHEU II - APR ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1875,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT MIRAMAR I - ENERGYST",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":23587,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ORAN - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3717,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PARQUE INDUSTR.CATAM-SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":8843,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PASO LA PATRIA-TURBODISEL",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1189,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PEREZ - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":109776,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PIEDRABUENA MG(L.LATA)",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":173945,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PILAR - EPEC",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1055603,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PILAR BS AS- PAMPA ENERG�A",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":187528,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PIRANE - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10675,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Formosa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT PRESIDENCIA ROCA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1276,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT RAFAELA - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7300,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT REALICO - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":6721,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"La Pampa"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT RENOVA - ALBANESI ENERGIA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":457321,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT RIO TERCERO II - SoENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":30138,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ROCA SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":502028,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"R�o Negro"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT RUFINO Sta Fe - ENARSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":8965,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAENZ PE�A - APR ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":3654,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAENZ PE�A II- AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4626,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SALTO 2 - SoENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":103648,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN MARTIN Chaco",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1320,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN PEDRO - CIERRE CC",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":33804,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN PEDRO - SPI ENERGY SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":46087,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN SALVADOR E.Rios -ENARSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1815,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Entre R�os"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN VICENTE BsAs - ENARSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4595,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SANTA ROSA -TURBODISEL",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1988,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Corrientes"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT TEREVINTOS - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2652,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT TINOGASTA - SULLAIR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4169,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VENADO TUERTO - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7617,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VIALE - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4529,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Entre R�os"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VILLA ANGELA - AGGREKO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4977,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chaco"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VILLA GESELL-CATLANT.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":333196,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VILLA MARIA CIERRE CC-UENSA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":630749,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VILLA OCAMPO - SECCO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":32945,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT VUELTA DE OBLIGADO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1829953,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT ZAPPALORTO - APR ENERGY",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":15249,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EDECAT GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":397,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Catamarca"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EDELAR GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":18733,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EDEN GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1627,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"ELECTROPATAGONIA-C.RIV-C.COMB.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":15137,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EMP.DIS.S.ESTERO GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":4901,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EMSA GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10472,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Misiones"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"ENDESA COSTANERA SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2518331,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"ENERGIA DEL SUR S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":226761,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"EPEC GENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":15814,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GEN.MEDITERRANEA (CONT.PLUS)",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":36744,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GEN.MEDITERRANEA GRUPO 5",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":27675,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENELBA - PETROBRAS",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1898589,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENELBA - RES.287",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1396334,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION FRIAS S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":15755,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION INDEPENDENCIA S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":28961,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION LA BANDA S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2514,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santiago del Estero"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION MEDITERRANEA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":6470,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION MEDITERRANEA 220",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":31381,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERACION RIOJANA SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":13132,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"La Rioja"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERADORA CORDOBA S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1537,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"C�rdoba"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"GENERADORA ELEC.TUCUMAN SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":9198,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"HIDROTERMICA SAN JUAN",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":6068,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"San Juan"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"LA PLATA COGENERACION SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":339665,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"LEDESMA SAAI",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":7544,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Jujuy"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"LUJAN DE CUYO COGENERAC.PUERTO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":265976,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Mendoza"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"MOLINOS AGRO AG.(Ex.Mol Rio P)",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":222,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"MOTOGENERADORES COSTANERA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":47985,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"NIDERA SAFORCADA-Junin",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":20,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"PAMPA ENERGIA SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":78724,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Salta"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"REFINERIA LA PLATA AUTOG",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":10998,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"SHELL CAPSA PTA. DOCK SUD",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":25501,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"SIDERAR PTA. IND. SAN NICOLAS",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":31,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"SINOPEC Arg. - El Huemul",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":29407,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Cruz"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"SINOPEC Arg. - Meseta Espinosa",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":13683,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Cruz"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"SOLALBAN ENERGIA SA",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":42405,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"TERMINAL 6 COGENERACION PUERTO",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":209988,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"TERMOELE. JOSE SAN MARTIN S.A",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2045982,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"TERMOELECTRICA GUILLERMO BROWN",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1021465,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"TERMOELECTRICA M.BELGRANO S.A.",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":2150020,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YAC.ENTRE LOMAS AUTOGENERADOR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":27680,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"R�o Negro"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF Autogenerador Pza. Huincul",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":161867,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF CT MANANTIALES BEHR II AG",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":8767,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF EL TREBOL CT MANANT. BEHR",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":6,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Chubut"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF ENERG�A ELECTR.ex PLUSPETG",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":1400041,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Tucum�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF LA PLATA COGENERACION",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":228277,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF LOS PERALES AUTOG",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":68352,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Cruz"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF YAC P.HERNANDEZ AUTOG",
+   "Company":"",
+   "Industry":"Thermal power plant",
+   "CO2_emissions_t":26,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CT AVELLANEDA SECCO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":41391,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SANTA FE"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CENTRAL BIOELECTRICA R.CUARTO1",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13140,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"C.BIOELECT.R.CUARTO1 REN2",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":10249.2,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"C.BIOELECT.R.CUARTO2 REN1",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":7884,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"C.BIOELECT.R.CUARTO2 REN2",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":7884,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG CITRUSVIL-ALCOVIL",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":19710,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"TUCUMAN"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS RS CT ENSENADA SECCO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":34821,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBG GENERAL ALVEAR",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":6570,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG GIGENA I",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":7884,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG JUSTO DARACT",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":6570,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SAN LUIS"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG PACUCA BIO ENERG�A",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":6570,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG PERGAMINO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":15768,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"C.T.SAN MARTIN NORTE 3A",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":33507,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT SAN MIGUEL NORTE III-ENARSA",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":75555,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"ENERGIA AGRO S.A.U",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":9296.55,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SANTA FE"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG TIGONBU",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13140,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SAN LUIS"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG VILLA DEL ROS. CGY",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":6570,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG VENADO TUERTO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13797,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SANTA FE"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIO ENERG�A YANQUETRUZ S.A.",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":9855,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SAN LUIS"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG ENRECO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13140,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBG BIO ENERG�A YANQUETRUZ II",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":5256,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"SAN LUIS"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBG BIO. SANTA CATALINA",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13140,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG AB ENERG�A",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":13140,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"LA PAMPA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CT BIOMASA MM BIOENERG�A",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":19710,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"MISIONES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBRS SAN MART�N NORTE III-D",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":33507,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CTBG ARRE BEEF SA",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":9855,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"BIOGAS CT RESENER SA",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":5256,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBG POLLOS SAN MATEO",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":15768,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"CORDOBA"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"CTBG GENERAL VILLEGAS Ren 2",
+   "Company":"",
+   "Industry":"Biogas Power Plant",
+   "CO2_emissions_t":8015.4,
+   "Source_CO2_emissions":"Biogenic point source",
+   "Source":"",
+   "City":"",
+   "Province":"BUENOS AIRES"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"YPF Plaza Huincul",
+   "Company":"YPF SA",
+   "Industry":"Methanol",
+   "CO2_emissions_t":275370,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Neuqu�n"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Arauco General San Martin",
+   "Company":"Arauco Argentina S.A. ",
+   "Industry":"Methanol",
+   "CO2_emissions_t":33500,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"La Plata Refinery",
+   "Company":"YPF SA",
+   "Industry":"Refinery",
+   "CO2_emissions_t":2224965.52,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Lujan de Cuyo Refinery",
+   "Company":"YPF SA",
+   "Industry":"Refinery",
+   "CO2_emissions_t":1229586.21,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Plaza Huincul Refinery",
+   "Company":"YPF SA",
+   "Industry":"Refinery",
+   "CO2_emissions_t":292758.62,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Raizen Dock Sud",
+   "Company":"Raizen",
+   "Industry":"Refinery",
+   "CO2_emissions_t":1171034.48,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Axion Campana Refinery",
+   "Company":"PAE",
+   "Industry":"Refinery",
+   "CO2_emissions_t":1171034.48,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"DAPSA",
+   "Company":"",
+   "Industry":"",
+   "CO2_emissions_t":0,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"Dock Sud Refinery",
+   "Company":"",
+   "Industry":"Refinery",
+   "CO2_emissions_t":0,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"REFINOR Campo Duran Refinery",
+   "Company":"",
+   "Industry":"Refinery",
+   "CO2_emissions_t":351310.34,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"TRAFIGURA Bahia Blanca Refinery",
+   "Company":"",
+   "Industry":"Refinery",
+   "CO2_emissions_t":351310.34,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"OIL Combustibles San Lorenzo Refinery",
+   "Company":"",
+   "Industry":"Refinery",
+   "CO2_emissions_t":0,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"",
+   "Province":""
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"PAMPA ENERGIA SA",
+   "Company":"",
+   "Industry":"Etileno",
+   "CO2_emissions_t":25916,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Pto General San Mart�n",
+   "Province":"Santa Fe"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"PBB Polisur S.A.",
+   "Company":"",
+   "Industry":"Etileno",
+   "CO2_emissions_t":229900,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bahia Blanca",
+   "Province":"Buenos Aires"
+   }
+ },
+ {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates":  { }
+   },
+   "properties": {
+   "Name":"PBB Polisur S.A.",
+   "Company":"",
+   "Industry":"Etileno",
+   "CO2_emissions_t":355300,
+   "Source_CO2_emissions":"Industrial point source",
+   "Source":"",
+   "City":"Bahia Blanca",
+   "Province":"Buenos Aires"
    }
  }
 ]

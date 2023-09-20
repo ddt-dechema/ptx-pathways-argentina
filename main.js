@@ -32,43 +32,73 @@ toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
 toggleIndustrialButton.style.color="white";
 
 // Specify the property you want to find the maximum value for
-var propertyToFindMax = 'Tonnes';
+var propertyToFindMax = 'CO2_emissions_t';
 
 // Initialize a variable to store the maximum value
 // var maxPropertyValue = -Infinity; // Start with negative infinity as an initial value
 var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
 var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
 
+// Function to check if an object is empty
+function isEmptyObject(obj) {
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 // Function to add the GeoJSON layer to the map
-function addGeoJSONLayer(industryType, filterValue) {
+function addGeoJSONLayer(filterValue) {
     fetch(geojsonURL)
         .then(response => response.json())
         .then(data => {
             // Filter the GeoJSON data based on the specified property and value
             // TO DO DDT
             // fertig (?): filterProperty - industry type oder point source type
-            if(industryType=="industrial") {
-                industryType="industry";
-            } else {
-                industryType="biogenic";
-            }
-            var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
+            // if(industryType=="industrial") {
+            //     industryType="industry";
+            // }
+            // else {
+            //     industryType="industry";
+            // }
+            // Filter the data and exclude features with empty coordinates
+
+            var filteredData = data.features.filter(function (feature) {
+            // var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
+                // Check if 'geometry' property is defined and if 'coordinates' is not empty
+                // return feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
+                    // Check if 'geometry' property is defined and if 'coordinates' is not empty
+                var hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
+                
+                // Check if the industryType matches the filterValue
+                var matchesIndustry = feature.properties.Industry === filterValue;
+                
+                // Return true if both conditions are met
+                return hasValidCoordinates && matchesIndustry;
+            });
+
             // console.log(filterValue);
             // console.log(emissionTypeColors_D[filterValue]);
-
+            // console.log(filteredData)
             // TO DO DDT
             // filterProperty - industry type oder point source type
             // filter value --> Farben
-
+            // console.log(maxEmissionsArgentina)
             // Create a GeoJSON layer and add it to the map
+
             geojsonLayer = L.geoJSON(filteredData, {
                 pointToLayer: function (feature, latlng) {
                     // check, ob die geojson überhaupt Koordinaten UND bekannte Emissionen haben
                     // console.log(feature.geometry)
-                    if (feature.geometry && parseFloat(feature.properties.Tonnes) >0 && feature.geometry.coordinates ) {
+                    // if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
+                    // if (feature.geometry.coordinates && parseFloat(feature.properties.CO2_emissions_t) >0 && feature.geometry.coordinates ) {
+                    // if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates)) {
+                    if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && feature.properties.CO2_emissions_t >0 ) {
                         return L.circleMarker(latlng, {
                             // radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-                            radius: Math.sqrt(feature.properties.Tonnes / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+                            radius: Math.sqrt(feature.properties.CO2_emissions_t / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
                             color: emissionTypeColors_D[filterValue],
                             /*fillColor: feature.properties.color,*/
                             fillColor: emissionTypeColors_D[filterValue],
@@ -77,7 +107,7 @@ function addGeoJSONLayer(industryType, filterValue) {
                             fillOpacity: 0.4
                         }).bindPopup(addCO2argentinaPopupHandler(feature));
                     } else {
-                        if (!parseFloat(feature.properties.Tonnes)>0) {
+                        if (!parseFloat(feature.properties.CO2_emissions_t)>0) {
                             console.log(feature.properties.Name, "(Company: ",feature.properties.Company,  ")"," does not contain information about CO2 emissions")
                         } else if (!feature.geometry) {
                             console.error(feature.properties.Name, "(Company: ",feature.properties.Company,  ")","does not contain valid coordinates");
@@ -432,60 +462,60 @@ function toggleLayerLegend(button, layer, legend) {
 // Global CO2 emissions, grouped by country 
 
 // as points
-var CO2_global = new L.GeoJSON.AJAX(['emissions_global-points.geojson'], {
-	pointToLayer: function(feature, latlng) {
-		return L.circleMarker(latlng, {
-			radius: feature.properties.MTonnes, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-            color: "black",
-			/*fillColor: feature.properties.color,*/
-			fillColor: "black",
-			weight: 1,
-			opacity: 0.7,
-			fillOpacity: 0.4
-		}).bindPopup(addCO2globalPopupHandler(feature));
-	}
-}); //.addTo(map);
+// var CO2_global = new L.GeoJSON.AJAX(['emissions_global-points.geojson'], {
+// 	pointToLayer: function(feature, latlng) {
+// 		return L.circleMarker(latlng, {
+// 			radius: feature.properties.MTonnes, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+//             color: "black",
+// 			/*fillColor: feature.properties.color,*/
+// 			fillColor: "black",
+// 			weight: 1,
+// 			opacity: 0.7,
+// 			fillOpacity: 0.4
+// 		}).bindPopup(addCO2globalPopupHandler(feature));
+// 	}
+// }); //.addTo(map);
 
-function addCO2globalPopupHandler(feature) {
-	// let nace = globalModel.emissions.categories.naceCategories.items
-	if (feature.properties) {
-		let thisEmission =
-			formatSI(feature.properties.MTonnes) + " Megatonnes CO<sub>2</sub>/year";
-		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
-		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
-		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
-		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-		return `<h2>${feature.properties.name} (${feature.properties.country})</h2>
-                        Emissions:
-                        <br>${thisEmission}</div>`;
-		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
-	} else {
-		console.log(feature);
-	}
-}
+// function addCO2globalPopupHandler(feature) {
+// 	// let nace = globalModel.emissions.categories.naceCategories.items
+// 	if (feature.properties) {
+// 		let thisEmission =
+// 			formatSI(feature.properties.MTonnes) + " Megatonnes CO<sub>2</sub>/year";
+// 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
+// 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
+// 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
+// 		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
+// 		return `<h2>${feature.properties.name} (${feature.properties.country})</h2>
+//                         Emissions:
+//                         <br>${thisEmission}</div>`;
+// 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
+// 	} else {
+// 		console.log(feature);
+// 	}
+// }
 
 
 /// Argentina CO2
 // as points
-var CO2_argentina = new L.GeoJSON.AJAX(['convertcsv.geojson'], {
-	pointToLayer: function(feature, latlng) {
-		return L.circleMarker(latlng, {
-			radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-			color: "black",
-			/*fillColor: feature.properties.color,*/
-			fillColor: "black",
-			weight: 1,
-			opacity: 0.7,
-			fillOpacity: 0.4
-		}).bindPopup(addCO2argentinaPopupHandler(feature));
-	}
-}); //.addTo(map);
+// var CO2_argentina = new L.GeoJSON.AJAX(['convertcsv.geojson'], {
+// 	pointToLayer: function(feature, latlng) {
+// 		return L.circleMarker(latlng, {
+// 			radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+// 			color: "black",
+// 			/*fillColor: feature.properties.color,*/
+// 			fillColor: "black",
+// 			weight: 1,
+// 			opacity: 0.7,
+// 			fillOpacity: 0.4
+// 		}).bindPopup(addCO2argentinaPopupHandler(feature));
+// 	}
+// }); //.addTo(map);
 
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
 		let thisEmission =
-        formatSI(feature.properties.Tonnes) + " Tonnes CO<sub>2</sub>/year";
+        formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
@@ -493,10 +523,13 @@ function addCO2argentinaPopupHandler(feature) {
 		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
                         Emissions:
                         <br>${thisEmission}<br>
-                        Source: 
+                        <p>Source: 
                         <br>${feature.properties.source}<br>
+                        </p>
+                        <p style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
                         Industry: 
                         <br>${feature.properties.industry}<br>
+                        </p>
                         </div>`;
 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
 	} else {
@@ -507,42 +540,42 @@ function addCO2argentinaPopupHandler(feature) {
 
 /// Argentina CO2 - selective for industry type
 // as points
-var CO2_argentina = new L.GeoJSON.AJAX(['convertcsv.geojson'], {
-	pointToLayer: function(feature, latlng) {
-		return L.circleMarker(latlng, {
-			radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-			color: "black",
-			/*fillColor: feature.properties.color,*/
-			fillColor: "black",
-			weight: 1,
-			opacity: 0.7,
-			fillOpacity: 0.4
-		}).bindPopup(addCO2argentinaPopupHandler(feature));
-	}
-}); //.addTo(map);
+// var CO2_argentina = new L.GeoJSON.AJAX(['convertcsv.geojson'], {
+// 	pointToLayer: function(feature, latlng) {
+// 		return L.circleMarker(latlng, {
+// 			radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+// 			color: "black",
+// 			/*fillColor: feature.properties.color,*/
+// 			fillColor: "black",
+// 			weight: 1,
+// 			opacity: 0.7,
+// 			fillOpacity: 0.4
+// 		}).bindPopup(addCO2argentinaPopupHandler(feature));
+// 	}
+// }); //.addTo(map);
 
-function addCO2argentinaPopupHandler(feature) {
-	// let nace = globalModel.emissions.categories.naceCategories.items
-	if (feature.properties) {
-		let thisEmission =
-        formatSI(feature.properties.Tonnes) + " Tonnes CO<sub>2</sub>/year";
-		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
-		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
-		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
-		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
-                        Emissions:
-                        <br>${thisEmission}<br>
-                        Source: 
-                        <br>${feature.properties.source}<br>
-                        Industry: 
-                        <br>${feature.properties.industry}<br>
-                        </div>`;
-		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
-	} else {
-		console.log(feature);
-	}
-}
+// function addCO2argentinaPopupHandler(feature) {
+// 	// let nace = globalModel.emissions.categories.naceCategories.items
+// 	if (feature.properties) {
+// 		let thisEmission =
+//         formatSI(feature.properties.Tonnes) + " Tonnes CO<sub>2</sub>/year";
+// 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
+// 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
+// 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
+// 		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
+// 		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
+//                         Emissions:
+//                         <br>${thisEmission}<br>
+//                         Source: 
+//                         <br>${feature.properties.source}<br>
+//                         Industry: 
+//                         <br>${feature.properties.industry}<br>
+//                         </div>`;
+// 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
+// 	} else {
+// 		console.log(feature);
+// 	}
+// }
 
 // ToDo: replace all this with a global data model and assign all buttons, functions etc. to the right model category.
 // For now this is just an example
@@ -741,7 +774,7 @@ function toggleLayer(layer, layerName, button_id, industryType) {
     button=button_id;
     if (map.hasLayer(layer)) {
         map.removeLayer(layer);
-        console.log(layer)
+        // console.log(layer)
         button.style.backgroundColor="white";
         if (industryType=="industrial") {
             industrialLayersVisible = false;
@@ -1952,9 +1985,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Loop through the features to find the maximum value
         // only consider those geojson features, which actually have coordinates.
         data.features.forEach(function (feature) {
-            var propertyValue = parseFloat(feature.properties[propertyToFindMax]);
+            var propertyValue = feature.properties[propertyToFindMax];
             // console.log(feature.properties.Name+feature.properties.Tonnes)
-        
+                // console.log(propertyValue)
             if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
                 maxEmissionsArgentina = propertyValue;
             }
@@ -1970,18 +2003,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.error(`Error loading GeoJSON data: ${error}`);
     });
     
-    addGeoJSONLayer('industrial', 'Aluminium');
-    addGeoJSONLayer('industrial', 'Steel');
-    addGeoJSONLayer('industrial', 'Cement');
-    addGeoJSONLayer('industrial', 'Cellulose and paper');
-    addGeoJSONLayer('industrial', 'Thermal power plant');
-    addGeoJSONLayer('industrial', 'Refinery');
-    addGeoJSONLayer('biogenic', 'Biogas');
-    addGeoJSONLayer('biogenic', 'Bioethanol');
-    addGeoJSONLayer('industrial', 'Ammonia');
-    addGeoJSONLayer('industrial', 'Methanol');
-    addGeoJSONLayer('industrial', 'Etileno');
-    addGeoJSONLayer('industrial', 'Initially add the layer to the map');
+    addGeoJSONLayer('Aluminium');
+    addGeoJSONLayer('Steel');
+    addGeoJSONLayer('Cement');
+    addGeoJSONLayer('Cellulose and paper');
+    addGeoJSONLayer('Thermal power plant');
+    addGeoJSONLayer('Refinery');
+    addGeoJSONLayer('Biogas');
+    addGeoJSONLayer('Bioethanol');
+    addGeoJSONLayer('Ammonia');
+    addGeoJSONLayer('Methanol');
+    addGeoJSONLayer('Etileno');
+    // addGeoJSONLayer('industrial', 'Initially add the layer to the map');
   
 
     // fetch('emissions.json')
@@ -2116,4 +2149,3 @@ function clone(obj) {
 // }
 
 /////////
-

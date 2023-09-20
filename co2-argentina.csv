@@ -1,276 +1,276 @@
-Name;Company;Type of industry;CO2 emissions [t];Type of source;Location (city);Provincia;Location (latitude);Location (longitude)
-Fábrica Pico Truncado;PCR;Cement; -   ;Industrial point source;Pico Truncado;Santa Cruz;-46,78713825;-67,92954422
-C.T. PATAGONICAS SA;CENTRALES TERMICAS PATAGONICAS S.A.;Thermal power plant; 27.712 ;Industrial point source;Comodoro Rivadavia;Chubut;-45,81390612;-67,44427712
-Fábrica Comodoro Rivadavia;PCR;Cement;;Industrial point source;Comodoro Rivadavia;Chubut;-45,80214455;-67,4236816
-ALUAR SA - GENERADOR;Aluar;Thermal power plant; 210.445 ;Industrial point source;Puerto Madryn;Chubut;-42,7438848;-65,04839927
-Fábrica de aluminio de Aluar;Aluar;Aluminium; 612.058 ;Industrial point source;Puerto Madryn;Chubut;-42,63615141;-65,1028453
-C.TERMICA ALTO VALLE;;Thermal power plant; 198.282 ;Industrial point source;Neuquén;Neuquén;-38,95161594;-68,02174487
-C.T. AGUA DEL CAJON;;Thermal power plant; 1.108.638 ;Industrial point source;Neuquén;Neuquén;-38,93531878;-68,35746075
-Fábrica Zapala;Loma Negra;Cement; -   ;Industrial point source;Zapala;Neusaquén;-38,89661841;-70,03773085
-CENTRAL PIEDRA BUENA S.A.;Pampa Energía;Thermal power plant; 243.763 ;Industrial point source;Ingeniero White;Buenos Aires;-38,78482523;-62,25607271
-Profertil Bahia Blanca;Profertil S.A.;Ammonia; 710.621 ;Industrial point source;Bahia Blanca;Buenos Aires;-38,78424491;-62,28168815
-C.T. LOMA DE LA LATA S.A.;C.T. LOMA DE LA LATA S.A.;Thermal power plant; 1.779.653 ;Industrial point source;Neuquén;Neuquén;-38,51178974;-68,60637825
-CT 9 de JULIO C Cost ATLANTICA;Centrales de la Costa Atlántica S.A.;Thermal power plant; 221.258 ;Industrial point source;Mar del Plata;Buenos Aires;-38,04949391;-57,54553583
-Fábrica Barker;Loma Negra;Cement;;Industrial point source;Benito Juarez;Buenos Aires;-37,68283558;-59,388828
-CT BARKER CIERRE CC;;Thermal power plant; 636.102 ;Industrial point source;Benito Juárez;Buenos Aires;-37,54858826;-59,4506657
-Fábrica L'Amalí;Loma Negra;Cement; -   ;Industrial point source;Olavarría;Buenos Aires;-37,03607735;-60,29810249
-Fábrica Sierras Bayas;Loma Negra;Cement;;Industrial point source;Sierras Bayas;Buenos Aires;-36,9383899;-60,16503118
-Fábrica Olavarría;Loma Negra;Cement; -   ;Industrial point source;Olavarría;Buenos Aires;-36,93725544;-60,16484634
-Planta Siderurgica ACERBRAG;Acerbrag S.A. (grupo brasileño Votorantim);Steel;;Industrial point source;Bragado;Buenos Aires;-35,13711789;-60,4520892
-CT BRAGADO 2 - GENNEIA;Genneia;Thermal power plant; 79.138 ;Industrial point source;Bragado;Buenos Aires;-35,13651396;-60,43241426
-CT BRAGADO 3 - GENNEIA;Genneia;Thermal power plant; 92.453 ;Industrial point source;Bragado;Buenos Aires;-35,13651396;-60,43241426
-Fábrica LomaSer;Loma Negra;Cement;;Industrial point source;Vicente Casares;Buenos Aires;-34,95797683;-58,64295248
-CT LA PLATA - SULLAIR;;Thermal power plant; 14.048 ;Industrial point source;San Carlos;Buenos Aires;-34,9338664;-58,01640058
-CT EZEIZA ETAPA1 G MEDITERRANE;;Thermal power plant; 56.618 ;Industrial point source;Carlos Spegazzini;Buenos Aires;-34,90274362;-58,61692333
-CT EZEIZA ETAPA2 G MEDITERRANE;;Thermal power plant; 32.456 ;Industrial point source;Carlos Spegazzini;Buenos Aires;-34,90274362;-58,61692333
-CENTRAL DIQUE S.A.;CENTRAL DIQUE S.A.;Thermal power plant; 478 ;Industrial point source;Ensenada;Buenos Aires;-34,88987358;-57,93335436
-CT BARRAGAN - ENARSA;ENARSA;Thermal power plant; 319.657 ;Industrial point source;Ensenada;Buenos Aires;-34,85965751;-57,95577403
-CT LINCOLN;;Thermal power plant; 5.898 ;Industrial point source;Lincoln;Buenos Aires;-34,85716731;-61,52070383
-C.T. ALMIRANTE BROWN;Excell Power S.R.L.;Thermal power plant; 7.094 ;Industrial point source;Burazco;Buenos Aires;-34,83766034;-58,40568505
-;Ternium Argentina S.A.;Steel;;Industrial point source;Ensenada;Buenos Aires;-34,80606584;-57,92924997
-;Ternium Argentina S.A.;Steel;;Industrial point source;Canning;Buenos Aires;-34,79942658;-58,51610678
-;Ternium Argentina S.A.;Steel;;Industrial point source;Florencio Varela;Buenos Aires;-34,72722318;-58,18102379
-;Ternaris S.A. / Siderca S.A.I.C.;Steel;;Industrial point source;Villa Mercedes;San Luis;-34,69235624;-58,54186997
-;Ternaris S.A. / Siderca S.A.I.C.;Steel;;Industrial point source;Valentin Alsina;Buenos Aires;-34,66288154;-58,40681255
-CENTRAL DOCK SUD;Central Dock Sud;Thermal power plant; 2.101.890 ;Industrial point source;Dock Sud;Buenos Aires;-34,65327861;-58,34352059
-;Ternium Argentina S.A.;Steel;;Industrial point source;Haedo;Buenos Aires;-34,58262707;-58,63146321
-Planta Campana;Cementos Avellaneda;Cement;;Industrial point source;Campana;Buenos Aires;-34,16978546;-59,00184583
-Planta siderúrgica TenarisSiderca;Ternaris S.A. / Siderca S.A.I.C.;Steel; 650.000 ;Industrial point source;Campana;Buenos Aires;-34,152554;-58,977388
-Planta Holcim Campana;HOLCIM;Cement;;Industrial point source;Campana;Buenos Aires;-34,14560719;-59,02034634
-Bunge Campana;Bunge Argentina S.A;Ammonia; 27.027 ;Industrial point source;Campana;Buenos Aires;-34,09354048;-59,00465275
-CT COLON BS.AS - SULLAIR;;Thermal power plant; 5.222 ;Industrial point source;Colón;Buenos Aires;-33,73201213;-61,09709894
-Papel Prensa S.A.I.C.F.;Papel Prensa S.A.I.C.F.;Cellulose and paper; 421.763 ;Industrial point source;San Pedro;Buenos Aires;-33,7216403;-59,62774924
-;Acindar Industria Argentina de Aceros S.A.;Steel;;Industrial point source;Villa Mercedes;San Luis;-33,72087734;-65,46444205
-CT GENERAL ROJO CIERRE CC;;Thermal power plant; 619.957 ;Industrial point source;San Nicolás de Los Arroyos;Buenos Aires;-33,45541478;-60,28090222
-Planta Ramallo;Loma Negra;Cement;;Industrial point source;Ramallo;Buenos Aires;-33,38022978;-60,15325117
-Promaíz;Promaiz S.A.;Bioethanol; -   ;Biogenic point source;Alejandro Roca;Córdoba;-33,36537538;-63,71712134
-C.TERMICA SAN NICOLAS;AES;Thermal power plant; 2.158.549 ;Industrial point source;San Nicolás de Los Arroyos;Buenos Aires;-33,35809074;-60,17476179
-;Acindar Industria Argentina de Aceros S.A.;Steel;;Industrial point source;San Nicolas;Buenos Aires;-33,34700797;-60,25863236
-Diaser;Derivados San Luis;Bioethanol; -   ;Biogenic point source;San Luis;San Luis;-33,32563333;-66,36372385
-Planta siderúrgica Ternium Siderar;Ternium Argentina S.A.;Steel; 5.286.272 ;Industrial point source;Ramallo/San Nicolas;Buenos Aires;-33,32260493;-60,15945416
-CT ANCHORIS - METHAX;EMESA;Thermal power plant; 50.825 ;Industrial point source;Tupungato;Mendoza;-33,3133564;-68,89151146
-Planta siderúrgia ArcelorMittal Acindar;Acindar Industria Argentina de Aceros S.A.;Steel; 1.015.000 ;Industrial point source;Villa Constitución;Santa Fe;-33,256309;-60,292472
-;Ternaris S.A. / Siderca S.A.I.C.;Steel;;Industrial point source;Villa Constitución;Santa Fe;-33,23981167;-60,31761739
-Bio IV;Bioetanol Rio Cuarto A.A.;Bioethanol; -   ;Biogenic point source;Río Cuarto;Córdoba;-33,17998671;-64,38329425
-CENTRAL PUERTO SA;Central Puerto S.A.;Thermal power plant; 3.481.800 ;Industrial point source;Luján de Cuyo;Mendoza;-33,05433167;-68,98071723
-Planta siderúrgica Gerdau Sipar Pérez;Gerdau SA;Steel; 103.031 ;Industrial point source;Pérez;Santa Fe;-32,9912336;-60,7588733
-;Acindar Industria Argentina de Aceros S.A.;Steel;;Industrial point source;Rosario;Santa Fe;-32,97077123;-60,72206377
-;Ternium Argentina S.A.;Steel;;Industrial point source;Rosario;Santa Fe;-32,88917097;-60,70918231
-CT CAÑADA DE GOMEZ - SECCO;Secco;Thermal power plant; 105.744 ;Industrial point source;Cañada de Gómez;Santa Fe;-32,78187222;-61,41843352
-Planta Holcim Capdeville Mendoza;HOLCIM;Cement; -   ;Industrial point source;Las Heras;Mendoza;-32,7406102;-68,83721964
-Celulosa Argentina S.A.;Celulosa Argentina S.A.;Cellulose and paper; 416.400 ;Industrial point source;Capitan Bermudez;Santa Fe;-32,73646168;-60,70218034
-CT BELL VILLE - SULLAIR;SULLAIR ARGENTINA S.A.;Thermal power plant; 6.459 ;Industrial point source;Bell Ville;Córdoba;-32,61039562;-62,68583225
-ACA;Aca Bio Cooperativa Ltda.;Bioethanol; -   ;Biogenic point source;Villa María;Córdoba;-32,41597156;-63,16162482
-CT BRIGADIER LOPEZ;Central Puerto S.A.;Thermal power plant; 64.572 ;Industrial point source;Santa Fe;Santa Fe;-31,71284154;-60,77930021
-Vicentin;Vicentin S.A.I.C.;Bioethanol; -   ;Biogenic point source;Avellaneda;Santa Fe;-31,62099492;-60,71499331
-Fábrica San Juan;Loma Negra;Cement;;Industrial point source;Rivadavia;San Juan;-31,54717154;-68,67430483
-Planta Holcim Malagueño;HOLCIM;Cement; -   ;Industrial point source;Malagueño;Córdoba;-31,47714495;-64,35835512
-Maíz Energía;MAÍZ ENERGÍA S.A.;Bioethanol; -   ;Biogenic point source;Ciudad de Córdoba;Córdoba;-31,37191425;-64,18185929
-CT GOYA - SECCO;;Thermal power plant; 4.754 ;Industrial point source;Goya;Corrientes;-29,15821641;-59,27345715
-CT CHILECITO - SECCO;Secco;Thermal power plant; 4.810 ;Industrial point source;Chilecito;La Rioja;-29,15733701;-67,50746666
-Bioenergías Agropecuarias S.A.;BIOENERGÍASAGROPECUARIAS S.A.;Bioethanol; -   ;Biogenic point source;General Obligado;Santa Fe;-28,48761165;-59,39684115
-Fábrica Catamarca;Loma Negra;Cement; -   ;Industrial point source;El Alto;Catamarca;-28,46620076;-65,21491434
-CT AÑATUYA - SULLAIR;;Thermal power plant; 11.557 ;Industrial point source;Añatuya;Santiago del Estero;-28,44584131;-62,85560319
-CT AÑATUYA II - SULLAIR;;Thermal power plant; 4.840 ;Industrial point source;Añatuya;Santiago del Estero;-28,44584131;-62,85560319
-Energías Ecológicas de Tucumán;Energías Ecológicas de Tucumán - Grupo Colombres;Bioethanol; -   ;Biogenic point source;Aguilares;Tucumán;-27,4571049;-65,60985513
-Bioenergía la Corona;Bioenergia La Corona S.A.;Bioethanol; -   ;Biogenic point source;Concepción;Tucumán;-27,3548157;-65,60294134
-Ingenio Santa Rosa;Bioenergía Santa Rosa S.A.;Bioethanol; -   ;Biogenic point source;Monteros;Tucumán;-27,22139848;-65,51695443
-CT ARISTOBU.DEL VALLE-SOENERGY;;Thermal power plant; 24.495 ;Industrial point source;Aristóbulo del Valle;Misiones;-27,09123769;-54,86344241
-Fronterita Energía S.A.;Fronterita Energia S.A.;Bioethanol; -   ;Biogenic point source;Juan XXIII;Tucumán;-27,0235712;-65,30157927
-Papel Misionero;Papel Misionero;Cellulose and paper; 272.138 ;Industrial point source;Puerto Leoni;Misiones;-26,93561856;-55,11980442
-CT INDEPEND. ETAPA1 G MEDITERR;Grupo Albanesi;Thermal power plant; 10.088 ;Industrial point source;San Miguel de Tucumán;Tucumán;-26,866966;-65,22182861
-CT INDEPEND. ETAPA2 G MEDITERR;Grupo Albanesi;Thermal power plant; 9.463 ;Industrial point source;San Miguel de Tucumán;Tucumán;-26,866966;-65,22182861
-Bioenergética Leales S.A.;Bioenergética Leales S.A.;Bioethanol; -   ;Biogenic point source;Cevil Pozo;Tucumán;-26,84424771;-65,14264897
-Bio Atar S.A.;Bio Atar S.A.;Bioethanol; -   ;Biogenic point source;Alderetes;Tucumán;-26,83469939;-65,15279485
-Biotrinidad;Biotrinidad S.A.;Bioethanol; -   ;Biogenic point source;San Miguel de Tucumán;Tucumán;-26,82826317;-65,20884372
-Compañía Bioenergética La Florida;Compañía Bioenergética La Florida S.A.;Bioethanol; -   ;Biogenic point source;La Florida;Tucumán;-26,81731107;-65,08538766
-Arauco Argentina S.A. ;Arauco Argentina S.A. ;Cellulose and paper; 875.000 ;Industrial point source;Puerto Esperanza;Misiones;-25,97573961;-54,63376934
-Austin Powder;Austin Powder;Ammonia; 54.600 ;Industrial point source;El Galpón;Salta;-25,37919283;-64,65198658
-CT LAGUNA BLANCA - SECCO;;Thermal power plant; 4.457 ;Industrial point source;Laguna Blanca;Formosa;-25,12695055;-58,25915073
-C.T. SALTA (TERMOANDES);AES;Thermal power plant; 1.004.183 ;Industrial point source;Cobos;Salta;-24,74271171;-65,05151496
-Bio San Isidro;Bio San Isidro S.A.;Bioethanol; -   ;Biogenic point source;Campo Santo;Salta;-24,6810765;-65,09802875
-Planta Holcim Puesto Viejo;HOLCIM;Cement; -   ;Industrial point source;Puesto Viejo;Jujuy;-24,49038325;-64,9570812
-Ingenio Río Grande;Rio Grande Energia S.A.;Bioethanol; -   ;Biogenic point source;La Mendieta;Jujuy;-24,31258742;-64,9683694
-Aceros Zapla;Aceros Zapla S.A.;Steel;;Industrial point source;Palpalá;Jujuy;-24,2460988;-65,19816083
-Papelera del NOA S.A.;Papelera del NOA S.A.;Cellulose and paper; 85.425 ;Industrial point source;Río Blanco;Jujuy;-24,23195846;-65,23014529
-CT ING JUAREZ - SECCO;;Thermal power plant; 2.692 ;Industrial point source;Ingeniero Juárez;Formosa;-23,90901687;-61,83150245
-Fábrica de Papel Ledesma;Fábrica de Papel Ledesma;Cellulose and paper; 212.250 ;Industrial point source;Libertador General San Martín;Jujuy;-23,82765684;-64,79551334
-Ingenio Ledesma;Bio Ledesma S.A.;Bioethanol; -   ;Biogenic point source;Libertador General San Martin;Jujuy;-23,82436777;-64,78800974
-CT CAIMANCITO -SULLAIR;;Thermal power plant; 62.571 ;Industrial point source;Libertador Gral San Martín;Jujuy;-23,73226891;-64,61399317
-Seaboard Energía Renovables y Alimentos;Seaboard Energía Renovables y Alimentos;Bioethanol; -   ;Biogenic point source;Orán;Salta;-23,2022408;-64,29616772
-CENTRAL TERMICA PIQUIRENDA;Pampa Energía;Thermal power plant; 25.963 ;Industrial point source;Piquirenda;Salta;-22,35004604;-63,76700533
-CT BARRAGAN - ENARSA,ENARSA,Thermal power plant, 319.657 ,Industrial point source,Ensenada,Buenos Aires,-34.85965751,-57.95577403,Electrical energy,567;;;;;;;;
-CT BARRANQUERAS Chaco,,Thermal power plant, 3.373 ,Industrial point source,,Chaco,,,,22;;;;;;;;
-CT BELL VILLE - SULLAIR,SULLAIR ARGENTINA S.A.,Thermal power plant, 6.459 ,Industrial point source,Bell Ville,Cï¿½rdoba,-32.61039562,-62.68583225,Electrical energy,16;;;;;;;;
-CT BRACHO CIERRE CC- Y-GEN S.A,,Thermal power plant, 1.242.878 ,Industrial point source,,TucumÃ¡n,,,,199;;;;;;;;
-CT BRAGADO - EMGASUD,,Thermal power plant, 7.559 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-CT BRAGADO 2 - GENNEIA,Genneia,Thermal power plant, 79.138 ,Industrial point source,Bragado,Buenos Aires,-35.13651396,-60.43241426,Electrical energy,59;;;;;;;;
-CT BRAGADO 3 - GENNEIA,Genneia,Thermal power plant, 92.453 ,Industrial point source,Bragado,Buenos Aires,-35.13651396,-60.43241426,Electrical energy,61;;;;;;;;
-CT BRIGADIER LOPEZ,Central Puerto S.A.,Thermal power plant, 64.572 ,Industrial point source,Santa Fe,Santa Fe,-31.71284154,-60.77930021,Electrical energy,280;;;;;;;;
-CT CAIMANCITO -SULLAIR,,Thermal power plant, 62.571 ,Industrial point source,Libertador Gral San Martï¿½n,Jujuy,-23.73226891,-64.61399317,Electrical energy,91;;;;;;;;
-CT CAï¿½ADA DE GOMEZ - SECCO,Secco,Thermal power plant, 105.744 ,Industrial point source,Caï¿½ada de Gï¿½mez,Santa Fe,-32.78187222,-61.41843352,Electrical energy,67;;;;;;;;
-CT CAPITAN SARMIENTO - SECCO,Secco,Thermal power plant, 10.205 ,Industrial point source,,Buenos Aires,,,,5;;;;;;;;
-CT CASTELLI - AGGREKO,,Thermal power plant, 9.440 ,Industrial point source,,Chaco,,,,15;;;;;;;;
-CT CATAMARCA - SECCO,,Thermal power plant, 10.013 ,Industrial point source,,Catamarca,,,,19;;;;;;;;
-CT CERES - SECCO,,Thermal power plant, 3.924 ,Industrial point source,,Santa Fe,,,,18;;;;;;;;
-CT CHARATA - SULLAIR,,Thermal power plant, 7.334 ,Industrial point source,,Chaco,,,,20;;;;;;;;
-CT CHILECITO - SECCO,Secco,Thermal power plant, 4.810 ,Industrial point source,Chilecito,La Rioja,-29.15733701,-67.50746666,Electrical energy,10;;;;;;;;
-CT CIPOLLETI - AGGREKO,,Thermal power plant, 501 ,Industrial point source,,RÃ­o Negro,,,,5;;;;;;;;
-CT COLON BS.AS - SULLAIR,,Thermal power plant, 5.222 ,Industrial point source,Colï¿½n,Buenos Aires,-33.73201213,-61.09709894,Electrical energy,15;;;;;;;;
-CT CORRIENTES - AGGREKO,,Thermal power plant, 7.204 ,Industrial point source,,Corrientes,,,,20;;;;;;;;
-CT EZEIZA ETAPA1 G MEDITERRANE,,Thermal power plant, 56.618 ,Industrial point source,Carlos Spegazzini,Buenos Aires,-34.90274362,-58.61692333,Electrical energy,102;;;;;;;;
-CT EZEIZA ETAPA2 G MEDITERRANE,,Thermal power plant, 32.456 ,Industrial point source,Carlos Spegazzini,Buenos Aires,-34.90274362,-58.61692333,Electrical energy,50;;;;;;;;
-CT FORMOSA - APR ENERGY,,Thermal power plant, 5.006 ,Industrial point source,,Formosa,,,,30;;;;;;;;
-CT GENERAL ROJO CIERRE CC,,Thermal power plant, 619.957 ,Industrial point source,San Nicolï¿½s de Los Arroyos,Buenos Aires,-33.45541478,-60.28090222,Electrical energy,108;;;;;;;;
-CT GOYA - SECCO,,Thermal power plant, 4.754 ,Industrial point source,Goya,Corrientes,-29.15821641,-59.27345715,Electrical energy,13;;;;;;;;
-CT GRAL. VILLEGAS - AGGREKO,,Thermal power plant, 14.209 ,Industrial point source,,Buenos Aires,,,,24;;;;;;;;
-CT INDEPEND. ETAPA1 G MEDITERR,Grupo Albanesi,Thermal power plant, 10.088 ,Industrial point source,San Miguel de TucumÃ¡n,TucumÃ¡n,-26.866966,-65.22182861,Electrical energy,50;;;;;;;;
-CT INDEPEND. ETAPA2 G MEDITERR,Grupo Albanesi,Thermal power plant, 9.463 ,Industrial point source,San Miguel de TucumÃ¡n,TucumÃ¡n,-26.866966,-65.22182861,Electrical energy,49;;;;;;;;
-CT ING JUAREZ - SECCO,,Thermal power plant, 2.692 ,Industrial point source,Ingeniero Juï¿½rez,Formosa,-23.90901687,-61.83150245,Electrical energy,4;;;;;;;;
-CT INTA CATAMARCA - SECCO,,Thermal power plant, 3.559 ,Industrial point source,,Catamarca,,,,7;;;;;;;;
-CT ISLA VERDE - AGGREKO,,Thermal power plant, 7.670 ,Industrial point source,,Cï¿½rdoba,,,,25;;;;;;;;
-CT ITATI - TURBODISEL,,Thermal power plant, 1.498 ,Industrial point source,,Corrientes,,,,7;;;;;;;;
-CT JUNIN,,Thermal power plant, 14.479 ,Industrial point source,,Buenos Aires,,,,22;;;;;;;;
-CT LA PAZ Entre Rios - ENARSA,,Thermal power plant, 2.674 ,Industrial point source,,Entre RÃ­os,,,,11;;;;;;;;
-CT LA PLATA - SULLAIR,,Thermal power plant, 14.048 ,Industrial point source,San Carlos,Buenos Aires,-34.9338664,-58.01640058,Electrical energy,40;;;;;;;;
-CT LA RIOJA - SECCO,,Thermal power plant, 7.688 ,Industrial point source,,La Rioja,,,,19;;;;;;;;
-CT LA RIOJA SUR- SECCO,,Thermal power plant, 3.506 ,Industrial point source,,La Rioja,,,,10;;;;;;;;
-CT LAGUNA BLANCA - SECCO,,Thermal power plant, 4.457 ,Industrial point source,Laguna Blanca,Formosa,-25.12695055,-58.25915073,Electrical energy,7;;;;;;;;
-CT LAS ARMAS II - EMGASUD,,Thermal power plant, 606 ,Industrial point source,,#NV,,,,;;;;;;;;
-CT LAS PALMAS 2 - ARAUCARIA,,Thermal power plant, 100.667 ,Industrial point source,,Buenos Aires,,,,212;;;;;;;;
-CT LAS PALMAS -TURBODISEL,,Thermal power plant, 543 ,Industrial point source,,Chaco,,,,7;;;;;;;;
-CT LIBERTADOR GSM - SULLAIR,,Thermal power plant, 3.331 ,Industrial point source,,Jujuy,,,,15;;;;;;;;
-CT LINCOLN,,Thermal power plant, 5.898 ,Industrial point source,Lincoln,Buenos Aires,-34.85716731,-61.52070383,Electrical energy,15;;;;;;;;
-CT LOBOS BS.AS - SULLAIR,,Thermal power plant, 23.328 ,Industrial point source,,Buenos Aires,,,,20;;;;;;;;
-CT LOMA CAMPANA 1 -YPF,,Thermal power plant, 93.992 ,Industrial point source,,Neuquï¿½n,,,,105;;;;;;;;
-CT LOMA CAMPANA 2 -Y-GEN ELECT,,Thermal power plant, 164.946 ,Industrial point source,,Neuquï¿½n,,,,107;;;;;;;;
-CT LOMA DE LA LATA II(NEUQEUN),,Thermal power plant, 228.867 ,Industrial point source,,Neuquï¿½n,,,,105;;;;;;;;
-CT LUJAN II - ARAUCARIA ENERGY,,Thermal power plant, 68.363 ,Industrial point source,,Buenos Aires,,,,127;;;;;;;;
-CT MAGDALENA - APR ENERGY,,Thermal power plant, 4.433 ,Industrial point source,,Buenos Aires,,,,25;;;;;;;;
-CT MATHEU II - APR ENERGY,,Thermal power plant, 1.875 ,Industrial point source,,Buenos Aires,,,,229;;;;;;;;
-CT MIRAMAR I - ENERGYST,,Thermal power plant, 23.587 ,Industrial point source,,Buenos Aires,,,,20;;;;;;;;
-CT ORAN - SECCO,,Thermal power plant, 3.717 ,Industrial point source,,Salta,,,,15;;;;;;;;
-CT PARQUE INDUSTR.CATAM-SECCO,,Thermal power plant, 8.843 ,Industrial point source,,Catamarca,,,,15;;;;;;;;
-CT PASO LA PATRIA-TURBODISEL,,Thermal power plant, 1.189 ,Industrial point source,,Corrientes,,,,7;;;;;;;;
-CT PEREZ - SECCO,,Thermal power plant, 109.776 ,Industrial point source,,Santa Fe,,,,81;;;;;;;;
-CT PIEDRABUENA MG(L.LATA),,Thermal power plant, 173.945 ,Industrial point source,,Buenos Aires,,,,100;;;;;;;;
-CT PILAR - EPEC,,Thermal power plant, 1.055.603 ,Industrial point source,,Cï¿½rdoba,,,,466;;;;;;;;
-CT PILAR BS AS- PAMPA ENERGï¿½A,,Thermal power plant, 187.528 ,Industrial point source,,Buenos Aires,,,,100;;;;;;;;
-CT PIRANE - SULLAIR,,Thermal power plant, 10.675 ,Industrial point source,,Formosa,,,,16;;;;;;;;
-CT PRESIDENCIA ROCA,,Thermal power plant, 1.276 ,Industrial point source,,Chaco,,,,6;;;;;;;;
-CT RAFAELA - SECCO,,Thermal power plant, 7.300 ,Industrial point source,,Santa Fe,,,,19;;;;;;;;
-CT REALICO - SECCO,,Thermal power plant, 6.721 ,Industrial point source,,La Pampa,,,,24;;;;;;;;
-CT RENOVA - ALBANESI ENERGIA,,Thermal power plant, 457.321 ,Industrial point source,,Santa Fe,,,,172;;;;;;;;
-CT RIO TERCERO II - SoENERGY,,Thermal power plant, 30.138 ,Industrial point source,,Cï¿½rdoba,,,,60;;;;;;;;
-CT ROCA SA,,Thermal power plant, 502.028 ,Industrial point source,,RÃ­o Negro,,,,193;;;;;;;;
-CT RUFINO Sta Fe - ENARSA,,Thermal power plant, 8.965 ,Industrial point source,,Santa Fe,,,,32;;;;;;;;
-CT SAENZ PEï¿½A - APR ENERGY,,Thermal power plant, 3.654 ,Industrial point source,,Chaco,,,,20;;;;;;;;
-CT SAENZ PEï¿½A II- AGGREKO,,Thermal power plant, 4.626 ,Industrial point source,,Chaco,,,,15;;;;;;;;
-CT SALTO 2 - SoENERGY,,Thermal power plant, 103.648 ,Industrial point source,,Buenos Aires,,,,63;;;;;;;;
-CT SAN MARTIN Chaco,,Thermal power plant, 1.320 ,Industrial point source,,Chaco,,,,15;;;;;;;;
-CT SAN PEDRO - CIERRE CC,,Thermal power plant, 33.804 ,Industrial point source,,Buenos Aires,,,,50;;;;;;;;
-CT SAN PEDRO - SPI ENERGY SA,,Thermal power plant, 46.087 ,Industrial point source,,Buenos Aires,,,,108;;;;;;;;
-CT SAN SALVADOR E.Rios -ENARSA,,Thermal power plant, 1.815 ,Industrial point source,,Entre RÃ­os,,,,11;;;;;;;;
-CT SAN VICENTE BsAs - ENARSA,,Thermal power plant, 4.595 ,Industrial point source,,Buenos Aires,,,,28;;;;;;;;
-CT SANTA ROSA -TURBODISEL,,Thermal power plant, 1.988 ,Industrial point source,,Corrientes,,,,7;;;;;;;;
-CT TEREVINTOS - SECCO,,Thermal power plant, 2.652 ,Industrial point source,,Catamarca,,,,8;;;;;;;;
-CT TINOGASTA - SULLAIR,,Thermal power plant, 4.169 ,Industrial point source,,Catamarca,,,,15;;;;;;;;
-CT VENADO TUERTO - SECCO,,Thermal power plant, 7.617 ,Industrial point source,,Santa Fe,,,,19;;;;;;;;
-CT VIALE - AGGREKO,,Thermal power plant, 4.529 ,Industrial point source,,Entre RÃ­os,,,,10;;;;;;;;
-CT VILLA ANGELA - AGGREKO,,Thermal power plant, 4.977 ,Industrial point source,,Chaco,,,,15;;;;;;;;
-CT VILLA GESELL-CATLANT.,,Thermal power plant, 333.196 ,Industrial point source,,Buenos Aires,,,,80;;;;;;;;
-CT VILLA MARIA CIERRE CC-UENSA,,Thermal power plant, 630.749 ,Industrial point source,,Cï¿½rdoba,,,,105;;;;;;;;
-CT VILLA OCAMPO - SECCO,,Thermal power plant, 32.945 ,Industrial point source,,Santa Fe,,,,50;;;;;;;;
-CT VUELTA DE OBLIGADO,,Thermal power plant, 1.829.953 ,Industrial point source,,Santa Fe,,,,847;;;;;;;;
-CT ZAPPALORTO - APR ENERGY,,Thermal power plant, 15.249 ,Industrial point source,,Buenos Aires,,,,109;;;;;;;;
-EDECAT GENERACION,,Thermal power plant, 397 ,Industrial point source,,Catamarca,,,,5;;;;;;;;
-EDELAR GENERACION,,Thermal power plant, 18.733 ,Industrial point source,,La Rioja,,,,19;;;;;;;;
-EDEN GENERACION,,Thermal power plant, 1.627 ,Industrial point source,,Buenos Aires,,,,28;;;;;;;;
-ELECTROPATAGONIA-C.RIV-C.COMB.,,Thermal power plant, 15.137 ,Industrial point source,,Chubut,,,,63;;;;;;;;
-EMP.DIS.S.ESTERO GENERACION,,Thermal power plant, 4.901 ,Industrial point source,,Santiago del Estero,,,,6;;;;;;;;
-EMSA GENERACION,,Thermal power plant, 10.472 ,Industrial point source,,Misiones,,,,33;;;;;;;;
-ENDESA COSTANERA SA,,Thermal power plant, 2.518.331 ,Industrial point source,,Buenos Aires,,,,2.304;;;;;;;;
-ENERGIA DEL SUR S.A.,,Thermal power plant, 226.761 ,Industrial point source,,Chubut,,,,125;;;;;;;;
-EPEC GENERACION,,Thermal power plant, 15.814 ,Industrial point source,,Cï¿½rdoba,,,,275;;;;;;;;
-GEN.MEDITERRANEA (CONT.PLUS),,Thermal power plant, 36.744 ,Industrial point source,,Cï¿½rdoba,,,,120;;;;;;;;
-GEN.MEDITERRANEA GRUPO 5,,Thermal power plant, 27.675 ,Industrial point source,,Cï¿½rdoba,,,,60;;;;;;;;
-GENELBA - PETROBRAS,,Thermal power plant, 1.898.589 ,Industrial point source,,Buenos Aires,,,,684;;;;;;;;
-GENELBA - RES.287,,Thermal power plant, 1.396.334 ,Industrial point source,,Buenos Aires,,,,381;;;;;;;;
-GENERACION FRIAS S.A.,,Thermal power plant, 15.755 ,Industrial point source,,Santiago del Estero,,,,60;;;;;;;;
-GENERACION INDEPENDENCIA S.A.,,Thermal power plant, 28.961 ,Industrial point source,,TucumÃ¡n,,,,120;;;;;;;;
-GENERACION LA BANDA S.A.,,Thermal power plant, 2.514 ,Industrial point source,,Santiago del Estero,,,,26;;;;;;;;
-GENERACION MEDITERRANEA,,Thermal power plant, 6.470 ,Industrial point source,,Cï¿½rdoba,,,,68;;;;;;;;
-GENERACION MEDITERRANEA 220,,Thermal power plant, 31.381 ,Industrial point source,,Cï¿½rdoba,,,,95;;;;;;;;
-GENERACION RIOJANA SA,,Thermal power plant, 13.132 ,Industrial point source,,La Rioja,,,,88;;;;;;;;
-GENERADORA CORDOBA S.A.,,Thermal power plant, 1.537 ,Industrial point source,,Cï¿½rdoba,,,,26;;;;;;;;
-GENERADORA ELEC.TUCUMAN SA,,Thermal power plant, 9.198 ,Industrial point source,,TucumÃ¡n,,,,232;;;;;;;;
-HIDROTERMICA SAN JUAN,,Thermal power plant, 6.068 ,Industrial point source,,San Juan,,,,30;;;;;;;;
-LA PLATA COGENERACION SA,,Thermal power plant, 339.665 ,Industrial point source,,Buenos Aires,,,,128;;;;;;;;
-LEDESMA SAAI,,Thermal power plant, 7.544 ,Industrial point source,,Jujuy,,,,;;;;;;;;
-LUJAN DE CUYO COGENERAC.PUERTO,,Thermal power plant, 265.976 ,Industrial point source,,Mendoza,,,,95;;;;;;;;
-MOLINOS AGRO AG.(Ex.Mol Rio P),,Thermal power plant, 222 ,Industrial point source,,Santa Fe,,,,;;;;;;;;
-MOTOGENERADORES COSTANERA,,Thermal power plant, 47.985 ,Industrial point source,,Buenos Aires,,,,36;;;;;;;;
-NIDERA SAFORCADA-Junin,,Thermal power plant, 20 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-PAMPA ENERGIA SA,,Thermal power plant, 78.724 ,Industrial point source,,Salta,,,,295;;;;;;;;
-REFINERIA LA PLATA AUTOG,,Thermal power plant, 10.998 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-SHELL CAPSA PTA. DOCK SUD,,Thermal power plant, 25.501 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-SIDERAR PTA. IND. SAN NICOLAS,,Thermal power plant, 31 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-SINOPEC Arg. - El Huemul,,Thermal power plant, 29.407 ,Industrial point source,,Santa Cruz,,,,;;;;;;;;
-SINOPEC Arg. - Meseta Espinosa,,Thermal power plant, 13.683 ,Industrial point source,,Santa Cruz,,,,;;;;;;;;
-SOLALBAN ENERGIA SA,,Thermal power plant, 42.405 ,Industrial point source,,Buenos Aires,,,,;;;;;;;;
-TERMINAL 6 COGENERACION PUERTO,,Thermal power plant, 209.988 ,Industrial point source,,Santa Fe,,,,380;;;;;;;;
-TERMOELE. JOSE SAN MARTIN S.A,,Thermal power plant, 2.045.982 ,Industrial point source,,Santa Fe,,,,865;;;;;;;;
-TERMOELECTRICA GUILLERMO BROWN,,Thermal power plant, 1.021.465 ,Industrial point source,,Buenos Aires,,,,583;;;;;;;;
-TERMOELECTRICA M.BELGRANO S.A.,,Thermal power plant, 2.150.020 ,Industrial point source,,Buenos Aires,,,,873;;;;;;;;
-YAC.ENTRE LOMAS AUTOGENERADOR,,Thermal power plant, 27.680 ,Industrial point source,,RÃ­o Negro,,,,;;;;;;;;
-YPF Autogenerador Pza. Huincul,,Thermal power plant, 161.867 ,Industrial point source,,Neuquï¿½n,,,,;;;;;;;;
-YPF CT MANANTIALES BEHR II AG,,Thermal power plant, 8.767 ,Industrial point source,,Chubut,,,,;;;;;;;;
-YPF EL TREBOL CT MANANT. BEHR,,Thermal power plant, 6 ,Industrial point source,,Chubut,,,,;;;;;;;;
-YPF ENERGï¿½A ELECTR.ex PLUSPETG,,Thermal power plant, 1.400.041 ,Industrial point source,,TucumÃ¡n,,,,829;;;;;;;;
-YPF LA PLATA COGENERACION,,Thermal power plant, 228.277 ,Industrial point source,,Buenos Aires,,,,90;;;;;;;;
-YPF LOS PERALES AUTOG,,Thermal power plant, 68.352 ,Industrial point source,,Santa Cruz,,,,;;;;;;;;
-YPF YAC P.HERNANDEZ AUTOG,,Thermal power plant, 26 ,Industrial point source,,Neuquï¿½n,,,,;;;;;;;;
-BIOGAS CT AVELLANEDA SECCO,,Biogas Power Plant, 41.391.00 ,Biogenic point source,,SANTA FE,,,Electrical energy,6.3;;;;;;;;
-CENTRAL BIOELECTRICA R.CUARTO1,,Biogas Power Plant, 13.140.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,2.0;;;;;;;;
-C.BIOELECT.R.CUARTO1 REN2,,Biogas Power Plant, 10.249.20 ,Biogenic point source,,CORDOBA,,,Electrical energy,1.6;;;;;;;;
-C.BIOELECT.R.CUARTO2 REN1,,Biogas Power Plant, 7.884.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,1.2;;;;;;;;
-C.BIOELECT.R.CUARTO2 REN2,,Biogas Power Plant, 7.884.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,1.2;;;;;;;;
-BIOGAS CTBG CITRUSVIL-ALCOVIL,,Biogas Power Plant, 19.710.00 ,Biogenic point source,,TUCUMAN,,,Electrical energy,3.0;;;;;;;;
-BIOGAS RS CT ENSENADA SECCO,,Biogas Power Plant, 34.821.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,5.3;;;;;;;;
-CTBG GENERAL ALVEAR,,Biogas Power Plant, 6.570.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,1.0;;;;;;;;
-BIOGAS CTBG GIGENA I,,Biogas Power Plant, 7.884.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,1.2;;;;;;;;
-BIOGAS CTBG JUSTO DARACT,,Biogas Power Plant, 6.570.00 ,Biogenic point source,,SAN LUIS,,,Electrical energy,1.0;;;;;;;;
-BIOGAS CTBG PACUCA BIO ENERGï¿½A,,Biogas Power Plant, 6.570.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,1.0;;;;;;;;
-BIOGAS CTBG PERGAMINO,,Biogas Power Plant, 15.768.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,2.4;;;;;;;;
-C.T.SAN MARTIN NORTE 3A,,Biogas Power Plant, 33.507.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,5.1;;;;;;;;
-CT SAN MIGUEL NORTE III-ENARSA,,Biogas Power Plant, 75.555.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,11.5;;;;;;;;
-ENERGIA AGRO S.A.U,,Biogas Power Plant, 9.296.55 ,Biogenic point source,,SANTA FE,,,Electrical energy,1.4;;;;;;;;
-BIOGAS CTBG TIGONBU,,Biogas Power Plant, 13.140.00 ,Biogenic point source,,SAN LUIS,,,Electrical energy,2.0;;;;;;;;
-BIOGAS CTBG VILLA DEL ROS. CGY,,Biogas Power Plant, 6.570.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,1.0;;;;;;;;
-BIOGAS CTBG VENADO TUERTO,,Biogas Power Plant, 13.797.00 ,Biogenic point source,,SANTA FE,,,Electrical energy,2.1;;;;;;;;
-BIO ENERGï¿½A YANQUETRUZ S.A.,,Biogas Power Plant, 9.855.00 ,Biogenic point source,,SAN LUIS,,,Electrical energy,1.5;;;;;;;;
-BIOGAS CTBG ENRECO,,Biogas Power Plant, 13.140.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,2.0;;;;;;;;
-CTBG BIO ENERGï¿½A YANQUETRUZ II,,Biogas Power Plant, 5.256.00 ,Biogenic point source,,SAN LUIS,,,Electrical energy,0.8;;;;;;;;
-CTBG BIO. SANTA CATALINA,,Biogas Power Plant, 13.140.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,2.0;;;;;;;;
-BIOGAS CTBG AB ENERGï¿½A,,Biogas Power Plant, 13.140.00 ,Biogenic point source,,LA PAMPA,,,Electrical energy,2.0;;;;;;;;
-CT BIOMASA MM BioenergÃ­a,,Biogas Power Plant, 19.710.00 ,Biogenic point source,,MISIONES,,,Electrical energy,3.0;;;;;;;;
-CTBRS SAN MARTï¿½N NORTE III-D,,Biogas Power Plant, 33.507.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,5.1;;;;;;;;
-BIOGAS CTBG ARRE BEEF SA,,Biogas Power Plant, 9.855.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,1.5;;;;;;;;
-BIOGAS CT RESENER SA,,Biogas Power Plant, 5.256.00 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,0.8;;;;;;;;
-CTBG POLLOS SAN MATEO,,Biogas Power Plant, 15.768.00 ,Biogenic point source,,CORDOBA,,,Electrical energy,2.4;;;;;;;;
-CTBG GENERAL VILLEGAS Ren 2,,Biogas Power Plant, 8.015.40 ,Biogenic point source,,BUENOS AIRES,,,Electrical energy,1.2;;;;;;;;
-YPF Plaza Huincul,YPF SA,Methanol, 275.370 ,Industrial point source,,Neuquï¿½n,,,Methanol,411.000;;;;;;;;
-Arauco General San Martin,Arauco Argentina S.A. ,Methanol, 33.500 ,Industrial point source,,Santa Fe,,,Methanol,50.000;;;;;;;;
-La Plata Refinery,YPF SA,Refinery, 2.224.966 ,Industrial point source,,,,,,190.000;;;;;;;;
-Lujan de Cuyo Refinery,YPF SA,Refinery, 1.229.586 ,Industrial point source,,,,,,105.000;;;;;;;;
-Plaza Huincul Refinery,YPF SA,Refinery, 292.759 ,Industrial point source,,,,,,25.000;;;;;;;;
-Raizen Dock Sud,Raizen,Refinery, 1.171.034 ,Industrial point source,,,,,,100.000;;;;;;;;
-Axion Campana Refinery,PAE,Refinery, 1.171.034 ,Industrial point source,,,,,,100.000;;;;;;;;
-DAPSA,,, -   ,Industrial point source,,,,,,;;;;;;;;
-Dock Sud Refinery,,Refinery, -   ,Industrial point source,,,,,,;;;;;;;;
-REFINOR Campo Duran Refinery,,Refinery, 351.310 ,Industrial point source,,,,,,30.000;;;;;;;;
-TRAFIGURA Bahia Blanca Refinery,,Refinery, 351.310 ,Industrial point source,,,,,,30.000;;;;;;;;
-OIL Combustibles San Lorenzo Refinery,,Refinery, -   ,Industrial point source,,,,,,0;;;;;;;;
-PAMPA ENERGIA SA,,Etileno, 25.916 ,Industrial point source,Pto General San Martï¿½n,Santa Fe,,,Etileno,31.000;;;;;;;;
-PBB Polisur S.A.,,Etileno, 229.900 ,Industrial point source,Bahia Blanca,Buenos Aires,,,Etileno,275.000;;;;;;;;
-PBB Polisur S.A.,,Etileno, 355.300 ,Industrial point source,Bahia Blanca,Buenos Aires,,,Etileno,425.000;;;;;;;;
+Name,Company,Industry,CO2_emissions_t,Source_CO2_emissions,Source,City,Province,Latitude,Longitude
+Fï¿½brica de aluminio de Aluar,Aluar,Aluminium,612057.60,Industrial point source,,Puerto Madryn,Chubut,-42.636151405294,-65.102845300067
+Bunge Campana,Bunge Argentina S.A,Ammonia,27027.00,Industrial point source,,Campana,Buenos Aires,-34.093540477338,-59.004652749122
+Profertil Bahia Blanca,Profertil S.A.,Ammonia,710621.00,Industrial point source,https://rs.profertil.com.ar/,Bahia Blanca,Buenos Aires,-38.784244912389,-62.281688152983
+Austin Powder,Austin Powder,Ammonia,54600.00,Industrial point source,,El Galpï¿½n,Salta,-25.379192832399,-64.651986584188
+Bioenergï¿½a la Corona,Bioenergia La Corona S.A.,Bioethanol,24300.00,Biogenic point source,Carbio,Concepciï¿½n,Tucumï¿½n,-27.354815697666,-65.602941337606
+Bioenergï¿½as Agropecuarias S.A.,BIOENERGï¿½ASAGROPECUARIAS S.A.,Bioethanol,24750.00,Biogenic point source,Carbio,General Obligado,Santa Fe,-28.487611654481,-59.396841152866
+Ingenio Santa Rosa,Bioenergï¿½a Santa Rosa S.A.,Bioethanol,24300.00,Biogenic point source,Carbio,Monteros,Tucumï¿½n,-27.221398484002,-65.516954427435
+Ingenio Ledesma,Bio Ledesma S.A.,Bioethanol,74250.00,Biogenic point source,Carbio,Libertador General San Martin,Jujuy,-23.824367770667,-64.788009742716
+Bio San Isidro,Bio San Isidro S.A.,Bioethanol,10125.00,Biogenic point source,Carbio,Campo Santo,Salta,-24.681076499462,-65.098028752545
+Biotrinidad,Biotrinidad S.A.,Bioethanol,21600.00,Biogenic point source,Carbio,San Miguel de Tucumï¿½n,Tucumï¿½n,-26.828263171350,-65.208843723293
+Compaï¿½ï¿½a Bioenergï¿½tica La Florida,Compaï¿½ï¿½a Bioenergï¿½tica La Florida S.A.,Bioethanol,93750.00,Biogenic point source,Carbio,La Florida,Tucumï¿½n,-26.817311067583,-65.085387664602
+Energï¿½as Ecolï¿½gicas de Tucumï¿½n,Energï¿½as Ecolï¿½gicas de Tucumï¿½n - Grupo Colombres,Bioethanol,24750.00,Biogenic point source,Carbio,Aguilares,Tucumï¿½n,-27.457104897341,-65.609855130089
+Fronterita Energï¿½a S.A.,Fronterita Energia S.A.,Bioethanol,24000.00,Biogenic point source,Carbio,Juan XXIII,Tucumï¿½n,-27.023571204313,-65.301579272432
+Ingenio Rï¿½o Grande,Rio Grande Energia S.A.,Bioethanol,16200.00,Biogenic point source,Carbio,La Mendieta,Jujuy,-24.312587422242,-64.968369396614
+ACA,Aca Bio Cooperativa Ltda.,Bioethanol,93750.00,Biogenic point source,Carbio,Villa Marï¿½a,Cï¿½rdoba,-32.415971563824,-63.161624819303
+Bio IV,Bioetanol Rio Cuarto A.A.,Bioethanol,75000.00,Biogenic point source,Carbio,Rï¿½o Cuarto,Cï¿½rdoba,-33.179986705747,-64.383294247291
+Diaser,Derivados San Luis,Bioethanol,69300.00,Biogenic point source,Carbio,San Luis,San Luis,-33.325633327674,-66.363723848115
+Maï¿½z Energï¿½a,MAï¿½Z ENERGï¿½A S.A.,Bioethanol,44100.00,Biogenic point source,Carbio,Ciudad de Cï¿½rdoba,Cï¿½rdoba,-31.371914251034,-64.181859290108
+Promaï¿½z,Promaiz S.A.,Bioethanol,165000.00,Biogenic point source,Carbio,Alejandro Roca,Cï¿½rdoba,-33.365375379094,-63.717121341109
+Vicentin,Vicentin S.A.I.C.,Bioethanol,86250.00,Biogenic point source,Carbio,Avellaneda,Santa Fe,-31.620994924442,-60.714993309701
+Seaboard Energï¿½a Renovables y Alimentos,Seaboard Energï¿½a Renovables y Alimentos,Bioethanol,185625.00,Biogenic point source,Carbio,Orï¿½n,Salta,-23.202240802675,-64.296167721715
+Bioenergï¿½tica Leales S.A.,Bioenergï¿½tica Leales S.A.,Bioethanol,31500.00,Biogenic point source,Carbio,Cevil Pozo,Tucumï¿½n,-26.844247714198,-65.142648974133
+Bio Atar S.A.,Bio Atar S.A.,Bioethanol,49500.00,Biogenic point source,Carbio,Alderetes,Tucumï¿½n,-26.834699386014,-65.152794845918
+Arauco Argentina S.A. ,Arauco Argentina S.A. ,Cellulose and paper,875000.00,Industrial point source,,Puerto Esperanza,Misiones,-25.975739607496,-54.633769337301
+Celulosa Argentina S.A.,Celulosa Argentina S.A.,Cellulose and paper,416400.00,Industrial point source,,Capitan Bermudez,Santa Fe,-32.736461684818,-60.702180344178
+Papel Prensa S.A.I.C.F.,Papel Prensa S.A.I.C.F.,Cellulose and paper,421762.50,Industrial point source,,San Pedro,Buenos Aires,-33.721640302338,-59.627749242683
+Papel Misionero,Papel Misionero,Cellulose and paper,272137.50,Industrial point source,,Puerto Leoni,Misiones,-26.935618555667,-55.119804415065
+Papelera del NOA S.A.,Papelera del NOA S.A.,Cellulose and paper,85425.00,Industrial point source,,Rï¿½o Blanco,Jujuy,-24.231958460070,-65.230145288909
+Fï¿½brica de Papel Ledesma,Fï¿½brica de Papel Ledesma,Cellulose and paper,212250.00,Industrial point source,,Libertador General San Martï¿½n,Jujuy,-23.827656844375,-64.795513340677
+Fana Quï¿½mica SA,Fana Quï¿½mica SA,Cellulose and paper,4000.00,Industrial point source,,San Josï¿½,Entre Rï¿½os,,
+Fï¿½brica L'Amalï¿½,Loma Negra,Cement,2442352.94,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Olavarrï¿½a,Buenos Aires,-37.036077350579,-60.298102492056
+Fï¿½brica Olavarrï¿½a,Loma Negra,Cement,1144852.94,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Olavarrï¿½a,Buenos Aires,-36.937255440162,-60.164846338630
+Fï¿½brica Sierras Bayas,Loma Negra,Cement,,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Sierras Bayas,Buenos Aires,-36.938389904003,-60.165031183490
+Fï¿½brica Barker,Loma Negra,Cement,,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Benito Juarez,Buenos Aires,-37.682835584301,-59.388828000000
+Planta Ramallo,Loma Negra,Cement,,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Ramallo,Buenos Aires,-33.380229777465,-60.153251169315
+Fï¿½brica Catamarca,Loma Negra,Cement,1373823.53,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,El Alto,Catamarca,-28.466200759561,-65.214914338630
+Fï¿½brica San Juan,Loma Negra,Cement,,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Rivadavia,San Juan,-31.547171537679,-68.674304830685
+Fï¿½brica Zapala,Loma Negra,Cement,305294.12,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Zapala,Neusaquï¿½n,-38.896618405611,-70.037730846574
+Fï¿½brica LomaSer,Loma Negra,Cement,,Industrial point source,https://www.lomanegra.com/nuestras-unidades/,Vicente Casares,Buenos Aires,-34.957976832627,-58.642952483835
+Planta Holcim Capdeville Mendoza,HOLCIM,Cement,534264.71,Industrial point source,,Las Heras,Mendoza,-32.740610196833,-68.837219638630
+Planta Holcim Malagueï¿½o,HOLCIM,Cement,2366029.41,Industrial point source,,Malagueï¿½o,Cï¿½rdoba,-31.477144950888,-64.358355119461
+Planta Holcim Puesto Viejo,HOLCIM,Cement,763235.29,Industrial point source,,Puesto Viejo,Jujuy,-24.490383251894,-64.957081198592
+Planta Holcim Campana,HOLCIM,Cement,,Industrial point source,,Campana,Buenos Aires,-34.145607191599,-59.020346338249
+Planta Campana,Cementos Avellaneda,Cement,,Industrial point source,,Campana,Buenos Aires,-34.169785456995,-59.001845830862
+San Jacinto,Cementos Avellaneda,Cement,1831764.71,Industrial point source,,Olavarrï¿½a,Buenos Aires,,
+El Grande,Cementos Avellaneda,Cement,839558.82,Industrial point source,,La Calera,San Luis,,
+Fï¿½brica Comodoro Rivadavia,PCR,Cement,,Industrial point source,,Comodoro Rivadavia,Chubut,-45.802144551281,-67.423681602394
+Fï¿½brica Pico Truncado,PCR,Cement,457941.18,Industrial point source,,Pico Truncado,Santa Cruz,-46.787138248615,-67.929544215843
+Planta siderï¿½rgica Ternium Siderar,Ternium Argentina S.A.,Steel,5286272.00,Industrial point source,https://www.gem.wiki/Planta_sider%C3%BArgica_Ternium_Siderar,Ramallo/San Nicolas,Buenos Aires,-33.322604930395,-60.159454163788
+,Ternium Argentina S.A.,Steel,,Industrial point source,,Ensenada,Buenos Aires,-34.806065837331,-57.929249968328
+,Ternium Argentina S.A.,Steel,,Industrial point source,,Haedo,Buenos Aires,-34.582627072485,-58.631463214818
+,Ternium Argentina S.A.,Steel,,Industrial point source,,Canning,Buenos Aires,-34.799426580998,-58.516106776976
+,Ternium Argentina S.A.,Steel,,Industrial point source,,Florencio Varela,Buenos Aires,-34.727223181628,-58.181023790864
+,Ternium Argentina S.A.,Steel,,Industrial point source,,Rosario,Santa Fe,-32.889170966540,-60.709182306915
+Planta siderï¿½rgica TenarisSiderca,Ternaris S.A. / Siderca S.A.I.C.,Steel,650000.00,Industrial point source,https://www.gem.wiki/Planta_sider%C3%BArgica_TenarisSiderca,Campana,Buenos Aires,-34.152554000000,-58.977388000000
+,Ternaris S.A. / Siderca S.A.I.C.,Steel,,Industrial point source,,Valentin Alsina,Buenos Aires,-34.662881539407,-58.406812550802
+,Ternaris S.A. / Siderca S.A.I.C.,Steel,,Industrial point source,,Villa Constituciï¿½n,Santa Fe,-33.239811665751,-60.317617387344
+,Ternaris S.A. / Siderca S.A.I.C.,Steel,,Industrial point source,,Villa Mercedes,San Luis,-34.692356244145,-58.541869973801
+Planta siderï¿½rgia ArcelorMittal Acindar,Acindar Industria Argentina de Aceros S.A.,Steel,1015000.00,Industrial point source,https://www.gem.wiki/Planta_sider%C3%BArgica_ArcelorMittal_Acindar,Villa Constituciï¿½n,Santa Fe,-33.256309000000,-60.292472000000
+,Acindar Industria Argentina de Aceros S.A.,Steel,,Industrial point source,,Rosario,Santa Fe,-32.970771234367,-60.722063773338
+,Acindar Industria Argentina de Aceros S.A.,Steel,,Industrial point source,,La Tablada,Buenos Aires,,
+,Acindar Industria Argentina de Aceros S.A.,Steel,,Industrial point source,,San Nicolas,Buenos Aires,-33.347007971105,-60.258632357077
+,Acindar Industria Argentina de Aceros S.A.,Steel,,Industrial point source,,Villa Mercedes,San Luis,-33.720877342117,-65.464442052362
+Planta Siderurgica ACERBRAG,Acerbrag S.A. (grupo brasileï¿½o Votorantim),Steel,,Industrial point source,,Bragado,Buenos Aires,-35.137117891147,-60.452089199364
+Aceros Zapla,Aceros Zapla S.A.,Steel,,Industrial point source,http://www.aceroszapla.com.ar/empresa.php,Palpalï¿½,Jujuy,-24.246098800446,-65.198160832031
+Planta siderï¿½rgica Gerdau Sipar Pï¿½rez,Gerdau SA,Steel,103031.00,Industrial point source,https://www.gem.wiki/Planta_sider%C3%BArgica_Gerdau_Sipar_P%C3%A9rez,Pï¿½rez,Santa Fe,-32.991233600000,-60.758873300000
+ALUAR SA - GENERADOR,Aluar,Thermal power plant,210445.00,Industrial point source,,Puerto Madryn,Chubut,-42.743884803272,-65.048399271627
+ARCOR MARIO SEVESO ARROYITO,,Thermal power plant,93267.00,Industrial point source,,,Cï¿½rdoba,,
+C. TERMICAS MENDOZA PLUS,,Thermal power plant,788702.00,Industrial point source,,,Mendoza,,
+C. TERMICAS MENDOZA SA,,Thermal power plant,297745.00,Industrial point source,,,Mendoza,,
+C.COSTA ATLANTICA,,Thermal power plant,509899.00,Industrial point source,,,Buenos Aires,,
+C.T. AES PARANA,,Thermal power plant,1717893.00,Industrial point source,,,Buenos Aires,,
+C.T. AGUA DEL CAJON,,Thermal power plant,1108638.00,Industrial point source,,Neuquï¿½n,Neuquï¿½n,-38.935318779054,-68.357460746867
+C.T. ALMIRANTE BROWN,Excell Power S.R.L.,Thermal power plant,7094.00,Industrial point source,,Burazco,Buenos Aires,-34.837660337743,-58.405685047387
+C.T. LOMA DE LA LATA S.A.,C.T. LOMA DE LA LATA S.A.,Thermal power plant,1779653.00,Industrial point source,,Neuquï¿½n,Neuquï¿½n,-38.511789741886,-68.606378253807
+C.T. PATAGONICAS SA,CENTRALES TERMICAS PATAGONICAS S.A.,Thermal power plant,27712.00,Industrial point source,,Comodoro Rivadavia,Chubut,-45.813906117753,-67.444277117473
+C.T. SALTA (TERMOANDES),AES,Thermal power plant,1004183.00,Industrial point source,,Cobos,Salta,-24.742711706449,-65.051514960853
+C.TERMICA ALTO VALLE,,Thermal power plant,198282.00,Industrial point source,,Neuquï¿½n,Neuquï¿½n,-38.951615939006,-68.021744873854
+C.TERMICA GUEMES S.A.,,Thermal power plant,139062.00,Industrial point source,,,Salta,,
+C.TERMICA SAN NICOLAS,AES,Thermal power plant,2158549.00,Industrial point source,,San Nicolï¿½s de Los Arroyos,Buenos Aires,-33.358090736896,-60.174761787322
+C.TERMICA SORRENTO,,Thermal power plant,20821.00,Industrial point source,,,Santa Fe,,
+CAPEX S.A. AUTOGENERADOR,,Thermal power plant,1075683.00,Industrial point source,,,Neuquï¿½n,,
+CENTRAL DIQUE S.A.,CENTRAL DIQUE S.A.,Thermal power plant,478.00,Industrial point source,,Ensenada,Buenos Aires,-34.889873579663,-57.933354360518
+CENTRAL DOCK SUD,Central Dock Sud,Thermal power plant,2101890.00,Industrial point source,,Dock Sud,Buenos Aires,-34.653278614482,-58.343520587515
+CENTRAL PIEDRA BUENA S.A.,Pampa Energï¿½a,Thermal power plant,243763.00,Industrial point source,,Ingeniero White,Buenos Aires,-38.784825227476,-62.256072711436
+CENTRAL PUERTO SA,Central Puerto S.A.,Thermal power plant,3481800.00,Industrial point source,,Lujï¿½n de Cuyo,Mendoza,-33.054331672917,-68.980717231873
+CENTRAL Tï¿½RMICA LOMITA AUTOG.,,Thermal power plant,59300.00,Industrial point source,,,Neuquï¿½n,,
+CENTRAL TERMICA PIQUIRENDA,Pampa Energï¿½a,Thermal power plant,25963.00,Industrial point source,,Piquirenda,Salta,-22.350046037543,-63.767005329713
+COOP. MNO. MORENO BS. AS.GENER,,Thermal power plant,668.00,Industrial point source,,,Buenos Aires,,
+CT 9 de JULIO C Cost ATLANTICA,Centrales de la Costa Atlï¿½ntica S.A.,Thermal power plant,221258.00,Industrial point source,,Mar del Plata,Buenos Aires,-38.049493905321,-57.545535829713
+CT ACONCAGUA ENERGï¿½A AUTOGENER,,Thermal power plant,17.00,Industrial point source,,,Mendoza,,
+CT ALEM - AGGREKO,,Thermal power plant,35577.00,Industrial point source,,,Misiones,,
+CT ANCHORIS - METHAX,EMESA,Thermal power plant,50825.00,Industrial point source,,Tupungato,Mendoza,-33.313356395358,-68.891511462424
+CT Aï¿½ATUYA - SULLAIR,,Thermal power plant,11557.00,Industrial point source,,Aï¿½atuya,Santiago del Estero,-28.445841312266,-62.855603190138
+CT Aï¿½ATUYA II - SULLAIR,,Thermal power plant,4840.00,Industrial point source,,Aï¿½atuya,Santiago del Estero,-28.445841312266,-62.855603190138
+CT ARISTOBU.DEL VALLE-SOENERGY,,Thermal power plant,24495.00,Industrial point source,,Aristï¿½bulo del Valle,Misiones,-27.091237692973,-54.863442406587
+CT ARRECIFES-AGGREKO,,Thermal power plant,8081.00,Industrial point source,,,Buenos Aires,,
+CT BANDERA SgoEstero - ENARSA,,Thermal power plant,4539.00,Industrial point source,,,Santiago del Estero,,
+CT BARILOCHE,,Thermal power plant,1392.00,Industrial point source,,,Rï¿½o Negro,,
+CT BARKER CIERRE CC,,Thermal power plant,636102.00,Industrial point source,,Benito Juï¿½rez,Buenos Aires,-37.548588257877,-59.450665699447
+CT BARRAGAN - ENARSA,ENARSA,Thermal power plant,319657.00,Industrial point source,,Ensenada,Buenos Aires,-34.859657508680,-57.955774029837
+CT BARRANQUERAS Chaco,,Thermal power plant,3373.00,Industrial point source,,,Chaco,,
+CT BELL VILLE - SULLAIR,SULLAIR ARGENTINA S.A.,Thermal power plant,6459.00,Industrial point source,,Bell Ville,Cï¿½rdoba,-32.610395618647,-62.685832245260
+CT BRACHO CIERRE CC- Y-GEN S.A,,Thermal power plant,1242878.00,Industrial point source,,,Tucumï¿½n,,
+CT BRAGADO - EMGASUD,,Thermal power plant,7559.00,Industrial point source,,,Buenos Aires,,
+CT BRAGADO 2 - GENNEIA,Genneia,Thermal power plant,79138.00,Industrial point source,,Bragado,Buenos Aires,-35.136513955612,-60.432414256814
+CT BRAGADO 3 - GENNEIA,Genneia,Thermal power plant,92453.00,Industrial point source,,Bragado,Buenos Aires,-35.136513955612,-60.432414256814
+CT BRIGADIER LOPEZ,Central Puerto S.A.,Thermal power plant,64572.00,Industrial point source,,Santa Fe,Santa Fe,-31.712841542501,-60.779300214608
+CT CAIMANCITO -SULLAIR,,Thermal power plant,62571.00,Industrial point source,,Libertador Gral San Martï¿½n,Jujuy,-23.732268910377,-64.613993172527
+CT CAï¿½ADA DE GOMEZ - SECCO,Secco,Thermal power plant,105744.00,Industrial point source,,Caï¿½ada de Gï¿½mez,Santa Fe,-32.781872219229,-61.418433516418
+CT CAPITAN SARMIENTO - SECCO,Secco,Thermal power plant,10205.00,Industrial point source,,,Buenos Aires,,
+CT CASTELLI - AGGREKO,,Thermal power plant,9440.00,Industrial point source,,,Chaco,,
+CT CATAMARCA - SECCO,,Thermal power plant,10013.00,Industrial point source,,,Catamarca,,
+CT CERES - SECCO,,Thermal power plant,3924.00,Industrial point source,,,Santa Fe,,
+CT CHARATA - SULLAIR,,Thermal power plant,7334.00,Industrial point source,,,Chaco,,
+CT CHILECITO - SECCO,Secco,Thermal power plant,4810.00,Industrial point source,,Chilecito,La Rioja,-29.157337009257,-67.507466658118
+CT CIPOLLETI - AGGREKO,,Thermal power plant,501.00,Industrial point source,,,Rï¿½o Negro,,
+CT COLON BS.AS - SULLAIR,,Thermal power plant,5222.00,Industrial point source,,Colï¿½n,Buenos Aires,-33.732012128137,-61.097098943922
+CT CORRIENTES - AGGREKO,,Thermal power plant,7204.00,Industrial point source,,,Corrientes,,
+CT EZEIZA ETAPA1 G MEDITERRANE,,Thermal power plant,56618.00,Industrial point source,,Carlos Spegazzini,Buenos Aires,-34.902743617093,-58.616923331727
+CT EZEIZA ETAPA2 G MEDITERRANE,,Thermal power plant,32456.00,Industrial point source,,Carlos Spegazzini,Buenos Aires,-34.902743617093,-58.616923331727
+CT FORMOSA - APR ENERGY,,Thermal power plant,5006.00,Industrial point source,,,Formosa,,
+CT GENERAL ROJO CIERRE CC,,Thermal power plant,619957.00,Industrial point source,,San Nicolï¿½s de Los Arroyos,Buenos Aires,-33.455414780766,-60.280902224428
+CT GOYA - SECCO,,Thermal power plant,4754.00,Industrial point source,,Goya,Corrientes,-29.158216405042,-59.273457149072
+CT GRAL. VILLEGAS - AGGREKO,,Thermal power plant,14209.00,Industrial point source,,,Buenos Aires,,
+CT INDEPEND. ETAPA1 G MEDITERR,Grupo Albanesi,Thermal power plant,10088.00,Industrial point source,,San Miguel de Tucumï¿½n,Tucumï¿½n,-26.866965997646,-65.221828614766
+CT INDEPEND. ETAPA2 G MEDITERR,Grupo Albanesi,Thermal power plant,9463.00,Industrial point source,,San Miguel de Tucumï¿½n,Tucumï¿½n,-26.866965997646,-65.221828614766
+CT ING JUAREZ - SECCO,,Thermal power plant,2692.00,Industrial point source,,Ingeniero Juï¿½rez,Formosa,-23.909016867446,-61.831502449431
+CT INTA CATAMARCA - SECCO,,Thermal power plant,3559.00,Industrial point source,,,Catamarca,,
+CT ISLA VERDE - AGGREKO,,Thermal power plant,7670.00,Industrial point source,,,Cï¿½rdoba,,
+CT ITATI - TURBODISEL,,Thermal power plant,1498.00,Industrial point source,,,Corrientes,,
+CT JUNIN,,Thermal power plant,14479.00,Industrial point source,,,Buenos Aires,,
+CT LA PAZ Entre Rios - ENARSA,,Thermal power plant,2674.00,Industrial point source,,,Entre Rï¿½os,,
+CT LA PLATA - SULLAIR,,Thermal power plant,14048.00,Industrial point source,,San Carlos,Buenos Aires,-34.933866404668,-58.016400581537
+CT LA RIOJA - SECCO,,Thermal power plant,7688.00,Industrial point source,,,La Rioja,,
+CT LA RIOJA SUR- SECCO,,Thermal power plant,3506.00,Industrial point source,,,La Rioja,,
+CT LAGUNA BLANCA - SECCO,,Thermal power plant,4457.00,Industrial point source,,Laguna Blanca,Formosa,-25.126950545234,-58.259150732006
+CT LAS ARMAS II - EMGASUD,,Thermal power plant,606.00,Industrial point source,,,#NV,,
+CT LAS PALMAS 2 - ARAUCARIA,,Thermal power plant,100667.00,Industrial point source,,,Buenos Aires,,
+CT LAS PALMAS -TURBODISEL,,Thermal power plant,543.00,Industrial point source,,,Chaco,,
+CT LIBERTADOR GSM - SULLAIR,,Thermal power plant,3331.00,Industrial point source,,,Jujuy,,
+CT LINCOLN,,Thermal power plant,5898.00,Industrial point source,,Lincoln,Buenos Aires,-34.857167311038,-61.520703831684
+CT LOBOS BS.AS - SULLAIR,,Thermal power plant,23328.00,Industrial point source,,,Buenos Aires,,
+CT LOMA CAMPANA 1 -YPF,,Thermal power plant,93992.00,Industrial point source,,,Neuquï¿½n,,
+CT LOMA CAMPANA 2 -Y-GEN ELECT,,Thermal power plant,164946.00,Industrial point source,,,Neuquï¿½n,,
+CT LOMA DE LA LATA II(NEUQEUN),,Thermal power plant,228867.00,Industrial point source,,,Neuquï¿½n,,
+CT LUJAN II - ARAUCARIA ENERGY,,Thermal power plant,68363.00,Industrial point source,,,Buenos Aires,,
+CT MAGDALENA - APR ENERGY,,Thermal power plant,4433.00,Industrial point source,,,Buenos Aires,,
+CT MATHEU II - APR ENERGY,,Thermal power plant,1875.00,Industrial point source,,,Buenos Aires,,
+CT MIRAMAR I - ENERGYST,,Thermal power plant,23587.00,Industrial point source,,,Buenos Aires,,
+CT ORAN - SECCO,,Thermal power plant,3717.00,Industrial point source,,,Salta,,
+CT PARQUE INDUSTR.CATAM-SECCO,,Thermal power plant,8843.00,Industrial point source,,,Catamarca,,
+CT PASO LA PATRIA-TURBODISEL,,Thermal power plant,1189.00,Industrial point source,,,Corrientes,,
+CT PEREZ - SECCO,,Thermal power plant,109776.00,Industrial point source,,,Santa Fe,,
+CT PIEDRABUENA MG(L.LATA),,Thermal power plant,173945.00,Industrial point source,,,Buenos Aires,,
+CT PILAR - EPEC,,Thermal power plant,1055603.00,Industrial point source,,,Cï¿½rdoba,,
+CT PILAR BS AS- PAMPA ENERGï¿½A,,Thermal power plant,187528.00,Industrial point source,,,Buenos Aires,,
+CT PIRANE - SULLAIR,,Thermal power plant,10675.00,Industrial point source,,,Formosa,,
+CT PRESIDENCIA ROCA,,Thermal power plant,1276.00,Industrial point source,,,Chaco,,
+CT RAFAELA - SECCO,,Thermal power plant,7300.00,Industrial point source,,,Santa Fe,,
+CT REALICO - SECCO,,Thermal power plant,6721.00,Industrial point source,,,La Pampa,,
+CT RENOVA - ALBANESI ENERGIA,,Thermal power plant,457321.00,Industrial point source,,,Santa Fe,,
+CT RIO TERCERO II - SoENERGY,,Thermal power plant,30138.00,Industrial point source,,,Cï¿½rdoba,,
+CT ROCA SA,,Thermal power plant,502028.00,Industrial point source,,,Rï¿½o Negro,,
+CT RUFINO Sta Fe - ENARSA,,Thermal power plant,8965.00,Industrial point source,,,Santa Fe,,
+CT SAENZ PEï¿½A - APR ENERGY,,Thermal power plant,3654.00,Industrial point source,,,Chaco,,
+CT SAENZ PEï¿½A II- AGGREKO,,Thermal power plant,4626.00,Industrial point source,,,Chaco,,
+CT SALTO 2 - SoENERGY,,Thermal power plant,103648.00,Industrial point source,,,Buenos Aires,,
+CT SAN MARTIN Chaco,,Thermal power plant,1320.00,Industrial point source,,,Chaco,,
+CT SAN PEDRO - CIERRE CC,,Thermal power plant,33804.00,Industrial point source,,,Buenos Aires,,
+CT SAN PEDRO - SPI ENERGY SA,,Thermal power plant,46087.00,Industrial point source,,,Buenos Aires,,
+CT SAN SALVADOR E.Rios -ENARSA,,Thermal power plant,1815.00,Industrial point source,,,Entre Rï¿½os,,
+CT SAN VICENTE BsAs - ENARSA,,Thermal power plant,4595.00,Industrial point source,,,Buenos Aires,,
+CT SANTA ROSA -TURBODISEL,,Thermal power plant,1988.00,Industrial point source,,,Corrientes,,
+CT TEREVINTOS - SECCO,,Thermal power plant,2652.00,Industrial point source,,,Catamarca,,
+CT TINOGASTA - SULLAIR,,Thermal power plant,4169.00,Industrial point source,,,Catamarca,,
+CT VENADO TUERTO - SECCO,,Thermal power plant,7617.00,Industrial point source,,,Santa Fe,,
+CT VIALE - AGGREKO,,Thermal power plant,4529.00,Industrial point source,,,Entre Rï¿½os,,
+CT VILLA ANGELA - AGGREKO,,Thermal power plant,4977.00,Industrial point source,,,Chaco,,
+CT VILLA GESELL-CATLANT.,,Thermal power plant,333196.00,Industrial point source,,,Buenos Aires,,
+CT VILLA MARIA CIERRE CC-UENSA,,Thermal power plant,630749.00,Industrial point source,,,Cï¿½rdoba,,
+CT VILLA OCAMPO - SECCO,,Thermal power plant,32945.00,Industrial point source,,,Santa Fe,,
+CT VUELTA DE OBLIGADO,,Thermal power plant,1829953.00,Industrial point source,,,Santa Fe,,
+CT ZAPPALORTO - APR ENERGY,,Thermal power plant,15249.00,Industrial point source,,,Buenos Aires,,
+EDECAT GENERACION,,Thermal power plant,397.00,Industrial point source,,,Catamarca,,
+EDELAR GENERACION,,Thermal power plant,18733.00,Industrial point source,,,La Rioja,,
+EDEN GENERACION,,Thermal power plant,1627.00,Industrial point source,,,Buenos Aires,,
+ELECTROPATAGONIA-C.RIV-C.COMB.,,Thermal power plant,15137.00,Industrial point source,,,Chubut,,
+EMP.DIS.S.ESTERO GENERACION,,Thermal power plant,4901.00,Industrial point source,,,Santiago del Estero,,
+EMSA GENERACION,,Thermal power plant,10472.00,Industrial point source,,,Misiones,,
+ENDESA COSTANERA SA,,Thermal power plant,2518331.00,Industrial point source,,,Buenos Aires,,
+ENERGIA DEL SUR S.A.,,Thermal power plant,226761.00,Industrial point source,,,Chubut,,
+EPEC GENERACION,,Thermal power plant,15814.00,Industrial point source,,,Cï¿½rdoba,,
+GEN.MEDITERRANEA (CONT.PLUS),,Thermal power plant,36744.00,Industrial point source,,,Cï¿½rdoba,,
+GEN.MEDITERRANEA GRUPO 5,,Thermal power plant,27675.00,Industrial point source,,,Cï¿½rdoba,,
+GENELBA - PETROBRAS,,Thermal power plant,1898589.00,Industrial point source,,,Buenos Aires,,
+GENELBA - RES.287,,Thermal power plant,1396334.00,Industrial point source,,,Buenos Aires,,
+GENERACION FRIAS S.A.,,Thermal power plant,15755.00,Industrial point source,,,Santiago del Estero,,
+GENERACION INDEPENDENCIA S.A.,,Thermal power plant,28961.00,Industrial point source,,,Tucumï¿½n,,
+GENERACION LA BANDA S.A.,,Thermal power plant,2514.00,Industrial point source,,,Santiago del Estero,,
+GENERACION MEDITERRANEA,,Thermal power plant,6470.00,Industrial point source,,,Cï¿½rdoba,,
+GENERACION MEDITERRANEA 220,,Thermal power plant,31381.00,Industrial point source,,,Cï¿½rdoba,,
+GENERACION RIOJANA SA,,Thermal power plant,13132.00,Industrial point source,,,La Rioja,,
+GENERADORA CORDOBA S.A.,,Thermal power plant,1537.00,Industrial point source,,,Cï¿½rdoba,,
+GENERADORA ELEC.TUCUMAN SA,,Thermal power plant,9198.00,Industrial point source,,,Tucumï¿½n,,
+HIDROTERMICA SAN JUAN,,Thermal power plant,6068.00,Industrial point source,,,San Juan,,
+LA PLATA COGENERACION SA,,Thermal power plant,339665.00,Industrial point source,,,Buenos Aires,,
+LEDESMA SAAI,,Thermal power plant,7544.00,Industrial point source,,,Jujuy,,
+LUJAN DE CUYO COGENERAC.PUERTO,,Thermal power plant,265976.00,Industrial point source,,,Mendoza,,
+MOLINOS AGRO AG.(Ex.Mol Rio P),,Thermal power plant,222.00,Industrial point source,,,Santa Fe,,
+MOTOGENERADORES COSTANERA,,Thermal power plant,47985.00,Industrial point source,,,Buenos Aires,,
+NIDERA SAFORCADA-Junin,,Thermal power plant,20.00,Industrial point source,,,Buenos Aires,,
+PAMPA ENERGIA SA,,Thermal power plant,78724.00,Industrial point source,,,Salta,,
+REFINERIA LA PLATA AUTOG,,Thermal power plant,10998.00,Industrial point source,,,Buenos Aires,,
+SHELL CAPSA PTA. DOCK SUD,,Thermal power plant,25501.00,Industrial point source,,,Buenos Aires,,
+SIDERAR PTA. IND. SAN NICOLAS,,Thermal power plant,31.00,Industrial point source,,,Buenos Aires,,
+SINOPEC Arg. - El Huemul,,Thermal power plant,29407.00,Industrial point source,,,Santa Cruz,,
+SINOPEC Arg. - Meseta Espinosa,,Thermal power plant,13683.00,Industrial point source,,,Santa Cruz,,
+SOLALBAN ENERGIA SA,,Thermal power plant,42405.00,Industrial point source,,,Buenos Aires,,
+TERMINAL 6 COGENERACION PUERTO,,Thermal power plant,209988.00,Industrial point source,,,Santa Fe,,
+TERMOELE. JOSE SAN MARTIN S.A,,Thermal power plant,2045982.00,Industrial point source,,,Santa Fe,,
+TERMOELECTRICA GUILLERMO BROWN,,Thermal power plant,1021465.00,Industrial point source,,,Buenos Aires,,
+TERMOELECTRICA M.BELGRANO S.A.,,Thermal power plant,2150020.00,Industrial point source,,,Buenos Aires,,
+YAC.ENTRE LOMAS AUTOGENERADOR,,Thermal power plant,27680.00,Industrial point source,,,Rï¿½o Negro,,
+YPF Autogenerador Pza. Huincul,,Thermal power plant,161867.00,Industrial point source,,,Neuquï¿½n,,
+YPF CT MANANTIALES BEHR II AG,,Thermal power plant,8767.00,Industrial point source,,,Chubut,,
+YPF EL TREBOL CT MANANT. BEHR,,Thermal power plant,6.00,Industrial point source,,,Chubut,,
+YPF ENERGï¿½A ELECTR.ex PLUSPETG,,Thermal power plant,1400041.00,Industrial point source,,,Tucumï¿½n,,
+YPF LA PLATA COGENERACION,,Thermal power plant,228277.00,Industrial point source,,,Buenos Aires,,
+YPF LOS PERALES AUTOG,,Thermal power plant,68352.00,Industrial point source,,,Santa Cruz,,
+YPF YAC P.HERNANDEZ AUTOG,,Thermal power plant,26.00,Industrial point source,,,Neuquï¿½n,,
+BIOGAS CT AVELLANEDA SECCO,,Biogas Power Plant,41391.00,Biogenic point source,,,SANTA FE,,
+CENTRAL BIOELECTRICA R.CUARTO1,,Biogas Power Plant,13140.00,Biogenic point source,,,CORDOBA,,
+C.BIOELECT.R.CUARTO1 REN2,,Biogas Power Plant,10249.20,Biogenic point source,,,CORDOBA,,
+C.BIOELECT.R.CUARTO2 REN1,,Biogas Power Plant,7884.00,Biogenic point source,,,CORDOBA,,
+C.BIOELECT.R.CUARTO2 REN2,,Biogas Power Plant,7884.00,Biogenic point source,,,CORDOBA,,
+BIOGAS CTBG CITRUSVIL-ALCOVIL,,Biogas Power Plant,19710.00,Biogenic point source,,,TUCUMAN,,
+BIOGAS RS CT ENSENADA SECCO,,Biogas Power Plant,34821.00,Biogenic point source,,,BUENOS AIRES,,
+CTBG GENERAL ALVEAR,,Biogas Power Plant,6570.00,Biogenic point source,,,BUENOS AIRES,,
+BIOGAS CTBG GIGENA I,,Biogas Power Plant,7884.00,Biogenic point source,,,CORDOBA,,
+BIOGAS CTBG JUSTO DARACT,,Biogas Power Plant,6570.00,Biogenic point source,,,SAN LUIS,,
+BIOGAS CTBG PACUCA BIO ENERGï¿½A,,Biogas Power Plant,6570.00,Biogenic point source,,,BUENOS AIRES,,
+BIOGAS CTBG PERGAMINO,,Biogas Power Plant,15768.00,Biogenic point source,,,BUENOS AIRES,,
+C.T.SAN MARTIN NORTE 3A,,Biogas Power Plant,33507.00,Biogenic point source,,,BUENOS AIRES,,
+CT SAN MIGUEL NORTE III-ENARSA,,Biogas Power Plant,75555.00,Biogenic point source,,,BUENOS AIRES,,
+ENERGIA AGRO S.A.U,,Biogas Power Plant,9296.55,Biogenic point source,,,SANTA FE,,
+BIOGAS CTBG TIGONBU,,Biogas Power Plant,13140.00,Biogenic point source,,,SAN LUIS,,
+BIOGAS CTBG VILLA DEL ROS. CGY,,Biogas Power Plant,6570.00,Biogenic point source,,,CORDOBA,,
+BIOGAS CTBG VENADO TUERTO,,Biogas Power Plant,13797.00,Biogenic point source,,,SANTA FE,,
+BIO ENERGï¿½A YANQUETRUZ S.A.,,Biogas Power Plant,9855.00,Biogenic point source,,,SAN LUIS,,
+BIOGAS CTBG ENRECO,,Biogas Power Plant,13140.00,Biogenic point source,,,CORDOBA,,
+CTBG BIO ENERGï¿½A YANQUETRUZ II,,Biogas Power Plant,5256.00,Biogenic point source,,,SAN LUIS,,
+CTBG BIO. SANTA CATALINA,,Biogas Power Plant,13140.00,Biogenic point source,,,CORDOBA,,
+BIOGAS CTBG AB ENERGï¿½A,,Biogas Power Plant,13140.00,Biogenic point source,,,LA PAMPA,,
+CT BIOMASA MM BIOENERGï¿½A,,Biogas Power Plant,19710.00,Biogenic point source,,,MISIONES,,
+CTBRS SAN MARTï¿½N NORTE III-D,,Biogas Power Plant,33507.00,Biogenic point source,,,BUENOS AIRES,,
+BIOGAS CTBG ARRE BEEF SA,,Biogas Power Plant,9855.00,Biogenic point source,,,BUENOS AIRES,,
+BIOGAS CT RESENER SA,,Biogas Power Plant,5256.00,Biogenic point source,,,BUENOS AIRES,,
+CTBG POLLOS SAN MATEO,,Biogas Power Plant,15768.00,Biogenic point source,,,CORDOBA,,
+CTBG GENERAL VILLEGAS Ren 2,,Biogas Power Plant,8015.40,Biogenic point source,,,BUENOS AIRES,,
+YPF Plaza Huincul,YPF SA,Methanol,275370.00,Industrial point source,,,Neuquï¿½n,,
+Arauco General San Martin,Arauco Argentina S.A. ,Methanol,33500.00,Industrial point source,,,Santa Fe,,
+La Plata Refinery,YPF SA,Refinery,2224965.52,Industrial point source,,,,,
+Lujan de Cuyo Refinery,YPF SA,Refinery,1229586.21,Industrial point source,,,,,
+Plaza Huincul Refinery,YPF SA,Refinery,292758.62,Industrial point source,,,,,
+Raizen Dock Sud,Raizen,Refinery,1171034.48,Industrial point source,,,,,
+Axion Campana Refinery,PAE,Refinery,1171034.48,Industrial point source,,,,,
+DAPSA,,,0.00,Industrial point source,,,,,
+Dock Sud Refinery,,Refinery,0.00,Industrial point source,,,,,
+REFINOR Campo Duran Refinery,,Refinery,351310.34,Industrial point source,,,,,
+TRAFIGURA Bahia Blanca Refinery,,Refinery,351310.34,Industrial point source,,,,,
+OIL Combustibles San Lorenzo Refinery,,Refinery,0.00,Industrial point source,,,,,
+PAMPA ENERGIA SA,,Etileno,25916.00,Industrial point source,,Pto General San Martï¿½n,Santa Fe,,
+PBB Polisur S.A.,,Etileno,229900.00,Industrial point source,,Bahia Blanca,Buenos Aires,,
+PBB Polisur S.A.,,Etileno,355300.00,Industrial point source,,Bahia Blanca,Buenos Aires,,
