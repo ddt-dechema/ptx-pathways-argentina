@@ -523,12 +523,15 @@ function addCO2argentinaPopupHandler(feature) {
 		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
                         Emissions:
                         <br>${thisEmission}<br>
-                        <p>Source: 
-                        <br>${feature.properties.source}<br>
+                        <p>Source of CO2 Emissions: 
+                        <br>${feature.properties.Source_CO2_emissions}<br>
                         </p>
                         <p style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
                         Industry: 
-                        <br>${feature.properties.industry}<br>
+                        <br>${feature.properties.Industry}<br>
+                        </p>
+                        <p>Data Source: 
+                        <br>${feature.properties.Source}<br>
                         </p>
                         </div>`;
 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
