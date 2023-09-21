@@ -1,5 +1,5 @@
 const element = document.getElementById('sidebar');
-element.style.backgroundColor = baseColors.base_first; // Set the background color to the first color in the palette (Red)
+element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
 
 // Define a GeoJSON URL
 var geojsonURL = 'convertcsv.geojson';
@@ -10,8 +10,8 @@ var layer;
 var layers = {};
 
 // Group layers by source type
-var industrialLayers = ["Aluminium", "Steel", "Cement", "Cellulose and paper", "Thermal power plant", "Refinery", "Ammonia", "Methanol", "Etileno"];
-var biogenicLayers = ["Biogas", "Bioethanol"];
+var industrialLayers = ["Aluminium", "Steel", "Cement", "Thermal power plant", "Refinery", "Ammonia", "Methanol", "Etileno"];
+var biogenicLayers = ["Biogas", "Bioethanol", "Cellulose and paper"];
 
 var allLayersVisible = true; // Initial state, all layers are visible
 var biogenicLayersVisible = true; // Initial state, biogenic layers are visible
@@ -19,23 +19,22 @@ var industrialLayersVisible = true; // Initial state, industrial layers are visi
 
 // Add a button to the HTML and set its click event to toggleAllLayers
 var toggleAllButton = document.getElementById('toggle-all-button'); // Replace with your button's ID
-toggleAllButton.addEventListener('click', toggleAllLayers);
+    toggleAllButton.addEventListener('click', toggleAllLayers);
 
 var toggleBiogenicButton = document.getElementById('toggle-biogenic-button'); // Replace with your button's ID
-toggleBiogenicButton.addEventListener('click', toggleBiogenicLayers);
-toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
-toggleBiogenicButton.style.color="white";
+    toggleBiogenicButton.addEventListener('click', toggleBiogenicLayers);
+    toggleBiogenicButton.style.backgroundColor = emissionColors_D['biogenic'];
+    toggleBiogenicButton.style.color="white";
 
 var toggleIndustrialButton = document.getElementById('toggle-industrial-button'); // Replace with your button's ID
-toggleIndustrialButton.addEventListener('click', toggleIndustrialLayers);
-toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
-toggleIndustrialButton.style.color="white";
+    toggleIndustrialButton.addEventListener('click', toggleIndustrialLayers);
+    toggleIndustrialButton.style.backgroundColor = emissionColors_D['industrial'];
+    toggleIndustrialButton.style.color="white";
 
 // Specify the property you want to find the maximum value for
 var propertyToFindMax = 'CO2_emissions_t';
 
 // Initialize a variable to store the maximum value
-// var maxPropertyValue = -Infinity; // Start with negative infinity as an initial value
 var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
 var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
 
@@ -68,8 +67,6 @@ function addGeoJSONLayer(filterValue) {
             var filteredData = data.features.filter(function (feature) {
             // var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
                 // Check if 'geometry' property is defined and if 'coordinates' is not empty
-                // return feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
-                    // Check if 'geometry' property is defined and if 'coordinates' is not empty
                 var hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
                 
                 // Check if the industryType matches the filterValue
@@ -104,7 +101,7 @@ function addGeoJSONLayer(filterValue) {
                             fillColor: emissionTypeColors_D[filterValue],
                             weight: 1,
                             opacity: 0.7,
-                            fillOpacity: 0.4
+                            fillOpacity: 0.5
                         }).bindPopup(addCO2argentinaPopupHandler(feature));
                     } else {
                         if (!parseFloat(feature.properties.CO2_emissions_t)>0) {
@@ -264,15 +261,27 @@ function showMap() {
         position: 'topright'
     }).addTo(map)
     /* Carto light-gray basemap tiles with labels */
-    map.light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap<\/a>, &copy; <a href="https://carto.com/attribution">CARTO<\/a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
-    })
+    // map.light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap<\/a>, &copy; <a href="https://carto.com/attribution">CARTO<\/a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
+    // })
+
+    map.stadia_outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        ext: 'png'
+    }).addTo(map);
+    // var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+    //     minZoom: 0,
+    //     maxZoom: 20,
+    //     attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //     ext: 'png'
+    // });
+    // .addTo(Map)
     /* Current default map. Switch by puting the .addTo above */
     /* Thunderforest green tiles with more information */
     map.green = L.tileLayer('https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=9a85f60a13be4bf7bed59b5ffc0f4d86', {
             attribution: 'Maps &copy; <a href="https://www.thunderforest.com">Thunderforest</a>, Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
         })
-        .addTo(map)
+        // .addTo(map)
 
     /* Add the zoom buttons */
     map.sidebar = L.control.sidebar('sidebar', {
@@ -520,17 +529,21 @@ function addCO2argentinaPopupHandler(feature) {
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
 		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
-                        Emissions:
-                        <br>${thisEmission}<br>
-                        <p>Source of CO2 Emissions: 
-                        <br>${feature.properties.Source_CO2_emissions}<br>
-                        </p>
-                        <p style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
-                        Industry: 
+		return `<h2>
+                    ${feature.properties.Name}<br>
+                    (${feature.properties.Company}) 
+                    <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
+                    <p><b>City: </b>
+                        <br>${feature.properties.City}</p>
+                    <p><b>Industry:</b>
                         <br>${feature.properties.Industry}<br>
                         </p>
-                        <p>Data Source: 
+                    <b>Emissions:</b>
+                        <br>${thisEmission}
+                    <p><b>Source of CO2 Emissions:</b> 
+                        <br>${feature.properties.Source_CO2_emissions}<br>
+                        </p>
+                    <p><b>Data Source:</b> 
                         <br>${feature.properties.Source}<br>
                         </p>
                         </div>`;
@@ -539,6 +552,7 @@ function addCO2argentinaPopupHandler(feature) {
 		console.log(feature);
 	}
 }
+
 
 
 /// Argentina CO2 - selective for industry type
@@ -703,14 +717,14 @@ const buttonData = [
     { name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
     { name: 'Steel', id: 'button-Steel', industry: 'industrial'},
     { name: 'Cement', id: 'button-cement', industry: 'industrial'},
-    { name: 'Cellulose and paper', id: 'button-cellulose', industry: 'industrial'},
     { name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     { name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
-    { name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
     { name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
     { name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
     { name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+    { name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+    { name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
 ];
 
 // Get a reference to the container element
@@ -1296,7 +1310,7 @@ function getFilteredTotals() {
 /****************/
 /* Settings tab */
 let mapLayoutGreen = document.getElementById('map-layout-green'),
-    mapLayoutLight = document.getElementById('map-layout-light'),
+    mapLayoutStadia = document.getElementById('map-layout-stadia'),
     mapShowConsumers = document.getElementById('map-show-consumers'),
     modifyConsumers = document.getElementById('modify-consumers'),
     modalModifyConsumers = document.getElementById('modal-modify-consumers'),
@@ -1312,17 +1326,17 @@ let mapLayoutGreen = document.getElementById('map-layout-green'),
 
 function toggleMapLayout() {
     mapLayoutGreen.classList.toggle('is-info')
-    mapLayoutLight.classList.toggle('is-info')
+    mapLayoutStadia.classList.toggle('is-info')
     if (mapLayoutGreen.classList.contains('is-info')) {
-        map.removeLayer(map.light)
+        map.removeLayer(map.stadia_outdoors)
         map.addLayer(map.green)
     } else {
         map.removeLayer(map.green)
-        map.addLayer(map.light)
+        map.addLayer(map.stadia_outdoors)
     }
 }
 mapLayoutGreen.addEventListener('click', toggleMapLayout)
-mapLayoutLight.addEventListener('click', toggleMapLayout)
+mapLayoutStadia.addEventListener('click', toggleMapLayout)
 
 // function toggleShowConsumers() {
 //     mapShowConsumers.classList.toggle('is-info')
@@ -1971,7 +1985,7 @@ function translucidColor(colorString, opacity = 0.6) {
 /* Change layout with get parameters */
 /*************************************/
 var url = new URL(window.location.href)
-if (!mapLayoutLight.classList.contains('is-info') && url.searchParams.get("style") == "light") toggleMapLayout()
+if (!mapLayoutStadia.classList.contains('is-info') && url.searchParams.get("style") == "light") toggleMapLayout()
 
 
 /*************************************************/
