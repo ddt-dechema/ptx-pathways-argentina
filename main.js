@@ -272,10 +272,15 @@ function showMap() {
     // map.stadia_outdoors = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
     //     attribution: '&copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Datos de Mapa &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     // }).addTo(map);
-    L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
+    map.spanish = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
         attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
+    });
+    // .addTo(map);
+
+    map.light= L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
     }).addTo(map);
+
     // var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
     //     minZoom: 0,
     //     maxZoom: 20,
@@ -1317,7 +1322,8 @@ function getFilteredTotals() {
 /****************/
 /* Settings tab */
 let mapLayoutGreen = document.getElementById('map-layout-green'),
-    mapLayoutStadia = document.getElementById('map-layout-stadia'),
+    mapLayoutSpanish = document.getElementById('map-layout-spanish'),
+    mapLayoutLight = document.getElementById('map-layout-light'),
     // mapShowConsumers = document.getElementById('map-show-consumers'),
     // modifyConsumers = document.getElementById('modify-consumers'),
     // modalModifyConsumers = document.getElementById('modal-modify-consumers'),
@@ -1331,19 +1337,60 @@ let mapLayoutGreen = document.getElementById('map-layout-green'),
     closeModalList = document.getElementsByClassName('close-modal')
     // resetConsumers = document.getElementById('reset-consumers')
 
-function toggleMapLayout() {
-    mapLayoutGreen.classList.toggle('is-info')
-    mapLayoutStadia.classList.toggle('is-info')
-    if (mapLayoutGreen.classList.contains('is-info')) {
-        map.removeLayer(map.stadia_outdoors)
-        map.addLayer(map.green)
-    } else {
-        map.removeLayer(map.green)
-        map.addLayer(map.stadia_outdoors)
-    }
-}
-mapLayoutGreen.addEventListener('click', toggleMapLayout)
-mapLayoutStadia.addEventListener('click', toggleMapLayout)
+// function toggleMapLayout(color) {
+//     mapLayoutGreen.classList.toggle('is-info')
+//     mapLayoutSpanish.classList.toggle('is-info')
+//     mapLayoutLight.classList.toggle('is-info')
+//     if (color=="green") {
+//         if(map.hasLayer(map.spanish)) {
+//             map.removeLayer(map.spanish)
+//         } else if (map.hasLayer(map.light)) {
+//             map.removeLayer(map.light)
+//         }
+//         map.addLayer(map.green)
+//         // map.removeLayer(map.spanish)
+//         // map.removeLayer(map.light)
+//         // map.addLayer(map.green)
+//     } else if (color="spanish") {
+//         // map.removeLayer(map.green)
+//         // map.removeLayer(map.light)
+//         // map.addLayer(map.spanish)
+//     } else if (color=="light") {
+//         // map.removeLayer(map.green)
+//         // map.removeLayer(map.spanish)
+//         // map.addLayer(map.light)
+//     }
+// }
+// mapLayoutGreen.addEventListener('click', toggleMapLayout('green'))
+// mapLayoutSpanish.addEventListener('click', toggleMapLayout('spanish'))
+// mapLayoutLight.addEventListener('click', toggleMapLayout('light'))
+
+mapLayoutGreen.addEventListener('click', function () {
+    map.removeLayer(map.light);
+    map.removeLayer(map.spanish);
+    map.addLayer(map.green);
+    mapLayoutSpanish.classList.remove('is-info')
+    mapLayoutLight.classList.remove('is-info')
+    mapLayoutGreen.classList.add('is-info')
+});
+
+mapLayoutSpanish.addEventListener('click', function () {
+    map.removeLayer(map.light);
+    map.removeLayer(map.green);
+    map.addLayer(map.spanish);
+    mapLayoutSpanish.classList.add('is-info')
+    mapLayoutLight.classList.remove('is-info')
+    mapLayoutGreen.classList.remove('is-info')
+});
+
+mapLayoutLight.addEventListener('click', function () {
+    map.removeLayer(map.spanish);
+    map.removeLayer(map.green);
+    map.addLayer(map.light);
+    mapLayoutSpanish.classList.remove('is-info')
+    mapLayoutLight.classList.add('is-info')
+    mapLayoutGreen.classList.remove('is-info')
+});
 
 // function toggleShowConsumers() {
 //     mapShowConsumers.classList.toggle('is-info')
@@ -1992,7 +2039,7 @@ function translucidColor(colorString, opacity = 0.6) {
 /* Change layout with get parameters */
 /*************************************/
 var url = new URL(window.location.href)
-if (!mapLayoutStadia.classList.contains('is-info') && url.searchParams.get("style") == "light") toggleMapLayout()
+if (!mapLayoutSpanish.classList.contains('is-info') && url.searchParams.get("style") == "light") toggleMapLayout()
 
 
 /*************************************************/
