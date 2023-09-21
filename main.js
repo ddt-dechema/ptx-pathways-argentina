@@ -265,9 +265,16 @@ function showMap() {
     //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap<\/a>, &copy; <a href="https://carto.com/attribution">CARTO<\/a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
     // })
 
-    map.stadia_outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
-        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        ext: 'png'
+    // map.stadia_outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+    //     attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //     ext: 'png'
+    // }).addTo(map);
+    // map.stadia_outdoors = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
+    //     attribution: '&copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Datos de Mapa &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // }).addTo(map);
+    L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
+        attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
     }).addTo(map);
     // var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
     //     minZoom: 0,
@@ -1311,18 +1318,18 @@ function getFilteredTotals() {
 /* Settings tab */
 let mapLayoutGreen = document.getElementById('map-layout-green'),
     mapLayoutStadia = document.getElementById('map-layout-stadia'),
-    mapShowConsumers = document.getElementById('map-show-consumers'),
-    modifyConsumers = document.getElementById('modify-consumers'),
-    modalModifyConsumers = document.getElementById('modal-modify-consumers'),
+    // mapShowConsumers = document.getElementById('map-show-consumers'),
+    // modifyConsumers = document.getElementById('modify-consumers'),
+    // modalModifyConsumers = document.getElementById('modal-modify-consumers'),
     // csvChemicalParks = document.getElementById('csv-chemical-parks'),
     // csvPolyolPlants = document.getElementById('csv-polyol-plants'),
     // renewEmissions = document.getElementById('renew-emissions'),
     csvArgentinaCO2Emissions = document.getElementById('csv-ArgentinaCO2Emissions'),
-    modifyConsumersCreateLink = document.getElementById('modify-consumers-create-link'),
-    modifyConsumersCreateJSON = document.getElementById('modify-consumers-create-json'),
-    modifyConsumersLoadData = document.getElementById('modify-consumers-load-data'),
-    closeModalList = document.getElementsByClassName('close-modal'),
-    resetConsumers = document.getElementById('reset-consumers')
+    // modifyConsumersCreateLink = document.getElementById('modify-consumers-create-link'),
+    // modifyConsumersCreateJSON = document.getElementById('modify-consumers-create-json'),
+    // modifyConsumersLoadData = document.getElementById('modify-consumers-load-data'),
+    closeModalList = document.getElementsByClassName('close-modal')
+    // resetConsumers = document.getElementById('reset-consumers')
 
 function toggleMapLayout() {
     mapLayoutGreen.classList.toggle('is-info')
