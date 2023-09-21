@@ -1,0 +1,52 @@
+
+<br>
+<a class="button is-small btn-block" href="co2-argentina.csv" target="_blank">
+    Download CO<ub>2</ub> emissions in Argentina (csv)
+</a>
+<a class="button is-small btn-block" href="convertcsv.geojson" target="_blank">
+    Download CO<sub>2</sub> emissions in Argentina (geojson)
+</a>
+<div id="data_text" style="color: red">
+
+
+<h2>Select types of plant</h2>
+<h2>Select needed resources</h2>
+
+<h2>Search radius around plants</h2>
+<div class="filterGroup" id="distance-chemical-plant">Distance in km from chemical plant to look for emissions:<br />
+    <div class="is-size-7">&#9432; All emissions within this radius will be summed up in the popup when clicking on a plant</div>
+    <input id="distance-chemical-plant-slider" class="slider has-output is-success" min="0" max="50"
+        value="20" step="1" type="range">
+    <output for="distance-chemical-plant-slider" id="distance-chemical-plant-slider-output">20</output>
+    
+    <a class="button is-small" id="radius-filter-button">Only show emitters within radius of chemical
+        plant</a>
+</div>
+<h2>Filter by desired Carbon4PUR plant size</h2>
+<div class="filterGroup">
+    <a class="button is-small" id="size-filter-button">Only clusters with enough CO for x kt
+        polyol:</a><br />
+    <input id="polyol-slider" class="slider has-output is-fullwidth" disabled min="0" max="100" value="5"
+        step="1" type="range">
+    <output for="polyol-slider" id="polyol-slider-output">5</output>
+</div>
+<h2>Statistics</h2>
+<table>
+    <tr>
+        <td>Chemical parks within the filters: </td>
+        <td style="text-align: right; padding-left: 0.75rem;"><output
+                id="number-chem-parks"></output></td>
+    </tr>
+    <tr>
+        <td>Polyol plants within the filters:</td>
+        <td style="text-align: right; padding-left: 0.75rem;"><output
+                id="number-polyol-plants"></output></td>
+    </tr>
+    <tr>
+        <td>Steel mills within the filters:</td>
+        <td style="text-align: right; padding-left: 0.75rem;"><output
+                id="number-steel-mills"></output></td>
+    </tr>
+    
+</table>
+</div>
