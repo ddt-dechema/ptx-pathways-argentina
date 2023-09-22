@@ -15,6 +15,7 @@ var biogenicLayers = ["Biogas", "Bioethanol", "Cellulose and paper"];
 
 // Initialize an object to store total emissions for each industry type
 var totalEmissions = {};
+var totalEmissions_total = 0;
 
 var allLayersVisible = true; // Initial state, all layers are visible
 var biogenicLayersVisible = true; // Initial state, biogenic layers are visible
@@ -2136,12 +2137,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         if(Industry=="Steel") {
                             console.log('Industry',Industry)
                         }
-                        console.log('total Emissions Steel',totalEmissions['Steel'])
+                        // console.log('total Emissions Steel',totalEmissions['Steel'])
                     }   
                 });
                 // console.log('Aluminium: ',totalEmissions['Aluminium'])
                 // Create an HTML table to display the aggregated data
-                var table = "<table><tr><th>Industry</th><th>Total Emissions (Tonnes)</th></tr>";
+                var table = "<table><tr><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
         
                 // Iterate through the totalEmissions object and populate the table
                 for (var industry in totalEmissions) {
@@ -2152,8 +2153,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     table += "<tr><td>" + industry 
                     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
                 }
-        
-                table += "</table>";
+                
+
+                for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
+                    console.log(IndustryEmissions)
+                    console.log(totalEmissions_total)
+                    totalEmissions_total += IndustryEmissions;
+                    console.log('totalEmissions_total: ',totalEmissions_total);
+                }
+                var formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+                table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";
+                          
         
                 // Display the table in a specific HTML element
                 var tableContainer = document.getElementById('table-container');
