@@ -33,10 +33,87 @@ var toggleIndustrialButton = document.getElementById('toggle-industrial-button')
 
 // Specify the property you want to find the maximum value for
 var propertyToFindMax = 'CO2_emissions_t';
-
 // Initialize a variable to store the maximum value
 var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
-var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
+// var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
+var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
+
+var radius_slider = document.getElementById('radius_slider');
+var sliderValue = 1;
+var sliderValue_old = 1;
+
+// Add an event listener to the slider
+radius_slider.addEventListener('input', function () {
+    // Get the current slider value
+    
+    sliderValue = parseFloat(radius_slider.value);
+    // console.log('Old Value: ' + sliderValue_old);
+    // console.log('New Value: ' + sliderValue);
+    // Update circle sizes based on the slider value
+    // console.log(sliderValue)
+    maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue
+         
+    // Update the circle elements using D3.js
+    // svg.selectAll('circle')
+    //   .attr('r', scaledRadius);
+  
+    // // Update the legend labels
+    // d3.select('#slider_legend').selectAll('div')
+    //   .text(function (d, i) {
+    //     return i === 0 ? 'Min' : 'Max'; // Update labels as needed
+    //   });
+    // Update the legend labels
+    createScale(sliderValue);
+
+    // Call the function to update circle sizes
+    // console.log(layers)
+    for (const [key, layername] of Object.entries(layers)) {
+        // console.log(`${key}: ${value}`);
+        updateCircleSizes(sliderValue_old, sliderValue, layername);
+        // console.log("sliderValue: ",sliderValue)
+      }
+        
+    // addGeoJSONLayer('Aluminium');
+    // addGeoJSONLayer('Steel');
+    // addGeoJSONLayer('Cement');
+    // addGeoJSONLayer('Cellulose and paper');
+    // addGeoJSONLayer('Thermal power plant');
+    // addGeoJSONLayer('Refinery');
+    // addGeoJSONLayer('Biogas');
+    // addGeoJSONLayer('Bioethanol');
+    // addGeoJSONLayer('Ammonia');
+    // addGeoJSONLayer('Methanol');
+    // addGeoJSONLayer('Etileno');
+
+    sliderValue_old=sliderValue;
+    // console.log('AFTER CHANGE Old Value: ' + sliderValue_old);
+    // console.log('New Value: ' + sliderValue);
+
+});
+
+// Assuming you have an existing GeoJSON layer named 'geojsonLayer'
+
+// Function to update circle sizes
+function updateCircleSizes(oldValue, newValue, layer) {
+    layer.eachLayer(function (featureLayer) {
+        // Get the current radius of the circle marker
+        var currentRadius = featureLayer.getRadius();
+
+        // Calculate the new radius by multiplying the current radius with a scale factor
+        // var newRadius = currentRadius * sliderValue;
+        var newRadius = currentRadius * (newValue / oldValue);
+        
+        // Set the new radius
+        featureLayer.setRadius(newRadius); // Set the new radius
+    });
+
+    // Refresh the layer to apply the changes
+    layer.eachLayer(function (featureLayer) {
+        featureLayer.redraw(); // Redraw the marker with the updated radius
+    });
+}
+
+
 
 // Function to check if an object is empty
 function isEmptyObject(obj) {
@@ -95,7 +172,8 @@ function addGeoJSONLayer(filterValue) {
                     if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && feature.properties.CO2_emissions_t >0 ) {
                         return L.circleMarker(latlng, {
                             // radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-                            radius: Math.sqrt(feature.properties.CO2_emissions_t / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+                            // radius: Math.sqrt(feature.properties.CO2_emissions_t / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
+                            radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_Mt * 1000000) )*50*sliderValue, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.                            color: emissionTypeColors_D[filterValue],
                             color: emissionTypeColors_D[filterValue],
                             /*fillColor: feature.properties.color,*/
                             fillColor: emissionTypeColors_D[filterValue],
@@ -354,26 +432,31 @@ function loadGlobalDefs() {
 }
 
 /* create scale for the index.html */
-let createScale = () => {
-	var height = 100;
-	var width = 150;
-	var svg = d3.select("#scale")
-		.append("svg")
+let createScale = (sliderValue) => {
+	var height = 100*sliderValue;
+	var width = 150*sliderValue;
+    var svg = d3.select("#scale")
+        .append("svg")
 		.attr("width", width)
 		.attr("height", height);
-
 	// The scale you use for bubble size
-    // console.log('creating scale. Max emissions (in tonnes): '+ maxEmissionsArgentina);
-    // console.log('creating scale. Max emissions (in Mtonnes): '+ maxEmissionsArgentina_Mt);
-	var size = d3.scaleSqrt()
-		.domain([0, maxEmissionsArgentina_Mt]) // What's in the data, min-max
-		.range([0, 45]) // Size in pixel
+    // if maxRadius is not set (because slider was not used yet)
+    // use maxEmissions of Argentina
+
+    //reset the legend
+    scale.removeChild(scale.children[1]);
+
+    var size = d3.scaleSqrt()
+		// .domain([0, maxEmissionsArgentina_Mt]) // What's in the data, min-max
+        .domain([0, maxRadius_Mt]) // What's in the data, min-max
+        // .range([0, 45]) // Size in pixel
+        .range([0, 50*sliderValue]) // Size in pixel
 	;
 	// Add legend: circles
-	var valuesToShow = [maxEmissionsArgentina_Mt/100, maxEmissionsArgentina_Mt/2.5, maxEmissionsArgentina_Mt]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
-	var xCircle = 55;
-	var xLabel = 120;
-	var yCircle = 100;
+	var valuesToShow = [maxRadius_Mt/100, maxRadius_Mt/2.5, maxRadius_Mt]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
+	var xCircle = 55*sliderValue;
+	var xLabel = 120*sliderValue;
+	var yCircle = 100*sliderValue;
 	svg
 		.selectAll("legend")
 		.data(valuesToShow)
@@ -535,8 +618,8 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-		let thisEmission =
-        formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
+		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
+        let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
@@ -556,7 +639,7 @@ function addCO2argentinaPopupHandler(feature) {
                         <br>${feature.properties.Source_CO2_emissions}<br>
                         </p>
                     <p><b>Data Source:</b> 
-                        <br>${feature.properties.Source}<br>
+                        <br>${thisSource}<br>
                         </p>
                         </div>`;
 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
@@ -727,15 +810,15 @@ function addCO2argentinaPopupHandler(feature) {
 // Define a list of button names
 const buttonData = [
     { name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
-    { name: 'Steel', id: 'button-Steel', industry: 'industrial'},
     { name: 'Cement', id: 'button-cement', industry: 'industrial'},
-    { name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+    { name: 'Steel', id: 'button-Steel', industry: 'industrial'},
     { name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+    { name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     { name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
-    { name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
     { name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
-    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+    { name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
     { name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
     { name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
 ];
 
@@ -2064,11 +2147,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
             // console.log('current Max Emissions: '+maxEmissionsArgentina)
         });
+        maxRadius_Mt = maxEmissionsArgentina / 1000000;
         // console.log("Maximum value of '" + propertyToFindMax + "': " + maxEmissionsArgentina);
-        maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
+        // maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
         loadGlobalDefs()
-        createScale(); 
+        createScale(1); 
     })
     .catch(error => {
         console.error(`Error loading GeoJSON data: ${error}`);
