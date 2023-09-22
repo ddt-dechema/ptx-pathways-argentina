@@ -303,47 +303,49 @@
 					</div>
 					<!-- <div class="buttons" id="nace-categories"></div> -->
 					<div id="button-container"></div>
-
-					<div  style="color:red;">
-						<h2>Statistics</h2>
-						<div style="color:red;" class="sumsEmissions">Total emissions in Europe for selected filters:
-							<table>
-								<tr>
-									<td>CO<sub>2</sub>: </td>
-									<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO2"></output></td>
-								</tr>
-								<tr>
-									<td>CO: </td>
-									<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO"></output></td>
-								</tr>
-							</table>
-						</div>
-						<div class="sumsCombinedEmissions">Total emissions in Europe for selected filters where both CO and
-							CO<sub>2</sub> are available at the same site:
-							<table>
-								<tr>
-									<td>CO<sub>2</sub>: </td>
-									<td style="text-align: right; padding-left: 0.75rem;"><output
-											id="sumCO2combined"></output></td>
-								</tr>
-								<tr>
-									<td>CO: </td>
-									<td style="text-align: right; padding-left: 0.75rem;"><output
-											id="sumCOcombined"></output></td>
-								</tr>
-							</table>
-						</div>
-					</div>
 				</div>
-				If you want to change the circle sizes (to be able to properly see the locations with rather few emissions), use this slider.
-				<input type="range" id="radius_slider" min="1" max="3" value="1">
-				<!-- <output for="distance-chemical-plant-slider" id="distance-chemical-plant-slider-output">20</output> -->
-				<div id="slider_legend">
-					<div>Factor</div> 
-					<div>Max</div>
+				<div>
+					<h2>Change circle size</h2>
+					If you want to change the circle sizes (to be able to properly see the locations with rather few emissions), use this slider.
+					<input type="range" id="radius_slider" min="1" max="3" value="1">
+					<!-- <output for="distance-chemical-plant-slider" id="distance-chemical-plant-slider-output">20</output> -->
+					<div id="slider_legend"></div>
+				</div>
+				<div> 
+					<h2>Total Emissions</h2>
+					<table id="table-container"></table>
+				</div>
+			<div style="color:red;">
+				<h2>Statistics</h2>
+				<div style="color:red;" class="sumsEmissions">Total emissions in Europe for selected filters:
+					<table>
+						<tr>
+							<td>CO<sub>2</sub>: </td>
+							<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO2"></output></td>
+						</tr>
+						<tr>
+							<td>CO: </td>
+							<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO"></output></td>
+						</tr>
+					</table>
+				</div>
+				<div class="sumsCombinedEmissions">Total emissions in Europe for selected filters where both CO and
+					CO<sub>2</sub> are available at the same site:
+					<table>
+						<tr>
+							<td>CO<sub>2</sub>: </td>
+							<td style="text-align: right; padding-left: 0.75rem;"><output
+									id="sumCO2combined"></output></td>
+						</tr>
+						<tr>
+							<td>CO: </td>
+							<td style="text-align: right; padding-left: 0.75rem;"><output
+									id="sumCOcombined"></output></td>
+						</tr>
+					</table>
 				</div>
 			</div>
-
+		</div>
 
 			<div class="sidebar-pane" id="data-content">
 				<h1 class="sidebar-header">

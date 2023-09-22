@@ -41,18 +41,18 @@ let baseColors = {
         // "polyol plants": "rgb(12,168,118)",
         // "steel mills": "yellow"
         "Aluminium": "rgb(113, 184, 210, 1)",
-        "Steel": "rgb(113, 184, 210, 0.8)",
-        "Cement": "rgb(113, 184, 210, 0.6)",
+        "Cement": "rgb(113, 184, 210, 0.8)",
+        "Steel": "rgb(113, 184, 210, 0.6)",
         
-        "Thermal power plant": "rgb(164, 146, 220, 1)",
-        "Refinery": "rgb(164, 146, 220, 0.8)",
+        "Refinery": "rgb(164, 146, 220, 1)",
+        "Thermal power plant": "rgb(164, 146, 220, 0.8)",
         
         "Ammonia": "rgb(241, 219, 38, 1)",
-        "Methanol": "rgb(241, 219, 38, 0.8)",
-        "Etileno": "rgb(241, 219, 38, 0.6)",
+        "Etileno": "rgb(241, 219, 38, 0.8)",
+        "Methanol": "rgb(241, 219, 38, 0.6)",
         
-        "Biogas": "rgb(143, 196, 146, 1)",
-        "Bioethanol": "rgb(143, 196, 146, 0.8)",
+        "Bioethanol": "rgb(143, 196, 146, 1)",
+        "Biogas": "rgb(143, 196, 146, 0.8)",
         "Cellulose and paper": "rgb(143, 196, 146, 0.6)"
     }
 

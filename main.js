@@ -13,6 +13,9 @@ var layers = {};
 var industrialLayers = ["Aluminium", "Steel", "Cement", "Thermal power plant", "Refinery", "Ammonia", "Methanol", "Etileno"];
 var biogenicLayers = ["Biogas", "Bioethanol", "Cellulose and paper"];
 
+// Initialize an object to store total emissions for each industry type
+var totalEmissions = {};
+
 var allLayersVisible = true; // Initial state, all layers are visible
 var biogenicLayersVisible = true; // Initial state, biogenic layers are visible
 var industrialLayersVisible = true; // Initial state, industrial layers are visible
@@ -113,8 +116,6 @@ function updateCircleSizes(oldValue, newValue, layer) {
     });
 }
 
-
-
 // Function to check if an object is empty
 function isEmptyObject(obj) {
     for (var key in obj) {
@@ -128,19 +129,9 @@ function isEmptyObject(obj) {
 // Function to add the GeoJSON layer to the map
 function addGeoJSONLayer(filterValue) {
     fetch(geojsonURL)
-        .then(response => response.json())
-        .then(data => {
-            // Filter the GeoJSON data based on the specified property and value
-            // TO DO DDT
-            // fertig (?): filterProperty - industry type oder point source type
-            // if(industryType=="industrial") {
-            //     industryType="industry";
-            // }
-            // else {
-            //     industryType="industry";
-            // }
+    .then(response => response.json())
+    .then(data => {
             // Filter the data and exclude features with empty coordinates
-
             var filteredData = data.features.filter(function (feature) {
             // var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
                 // Check if 'geometry' property is defined and if 'coordinates' is not empty
@@ -153,15 +144,7 @@ function addGeoJSONLayer(filterValue) {
                 return hasValidCoordinates && matchesIndustry;
             });
 
-            // console.log(filterValue);
-            // console.log(emissionTypeColors_D[filterValue]);
-            // console.log(filteredData)
-            // TO DO DDT
-            // filterProperty - industry type oder point source type
-            // filter value --> Farben
-            // console.log(maxEmissionsArgentina)
             // Create a GeoJSON layer and add it to the map
-
             geojsonLayer = L.geoJSON(filteredData, {
                 pointToLayer: function (feature, latlng) {
                     // check, ob die geojson überhaupt Koordinaten UND bekannte Emissionen haben
@@ -301,6 +284,7 @@ function toggleBiogenicLayers() {
     // console.log('allLayersVisible: ',allLayersVisible);
 }
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // OLLI
 // define global variables
@@ -428,7 +412,7 @@ function showMap() {
 function loadGlobalDefs() {
     // show all numbers with 1,000.00 format
     format1Dec = d3.format(',.1f')
-    formatSI = d3.format(',.3f')
+    formatSI = d3.format(',.2f') // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
 }
 
 /* create scale for the index.html */
@@ -2135,9 +2119,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetch(geojsonURL)
     .then(response => response.json())
     .then(data => {
-    // Check if the GeoJSON data contains features
+        // Check if the GeoJSON data contains features
         // Loop through the features to find the maximum value
         // only consider those geojson features, which actually have coordinates.
+                // Iterate through GeoJSON data features
+                data.features.forEach(function (feature) {
+                    var Industry = feature.properties.Industry;
+                    var emissions = parseFloat(feature.properties.CO2_emissions_t);
+                    // Update the total emissions for the industry type
+                    if (typeof emissions === 'number' && !isNaN(emissions)) {
+                        if (!totalEmissions[Industry]) {
+                            totalEmissions[Industry] = 0;
+                        // console.log('hi')
+                        }
+                        totalEmissions[Industry] += emissions;
+                        if(Industry=="Steel") {
+                            console.log('Industry',Industry)
+                        }
+                        console.log('total Emissions Steel',totalEmissions['Steel'])
+                    }   
+                });
+                // console.log('Aluminium: ',totalEmissions['Aluminium'])
+                // Create an HTML table to display the aggregated data
+                var table = "<table><tr><th>Industry</th><th>Total Emissions (Tonnes)</th></tr>";
+        
+                // Iterate through the totalEmissions object and populate the table
+                for (var industry in totalEmissions) {
+                    var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                      });
+                    table += "<tr><td>" + industry 
+                    + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+                }
+        
+                table += "</table>";
+        
+                // Display the table in a specific HTML element
+                var tableContainer = document.getElementById('table-container');
+                tableContainer.innerHTML = table;
+        
         data.features.forEach(function (feature) {
             var propertyValue = feature.properties[propertyToFindMax];
             // console.log(feature.properties.Name+feature.properties.Tonnes)
