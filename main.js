@@ -1,8 +1,9 @@
 const element = document.getElementById('sidebar');
 element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
 
+
 // Define a GeoJSON URL
-var geojsonURL = 'convertcsv.geojson';
+var geojsonURL = 'argentina_emissions.geojson';
 var geojsonLayer; // Declare a variable to hold the GeoJSON layer
 var aluminiumLayer, steelLayer, cementLayer, celluloseLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
 var layer;
@@ -133,8 +134,10 @@ function addGeoJSONLayer(filterValue) {
     .then(response => response.json())
     .then(data => {
             // Filter the data and exclude features with empty coordinates
+            // var filteredData = data.features.filter(function (feature) {
             var filteredData = data.features.filter(function (feature) {
-            // var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
+                // console.log(filteredData)
+                // var filteredData = data.features.filter(feature => feature.properties[industryType] === filterValue);
                 // Check if 'geometry' property is defined and if 'coordinates' is not empty
                 var hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
                 
@@ -2134,9 +2137,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         // console.log('hi')
                         }
                         totalEmissions[Industry] += emissions;
-                        if(Industry=="Steel") {
-                            console.log('Industry',Industry)
-                        }
+                        // if(Industry=="Steel") {
+                            // console.log('Industry',Industry)
+                        // }
                         // console.log('total Emissions Steel',totalEmissions['Steel'])
                     }   
                 });
@@ -2153,13 +2156,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     table += "<tr><td>" + industry 
                     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
                 }
-                
 
                 for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
-                    console.log(IndustryEmissions)
-                    console.log(totalEmissions_total)
+                    // console.log(IndustryEmissions)
+                    // console.log(totalEmissions_total)
                     totalEmissions_total += IndustryEmissions;
-                    console.log('totalEmissions_total: ',totalEmissions_total);
+                    // console.log('totalEmissions_total: ',totalEmissions_total);
                 }
                 var formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
                     minimumFractionDigits: 2,
@@ -2177,7 +2179,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // console.log(feature.properties.Name+feature.properties.Tonnes)
                 // console.log(propertyValue)
             if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
-                maxEmissionsArgentina = propertyValue;
+                maxEmissionsArgentina = parseFloat(propertyValue);
             }
             // console.log('current Max Emissions: '+maxEmissionsArgentina)
         });

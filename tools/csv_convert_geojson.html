@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Converter tool from csv list</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="utf-8">
+	</script>
+	<!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
+	<script src='../assets/csv2geojson.js'></script>
+	<link href="../assets/styles.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+        <h2>Use this page to convert your CSV into a geojson file.</h2>
+        
+        <p>Please be aware of the following things:</p>
+        <ul>
+            <li>The CSV should use semicolons as a separator</li>
+            <li>latitude and longitude should be in the 9th and 10th column, respectively</li>
+            <li>the columns must be named "Latitude" and "Longitude" (Capital letters!)</li>
+            <li>Name and Company should be in the 1st and 2nd column</li>
+        </ul>
+        <p>
+            If you open the developer tools (F12) and open the console, you will get some information:
+        </p>
+        <ul>
+            <li>After converting the CSV the console will tell you, which rows could not processed. Those do not contain geo-information (missing lat/lon)</li>
+            <li>You can either download the geojson-file directly (button will appear, after you successfully convert the file) <br>
+                or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.<br>
+                Like this, the file will look more "readable".</li>
+            <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
+            <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
+        </ul>
+
+        <p> If all this does not work, you can use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, to convert the csv to the geojson.<br>
+        The solution provided with the website here is a fallback, if the link mentioned above does not provide the service anymore.</p>
+        <p> You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </p>
+           
+        <hr>
+
+            <h2>Data structure of the CSV:</h2>
+        <p>To correctly display the information on the map, the csv should look like this.</p>
+        <ul>
+            <li>Only the order of the lat and lon column, as well as the Name and Company of the emitter is important (see above).</li>
+            <li>For the rest, it is crucial, that the spelling is identical to the exemplary table below (please note all the capital letters)</li>
+        </ul>
+        <table>
+            <colgroup>
+            <col style="width: 49px">
+            <col style="width: 73px">
+            <col style="width: 64px">
+            <col style="width: 142px">
+            <col style="width: 114px">
+            <col style="width: 61px">
+            <col style="width: 57px">
+            <col style="width: 68px">
+            <col style="width: 63px">
+            <col style="width: 77px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Industry</th>
+                <th>CO2_emissions_t</th>
+                <th>Source_CO2 _emissions</th>
+                <th>Source</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            </table>
+
+                <br><br>       
+        <hr>
+
+        <input type="file" id="csvFile" accept=".csv"><br><br>
+        <button id="convertButton">Convert to GeoJSON</button><br><br>
+
+        <a class="button" id="downloadLink" style="display: none;">Download GeoJSON</a>
+    </div>
+
+	<script>	
+		const csvFileInput = document.getElementById('csvFile');
+		// const csvFileInput = "co2-argentina2_latlonzuerst.csv";
+		const convertButton = document.getElementById('convertButton');
+		const downloadLink = document.getElementById('downloadLink');
+
+		var argentina_emissions = {}
+
+        convertButton.addEventListener('click', () => {
+            const fileInput = document.getElementById('csvFile');
+            const file = fileInput.files[0];
+			if (file) {
+                // Read the uploaded CSV file
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const csvData = event.target.result;
+                    // Call your CSV to GeoJSON conversion function here
+                    
+                    
+                    const preprocessedCSV = preprocessCSV(csvData);
+			        // console.log(preprocessedCSV)
+			        // Now, pass the preprocessed CSV data to the conversion function
+			        convertCSV(preprocessedCSV)
+                    
+                    // Create a download link for the user
+                    // downloadLink.href = URL.createObjectURL(argentina_emissions);
+                    // downloadLink.href = window.URL.createObjectURL(new Blob(argentina_emissions, {type: "application/json"}))
+
+                    //this works
+                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(argentina_emissions));
+                    downloadLink.href = dataStr
+                    
+                    
+                    // const geojson = argentina_emissions;
+                    // const url = URL.createObjectURL(geojson);
+                    // Convert GeoJSON to a formatted string with line breaks and indentation
+                    // const formattedGeoJSON = JSON.stringify(geojson, null, 2);
+                    // Create a Blob from the GeoJSON data
+                    // const blob = new Blob([JSON.stringify(formattedGeoJSON)], { type: 'application/json' });
+                    // const url = URL.createObjectURL(blob);
+                    // downloadLink.href= url
+                    
+                    downloadLink.download = 'argentina_emissions.geojson';
+                    downloadLink.style.display = 'block';
+                };
+                reader.readAsText(file);
+                // Create a Blob object for the GeoJSON data
+                // const geoJsonBlob = new Blob([argentina_emissions], { type: 'application/json' });
+                // console.log('geoJsonBlob: ',geoJsonBlob)
+                // console.log('argentina_emissions: ',argentina_emissions)
+                
+            } else {
+                alert('Please select a CSV file to upload.');
+            }
+        });
+                    	
+		function convertCSV(myBlob, name) {
+			return new Promise((resolve, reject) => {
+				csv2geojson.csv2geojson(myBlob, {
+					latfield: 'Latitude',
+					lonfield: 'Longitude',
+					delimiter: ';',
+				}, (err, geojson) => {
+					if (err) {
+						// console.error(err);
+						// reject(err);
+						console.error(`Error converting CSV for ${name}:`, err);
+        				reject(err);
+					} else {
+						// argentina_emissions[name] = geojson
+                        argentina_emissions = geojson
+						console.log(argentina_emissions)
+						resolve()
+					}
+				})
+			})
+		}
+
+		function roundTo3Dec(json) {
+			return new Promise((resolve, reject) => {				
+				for(cat in json){
+					if(cat != "stats"){
+						for(f in json[cat].features){
+							let feat = json[cat].features[f]							
+							feat.geometry.coordinates[0] = Math.round(feat.geometry.coordinates[0] * 1000) / 1000
+							feat.geometry.coordinates[1] = Math.round(feat.geometry.coordinates[1] * 1000) / 1000
+						}
+					}
+				}
+				console.log(json)
+				resolve()
+			});
+		}
+
+		function preprocessCSV(csvData) {
+			// Split the CSV data into rows
+			const rows = csvData.split('\n');
+
+			// Extract the header row
+  			const headerRow = rows[0];
+
+			// Initialize an array to store valid rows
+			const validRows = [];
+			
+			// Initialize an array to store rows without coordinates
+			const invalidRows = [];
+			
+			// Extract column headers from the first row
+			const headers = rows[0].split(';');
+						
+			// Initialize variables for the "latitude" and "longitude" columns
+			let latitudeIndex = -1;
+			let longitudeIndex = -1;
+
+			// Initialize variables for the "Company" and "Name" columns
+			let companyIndex = -1;
+			let nameIndex = -1;
+
+			// Iterate through each column header
+			headers.forEach((header, index) => {
+				if (header === 'latitude') {
+				latitudeIndex = index;
+				} else if (header === 'longitude') {
+				longitudeIndex = index;
+				} else if (header === 'Company') {
+				companyIndex = index;
+				} else if (header === 'Name') {
+				nameIndex = index;
+				}
+			});
+
+			// Iterate through each row (skip the first row with headers)
+			for (let i = 1; i < rows.length; i++) {
+				const row = rows[i];
+
+				// Split the row into fields using the delimiter (e.g., ';')
+				const fields = row.split(';');
+
+				// Check if the row has both latitude and longitude fields
+				if (fields[8] !== '' && fields[9] !== '') { // hard coded! if lat/longitude columns are in different column numbers, then code will fail
+					validRows.push(row);
+				} else if (companyIndex !== -1 && nameIndex !== -1) {
+					// Log rows without coordinates, including "Company" and "Name" columns
+					invalidRows.push(`${fields[companyIndex]};${fields[nameIndex]}`);
+				}
+			}
+
+			// Log rows without coordinates
+			console.log('Rows without coordinates:');
+			console.log(invalidRows);
+
+			// Join the valid rows back into CSV format
+			return headerRow + '\n' + validRows.join('\n');
+		}
+
+	</script>
+</body>
+
+</html>
