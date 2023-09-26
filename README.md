@@ -25,13 +25,17 @@ If they dont have the above names, the matching of the code will not work correc
 Save it as a CSV file.
 The following step should be done especially if you have a german computer (where decimal points and comma are not according to the CSV-convention):
 * replace the commas (,) to dots (.)
-* replace the semicolons (;) to commas (,)
+* optional: replace the semicolons (;) to commas (,)
 
 Save the file. 
+
 ! Make sure to delete the tailing empty rows. This just unnecessarily enlarges the csv file.
 
 2. convert the csv to geojson
-Go to this website: https://www.convertcsv.com/csv-to-geojson.htm and enter the csv code.
+you can use the [csv_convert_geojson.html](https://ddt-dechema.github.io/ptx-pathways-argentina/tools/csv_convert_geojson.html) located in /tools to convert the csv. The website also contains instructions.
+
+
+Else, you could also use this website: https://www.convertcsv.com/csv-to-geojson.htm and enter the csv code.
 In step 3, enter the columns, in which longitude and latitude are saved. Normally this woul be the columns 9 and 10, respectively.
 copy and paste the converted file (now geojson) to an empty file and replace the old one:
 "convertcsv.geojson".
