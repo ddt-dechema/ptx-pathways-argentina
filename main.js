@@ -1,6 +1,8 @@
 const element = document.getElementById('sidebar');
 element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
 
+var table_all = document.getElementById('table-all-emissions');
+var table_selected = document.getElementById('table-selected-emissions');
 
 // Define a GeoJSON URL
 var geojsonURL = 'argentina_emissions.geojson';
@@ -17,6 +19,8 @@ var biogenicLayers = ["Biogas", "Bioethanol", "Cellulose and paper"];
 // Initialize an object to store total emissions for each industry type
 var totalEmissions = {};
 var totalEmissions_total = 0;
+var formattedEmissions_total = 0;
+var formattedEmissions_selected = 0;
 
 var allLayersVisible = true; // Initial state, all layers are visible
 var biogenicLayersVisible = true; // Initial state, biogenic layers are visible
@@ -44,6 +48,7 @@ var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an ini
 var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
 
 var radius_slider = document.getElementById('radius_slider');
+var radius_slider_output = document.getElementById('radius_slider_output');
 var sliderValue = 1;
 var sliderValue_old = 1;
 
@@ -57,7 +62,7 @@ radius_slider.addEventListener('input', function () {
     // Update circle sizes based on the slider value
     // console.log(sliderValue)
     maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue
-         
+    radius_slider_output.innerHTML = sliderValue;    
     // Update the circle elements using D3.js
     // svg.selectAll('circle')
     //   .attr('r', scaledRadius);
@@ -700,6 +705,7 @@ function addCO2argentinaPopupHandler(feature) {
 //                     }
 //                 }
 //             },
+
 //             // naceCategories: {
 //             //     buttons: {
 //             //         containerId: 'nace-categories',
@@ -895,6 +901,7 @@ function toggleLayer(layer, layerName, button_id, industryType) {
 
 // Add event listeners to toggle buttons
 var toggleButtons = document.querySelectorAll('.toggle-layer-button');
+
 toggleButtons.forEach(button => {
     button.addEventListener('click', function () {
 
@@ -907,6 +914,11 @@ toggleButtons.forEach(button => {
         if (layer) {
             toggleLayer(layer, layerName, button, industryType);
         } 
+        table_selected.style.background = '#ddc'
+        getEmissionsSelected()
+        setTimeout(function () {
+            table_selected.style.background = 'none'
+        }, 500)
     });
 });
     
@@ -1017,45 +1029,64 @@ function toggleFilterEmittersByPollutant(pollutant) {
 // pollutantFilterCO2biogasButton.addEventListener('click', returnTogglePollutantFilter(pollutantFilterCO2biogasButton))
 // pollutantFilterCO2industrialButton.addEventListener('click', returnTogglePollutantFilter(pollutantFilterCO2industrialButton))
 
+function getEmissionsSelected() {
+    formattedEmissions_selected = 0;
 
-function getFilteredTotals() {
-    let co2sum = 0,
-        cosum = 0,
-        co2sumCombined = 0,
-        cosumCombined = 0,
-        nace = globalModel.emissions.categories.naceCategories.items
-    for (name in nace) {
-        if (nace[name].active) {
-            if (pollutantFilterCO2industrialButton.classList.contains('is-activated')) cosum += globalEmissionData.stats.totals['CO2, biogenic'][name]
-            if (pollutantFilterCO2biogasButton.classList.contains('is-activated')) co2sum += globalEmissionData.stats.totals['CO2, industrial'][name]
+    buttonData.forEach(function(name) {
+        if (map.hasLayer(layers[name.name])) {
+            if(totalEmissions[name.name]){
+                formattedEmissions_selected += totalEmissions[name.name];
+            }
+        } else {
         }
-    }
-    for (f in globalEmissionData['CO2, biogenic'].features) {
-        let props = globalEmissionData['CO2, biogenic'].features[f].properties
-        if (pollutantFilterCO2industrialButton.classList.contains('is-activated') &&
-            pollutantFilterCO2biogasButton.classList.contains('is-activated') &&
-            nace[props.NACEMainEconomicActivityName].active &&
-            props.co2Amount &&
-            props.co2Amount > 0) {
-            co2sumCombined += props.co2Amount
-            cosumCombined += props.MTonnes
-        }
-    }
-    co2CombinedFilteredSumOutput.style.background = '#ddc'
-    coCombinedFilteredSumOutput.style.background = '#ddc'
-    co2FilteredSumOutput.style.background = '#ddc'
-    coFilteredSumOutput.style.background = '#ddc'
-    setTimeout(function () {
-        co2FilteredSumOutput.style.background = '#fff'
-        coFilteredSumOutput.style.background = '#fff'
-        co2CombinedFilteredSumOutput.style.background = '#fff'
-        coCombinedFilteredSumOutput.style.background = '#fff'
-    }, 500)
-    co2FilteredSumOutput.textContent = format1Dec(co2sum) + ' Megatonnes/year'
-    coFilteredSumOutput.textContent = format1Dec(cosum) + ' Megatonnes/year'
-    co2CombinedFilteredSumOutput.textContent = format1Dec(co2sumCombined) + ' Megatonnes/year'
-    coCombinedFilteredSumOutput.textContent = format1Dec(cosumCombined) + ' Megatonnes/year'
-}
+    })
+    formattedEmissions_selected = formattedEmissions_selected.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    table_selected.innerHTML=formattedEmissions_selected;
+
+};
+
+// function getFilteredTotals() {
+//     let co2sum = 0,
+//         cosum = 0,
+//         co2sumCombined = 0,
+//         cosumCombined = 0,
+//         nace = globalModel.emissions.categories.naceCategories.items
+//     for (name in nace) {
+//         if (nace[name].active) {
+//             if (pollutantFilterCO2industrialButton.classList.contains('is-activated')) cosum += globalEmissionData.stats.totals['CO2, biogenic'][name]
+//             if (pollutantFilterCO2biogasButton.classList.contains('is-activated')) co2sum += globalEmissionData.stats.totals['CO2, industrial'][name]
+//         }
+//     }
+//     for (f in globalEmissionData['CO2, biogenic'].features) {
+//         let props = globalEmissionData['CO2, biogenic'].features[f].properties
+//         if (pollutantFilterCO2industrialButton.classList.contains('is-activated') &&
+//             pollutantFilterCO2biogasButton.classList.contains('is-activated') &&
+//             nace[props.NACEMainEconomicActivityName].active &&
+//             props.co2Amount &&
+//             props.co2Amount > 0) {
+//             co2sumCombined += props.co2Amount
+//             cosumCombined += props.MTonnes
+//         }
+//     }
+//     co2CombinedFilteredSumOutput.style.background = '#ddc'
+//     coCombinedFilteredSumOutput.style.background = '#ddc'
+//     co2FilteredSumOutput.style.background = '#ddc'
+//     coFilteredSumOutput.style.background = '#ddc'
+//     setTimeout(function () {
+//         co2FilteredSumOutput.style.background = '#fff'
+//         coFilteredSumOutput.style.background = '#fff'
+//         co2CombinedFilteredSumOutput.style.background = '#fff'
+//         coCombinedFilteredSumOutput.style.background = '#fff'
+//     }, 500)
+//     co2FilteredSumOutput.textContent = format1Dec(co2sum) + ' Megatonnes/year'
+//     coFilteredSumOutput.textContent = format1Dec(cosum) + ' Megatonnes/year'
+//     co2CombinedFilteredSumOutput.textContent = format1Dec(co2sumCombined) + ' Megatonnes/year'
+//     coCombinedFilteredSumOutput.textContent = format1Dec(cosumCombined) + ' Megatonnes/year'
+// }
 
 // function toggleAllNaceFilter() {
 //     let nace = globalModel.emissions.categories.naceCategories
@@ -1249,6 +1280,37 @@ function getFilteredTotals() {
 //     // getActiveChemPlants()
 // }
 
+/**
+ * Decide for each emission if it should be displayed depending on all active filters
+//  */
+function updateEmissionsFilter() {
+    let nace = globalModel.emissions.categories.naceCategories.items
+    // let chemParkFilterOn = chemParkFilterButton.classList.contains('is-info')
+    // let polyolPlantFilterOn = polyolFilterButton.classList.contains('is-info')
+    for (marker in markers) {
+        var m = markers[marker]
+        m.setFilter(globalEmissionData[marker], function (feature) {
+            let isVisible = true
+            isVisible = (nace[feature.properties.NACEMainEconomicActivityName].active)
+            // if selected, only show those next to chemParks
+            // if (isVisible && radiusFilterButton.classList.contains('is-info')) {
+            //     isVisible =
+            //         // if the chemical parks are not limited to polyol plants, check for distance to chemParks
+            //         (chemParkFilterOn && decideIfInDistance(feature, 'chemical parks'))
+            //         // and always check for distance to polyol plants
+            //         ||
+            //         (polyolPlantFilterOn && decideIfInDistance(feature, 'polyol plants'))
+            //     // if selected, only show clusters with enough CO for x kt polyol
+            //     if (isVisible && sizeFilterButton.classList.contains('is-info')) {
+            //         isVisible = decideIfInVisibleCluster(feature)
+            //     }
+            // }
+            return isVisible
+        })
+    }
+    getFilteredTotals()
+    // getActiveChemPlants()
+}
 /**
  * Checks if the feature is within the radius of a chemical cluster that has enough CO emissions
  *
@@ -2163,16 +2225,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     totalEmissions_total += IndustryEmissions;
                     // console.log('totalEmissions_total: ',totalEmissions_total);
                 }
-                var formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
+                
+                formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
                 });
-                table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";
-                          
+                
+                formattedEmissions_selected = formattedEmissions_total;
+
+                table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";       
         
                 // Display the table in a specific HTML element
-                var tableContainer = document.getElementById('table-container');
-                tableContainer.innerHTML = table;
+                table_all.innerHTML = table;
+                table_selected.innerHTML=formattedEmissions_total;
         
         data.features.forEach(function (feature) {
             var propertyValue = feature.properties[propertyToFindMax];

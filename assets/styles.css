@@ -13,6 +13,10 @@
   display: inline-block;
 }
 
+input[type='range'].slider {
+  background-color: #23d160;
+  color: #fff;
+}
 body {
   margin: 0;
   padding: 0;
