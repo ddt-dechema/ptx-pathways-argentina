@@ -13,10 +13,12 @@
   display: inline-block;
 }
 
-input[type='range'].slider {
-  background-color: #23d160;
-  color: #fff;
+input[type='range'] {
+  accent-color: var(--ptx-primary-color);
 }
+
+
+
 body {
   margin: 0;
   padding: 0;
