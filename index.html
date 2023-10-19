@@ -2,7 +2,7 @@
 <html lang="en-EN">
 
 <head>
-	<title>PtX Pathways Argentina - CO2 sources map</title>
+	<title>PtX Pathways Argentina - CO₂ sources map</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="Description" content="An interactive map to show CO/CO2 emissions from different processes and a non-exhaustive number of chemical parks and polyol plants.
@@ -18,14 +18,65 @@
 	<!-- Boring layer selection <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.min.css" integrity="sha256-2nki7eLxn91r/RI3QQq+ArnIltknk6gz4wSoQHFrJnA=" crossorigin="anonymous" /> -->
 	<link href="assets/styles.css" rel="stylesheet">
 	<!-- <link href="index.css" rel="stylesheet"> -->
+	<!-- When inserting HTML content dynamically using jQuery or JavaScript, it's important to be aware of the potential for cross-site scripting (XSS) vulnerabilities if the HTML content comes from untrusted sources.
+		If the content you're inserting into the DOM is not trusted or user-generated, you should sanitize it to prevent potential security risks. You can use a library like DOMPurify to help with HTML sanitization.
+	Here's an example of how you can use DOMPurify with jQuery to safely insert HTML content: 
+	Include the DOMPurify library in your HTML file:
+	-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.2/purify.min.js"></script>
 
 	<script src="assets/jquery-3.7.1.min.js"></script>
+
 	<script> 
-        $(function(){
-            $("#ToIncludeIntroduction").load("introduction.html"); 
-			$("#ToIncludeLegal").load("legal.html"); 
-			$("#ToIncludeData").load("data.html"); 
-        });
+
+
+		$(document).ready(function () {
+			let lang = 'es'; // Default language
+			// var lang = getUrlParameter('lang');
+
+			const urlParams = new URLSearchParams(window.location.search);
+			if (urlParams.has('lang')) {
+				lang = urlParams.get('lang');
+			}
+			// Now you can create the translations variable dynamically based on the selected language
+			const translations = window['translations_' + lang];
+			
+			if (!translations) {
+				// Handle cases where the selected language is not found
+				lang = 'es';
+				console.log('Language not found. Falling back to spanish.');
+				const translations = window['translations_' + lang];
+				// console.log(translations)
+				window.location.replace("index.html?lang=es");
+			}	
+
+			$("#sidebar_title").html(translations.sidebar_title);
+			$("#filter_title").html(translations.filter_title);
+			$("#manual_filter").html(translations.manual_filter);
+
+			$("#statistics_title").html(translations.statistics_title);
+			$("#statistics").html(translations.statistics);
+			$("#statistics_total").html(translations.statistics_total);		
+			$("#circle_title").html(translations.circle_title);
+			$("#circle_size").html(translations.circle_size);
+			$("#zoom_factor").html(translations.zoom_factor);		
+
+			$("#ToIncludeIntroduction").load("introduction.html", function() {
+				$("#introduction_title").html(translations.introduction_title);
+				$("#introduction").html(translations.introduction);
+				$("#project").html(translations.project);		
+			}); 
+			$("#ToIncludeData").load("data.html", function() {
+				$("#data_title").html(translations.data_title);
+				$("#methods").html(translations.methods);
+				$("#sources").html(translations.sources);			
+				$("#map_programming").html(translations.map_programming);	
+				$("#contact").html(translations.contact);
+			}); 
+			$("#ToIncludeDisclaimer").load("disclaimer.html", function() {
+				$("#disclaimer").html(translations.disclaimer);
+			}); 
+		});
     </script> 
 
 	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
@@ -148,14 +199,14 @@
 		<!-- Nav tabs -->
 		<div class="sidebar-tabs">
 			<ul role="tablist" id="maintablist">
-				<li class="" id="info-tab-li">
+				<li class="active" id="info-tab-li">
 					<a href="#info-content" role="tab" aria-label="Information about the tool">
 						<svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-info"></use>
 						</svg>
 					</a>
 				</li>
-				<li class="active" id="emitter-tab-li">
+				<li class="" id="emitter-tab-li">
 					<a href="#emitter-content" role="tab" aria-label="Filter by emitter type">
 						<svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-emitter"></use>
@@ -169,24 +220,10 @@
 						</svg>
 					</a>
 				</li>
-				<!-- <li id="legal-tab-li">
-					<a href="#legal-content" role="tab" aria-label="Legal information, Copyrights, data">
-						<svg class="svgicon" viewbox="0 0 32 32">
-							<use xlink:href="#icon-paragraph"></use>
-						</svg>
-					</a>
-				</li> -->
 			</ul>
 			<ul role="tablist">
-				<!-- <li id="settings-tab-li">
-					<a href="#settings-content" role="tab" aria-label="Advanced settings">
-						<svg class="svgicon" viewbox="0 0 32 32">
-							<use xlink:href="#icon-settings"></use>
-						</svg>
-					</a>
-				</li> -->
-				<li id="legal-tab-li">
-					<a href="#legal-content" role="tab" aria-label="Legal information, Copyrights, data">
+				<li id="disclaimer-tab-li">
+					<a href="#disclaimer-content" role="tab" aria-label="Legal information, Copyrights, data">
 						<svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-paragraph"></use>
 						</svg>
@@ -197,77 +234,25 @@
 
 		<!-- Tab panes -->
 		<div class="sidebar-content" id="sidebarcontent">
-			<div class="sidebar-pane" id="info-content">
-				<h1 class="sidebar-header">
-					PtX Pathways - CO<sub>2</sub> emissions in Argentina aaaaaa
+			<div class="sidebar-pane active" id="info-content">
+				<h1 class="sidebar-header" id="sidebar_title">
+					PtX Pathways - CO<sub>2</sub> emissions in Argentina
 					<span class="sidebar-close" id="sidebar-close-info-span"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
 				<div id="ToIncludeIntroduction"></div>
 
-				<!-- <h1 class="sidebar-header">
-					PtX Pathways - CO<sub>2</sub> emissions in Argentina
-					<span class="sidebar-close" id="sidebar-close-info-span"><svg class="svgicon" viewbox="0 0 32 32">
-							<use xlink:href="#icon-play3"></use>
-						</svg></span>
-				</h1>
-				<h2>Information on this map</h2> 
-				<div class="description">This map shows all emissions of CO and CO<sub>2</sub> in Europe <b>in selected industrial categories that contain processes with Carbon4PUR compatible emissions</b> according to
-					the <a href="https://prtr.eea.europa.eu" target="_blank" rel="noopener">E-PRTR</a>. For more detail on the E-PRTR
-					data and how it was obtained, read the <a href="#data-section" onclick="map.sidebar.open('legal-content')">data section</a>.<br>
-					The tabs on the left allow to filter those emissions to obtain possible replication sites for a
-					Carbon4PUR plant. The first tab contains filters based on the type of emissions, the second tab
-					filters based on possible plants.
-					<h2>Legend</h2>
-					<h3>CO/CO<sub>2</sub> emitters</h3>
-					CO emissions are displayed with an <span style="border: 1px solid rgb(234,110,57); border-radius: 4px;">orange</span> border and all
-					CO<sub>2</sub> emissions with a	<span style="border: 1px solid rgb(241, 177, 48); border-radius: 4px;">yellow</span> border. The fill
-					color depends on the type of plant (see colors in the second tab on the left or click on any circle
-					on the map). The size indicates the amount of CO or CO<sub>2</sub> available.
-					<h3>CO/CO<sub>2</sub> users (chemical plants)</h3>
-					Chemical plants are <span style="background: rgba(0,168,189,0.6); border-radius: 4px;">blue</span>
-					and
-					polyol plants <span style="background: rgba(12,168,118,0.6); border-radius: 4px;">green</span>.
-					Those are potential sites for the Carbon4PUR technology. CO and CO<sub>2</sub> have to be available
-					nearby, and the size of the circle corresponds to the radius (defined by the user) in which transporting
-					those gases might be economical.
-					<h2>Usage</h2>
-					You can add filters to narrow down the emissions:<ul class="is-bullet">
-						<li>to those compatible with the Carbon4PUR process or by emission type and source <a
-								onclick="map.sidebar.open('emitter-content')">(<svg class="svgicon-small">
-									<use xlink:href="#icon-emitter"></use>
-								</svg> tab on the left)</a>,</li>
-						<li>and to those near an existing chemical parc, polyol plant or steel mill <a
-								onclick="map.sidebar.open('consumer-content')">(<svg class="svgicon-small">
-									<use xlink:href="#icon-consumer"></use>
-								</svg> tab)</a>. This tab also allows for analysis of available CO/CO<sub>2</sub>, ethylene oxide and propylene oxide as well as some analytics.</li>
-						<li>The <a onclick="map.sidebar.open('legal-content')"><svg class="svgicon-small">
-							<use xlink:href="#icon-paragraph"></use>
-							</svg> tab</a> contains information about data, licences and privacy and</li>
-						<li>in the <a onclick="map.sidebar.open('settings-content')"><svg class="svgicon-small">
-							<use xlink:href="#icon-settings"></use>
-							</svg> settings tab</a> contains advanced options like map layout and a possibility to load and save your own consumers.</li>
-					</ul>
-				</div>
-				<h2>Funding</h2>
-				<div>
-					<img src="img/eu.png" style="float: left; vertical-align: middle; padding: 8px 8px 5px 0px;">This
-					project has
-					received funding from the European Union’s Horizon 2020 research and innovation programme under
-					grant agreement No 768919
-				</div> 
-			-->
 			</div>
-			<div class="sidebar-pane active" id="emitter-content">
+			<div class="sidebar-pane" id="emitter-content">
 				<h1 class="sidebar-header">
 					CO<sub>2</sub> emitters in Argentina
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
-				<h2 style="color: red;">Filter by compatibility with Carbon4PUR cleaning step</h2>
-				<div class="filterGroup">
+				<h2 id="filter_title">Filter by compatibility with Carbon4PUR cleaning step</h2>
+				<div class="filterGroup" id="manual_filter">
 					<!-- <div class="buttons has-addons">
 						<a id="compat-filter-loop-button" class="button is-info is-small">chemical looping</a>
 						<a id="compat-filter-cat-button" class="button is-small">catalytic cleaning</a>
@@ -305,263 +290,59 @@
 					<div id="button-container"></div>
 				</div>
 				<div> 
-					<h2>Statistics</h2>
-						Total emissions in Europe for selected filters:
+					<h2 id="statistics_title">Statistics</h2>
+					<div id="statistics"></div>
+					
 						<table>
 							<tr>
 								<th id="table-selected-emissions" style="width: 135px;text-align: right;">123 </th>
-								<th>&nbsp;Tonnes per year</td></th>
+								<th id="statistics_total">Tonnes per year</td></th>
 							</tr>
 						</table>
-					<h3>Total Emissions</h3>
-						<table id="table-all-emissions"></table>
+					<h3 style="color:red";>Total Emissions</h3>
+						<table id="table-all-emissions" style="color:red"></table>
 				</div>
+
 				<div>
-					<h2>Change circle size</h2>
-					If you want to change the circle sizes (to be able to properly see the locations with rather few emissions), use this slider.
-					<br>Zoom factor:
+					<h2 id="circle_title">Change circle size</h2>
+					<div id="circle_size">If you want to change the circle sizes (to be able to properly see the locations with rather few emissions), use this slider.</div>
+					<br>
+					<div id="zoom_factor">Zoom factor:</div>
 					<input type="range" class="" id="radius_slider" min="1" max="3" value="1">
 					<output for="radius_slider" id="radius_slider_output">1</output>x
 					<div id="slider_legend"></div>
 				</div>
-				<!-- <div style="color:red;">
-					<h2>Statistics</h2>
-					<div style="color:red;" class="sumsEmissions">Total emissions in Europe for selected filters:
-						<table>
-							<tr>
-								<td>CO<sub>2</sub>: </td>
-								<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO2"></output></td>
-							</tr>
-							<tr>
-								<td>CO: </td>
-								<td style="text-align: right; padding-left: 0.75rem;"><output id="sumCO"></output></td>
-							</tr>
-						</table>
-					</div>
-					<div class="sumsCombinedEmissions">Total emissions in Europe for selected filters where both CO and
-						CO<sub>2</sub> are available at the same site:
-						<table>
-							<tr>
-								<td>CO<sub>2</sub>: </td>
-								<td style="text-align: right; padding-left: 0.75rem;"><output
-										id="sumCO2combined"></output></td>
-							</tr>
-							<tr>
-								<td>CO: </td>
-								<td style="text-align: right; padding-left: 0.75rem;"><output
-										id="sumCOcombined"></output></td>
-							</tr>
-						</table>
-					</div>
-				</div> -->
-		</div>
+			</div>
 
 			<div class="sidebar-pane" id="data-content">
-				<h1 class="sidebar-header">
+				<h1 class="sidebar-header" id="data_title">
 					Data
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
+				<h3>Change layout</h3>
 				<div class="buttons has-addons">
 					<a class="button is-small" id="map-layout-green">Blue-Green</a>
 					<a class="button is-small" id="map-layout-spanish">Spanish</a>
 					<a class="button is-info is-small" id="map-layout-light">Light</a>
 				</div>
 				<div id="ToIncludeData"></div>
-<!-- 
-				<h2>Select types of plant</h2>
-				<div class="buttons">
-					<button class="button is-small is-fullwidth is-info" id="polyol-filter-button">Polyol plants</button>
-					<button class="button is-small is-fullwidth is-info" id="chem-plant-filter-button">Chemical parks</button>
-					<div class="buttons has-addons" style="width: 100%;">
-						<button class="button is-small" style="width: 62%;" id="steel-mill-button">Also show steel mills as consumers</button>
-						<button class="button is-small" style="width: 38%;" id="steel-mill-filter-button" disabled>Don't filter by resources</button>
-					</div>
-				</div>
-				<h2>Select needed resources</h2>
-				<div class="buttons">
-					<div class="buttons has-addons" style="width: 100%;">					
-						<button class="button is-small" style="width: 62%;" id="ethylene-filter-button">Only plants with ethylene oxide availability</button>						
-						<button class="button is-small" style="width: 38%;" id="ethylene-pipeline-button">(Show ethylene pipelines)</button>
-						<button class="button is-small" style="width: 62%;" id="propylene-filter-button">Only plants with propylene oxide availability</button>
-						<button class="button is-small" style="width: 38%;" id="propylene-pipeline-button">(Show propylene pipelines)</button>
-					</div>
-					<div class="buttons has-addons" style="width: 100%;">					
-					</div>
-				</div>
-				<h2>Search radius around plants</h2>
-				<div class="filterGroup" id="distance-chemical-plant">Distance in km from chemical plant to look for emissions:<br />
-					<div class="is-size-7">&#9432; All emissions within this radius will be summed up in the popup when clicking on a plant</div>
-					<input id="distance-chemical-plant-slider" class="slider has-output is-success" min="0" max="50"
-						value="20" step="1" type="range">
-					<output for="distance-chemical-plant-slider" id="distance-chemical-plant-slider-output">20</output>
-					
-					<a class="button is-small" id="radius-filter-button">Only show emitters within radius of chemical
-						plant</a>
-				</div>
-				<h2>Filter by desired Carbon4PUR plant size</h2>
-				<div class="filterGroup">
-					<a class="button is-small" id="size-filter-button">Only clusters with enough CO for x kt
-						polyol:</a><br />
-					<input id="polyol-slider" class="slider has-output is-fullwidth" disabled min="0" max="100" value="5"
-						step="1" type="range">
-					<output for="polyol-slider" id="polyol-slider-output">5</output>
-				</div>
-				<h2>Statistics</h2>
-				<table>
-					<tr>
-						<td>Chemical parks within the filters: </td>
-						<td style="text-align: right; padding-left: 0.75rem;"><output
-								id="number-chem-parks"></output></td>
-					</tr>
-					<tr>
-						<td>Polyol plants within the filters:</td>
-						<td style="text-align: right; padding-left: 0.75rem;"><output
-								id="number-polyol-plants"></output></td>
-					</tr>
-					<tr>
-						<td>Steel mills within the filters:</td>
-						<td style="text-align: right; padding-left: 0.75rem;"><output
-								id="number-steel-mills"></output></td>
-					</tr>
-					
-				</table> -->
 			</div>
 
-			<div class="sidebar-pane" id="legal-content">
+			<div class="sidebar-pane" id="disclaimer-content">
 				<h1 class="sidebar-header">
 					Data, Licences, Privacy
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
-				<div id="ToIncludeLegal"></div>
-				<!-- <a name="data-section"></a> -->
-				<!-- <h2>Data</h2>
-				<h3>Emissions</h3>
-				All emissions have been obtained from <a href="https://prtr.eea.europa.eu" target="_blank" rel="noopener">E-PRTR</a>.
-				The data was queried via the SPARQL-Endpoint <a href="http://semantic.eea.europa.eu/sparql"
-					target="_blank" rel="noopener">http://semantic.eea.europa.eu/sparql</a>. The exact query can be found <a
-					href="sparql.txt" target="_blank" rel="noopener">in this text file</a>. Some errors have been corrected manually, e.g. the
-				coordinates of Fjernvarme Fyn power plant was changed from somewhere in Cameroon to the correct
-				location in Denmark.<br>
-				<h3>Chemical parks and polyol plants</h3>
-				All chemical plants and polyol plants have been gathered manually via desk research, publications
-				and interviews. There is no promise that this data is complete or correct. If you have suggestions,
-				please <a href="https://www.carbon4pur.eu/contact/" target="_blank" rel="noopener">contact us</a>.<br>
-				The steel mills come from Carbon4PUR internal resources.
-				<h3>Resource availability</h3>
-				Ethylene oxide and propylene oxide availability was also gathered via desk research. Data is sparse and sometimes contradictory,
-				so please only use this as a first indicator. It is (wrongly) considered that all polyol plants have ethylene oxide and propylene oxide available.<br>
-				Ethylene and propylene pipelines are compiled from
-				<a href="https://chemicalparks.eu">chemicalparks.eu</a>,
-				<a href="https://argkg.com/european-ethylene-pipeline-network/">argkg.com</a>,
-				<a href="https://www.eps-pipeline.de/pipeline/verbund.html">eps-pipeline.de</a>,
-				<a href="https://www.sabic.com/en/about/ehss/sabic-uk-pipelines">sabic.com</a>,
-				<a href="https://www.infraserv.com/en/standortbetrieb/energien_1/technische_gase_und_medien/ethylen_transport/ethylen_transp_grbild.html">infraserv.com</a> and 
-				<a href="https://www.gtai.de/GTAI/Navigation/EN/Invest/Industries/Chemicals-materials/Chemicals/chemical-parks-in-germany.html">gtai.de</a>
-				<a name="nace-description"></a>
-				<h3>Further reading</h3>
-				A more detailed documentation can be found in our <a href="https://www.carbon4pur.eu/wp-content/uploads/2019/09/D-7.1-Mapping-of-CO2-CO-mixed-and-pure-sources-in-Europe.pdf">public deliverable D7.1</a>.
-				<h2>NACE categories and plant types</h2>
-				Carbon4PUR is investigating two cleaning technologies: <b>chemical looping</b> and <b>catalytic
-					cleaning</b>. They differ in their compatibility with input gases. We therefore defined a list
-				of compatible processes for each cleaning step.<br>
-				<b>catalytic cleaning</b> is compatible with steel gases and the Acheson process.<br>
-				<b>chemical looping</b> is compatible with steel gases, the Acheson process, biogas before and after
-				combustion, [pyrolysis gas, refineries and steam crackers] all after partial combustion. Cement/lime
-				kiln and ammonia could be used if the off gases were separated and then mixed with CO, H<sub>2</sub> or
-				CH<sub>4</sub> containing streams .<br>
-				To get an idea of where those emissions are available, the <a
-					href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2&StrLanguageCode=EN&StrLayoutCode=HIERARCHIC&IntPcKey="
-					target="_blank" rel="noopener">NACE category</a> for each of those processes have been obtained:
-				<table>
-					<tr>
-						<td>Steel: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18501854&IntKey=18501884&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">24.10 Manufacture of basic iron and steel and of ferro-alloys</a>
-						</td>
-					</tr>
-					<tr>
-						<td>Acheson: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18499754&IntKey=18499844&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">20.13 Manufacture of other inorganic basic chemicals</a></td>
-					</tr>
-					<tr>
-						<td>Biogas: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18506894&IntKey=18506924&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">35.11 Production of electricity</a></td>
-					</tr>
-					<tr>
-						<td>Pyrolysis: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18495674&IntKey=18495704&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">06.20 Extraction of natural gas</a></td>
-					</tr>
-					<tr>
-						<td>Refineries and steam crackers: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18499664&IntKey=18499694&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">19.20 Manufacture of refined petroleum products</a></td>
-					</tr>
-					<tr>
-						<td>Cement: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18499754&IntKey=18499844&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">23.51 Manufacture of cement</a></td>
-					</tr>
-					<tr>
-						<td>Lime and Plaster: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18501374&IntKey=18501434&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">23.52 Manufacture of lime and plaster</a></td>
-					</tr>
-					<tr>
-						<td>Ammonia: </td>
-						<td><a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=DSP_NOM_DTL_VIEW&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=18499754&IntKey=18499904&StrLayoutCode=HIERARCHIC&IntCurrentPage=1"
-								target="_blank" rel="noopener">20.15 Manufacture of fertilisers and nitrogen compounds</a></td>
-					</tr>
-				</table>				
-				<h2>Disclaimer</h2>
-				The information contained in this document has been prepared solely for the purpose of providing
-				information about the Carbon4PUR consortium and its project. The document reflects only the
-				Carbon4PUR consortium’s view and the European Commission is not responsible for any use that may be
-				made of the information it contains.
-				<h2>Funding</h2>
-				<div>
-					<img src="img/eu.png" style="float: left; vertical-align: middle; padding: 8px 8px 5px 0px;">This
-					project has
-					received funding from the European Union’s Horizon 2020 research and innovation programme under
-					grant agreement No 768919
-				</div>
-				<h2>Licence</h2>
-				The content of this site is licensed under the <a href="https://opensource.org/licenses/MIT">MIT
-					license</a>. You are basically free to do anything you want with it as long as you cite the author
-				(Carbon4PUR consortium) and use a similarly permissive licence.<br>
-				The source code <a href="https://github.com/Carbon4PUR/mapping">is available on github</a>, please feel
-				free to clone and modify the code. It would be nice to <a href="https://www.carbon4pur.eu/contact/"
-					target="_blank" rel="noopener">contact us</a> to let us know what you are doing with the tool.
-				<h2>Used software</h2>
-				This website uses several technologies, libraries and artwork, notably:
-				<ul class="is-bullet">
-					<li><a href="https://leafletjs.com/">Leaflet</a> as mapping utility</li>
-					<li>Map data from <a href="https://www.thunderforest.com/">Thunderforest</a>, <a
-							href="https://carto.com/attribution">CARTO</a> and <a
-							href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></li>
-					<li><a href="https://github.com/turbo87/sidebar-v2/">Leaflet-Sidebar2</a> for the left tabs</li>
-					<li><a href="https://bulma.io/">Bulma</a> as a styling framework</li>
-					<li><a href="https://introjs.com/">Intro.js</a> for the guided tour</li> 
-					<li><a href="https://d3js.org/">d3.js</a> for some DOM manipulation and the legend</li>
-					<li>Icons from Peter Selinger (<a
-							href="https://commons.wikimedia.org/wiki/File:Paragraf_-_symbol.svg">paragraph</a>)</li>
-				</ul>
-				<h2>Impressum</h2>
-				This website has been created by Oliver Hurtig with the help and for the Carbon4PUR consortium, based on
-				<a href="https://carbonnext-eu.github.io/">a similar map from the EU funded CarbonNext project</a>.
-				It is intended as a tool to visualize publicly available data to help with the decision making of
-				Carbon4PUR replication activities.<br>
-				You can contact the Carbon4PUR consortium via our website: <a href="https://www.carbon4pur.eu/contact/"
-					target="_blank" rel="noopener">Carbon4PUR contact form</a> -->
+				
+				<div id="ToIncludeDisclaimer"></div>
+				
 			</div>
 
-			<div class="sidebar-pane" id="settings-content">
+			<!-- <div class="sidebar-pane" id="settings-content">
 				<h1 class="sidebar-header">
 					Settings
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
@@ -591,14 +372,14 @@
 						<button class="button is-small is-warning" id="reset-consumers">Reset consumers</button>
 					</div>
 				</div>
-				<!-- <h2>Introduction tour</h2>
-				<a class="button is-small" id="show-intro">Show intro again</a> -->
-			</div>
+				<h2>Introduction tour</h2>
+				<a class="button is-small" id="show-intro">Show intro again</a> 
+			</div> -->
 		</div>
 	</div>
 
 	<!-- Modal for input/output of chemical data -->
-	<div class="modal" id="modal-modify-consumers" style="z-index: 9000">
+	<!-- <div class="modal" id="modal-modify-consumers" style="z-index: 9000">
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
@@ -607,7 +388,7 @@
 			</header>
 			<section class="modal-card-body">
 				<!-- Content ... -->
-				<p>You can edit the data in csv format directly here, or you can download it as csv and edit it for
+				<!--<p>You can edit the data in csv format directly here, or you can download it as csv and edit it for
 					example in Excel. You can then copy it in here again.</p>
 				<p>If you want to share your own data, click on "create link" below and copy the displayed link.</p>
 				<h2>Chemical parks <span class="is-size-7">(<a href="chemicalparks v2.csv">Download</a>)</span></h2>
@@ -623,7 +404,7 @@
 				<button class="button close-modal">Cancel</button>
 			</footer>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <script src="vendor/leaflet.js" defer></script> -->
 	<script src="assets/leaflet.js"></script>
@@ -636,6 +417,8 @@
 	<script src="geojson.js"></script>
 
 	<script src="assets/color_palette_ptxpathways.js"></script>
+	<script src="es.js"></script>
+	<script src="en.js"></script>
 	<script src="main.js"></script>
 </body>
 

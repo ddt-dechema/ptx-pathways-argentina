@@ -1,8 +1,11 @@
+
+
 const element = document.getElementById('sidebar');
 element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
+
 
 // Define a GeoJSON URL
 var geojsonURL = 'argentina_emissions.geojson';
@@ -2254,6 +2257,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
         loadGlobalDefs()
         createScale(1); 
+
+        
     })
     .catch(error => {
         console.error(`Error loading GeoJSON data: ${error}`);
@@ -2288,8 +2293,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //     // .then(loadSteelMillsAsChemicalParks)
     //     // .then(checkIfIntro)
     //     // .then(getActiveChemPlants)
-
-
 
 })
 
