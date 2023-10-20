@@ -1,11 +1,18 @@
+let lang = 'es'; // Default language
+			// var lang = getUrlParameter('lang');
 
-
-const element = document.getElementById('sidebar');
-element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('lang')) {
+    lang = urlParams.get('lang');
+}
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
-
+if (lang==="en") {
+    var table = "<table><tr><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
+} else if (lang==="es") {
+    var table = "<table><tr><th>Industria</th><th style='text-align: right;'>Emisiones totales (toneladas)</th></tr>";
+}
 
 // Define a GeoJSON URL
 var geojsonURL = 'argentina_emissions.geojson';
@@ -16,8 +23,99 @@ var layer;
 var layers = {};
 
 // Group layers by source type
-var industrialLayers = ["Aluminium", "Steel", "Cement", "Thermal power plant", "Refinery", "Ammonia", "Methanol", "Etileno"];
-var biogenicLayers = ["Biogas", "Bioethanol", "Cellulose and paper"];
+var industrialLayers = [
+    "Aluminium", 
+    "Steel", 
+    "Cement", 
+    "Thermal power plant", 
+    "Refinery", 
+    "Ammonia", 
+    "Methanol", 
+    "Etileno"
+    ];
+var biogenicLayers = [
+    "Biogas", 
+    "Bioethanol", 
+    "Cellulose and paper"
+];
+
+let buttonData;
+// Define a list of button names
+if (lang=="es") {
+    buttonData = [
+        { name_lang: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+        { name_lang: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+        { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
+        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+        { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+        { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+        { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+        { name_lang: 'Biogás ', name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+        { name_lang: 'Papel y celulosa', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
+    ];
+} else if(lang=="en") {
+    buttonData = [
+        { name_lang: 'Aluminium', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+        { name_lang: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
+        { name_lang: 'Steel', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+        { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_lang: 'Thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Ammonia', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+        { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+        { name_lang: 'Methanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+        { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+        { name_lang: 'Biogas', name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+        { name_lang: 'Cellulose and paper', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
+    ];
+}
+
+// Get a reference to the container element
+const buttonContainer = document.getElementById('button-container');
+
+// Loop through the button data and create buttons
+buttonData.forEach(data => {
+    // Create a button element
+    const button = document.createElement('button');
+  
+    // Set the button's text to the name from the data
+    button.textContent = data.name_lang;
+  
+    // Set the button's ID to the ID from the data
+    button.id = data.id;
+  
+    // Add a class for styling (if needed)
+    button.classList.add('custom-button-class', 'toggle-layer-button', 'button', 'is-fullwidth');
+  
+    // Set the button's background color from the data
+    button.style.backgroundColor = emissionTypeColors_D[data.name];
+
+    // add "data-layer" name for each button
+    button.setAttribute('data-layer', data.name);
+    button.setAttribute('industry-type', data.industry)
+    // Add event listeners or other customizations as needed
+    // button.addEventListener('click', () => {
+    //   // Define the click behavior for each button
+    // //   alert(`You clicked ${data.name}`);
+    // //   addGeoJSONLayer("industry", `${data.name}`);
+
+    //     // var layerName = button.getAttribute('data-layer');
+    //     // console.log(layerName);
+    //     // var layer = layers[layerName];
+    //     // console.log(layer)
+    //     // if (layer) {
+    //     //     toggleLayer(layer);
+    //     // }
+    // });
+  // Append the button to the container
+  buttonContainer.appendChild(button);
+
+});
+
+const element = document.getElementById('sidebar');
+element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
+
 
 // Initialize an object to store total emissions for each industry type
 var totalEmissions = {};
@@ -60,48 +158,22 @@ radius_slider.addEventListener('input', function () {
     // Get the current slider value
     
     sliderValue = parseFloat(radius_slider.value);
-    // console.log('Old Value: ' + sliderValue_old);
-    // console.log('New Value: ' + sliderValue);
-    // Update circle sizes based on the slider value
-    // console.log(sliderValue)
+
     maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue
     radius_slider_output.innerHTML = sliderValue;    
-    // Update the circle elements using D3.js
-    // svg.selectAll('circle')
-    //   .attr('r', scaledRadius);
-  
-    // // Update the legend labels
-    // d3.select('#slider_legend').selectAll('div')
-    //   .text(function (d, i) {
-    //     return i === 0 ? 'Min' : 'Max'; // Update labels as needed
-    //   });
-    // Update the legend labels
     createScale(sliderValue);
 
     // Call the function to update circle sizes
-    // console.log(layers)
+
     for (const [key, layername] of Object.entries(layers)) {
         // console.log(`${key}: ${value}`);
         updateCircleSizes(sliderValue_old, sliderValue, layername);
         // console.log("sliderValue: ",sliderValue)
       }
         
-    // addGeoJSONLayer('Aluminium');
-    // addGeoJSONLayer('Steel');
-    // addGeoJSONLayer('Cement');
-    // addGeoJSONLayer('Cellulose and paper');
-    // addGeoJSONLayer('Thermal power plant');
-    // addGeoJSONLayer('Refinery');
-    // addGeoJSONLayer('Biogas');
-    // addGeoJSONLayer('Bioethanol');
-    // addGeoJSONLayer('Ammonia');
-    // addGeoJSONLayer('Methanol');
-    // addGeoJSONLayer('Etileno');
-
     sliderValue_old=sliderValue;
     // console.log('AFTER CHANGE Old Value: ' + sliderValue_old);
     // console.log('New Value: ' + sliderValue);
-
 });
 
 // Assuming you have an existing GeoJSON layer named 'geojsonLayer'
@@ -231,7 +303,12 @@ function toggleIndustrialLayers() {
         toggleIndustrialButton.style.backgroundColor="white";
         toggleIndustrialButton.style.color="black";
 
-        document.getElementById('toggle-all-button').text = 'Select all';
+        if (lang === "es") {
+            document.getElementById('toggle-all-button').text = 'Seleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Select all';
+        }
+
         allLayersVisible = false;
         // TO DO DDT
         // TOGGLE SELECT ALL BUTTON and the STATE 
@@ -250,7 +327,11 @@ function toggleIndustrialLayers() {
         allLayersVisible = false;
     } else if (biogenicLayersVisible && industrialLayersVisible) {
         allLayersVisible = true;
-        document.getElementById('toggle-all-button').text = 'Deselect all';
+        if (lang==="es") {
+            document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Deselect all';
+        }
     }
 
     // console.log('industrialLayersVisible: ',industrialLayersVisible);
@@ -272,7 +353,11 @@ function toggleBiogenicLayers() {
         toggleBiogenicButton.style.color="black";
         // TO DO DDT
         allLayersVisible = false;
-        document.getElementById('toggle-all-button').text = 'Select all';
+        if (lang==="es") {
+            document.getElementById('toggle-all-button').text = 'Seleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Select all';
+        }
         // TOGGLE SELECT ALL BUTTON and the STATE
     } else {
         biogenicLayers.forEach(function (layerName) {
@@ -288,7 +373,11 @@ function toggleBiogenicLayers() {
         allLayersVisible = false;
     } else if (biogenicLayersVisible && industrialLayersVisible) {
         allLayersVisible = true;
-        document.getElementById('toggle-all-button').text = 'Deselect all';
+        if (lang==="es") {
+            document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Deselect all';
+        }
     }
 
     // console.log('industrialLayersVisible: ',industrialLayersVisible);
@@ -804,63 +893,6 @@ function addCO2argentinaPopupHandler(feature) {
 //     }
 // }
 
-// Define a list of button names
-const buttonData = [
-    { name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
-    { name: 'Cement', id: 'button-cement', industry: 'industrial'},
-    { name: 'Steel', id: 'button-Steel', industry: 'industrial'},
-    { name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-    { name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
-    { name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
-    { name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
-    { name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
-    { name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-    { name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
-    { name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
-];
-
-// Get a reference to the container element
-const buttonContainer = document.getElementById('button-container');
-
-// Loop through the button data and create buttons
-buttonData.forEach(data => {
-    // Create a button element
-    const button = document.createElement('button');
-  
-    // Set the button's text to the name from the data
-    button.textContent = data.name;
-  
-    // Set the button's ID to the ID from the data
-    button.id = data.id;
-  
-    // Add a class for styling (if needed)
-    button.classList.add('custom-button-class', 'toggle-layer-button', 'button', 'is-fullwidth');
-  
-    // Set the button's background color from the data
-    button.style.backgroundColor = emissionTypeColors_D[data.name];
-
-    // add "data-layer" name for each button
-    button.setAttribute('data-layer', data.name);
-    button.setAttribute('industry-type', data.industry)
-    // Add event listeners or other customizations as needed
-    // button.addEventListener('click', () => {
-    //   // Define the click behavior for each button
-    // //   alert(`You clicked ${data.name}`);
-    // //   addGeoJSONLayer("industry", `${data.name}`);
-
-    //     // var layerName = button.getAttribute('data-layer');
-    //     // console.log(layerName);
-    //     // var layer = layers[layerName];
-    //     // console.log(layer)
-    //     // if (layer) {
-    //     //     toggleLayer(layer);
-    //     // }
-    // });
-  // Append the button to the container
-  buttonContainer.appendChild(button);
-
-});
-
 
 
 
@@ -895,7 +927,12 @@ function toggleLayer(layer, layerName, button_id, industryType) {
             toggleBiogenicButton.style.color="black";            
         }
         allLayersVisible = false;
-        document.getElementById('toggle-all-button').text = 'Select all';
+        if (lang==="es") {
+            document.getElementById('toggle-all-button').text = 'Seleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Select all';
+        }
+        
     } else {
         layer.addTo(map);
         button.style.backgroundColor = emissionTypeColors_D[layerName];
@@ -2210,15 +2247,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 });
                 // console.log('Aluminium: ',totalEmissions['Aluminium'])
                 // Create an HTML table to display the aggregated data
-                var table = "<table><tr><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
-        
+                
+                // TO DO: append to the HTML table, to be able to change the text to other languages
+
+                // var table = "<tr id='table_emissions_header'><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
+                
                 // Iterate through the totalEmissions object and populate the table
                 for (var industry in totalEmissions) {
                     var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2
                       });
-                    table += "<tr><td>" + industry 
+                      let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
+                    table += "<tr><td>" + industry_lang 
                     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
                 }
 
@@ -2240,6 +2281,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
                 // Display the table in a specific HTML element
                 table_all.innerHTML = table;
+                // table_all.appendChild(table);
                 table_selected.innerHTML=formattedEmissions_total;
         
         data.features.forEach(function (feature) {

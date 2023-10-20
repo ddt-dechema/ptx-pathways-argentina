@@ -39,28 +39,37 @@
 				lang = urlParams.get('lang');
 			}
 			// Now you can create the translations variable dynamically based on the selected language
-			const translations = window['translations_' + lang];
+			let translations = window['translations_' + lang];
 			
 			if (!translations) {
 				// Handle cases where the selected language is not found
 				lang = 'es';
 				console.log('Language not found. Falling back to spanish.');
-				const translations = window['translations_' + lang];
+				translations = window['translations_' + lang];
 				// console.log(translations)
 				window.location.replace("index.html?lang=es");
 			}	
-
+			
 			$("#sidebar_title").html(translations.sidebar_title);
 			$("#filter_title").html(translations.filter_title);
-			$("#manual_filter").html(translations.manual_filter);
-
+			$("#filter_text").html(translations.filter_text);
+			
+			$("#manual_filter_title").html(translations.manual_filter_title);
+			$("#emission_type").html(translations.emission_type);
+			$("#toggle-industrial-button").html(translations.industrial_button);
+			$("#toggle-biogenic-button").html(translations.biogenic_button);
+			$("#only_selected_plants").html(translations.only_selected_plants);
+			$("#toggle-all-button").html(translations.deselect_all_button);
+			
 			$("#statistics_title").html(translations.statistics_title);
 			$("#statistics").html(translations.statistics);
 			$("#statistics_total").html(translations.statistics_total);		
+
 			$("#circle_title").html(translations.circle_title);
 			$("#circle_size").html(translations.circle_size);
 			$("#zoom_factor").html(translations.zoom_factor);		
-
+			$("#scale_title").html(translations.scale_title);
+			
 			$("#ToIncludeIntroduction").load("introduction.html", function() {
 				$("#introduction_title").html(translations.introduction_title);
 				$("#introduction").html(translations.introduction);
@@ -191,7 +200,7 @@
 
 	<!-- Size legend -->
 	<div id="scale">
-		<h3>Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">MT</span>/year</h3>
+		<h3 id="scale_title">Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">MT</span>/year</h3>
 		<svg></svg>
 	</div>
 
@@ -252,7 +261,7 @@
 						</svg></span>
 				</h1>
 				<h2 id="filter_title">Filter by compatibility with Carbon4PUR cleaning step</h2>
-				<div class="filterGroup" id="manual_filter">
+				<div class="filterGroup" id="filter_text">
 					<!-- <div class="buttons has-addons">
 						<a id="compat-filter-loop-button" class="button is-info is-small">chemical looping</a>
 						<a id="compat-filter-cat-button" class="button is-small">catalytic cleaning</a>
@@ -269,9 +278,9 @@
 				<!-- <button class="button is-small btn-block"  id="CO2-argentina-button">ARGENTINIEN TEST</button> -->
 				<!-- <button class="button is-small btn-block"  id="show-geojson-button">DDT TEST</button> -->
 
-				<h2>Or manually filter</h2>
+				<h2 id="manual_filter_title">Or manually filter</h2>
 				<div class="filterGroup">
-					Emission type:
+					<p id="emission_type">Emission type:</p>
 					<div class="buttons" id="gas-type-buttons">
 						<a id="toggle-industrial-button" class="button is-activated is-small">
 							<span>industrial CO<sub>2</sub> sources</span></a>
@@ -281,7 +290,7 @@
 				</div>
 				<div class="filterGroup">
 					<div>
-						<span class="is-pulled-left">Only selected plant types: </span>
+						<span class="is-pulled-left" id="only_selected_plants">Only selected plant types: </span>
 						<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;"><a
 								class="button is-small" id="toggle-all-button">Deselect all</a></span>
 						<span class=" is-clearfix"></span>
@@ -299,8 +308,9 @@
 								<th id="statistics_total">Tonnes per year</td></th>
 							</tr>
 						</table>
-					<h3 style="color:red";>Total Emissions</h3>
-						<table id="table-all-emissions" style="color:red"></table>
+					<h3 id="table_emissions_title">Total Emissions</h3>
+						<table id="table-all-emissions">
+						</table>
 				</div>
 
 				<div>
