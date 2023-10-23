@@ -83,6 +83,7 @@
 			$("#circle_size").html(translations.circle_size);
 			$("#zoom_factor").html(translations.zoom_factor);		
 			$("#scale_title").html(translations.scale_title);
+			$("#disclaimer_title").html(translations.disclaimer_title);
 			
 			$("#ToIncludeIntroduction").load("introduction.html", function() {
 				$("#introduction_title").html(translations.introduction_title);
@@ -351,7 +352,7 @@
 			</div>
 
 			<div class="sidebar-pane" id="disclaimer-content">
-				<h1 class="sidebar-header" style="color:red;">
+				<h1 class="sidebar-header" id="disclaimer_title">
 					Data, Licences, Privacy
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>

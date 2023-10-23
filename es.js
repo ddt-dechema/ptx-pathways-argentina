@@ -67,9 +67,10 @@ var translations_es = {
   <br>[16]	Instituto Petroquímico Argentino (IPA), “Reporte Anual Instituto Petroquímico Argentino,” 2021. Accessed: Oct. 09, 2023. [Online]. Available: https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf
   `,
   download_text: `Descargar los datos`,
-  download_csv: `Desacargar las fuentes de CO<sub>2</sub> en Argentina (csv)`,
-  download_geojson: `Desacargar las fuentes de CO<sub>2</sub> en Argentina (geojson)`,
+  download_csv: `Descargar las fuentes de CO<sub>2</sub> en Argentina (csv)`,
+  download_geojson: `Descargar las fuentes de CO<sub>2</sub> en Argentina (geojson)`,
 
+  disclaimer_title: `Datos, licencias y privacidad`,
   map_programming: "<h3>Elaboración del mapa</h3>Este mapa fue elaborado por Dinh Du Tran (DECHEMA e.V.) con información recolectada por DECHEMA y la GIZ Argentina. ",
   contact: `<h3>Contacto</h3>
   Luisa López<br>
