@@ -5,34 +5,7 @@
     <div id="project"></div>
     
     <div class="description" style="color:red">
-        <br><br>
-        This map shows all emissions of CO and CO<sub>2</sub> in Europe <b>in selected industrial categories that contain processes with Carbon4PUR compatible emissions</b> according to
-        the <a href="https://prtr.eea.europa.eu" target="_blank" rel="noopener">E-PRTR</a>. For more detail on the E-PRTR
-        data and how it was obtained, read the <a href="#data-section" onclick="map.sidebar.open('legal-content')">data section</a>.<br>
-        The tabs on the left allow to filter those emissions to obtain possible replication sites for a
-        Carbon4PUR plant. The first tab contains filters based on the type of emissions, the second tab
-        filters based on possible plants.
-        <h2>Legend</h2>
-        <h3>CO/CO<sub>2</sub> emitters</h3>
-        CO emissions are displayed with an <span style="border: 1px solid rgb(234,110,57); border-radius: 4px;">orange</span> border and all
-        CO<sub>2</sub> emissions with a	<span style="border: 1px solid rgb(241, 177, 48); border-radius: 4px;">yellow</span> border. The fill
-        color depends on the type of plant (see colors in the second tab on the left or click on any circle
-        on the map). The size indicates the amount of CO or CO<sub>2</sub> available.
-        <h3>CO/CO<sub>2</sub> users (chemical plants)</h3>
-        Chemical plants are <span style="background: rgba(0,168,189,0.6); border-radius: 4px;">blue</span>
-        and
-        polyol plants <span style="background: rgba(12,168,118,0.6); border-radius: 4px;">green</span>.
-        Those are potential sites for the Carbon4PUR technology. CO and CO<sub>2</sub> have to be available
-        nearby, and the size of the circle corresponds to the radius (defined by the user) in which transporting
-        those gases might be economical.
-        <h2>Usage</h2>
-        You can add filters to narrow down the emissions:<ul class="is-bullet">
-            <li>to those compatible with the Carbon4PUR process or by emission type and source </li>
-            <li>and to those near an existing chemical parc, polyol plant or steel mill . This tab also allows for analysis of available CO/CO<sub>2</sub>, ethylene oxide and propylene oxide as well as some analytics.</li>
-            <li>The tab contains information about data, licences and privacy and</li>
-            <li>in the settings tab contains advanced options like map layout and a possibility to load and save your own consumers.</li>
-        </ul>
-    </div>
+       
     <h2  style="color:red">Funding</h2>
     <div  style="color:red">
         <img src="img/eu.png" style="float: left; vertical-align: middle; padding: 8px 8px 5px 0px;">This
@@ -40,4 +13,11 @@
         received funding from the European Union’s Horizon 2020 research and innovation programme under
         grant agreement No 768919
     </div>
+
+    <div id="language_picker"><h2>Change the language</h2></div>
+    <div>
+        <button class="language-buttons" id="language_button_en" onclick="updateContent('en')">EN</button>
+        <button class="language-buttons" id="language_button_es" onclick="updateContent('es')">ES</button>
+    </div>
+    
 </div>

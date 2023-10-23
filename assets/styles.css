@@ -17,6 +17,18 @@ input[type='range'] {
   accent-color: var(--ptx-primary-color);
 }
 
+#language-buttons, .language-buttons {
+  /* margin: 10px; */
+  padding: 10px;
+  background-color: grey;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.lang_active {
+  background: #3498db;
+}
 
 
 body {

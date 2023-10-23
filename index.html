@@ -29,6 +29,14 @@
 
 	<script> 
 
+		function updateContent(language) {
+			// const elements = document.querySelectorAll('[data-lang]');
+			// elements.forEach(element => {
+			// 	const key = element.getAttribute('data-lang');
+			// 	element.textContent = translations[language][key];
+			// });
+			window.location.replace("index.html?lang="+language);
+		}
 
 		$(document).ready(function () {
 			let lang = 'es'; // Default language
@@ -49,9 +57,14 @@
 				// console.log(translations)
 				window.location.replace("index.html?lang=es");
 			}	
+			// $("#language_button_en").removeClass('lang_active');
+			// $("#language_button_es").removeClass('lang_active');
+			console.log(lang);
+			
 			
 			$("#sidebar_title").html(translations.sidebar_title);
 			$("#filter_title").html(translations.filter_title);
+			$("#filter_text").html(translations.filter_text);
 			$("#filter_text").html(translations.filter_text);
 			
 			$("#manual_filter_title").html(translations.manual_filter_title);
@@ -64,7 +77,8 @@
 			$("#statistics_title").html(translations.statistics_title);
 			$("#statistics").html(translations.statistics);
 			$("#statistics_total").html(translations.statistics_total);		
-
+			$("#table_emissions_title").html(translations.table_emissions_title);		
+			
 			$("#circle_title").html(translations.circle_title);
 			$("#circle_size").html(translations.circle_size);
 			$("#zoom_factor").html(translations.zoom_factor);		
@@ -73,17 +87,27 @@
 			$("#ToIncludeIntroduction").load("introduction.html", function() {
 				$("#introduction_title").html(translations.introduction_title);
 				$("#introduction").html(translations.introduction);
-				$("#project").html(translations.project);		
+				$("#project").html(translations.project);	
+				$("#language_picker	").html(translations.language_picker	);	
+				if(lang=="es") {
+					$("#language_button_es").addClass('lang_active');
+				} else if (lang=="en") {
+					$("#language_button_en").addClass('lang_active');
+				}
 			}); 
 			$("#ToIncludeData").load("data.html", function() {
 				$("#data_title").html(translations.data_title);
 				$("#methods").html(translations.methods);
 				$("#sources").html(translations.sources);			
-				$("#map_programming").html(translations.map_programming);	
-				$("#contact").html(translations.contact);
+				$("#download_text").html(translations.download_text);
+				$("#download_csv").html(translations.download_csv);
+				$("#download_geojson").html(translations.download_geojson);		
 			}); 
 			$("#ToIncludeDisclaimer").load("disclaimer.html", function() {
+				$("#map_programming").html(translations.map_programming);	
+				$("#contact").html(translations.contact);
 				$("#disclaimer").html(translations.disclaimer);
+				$("#legal").html(translations.legal);
 			}); 
 		});
     </script> 
@@ -255,37 +279,22 @@
 			</div>
 			<div class="sidebar-pane" id="emitter-content">
 				<h1 class="sidebar-header">
-					CO<sub>2</sub> emitters in Argentina
+					Filtros
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
-				<h2 id="filter_title">Filter by compatibility with Carbon4PUR cleaning step</h2>
-				<div class="filterGroup" id="filter_text">
-					<!-- <div class="buttons has-addons">
-						<a id="compat-filter-loop-button" class="button is-info is-small">chemical looping</a>
-						<a id="compat-filter-cat-button" class="button is-small">catalytic cleaning</a>
-						<a id="compat-filter-manual-button" class="button is-small">Manual</a> 
-					</div> -->
-					<div class="is-size-7" style="color: red;">&#9432; Each chemical route tolerates different levels and kinds of impurities  and is therefore
-						suited to treating different industrial processes. Emissions from each process are identified and presented based on their <a
-							href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2&StrLanguageCode=EN&StrLayoutCode=HIERARCHIC&IntPcKey="
-							target="_blank"  rel="noopener">NACE category</a>. Within this categories, especially within "electricity",
-						not all emissions are compatible with the Carbon4PUR cleaning steps. Please find more
-						information <a href="#nace-description" onclick="map.sidebar.open('legal-content')">in the data section.</a></div>
-				</div>
-				<!-- <button class="button is-small btn-block"  id="CO2-global-button">Punkt-Darstellung</button> -->
-				<!-- <button class="button is-small btn-block"  id="CO2-argentina-button">ARGENTINIEN TEST</button> -->
-				<!-- <button class="button is-small btn-block"  id="show-geojson-button">DDT TEST</button> -->
-
+				<h2 id="filter_title">Different categories/sources of CO<sub>2</sub></h2>
+				<div class="filterGroup" id="filter_text"></div>
+				
 				<h2 id="manual_filter_title">Or manually filter</h2>
 				<div class="filterGroup">
-					<p id="emission_type">Emission type:</p>
+					<p id="emission_type">Types of CO<sub>2</sub> emissions:</p>
 					<div class="buttons" id="gas-type-buttons">
 						<a id="toggle-industrial-button" class="button is-activated is-small">
-							<span>industrial CO<sub>2</sub> sources</span></a>
+							<span>industrial/energetic sources</span></a>
 						<a id="toggle-biogenic-button" class="button is-activated is-small">
-							<span>biogenic CO<sub>2</sub> sources</span></a>
+							<span>biogenic sources</span></a>
 					</div>
 				</div>
 				<div class="filterGroup">
@@ -322,6 +331,7 @@
 					<output for="radius_slider" id="radius_slider_output">1</output>x
 					<div id="slider_legend"></div>
 				</div>
+				
 			</div>
 
 			<div class="sidebar-pane" id="data-content">
@@ -331,17 +341,17 @@
 							<use xlink:href="#icon-play3"></use>
 						</svg></span>
 				</h1>
-				<h3>Change layout</h3>
+				<h3 style="color:red;">Change layout</h3>
 				<div class="buttons has-addons">
-					<a class="button is-small" id="map-layout-green">Blue-Green</a>
-					<a class="button is-small" id="map-layout-spanish">Spanish</a>
-					<a class="button is-info is-small" id="map-layout-light">Light</a>
+					<a style="color:red;" class="button is-small" id="map-layout-green">Blue-Green</a>
+					<a style="color:red;" class="button is-small" id="map-layout-spanish">Spanish</a>
+					<a style="color:red;" class="button is-info is-small" id="map-layout-light">Light</a>
 				</div>
 				<div id="ToIncludeData"></div>
 			</div>
 
 			<div class="sidebar-pane" id="disclaimer-content">
-				<h1 class="sidebar-header">
+				<h1 class="sidebar-header" style="color:red;">
 					Data, Licences, Privacy
 					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
 							<use xlink:href="#icon-play3"></use>
@@ -351,70 +361,8 @@
 				<div id="ToIncludeDisclaimer"></div>
 				
 			</div>
-
-			<!-- <div class="sidebar-pane" id="settings-content">
-				<h1 class="sidebar-header">
-					Settings
-					<span class="sidebar-close"><svg class="svgicon" viewbox="0 0 32 32">
-							<use xlink:href="#icon-play3"></use>
-						</svg></span>
-				</h1>
-				<h2>Map layout</h2>
-
-				<div class="is-size-7">&#9432; If you want to link to the map with light style, use this url: <a
-						href="https://carbon4pur.github.io/mapping/?style=light">https://carbon4pur.github.io/mapping/?style=light</a>
-				</div>
-				<h2>Emissions</h2>
-				<div class="filterGroup">
-					<div class="buttons">
-						<button class="button is-small" id="renew-emissions">Get emissions from E-PRTR</button>
-					</div>
-				</div>
-				<h2>Consumers</h2>
-				<div class="filterGroup">
-					<div class="buttons">
-						<button class="button is-info is-small" id="map-show-consumers">Show consumers</button>
-					</div>
-				</div>
-				<div class="filterGroup">
-					<div class="buttons">
-						<button class="button is-small" id="modify-consumers">Load your own consumers</button>
-						<button class="button is-small is-warning" id="reset-consumers">Reset consumers</button>
-					</div>
-				</div>
-				<h2>Introduction tour</h2>
-				<a class="button is-small" id="show-intro">Show intro again</a> 
-			</div> -->
 		</div>
 	</div>
-
-	<!-- Modal for input/output of chemical data -->
-	<!-- <div class="modal" id="modal-modify-consumers" style="z-index: 9000">
-		<div class="modal-background"></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<p class="modal-card-title">Load your own data</p>
-				<button class="delete close-modal" aria-label="close"></button>
-			</header>
-			<section class="modal-card-body">
-				<!-- Content ... -->
-				<!--<p>You can edit the data in csv format directly here, or you can download it as csv and edit it for
-					example in Excel. You can then copy it in here again.</p>
-				<p>If you want to share your own data, click on "create link" below and copy the displayed link.</p>
-				<h2>Chemical parks <span class="is-size-7">(<a href="chemicalparks v2.csv">Download</a>)</span></h2>
-				<textarea class="textarea" rows="7" id="csv-chemical-parks"></textarea>
-				<h2>Polyol plants <span class="is-size-7">(<a href="polyol plants europe v2.csv">Download</a>)</span>
-				</h2>
-				<textarea class="textarea" rows="7" id="csv-polyol-plants"></textarea>
-			</section>
-			<footer class="modal-card-foot">
-				<button class="button is-link" id="modify-consumers-create-link">Create link</button>				
-				<button class="button is-link" id="modify-consumers-create-json">Create JSON</button>
-				<button class="button is-success" id="modify-consumers-load-data">Load this data</button>
-				<button class="button close-modal">Cancel</button>
-			</footer>
-		</div>
-	</div> -->
 
 	<!-- <script src="vendor/leaflet.js" defer></script> -->
 	<script src="assets/leaflet.js"></script>

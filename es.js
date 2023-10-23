@@ -6,13 +6,14 @@ var translations_es = {
   introduction: `<h3>Introducción</h3>El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
   El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño.  `,
   project: `<h3>Proyecto PtX Pathways</h3>El Proyecto PtX Pathways tiene como objetivo apoyar a los países socios en el desarrollo de un mercado sostenible para la producción, el uso y la exportación de hidrógeno verde y sus derivados (PtX). Se encuentra financiado por el Ministerio Federal Alemán de Economía y Protección del Clima (BMWK) a través de la Iniciativa Climática Internacional (IKI). Los socios en la ejecución del proyecto son la Sociedad Alemana para la Cooperación Internacional (GIZ), Agora Energiewende, DECHEMA e.V, la Secretaría de Energía de Argentina, el Centro de Estudios de la Actividad Regulatoria Energética (CEARE) y la Fundación Torcuato Di Tella (FTDT), en estrecha colaboración con el International PtX Hub.`,
-  
-  filter_title: `Explicación muy corta de las diferentes categorías/fuentes`,
+  language_picker: `Change the language/Cambiar el idioma`,
+
+  filter_title: `Diferentes categorías/fuentes de CO<sub>2</sub>`,
   filter_text: `Se diferencia entre fuentes industriales y biogénicas. Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, metanol, etileno), metales (aluminio y acero) y cemento, así como las refinerías y centrales termoeléctricas. Las fuentes biogénicas incluyen la producción de biogás y bioetanol.`,
   manual_filter_title: `O filtrar manualmente`,
-  emission_type: `Tipo de emisión:`,
-  industrial_button: `fuentes industriales de CO<sub>2</sub>`,
-  biogenic_button: `fuentes biogénicas de CO<sub>2</sub>`,
+  emission_type: `Tipo de emisión de CO<sub>2</sub>:`,
+  industrial_button: `fuentes industriales/energéticas`,
+  biogenic_button: `fuentes biogénicas`,
   only_selected_plants: `Sólo los tipos de plantas seleccionados:`,
   deselect_all_button:`Deseleccionar todo`,
   
@@ -22,9 +23,9 @@ var translations_es = {
   circle_title: `Cambiar la escala de los círculos`,
   circle_size: `Use este control si desea cambiar la escala (el tamaño) de los círculos para poder ver en el mapa los sitios con emisiones más bajas`,
   zoom_factor: `Factor de zoom`,
-  scale_title: `Emisiones en <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">MT</span>/año`,
+  scale_title: `Emisiones en <span title="Megatonnes o 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">Mt</span>/año`,
   data_title: `Datos y fuentes`,
-  methods: `<h3>Fuentes y metodología</h3>Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
+  methods: `<h2>Fuentes y metodología</h2>Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
   <b>Aluminio</b>
   <br>Valor estimado con la capacidad de producción reportada en la página de Aluar [1], un factor de producción de 83% (promedio de la producción de cinco años relativa a la capacidad [1] y un factor de emisión de 1,6 toneladas de CO<sub>2</sub> por toneladas de aluminio [2].
   <br><b>Acero</b>
@@ -65,9 +66,12 @@ var translations_es = {
   <br>[15]	Profertil, “Reporte de Sostenibilidad 2022.” Accessed: Oct. 09, 2023. [Online]. Available: https://rs.profertil.com.ar/wp-content/uploads/2023/09/Reporte-de-Sostenibilidad-2022.pdf
   <br>[16]	Instituto Petroquímico Argentino (IPA), “Reporte Anual Instituto Petroquímico Argentino,” 2021. Accessed: Oct. 09, 2023. [Online]. Available: https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf
   `,
+  download_text: `Descargar los datos`,
+  download_csv: `Desacargar las fuentes de CO<sub>2</sub> en Argentina (csv)`,
+  download_geojson: `Desacargar las fuentes de CO<sub>2</sub> en Argentina (geojson)`,
 
   map_programming: "<h3>Elaboración del mapa</h3>Este mapa fue elaborado por Dinh Du Tran (DECHEMA e.V.) con información recolectada por DECHEMA y la GIZ Argentina. ",
-  contact: `<h3>Contact</h3>
+  contact: `<h3>Contacto</h3>
   Luisa López<br>
   <a href="mailto:luisa.lopez@dechema.de">luisa.lopez@dechema.de</a><br>
   DECHEMA e.V.<br><br>
@@ -83,8 +87,7 @@ var translations_es = {
   Dado que la información pública disponible sobre emisiones de CO<sub>2</sub> es limitada, en algunos casos fue necesario realizar una estimación usando un factor de emisiones asumido. Por lo tanto, el valor de emisiones presentado puede no ser totalmente coincidente con el valor real para algunas de las fuentes identificadas. \n
   Adicionalmente, este mapa no es exhaustivo, pudiendo existir fuentes que no han sido identificadas. \n
   Los socios del consorcio no se hacen responsables por la interpretación y el uso de la información provista por este mapa.`,
-  legal: `En este caso, ¡sin duda seguimos necesitando un texto en el sentido de la impronta!
-  Es necesito  para referirse a una declaración de propiedad y autoría de un documento, que es requerido legalmente para libros, periódicos, revistas1​ y sitios web2​ publicados en Alemania y otros países de habla alemana.`,
+  legal: `This Map of CO2 sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
   // ...
 };
 
