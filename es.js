@@ -87,7 +87,7 @@ var translations_es = {
   Dado que la información pública disponible sobre emisiones de CO<sub>2</sub> es limitada, en algunos casos fue necesario realizar una estimación usando un factor de emisiones asumido. Por lo tanto, el valor de emisiones presentado puede no ser totalmente coincidente con el valor real para algunas de las fuentes identificadas. \n
   Adicionalmente, este mapa no es exhaustivo, pudiendo existir fuentes que no han sido identificadas. \n
   Los socios del consorcio no se hacen responsables por la interpretación y el uso de la información provista por este mapa.`,
-  legal: `This Map of CO2 sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
+  legal: `<h3>Aviso legal</h3><p style="color:red";>This Map of CO2 sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.</p>`,
   // ...
 };
 
