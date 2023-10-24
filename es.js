@@ -3,10 +3,10 @@ var translations_es = {
   table_emissions_title: `Emisiones totales`,
   sidebar_title: `Fuentes de CO<sub>2</sub> en Argentina`,
   introduction_title: `<h2>Información general</h2>`,
-  introduction: `<h3>Introducción</h3>El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
+  introduction_text: `<h3>Introducción</h3>El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
   El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño.  `,
   project: `<h3>Proyecto PtX Pathways</h3>El Proyecto PtX Pathways tiene como objetivo apoyar a los países socios en el desarrollo de un mercado sostenible para la producción, el uso y la exportación de hidrógeno verde y sus derivados (PtX). Se encuentra financiado por el Ministerio Federal Alemán de Economía y Protección del Clima (BMWK) a través de la Iniciativa Climática Internacional (IKI). Los socios en la ejecución del proyecto son la Sociedad Alemana para la Cooperación Internacional (GIZ), Agora Energiewende, DECHEMA e.V, la Secretaría de Energía de Argentina, el Centro de Estudios de la Actividad Regulatoria Energética (CEARE) y la Fundación Torcuato Di Tella (FTDT), en estrecha colaboración con el International PtX Hub.`,
-  language_picker: `Change the language/Cambiar el idioma`,
+  language_picker: `<h3>Change the language/Cambiar el idioma</h3>`,
 
   filter_title: `Diferentes categorías/fuentes de CO<sub>2</sub>`,
   filter_text: `Se diferencia entre fuentes industriales y biogénicas. Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, metanol, etileno), metales (aluminio y acero) y cemento, así como las refinerías y centrales termoeléctricas. Las fuentes biogénicas incluyen la producción de biogás y bioetanol.`,
@@ -67,8 +67,8 @@ var translations_es = {
   <br>[16]	Instituto Petroquímico Argentino (IPA), “Reporte Anual Instituto Petroquímico Argentino,” 2021. Accessed: Oct. 09, 2023. [Online]. Available: https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf
   `,
   download_text: `Descargar los datos`,
-  download_csv: `Descargar las fuentes de CO<sub>2</sub> en Argentina (csv)`,
-  download_geojson: `Descargar las fuentes de CO<sub>2</sub> en Argentina (geojson)`,
+  download_csv: `Descargar las fuentes de CO<sub>2</sub>&nbsp; en Argentina (csv)`,
+  download_geojson: `Descargar las fuentes de CO<sub>2</sub>&nbsp; en Argentina (geojson)`,
 
   disclaimer_title: `Datos, licencias y privacidad`,
   map_programming: "<h3>Elaboración del mapa</h3>Este mapa fue elaborado por Dinh Du Tran (DECHEMA e.V.) con información recolectada por DECHEMA y la GIZ Argentina. ",
