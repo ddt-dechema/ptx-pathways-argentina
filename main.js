@@ -8,10 +8,13 @@ if (urlParams.has('lang')) {
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
+
 if (lang==="en") {
-    var table = "<table><tr><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
+    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
 } else if (lang==="es") {
-    var table = "<table><tr><th>Industria</th><th style='text-align: right;'>Emisiones totales (toneladas)</th></tr>";
+    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
 }
 
 // Define a GeoJSON URL
@@ -2248,7 +2251,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // console.log('Aluminium: ',totalEmissions['Aluminium'])
                 // Create an HTML table to display the aggregated data
                 
-                // TO DO: append to the HTML table, to be able to change the text to other languages
+                // TO DO DDT
+                // append to the HTML table, to be able to change the text to other languages
 
                 // var table = "<tr id='table_emissions_header'><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
                 
@@ -2259,7 +2263,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         maximumFractionDigits: 2
                       });
                       let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
-                    table += "<tr><td>" + industry_lang 
+                      let industry_short = buttonData.find(item => item.name === industry)?.id;                      
+                    //   console.log(industry_short)
+                    table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
                     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
                 }
 

@@ -23,7 +23,7 @@
 		<script> 
 			function updateContent(language) {
 
-				$('#language_button_es,#language_button_en').removeClass('lang_active');
+				$('#language_button_es, #language_button_en').removeClass('lang_active');
 				
 				let translations = window['translations_' + language];
 				// console.log(translations)
@@ -46,8 +46,9 @@
 				$("#introduction_title").html(translations.introduction_title);
 				$("#introduction_text").html(translations.introduction_text);
 				$("#project").html(translations.project);	
-				$("#language_picker	").html(translations.language_picker);	
-				
+				$("#language_picker").html(translations.language_picker);	
+				$("#languge_switch_link").html(translations.languge_switch_link);	
+
 				$("#sidebar_title").html(translations.sidebar_title);
 				$("#filter_title").html(translations.filter_title);
 				$("#filter_text").html(translations.filter_text);
@@ -88,14 +89,38 @@
 				$("#disclaimer").html(translations.disclaimer);
 				$("#legal").html(translations.legal);
 				
+				// update button and table texts, which are generated in main.js
+				$('#button-Aluminium').html(translations.button_Aluminium);
+				$('#button-Steel').html(translations.button_Steel);
+				$('#button-cement').html(translations.button_cement);
+				$('#button-refinery').html(translations.button_refinery);
+				$('#button-thermal').html(translations.button_thermal);
+				$('#button-ammonia').html(translations.button_ammonia);
+				$('#button-etileno').html(translations.button_etileno);
+				$('#button-methanol').html(translations.button_methanol);
+				$('#button-bioethanol').html(translations.button_bioethanol);
+				$('#button-biogas').html(translations.button_biogas);
+				$('#button-cellulose').html(translations.button_cellulose);
+				$('#table_header_industry_type').html(translations.table_header_industry_type);
+				$('#table_header_total_emissions').html(translations.table_header_total_emissions);
+				$('#industry_type_button-Aluminium').html(translations.button_Aluminium);
+				$('#industry_type_button-Steel').html(translations.button_Steel);
+				$('#industry_type_button-cement').html(translations.button_cement);
+				$('#industry_type_button-refinery').html(translations.button_refinery);
+				$('#industry_type_button-thermal').html(translations.button_thermal);
+				$('#industry_type_button-ammonia').html(translations.button_ammonia);
+				$('#industry_type_button-etileno').html(translations.button_etileno);
+				$('#industry_type_button-methanol').html(translations.button_methanol);
+				$('#industry_type_button-bioethanol').html(translations.button_bioethanol);
+				$('#industry_type_button-biogas').html(translations.button_biogas);
+				$('#industry_type_button-cellulose').html(translations.button_cellulose);
 			}
 							
 			$(document).ready(function () {
 				$('#language_button_es').on("click", updateContent('es'));
 				$('#language_button_en').on("click", updateContent('en'));
 				
-
-				let lang = 'es'; // Default language
+				let lang;
 
 				const urlParams = new URLSearchParams(window.location.search);
 				if (urlParams.has('lang')) {
@@ -313,6 +338,8 @@
 						<span class="on">ES</span>
 						<span class="off">EN</span>
 					  </div>
+					  <br>ⓘ<div id="languge_switch_link"></div>
+
 				</div>
 
 				<div class="sidebar-pane" id="sources-content">
