@@ -1,26 +1,26 @@
 var translations_en = {
   
   table_emissions_title: `Total Emissions`,
-  sidebar_title: `Sources of CO<sub>2</sub> in Argentina`,
+  sidebar_title: `Sources of Carbon in Argentina`,
   introduction_title: `<h2>General information</h2>`,
   introduction_text: `<h3>Introduction</h3>
-    El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
-    El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño. `,
-  project: `<h3>PtX Pathways-Project</h3>
-    The PtX Pathways project aims to support partner countries in developing a sustainable market for the production, use and export of green hydrogen and its derivatives (PtX). It is funded by the German Federal Ministry of Economics and Climate Protection (BMWK) through the International Climate Initiative (IKI). The project's implementing partners are the German Society for International Cooperation (GIZ), Agora Energiewende, DECHEMA e.V, the Argentine Energy Secretariat, the Centro de Estudios de la Actividad Regulatoria Energética (CEARE) and the Fundación Torcuato Di Tella (FTDT), in close collaboration with the International PtX Hub.`,
+  CO<sub>2</sub> is a greenhouse gas produced in many cases as an industrial byproduct, which is currently emitted into the atmosphere in most of the processes that produce it. However, this gas has the potential to be used as raw material for Power-to-X (PtX) products that contain carbon in their molecules, such as e-methanol or synthetic fuels (e-fuels). The competitiveness of these products can be highly affected by the availability and quality of the CO<sub>2</sub> source that will be used.
+    This map aims to identify carbon sources (in the form of CO<sub>2</sub>) in Argentina to collaborate in the search for opportunities to develop PtX projects in the country. To do this, the main point sources of CO<sub>2</sub> in Argentina are shown, indicating their location, type of source and size.`,
+  project: `<h3>PtX Pathways-Project</h3> The PtX Pathways project aims to support partner countries in developing a sustainable market for the production, use and export of green hydrogen and its derivatives (PtX). It is funded by the German Federal Ministry of Economics and Climate Protection (BMWK) through the International Climate Initiative (IKI). The project's implementing partners are the German Society for International Cooperation (GIZ), Agora Energiewende, DECHEMA e.V, the Argentine Energy Secretariat, the Centro de Estudios de la Actividad Regulatoria Energética (CEARE) and the Fundación Torcuato Di Tella (FTDT), in close collaboration with the International PtX Hub.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
-  languge_switch_link: `If you want to link to the map with light style, use the 
+  languge_switch_link: `If you want to link to the map in a specific language, use the 
     <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">english</a>
     or <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">spanish</a>
     link`,
 
-  filter_title: `Different categories/sources of CO<sub>2</sub>`,
+  filter_title: `Different categories/sources of carbon`,
   filter_text: `A distinction is made between industrial and biogenic sources. Industrial sources include the manufacture of chemical products (ammonia, methanol, ethylene), metals (aluminum and steel) and cement, as well as refineries and thermoelectric power plants. Biogenic sources include biogas and bioethanol production.`,
   manual_filter_title: `Or filter manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
   biogenic_button: `biogenic sources`,
   only_selected_plants: `Only selected plant types:`,
+  deselect_all_button: `Deselect all`,
   
   statistics_title: `Statistics`,
   statistics: `Total emissions in Argentina for selected filters:`,
@@ -46,7 +46,7 @@ var translations_en = {
   <br>A partir de las emisiones directas totales del sector de refinación reportadas en el inventario nacional de 2018 [14], se estimaron las emisiones por refinería considerando que sus emisiones fueron proporcionales a su capacidad instalada. Esta estimación asume dos cosas: factores de emisión iguales para todas las refinerías y factores de usos iguales de todas las refinerías en 2018. 
   <br><b>Amoniaco</b>
   <br>El valor para la empresa Profertil se obtuvo directamente de su informe de sustentabilidad [15]. Para las otras dos plantas se usó la capacidad instalada de producción [16], un factor de producción asumido de 80% y un factor de emisión de 0,91 toneladas de CO<sub>2</sub> por tonelada de amoniaco [2].
-  <br><b>>Metanol</b>
+  <br><b>Metanol</b>
   <br>La producción anual de 2018 se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], y se utilizó un factor de emisión de 0,67 toneladas de CO<sub>2</sub> por tonelada de metanol [2].
   <br><b>Etileno</b>
   <br>La capacidad instalada de producción se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], un factor de utilización asumido del 98%, y se utilizó un factor de emisión de 0,84 toneladas de CO<sub>2</sub> por tonelada de etileno [2].

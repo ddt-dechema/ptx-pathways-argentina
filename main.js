@@ -37,7 +37,7 @@ var industrialLayers = [
     "Etileno"
     ];
 var biogenicLayers = [
-    "Biogas", 
+    "Biogas Power Plant", 
     "Bioethanol", 
     "Cellulose and paper"
 ];
@@ -47,30 +47,30 @@ let buttonData;
 if (lang=="es") {
     buttonData = [
         { name_lang: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
-        { name_lang: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
         { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
-        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
         { name_lang: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
         { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-        { name_lang: 'Biogás ', name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+        { name_lang: 'Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Papel y celulosa', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
+        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
 } else if(lang=="en") {
     buttonData = [
         { name_lang: 'Aluminium', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
         { name_lang: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
         { name_lang: 'Steel', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
-        { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
         { name_lang: 'Ammonia', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
         { name_lang: 'Methanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
         { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-        { name_lang: 'Biogas', name: 'Biogas', id: 'button-biogas', industry: 'biogenic'},
+        { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Cellulose and paper', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
+        { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_lang: 'Thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
 }
 
@@ -2257,17 +2257,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // var table = "<tr id='table_emissions_header'><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
                 
                 // Iterate through the totalEmissions object and populate the table
-                for (var industry in totalEmissions) {
-                    var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
+                // 3.1.2024 - iterate through button order 
+                for (let i = 0; i < buttonData.length; i++) {
+                    const industryValue = buttonData[i]['name'];
+                    var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2
                       });
-                      let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
-                      let industry_short = buttonData.find(item => item.name === industry)?.id;                      
+                      let industry_lang = buttonData.find(item => item.name === industryValue)?.name_lang;                      
+                      let industry_short = buttonData.find(item => item.name === industryValue)?.id;                      
                     //   console.log(industry_short)
                     table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
                     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
                 }
+                // for (var industry in totalEmissions) {
+                //     var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
+                //         minimumFractionDigits: 2,
+                //         maximumFractionDigits: 2
+                //       });
+                //       let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
+                //       let industry_short = buttonData.find(item => item.name === industry)?.id;                      
+                //     //   console.log(industry_short)
+                //     table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
+                //     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+                // }
 
                 for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
                     // console.log(IndustryEmissions)
@@ -2318,7 +2331,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     addGeoJSONLayer('Cellulose and paper');
     addGeoJSONLayer('Thermal power plant');
     addGeoJSONLayer('Refinery');
-    addGeoJSONLayer('Biogas');
+    addGeoJSONLayer('Biogas Power Plant'); // vorher: addGeoJSONLayer('Biogas Power Plant');
     addGeoJSONLayer('Bioethanol');
     addGeoJSONLayer('Ammonia');
     addGeoJSONLayer('Methanol');

@@ -1,26 +1,27 @@
 var translations_es = {
   
   table_emissions_title: `Emisiones totales`,
-  sidebar_title: `Fuentes de CO<sub>2</sub> en Argentina`,
+  sidebar_title: `Fuentes de Carbono en Argentina`,
   introduction_title: `<h2>Información general</h2>`,
   introduction_text: `<h3>Introducción</h3>
     El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
     El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño.  `,
   project: `<h3>Proyecto PtX Pathways</h3>El Proyecto PtX Pathways tiene como objetivo apoyar a los países socios en el desarrollo de un mercado sostenible para la producción, el uso y la exportación de hidrógeno verde y sus derivados (PtX). Se encuentra financiado por el Ministerio Federal Alemán de Economía y Protección del Clima (BMWK) a través de la Iniciativa Climática Internacional (IKI). Los socios en la ejecución del proyecto son la Sociedad Alemana para la Cooperación Internacional (GIZ), Agora Energiewende, DECHEMA e.V, la Secretaría de Energía de Argentina, el Centro de Estudios de la Actividad Regulatoria Energética (CEARE) y la Fundación Torcuato Di Tella (FTDT), en estrecha colaboración con el International PtX Hub.`,
   language_picker: `<h3>Change the language</h3>`,
-  languge_switch_link: `Si desea enlazar al mapa con estilo ligero, utilice el link 
+  languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
   <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">inglés</a>
   o <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">español</a>
   `,
 
-  filter_title: `Diferentes categorías/fuentes de CO<sub>2</sub>`,
+  filter_title: `Diferentes categorías/fuentes de carbono`,
   filter_text: `Se diferencia entre fuentes industriales y biogénicas. Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, metanol, etileno), metales (aluminio y acero) y cemento, así como las refinerías y centrales termoeléctricas. Las fuentes biogénicas incluyen la producción de biogás y bioetanol.`,
   manual_filter_title: `O filtrar manualmente`,
   emission_type: `Tipo de emisión de CO<sub>2</sub>:`,
   industrial_button: `fuentes industriales/energéticas`,
   biogenic_button: `fuentes biogénicas`,
   only_selected_plants: `Sólo los tipos de plantas seleccionados:`,
-  
+  deselect_all_button: `Deseleccionar todo`,
+
   statistics_title: `Estadísticas`,
   statistics: `Emisiones totales en Argentina para los filtros seleccionados:`,
   statistics_total: ` &nbsp;toneladas de CO<sub>2</sub> por año`,
@@ -44,7 +45,7 @@ var translations_es = {
   <br>A partir de las emisiones directas totales del sector de refinación reportadas en el inventario nacional de 2018 [14], se estimaron las emisiones por refinería considerando que sus emisiones fueron proporcionales a su capacidad instalada. Esta estimación asume dos cosas: factores de emisión iguales para todas las refinerías y factores de usos iguales de todas las refinerías en 2018. 
   <br><b>Amoniaco</b>
   <br>El valor para la empresa Profertil se obtuvo directamente de su informe de sustentabilidad [15]. Para las otras dos plantas se usó la capacidad instalada de producción [16], un factor de producción asumido de 80% y un factor de emisión de 0,91 toneladas de CO<sub>2</sub> por tonelada de amoniaco [2].
-  <br><b>>Metanol</b>
+  <br><b>Metanol</b>
   <br>La producción anual de 2018 se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], y se utilizó un factor de emisión de 0,67 toneladas de CO<sub>2</sub> por tonelada de metanol [2].
   <br><b>Etileno</b>
   <br>La capacidad instalada de producción se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], un factor de utilización asumido del 98%, y se utilizó un factor de emisión de 0,84 toneladas de CO<sub>2</sub> por tonelada de etileno [2].
@@ -105,7 +106,7 @@ var translations_es = {
   button_bioethanol: `Bioetanol`,
   button_biogas: `Biogás`,
   button_cellulose: `Papel y celulosa`,
-  table_header_industry_type: `Industroa`,
+  table_header_industry_type: `Industria`,
   table_header_total_emissions: `Emisiones totales (toneladas)`
 };
 

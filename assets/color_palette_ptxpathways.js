@@ -52,7 +52,7 @@ let baseColors = {
         "Methanol": "rgb(241, 219, 38, 0.6)",
         
         "Bioethanol": "rgb(143, 196, 146, 1)",
-        "Biogas": "rgb(143, 196, 146, 0.8)",
+        "Biogas Power Plant": "rgb(143, 196, 146, 0.8)",
         "Cellulose and paper": "rgb(143, 196, 146, 0.6)"
     }
 
