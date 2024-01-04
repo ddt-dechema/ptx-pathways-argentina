@@ -1,6 +1,7 @@
 let lang = 'es'; // Default language
 			// var lang = getUrlParameter('lang');
 
+
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('lang')) {
     lang = urlParams.get('lang');
@@ -401,13 +402,7 @@ let map, format1Dec, formatSI,
 // DDTs personal key
 const key = 'tqfuJhSDIhJBFNXpuIIr';
 
-if (lang==="es") {
-    maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
-    console.log('Changed map labels to spanish');
-} else if (lang==="en") {
-    maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
-    console.log('Changed map labels to english')
-}
+
 
 // // const map = L.map('map').setView([0, 0], 1); //starting position
 // const mtLayer = L.maptilerLayer({
@@ -428,6 +423,14 @@ function showMap() {
         }
     })
 
+    if (lang==="es") {
+        maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+        console.log('Changed map labels to spanish');
+    } else if (lang==="en") {
+        maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+        console.log('Changed map labels to english')
+    }
+    
     // in potana-dev gab es folgenden Teil
     // map.layout = { }
 
