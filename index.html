@@ -39,8 +39,16 @@
 				
 				if(language==="es") {
 					$("#language_button_es").addClass('lang_active');
+					// Change Map Labels to language as well
+					maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+					// TO DO 
+					console.log('switching language tiles to '+language);
 				} else if (language==="en") {
 					$("#language_button_en").addClass('lang_active');
+					// Change Map Labels to language as well
+					maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+					// TO DO 
+					console.log('switching language tiles to '+language);
 				}
 
 				$("#introduction_title").html(translations.introduction_title);
@@ -113,7 +121,7 @@
 				$('#industry_type_button-methanol').html(translations.button_methanol);
 				$('#industry_type_button-bioethanol').html(translations.button_bioethanol);
 				$('#industry_type_button-biogas').html(translations.button_biogas);
-				$('#industry_type_button-cellulose').html(translations.button_cellulose);
+				$('#industry_type_button-cellulose').html(translations.button_cellulose);				
 			}
 							
 			$(document).ready(function () {
@@ -407,9 +415,10 @@
 					</span>
 					<h3 style="color:red;">Change layout</h3>
 					<div class="buttons has-addons">
-						<a style="color:red;" class="button is-small" id="map-layout-green">Blue-Green</a>
-						<a style="color:red;" class="button is-small" id="map-layout-spanish">Spanish</a>
-						<a style="color:red;" class="button is-info is-small" id="map-layout-light">Light</a>
+						<a style="color:red;" class="button is-info is-small" id="map-layout-OSM">OpenStreetMap</a>
+						<a style="color:red;" class="button is-small" id="map-layout-winterv2">Winter V2</a>
+						<a style="color:red;" class="button is-small" id="map-layout-bright">Bright</a>
+						<a style="color:red;" class="button is-small" id="map-layout-bright-v2">bright V2</a>
 					</div>
 					
 					<div id="methods"></div>
@@ -444,6 +453,9 @@
 		<!-- <script src="vendor/leaflet.js" defer></script> -->
 		<script src="assets/leaflet.js"></script>
 		<script type="text/javascript" src="assets/leaflet.ajax.js"></script>
+		<script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.js"></script>
+		<link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
+		<script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
 
 		<script src="assets/d3.min.js" defer></script>
 		<script src="assets/bulma-slider.min.js" defer></script>

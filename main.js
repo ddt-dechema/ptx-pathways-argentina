@@ -395,8 +395,25 @@ function toggleBiogenicLayers() {
 let map, format1Dec, formatSI,
     CO2globalButton = document.getElementById("CO2-global-button"),
     scale = document.getElementById("scale")
-    CO2_argentinaButton = document.getElementById("CO2-argentina-button")
+    CO2_argentinaButton = document.getElementById("CO2-argentina-button");
 
+// https://docs.maptiler.com/sdk-js/examples/language-map/
+// DDTs personal key
+const key = 'tqfuJhSDIhJBFNXpuIIr';
+
+if (lang==="es") {
+    maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+    console.log('Changed map labels to spanish');
+} else if (lang==="en") {
+    maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+    console.log('Changed map labels to english')
+}
+
+// // const map = L.map('map').setView([0, 0], 1); //starting position
+// const mtLayer = L.maptilerLayer({
+//   apiKey: key,
+//   style: L.MaptilerStyle.STREETS, // optional
+// }).addTo(map);
 
 // Argentina center 
 // -38.45155,-63.5988853
@@ -425,7 +442,8 @@ function showMap() {
 
     L.control.zoom({
         position: 'topright'
-    }).addTo(map)
+    }).addTo(map);
+
     /* Carto light-gray basemap tiles with labels */
     // map.light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap<\/a>, &copy; <a href="https://carto.com/attribution">CARTO<\/a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
@@ -438,15 +456,33 @@ function showMap() {
     // map.stadia_outdoors = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
     //     attribution: '&copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Datos de Mapa &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     // }).addTo(map);
-    map.spanish = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
-        attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    });
-    // .addTo(map);
-
-    map.light= L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
+    // map.spanish = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
+    //     attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    // });
+    map.OSM = L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style: 'openstreetmap', // optional
     }).addTo(map);
+    // map.test = L.tileLayer('https://api.maptiler.com/tiles/v3-4326/{z}/{x}/{y}.pbf?key=tqfuJhSDIhJBFNXpuIIr', {
+    //     attribution: 'TEST, GAGAGAGAGA',
+    // });
 
+    map.winter_V2 = L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style: 'winter-v2', // optional
+    });
+    
+    //OLD
+    // map.light= L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
+    // }).addTo(map);
+    map.bright= L.maptilerLayer({
+        attribution: '',
+        apiKey: key,
+        style:'bright',
+    });
     // var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
     //     minZoom: 0,
     //     maxZoom: 20,
@@ -456,10 +492,11 @@ function showMap() {
     // .addTo(Map)
     /* Current default map. Switch by puting the .addTo above */
     /* Thunderforest green tiles with more information */
-    map.green = L.tileLayer('https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=9a85f60a13be4bf7bed59b5ffc0f4d86', {
-            attribution: 'Maps &copy; <a href="https://www.thunderforest.com">Thunderforest</a>, Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
-        })
-        // .addTo(map)
+    map.bright_v2 = L.maptilerLayer({
+        attribution: '',
+        apiKey: key,
+        style:'bright-v2',
+    })
 
     /* Add the zoom buttons */
     map.sidebar = L.control.sidebar('sidebar', {
@@ -1497,9 +1534,10 @@ function updateEmissionsFilter() {
 
 /****************/
 /* Settings tab */
-let mapLayoutGreen = document.getElementById('map-layout-green'),
-    mapLayoutSpanish = document.getElementById('map-layout-spanish'),
-    mapLayoutLight = document.getElementById('map-layout-light'),
+let mapLayoutOSM = document.getElementById('map-layout-OSM'),
+    mapLayoutwinter_v2 = document.getElementById('map-layout-winterv2'),
+    mapLayoutBright = document.getElementById('map-layout-bright'),
+    mapLayoutBrightV2 = document.getElementById('map-layout-bright-v2'),
     // mapShowConsumers = document.getElementById('map-show-consumers'),
     // modifyConsumers = document.getElementById('modify-consumers'),
     // modalModifyConsumers = document.getElementById('modal-modify-consumers'),
@@ -1540,33 +1578,51 @@ let mapLayoutGreen = document.getElementById('map-layout-green'),
 // mapLayoutGreen.addEventListener('click', toggleMapLayout('green'))
 // mapLayoutSpanish.addEventListener('click', toggleMapLayout('spanish'))
 // mapLayoutLight.addEventListener('click', toggleMapLayout('light'))
-
-mapLayoutGreen.addEventListener('click', function () {
-    map.removeLayer(map.light);
-    map.removeLayer(map.spanish);
-    map.addLayer(map.green);
-    mapLayoutSpanish.classList.remove('is-info')
-    mapLayoutLight.classList.remove('is-info')
-    mapLayoutGreen.classList.add('is-info')
+mapLayoutOSM.addEventListener('click', function () {
+    map.addLayer(map.OSM);
+    map.removeLayer(map.bright);
+    map.removeLayer(map.bright_v2);
+    map.removeLayer(map.winter_V2);
+    mapLayoutOSM.classList.add('is-info');
+    mapLayoutwinter_v2.classList.remove('is-info');
+    mapLayoutBright.classList.remove('is-info');
+    mapLayoutBrightV2.classList.remove('is-info');
 });
 
-mapLayoutSpanish.addEventListener('click', function () {
-    map.removeLayer(map.light);
-    map.removeLayer(map.green);
-    map.addLayer(map.spanish);
-    mapLayoutSpanish.classList.add('is-info')
-    mapLayoutLight.classList.remove('is-info')
-    mapLayoutGreen.classList.remove('is-info')
+mapLayoutwinter_v2.addEventListener('click', function () {
+    map.removeLayer(map.OSM);
+    map.addLayer(map.winter_V2);
+    map.removeLayer(map.bright);
+    map.removeLayer(map.bright_v2);
+    mapLayoutOSM.classList.remove('is-info');
+    mapLayoutwinter_v2.classList.add('is-info');
+    mapLayoutBright.classList.remove('is-info');
+    mapLayoutBrightV2.classList.remove('is-info');
 });
 
-mapLayoutLight.addEventListener('click', function () {
-    map.removeLayer(map.spanish);
-    map.removeLayer(map.green);
-    map.addLayer(map.light);
-    mapLayoutSpanish.classList.remove('is-info')
-    mapLayoutLight.classList.add('is-info')
-    mapLayoutGreen.classList.remove('is-info')
+mapLayoutBright.addEventListener('click', function () {
+    map.removeLayer(map.OSM);
+    map.removeLayer(map.winter_V2);
+    map.addLayer(map.bright);
+    map.removeLayer(map.bright_v2);
+    mapLayoutOSM.classList.remove('is-info');
+    mapLayoutwinter_v2.classList.remove('is-info');
+    mapLayoutBright.classList.add('is-info');
+    mapLayoutBrightV2.classList.remove('is-info');
 });
+
+
+mapLayoutBrightV2.addEventListener('click', function () {
+    map.removeLayer(map.OSM);
+    map.removeLayer(map.winter_V2);
+    map.removeLayer(map.bright);
+    map.addLayer(map.bright_v2);
+    mapLayoutOSM.classList.remove('is-info');
+    mapLayoutwinter_v2.classList.remove('is-info');
+    mapLayoutBright.classList.remove('is-info');
+    mapLayoutBrightV2.classList.add('is-info');
+});
+
 
 // function toggleShowConsumers() {
 //     mapShowConsumers.classList.toggle('is-info')
@@ -2215,7 +2271,7 @@ function translucidColor(colorString, opacity = 0.6) {
 /* Change layout with get parameters */
 /*************************************/
 var url = new URL(window.location.href)
-if (!mapLayoutSpanish.classList.contains('is-info') && url.searchParams.get("style") == "light") toggleMapLayout()
+if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
 
 /*************************************************/
