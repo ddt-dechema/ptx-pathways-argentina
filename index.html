@@ -39,16 +39,8 @@
 				
 				if(language==="es") {
 					$("#language_button_es").addClass('lang_active');
-					// Change Map Labels to language as well
-					maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
-					// TO DO 
-					console.log('switching language tiles to '+language);
 				} else if (language==="en") {
 					$("#language_button_en").addClass('lang_active');
-					// Change Map Labels to language as well
-					maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
-					// TO DO 
-					console.log('switching language tiles to '+language);
 				}
 
 				$("#introduction_title").html(translations.introduction_title);
@@ -146,12 +138,23 @@
 					// window.location.replace("index.html?lang=es");
 				}	
 				$('#language-toggle').on('click', function(){
+					let zoomlevel = map.getZoom();
+					let center = map.getCenter();
+					let style=getActiveLayers();
+					console.log(style)
+
 					if (lang==="en") {
 						updateContent("es"); 
 						lang="es";
+						// Change Map Labels to language as well	
+						showMap('reload', lang, zoomlevel, center, style);
+						toggleAllLayers();
 					} else if (lang==="es") {
 						updateContent("en"); 
 						lang="en";
+						// Change Map Labels to language as well
+						showMap('reload', lang, zoomlevel, center, style);
+						toggleAllLayers();
 					}
 				});
 				updateContent(lang); 
@@ -416,9 +419,9 @@
 					<h3 style="color:red;">Change layout</h3>
 					<div class="buttons has-addons">
 						<a style="color:red;" class="button is-info is-small" id="map-layout-OSM">OpenStreetMap</a>
-						<a style="color:red;" class="button is-small" id="map-layout-winterv2">Winter V2</a>
+						<a style="color:red;" class="button is-small" id="map-layout-winterv2">Winter v2</a>
 						<a style="color:red;" class="button is-small" id="map-layout-bright">Bright</a>
-						<a style="color:red;" class="button is-small" id="map-layout-bright-v2">bright V2</a>
+						<a style="color:red;" class="button is-small" id="map-layout-bright-v2">bright v2</a>
 					</div>
 					
 					<div id="methods"></div>

@@ -1,7 +1,6 @@
 let lang = 'es'; // Default language
 			// var lang = getUrlParameter('lang');
 
-
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('lang')) {
     lang = urlParams.get('lang');
@@ -25,6 +24,8 @@ var aluminiumLayer, steelLayer, cementLayer, celluloseLayer, thermalLayer, refin
 var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
+
+var activeLayers; // Declare a variable to hold the active map layers
 
 // Group layers by source type
 var industrialLayers = [
@@ -412,7 +413,7 @@ const key = 'tqfuJhSDIhJBFNXpuIIr';
 
 // Argentina center 
 // -38.45155,-63.5988853
-function showMap() {
+function showMap(reload, language, zoomlevel, center, style) {
     /* allows us to create filters within a Leaflet GeoJSON layer */
     L.GeoJSON.include({
         setFilter: function (originalData, _) {
@@ -422,22 +423,42 @@ function showMap() {
             return this
         }
     })
+    
+    let zoom = 5;
+    let position = [-38.45155, -63.5988853];
 
-    if (lang==="es") {
-        maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
-        console.log('Changed map labels to spanish');
-    } else if (lang==="en") {
-        maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
-        console.log('Changed map labels to english')
+    if (zoomlevel && center) {
+        zoom = zoomlevel;
+        position = center;
+    }
+
+    if(language) {
+        if (language==="es") {
+            maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+        } else if (language==="en") {
+            maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+        }
+    } else {
+        if (lang==="es") {
+            maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+        } else if (lang==="en") {
+            maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+        }
     }
     
+    if (reload=="reload") {
+        if(map != 'undefined' || map != null) {
+            map.off();
+            map.remove(); 
+        } 
+    }
     // in potana-dev gab es folgenden Teil
     // map.layout = { }
 
     /* Set up the map with initial center and zoom level */
     map = L.map('map', {
-        center: [-38.45155, -63.5988853], // show Argentina
-        zoom: 5, // roughly show Europe from 1 to 18 -- decrease to zoom out, increase to zoom in)
+        center: position, // show Argentina
+        zoom: zoom, // roughly show Europe from 1 to 18 -- decrease to zoom out, increase to zoom in)
         scrollWheelZoom: false,
         zoomControl: false, // to put the zoom butons on the right
         minZoom: 4 // damit man nicht zu weit rauszoomen kann
@@ -446,6 +467,46 @@ function showMap() {
     L.control.zoom({
         position: 'topright'
     }).addTo(map);
+
+    map.OSM = L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style: 'openstreetmap', // optional
+    });
+
+    map.winter_v2 = L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style: 'winter-v2', // optional
+    });
+    
+    map.bright= L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style:'bright',
+    });
+
+    map.bright_v2 = L.maptilerLayer({
+        attribution: 'TEST TEST TEST',
+        apiKey: key,
+        style:'bright-v2',
+    })
+
+    if(style) {
+        // console.log(style)
+        eval(style+'.addTo(map)');
+    } else {
+        map.OSM.addTo(map);
+    }
+
+    // Define an object to store the active layers
+    activeLayers = {
+        'map.bright': map.bright,
+        'map.bright_v2': map.bright_v2,
+        'map.winter_v2': map.winter_v2,
+        'map.OSM': map.OSM
+    };
+
 
     /* Carto light-gray basemap tiles with labels */
     // map.light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
@@ -462,30 +523,10 @@ function showMap() {
     // map.spanish = L.tileLayer('https://maptiles.p.rapidapi.com/es/map/v1/{z}/{x}/{y}.png?rapidapi-key=2ec246750fmsh6005cb840b05476p1622dejsnf34ebf232f08', {
     //     attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     // });
-    map.OSM = L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
-        apiKey: key,
-        style: 'openstreetmap', // optional
-    }).addTo(map);
-    // map.test = L.tileLayer('https://api.maptiler.com/tiles/v3-4326/{z}/{x}/{y}.pbf?key=tqfuJhSDIhJBFNXpuIIr', {
-    //     attribution: 'TEST, GAGAGAGAGA',
-    // });
-
-    map.winter_V2 = L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
-        apiKey: key,
-        style: 'winter-v2', // optional
-    });
-    
     //OLD
     // map.light= L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
     //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>, <a href="http://prtr.ec.europa.eu">E-PRTR</a>'
     // }).addTo(map);
-    map.bright= L.maptilerLayer({
-        attribution: '',
-        apiKey: key,
-        style:'bright',
-    });
     // var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
     //     minZoom: 0,
     //     maxZoom: 20,
@@ -495,11 +536,6 @@ function showMap() {
     // .addTo(Map)
     /* Current default map. Switch by puting the .addTo above */
     /* Thunderforest green tiles with more information */
-    map.bright_v2 = L.maptilerLayer({
-        attribution: '',
-        apiKey: key,
-        style:'bright-v2',
-    })
 
     /* Add the zoom buttons */
     map.sidebar = L.control.sidebar('sidebar', {
@@ -543,6 +579,18 @@ function showMap() {
 	// }).addTo(map);
 }
 
+// Function to check which layers are currently active
+function getActiveLayers() {
+    var activeLayerNames = [];
+
+    // Iterate over the layers in the activeLayers object
+    for (var layerName in activeLayers) {
+        if (map.hasLayer(activeLayers[layerName])) {
+            activeLayerNames.push(layerName);
+        }
+    }
+    return activeLayerNames;
+}
 
 
 
@@ -1540,7 +1588,7 @@ function updateEmissionsFilter() {
 let mapLayoutOSM = document.getElementById('map-layout-OSM'),
     mapLayoutwinter_v2 = document.getElementById('map-layout-winterv2'),
     mapLayoutBright = document.getElementById('map-layout-bright'),
-    mapLayoutBrightV2 = document.getElementById('map-layout-bright-v2'),
+    mapLayoutBrightv2 = document.getElementById('map-layout-bright-v2'),
     // mapShowConsumers = document.getElementById('map-show-consumers'),
     // modifyConsumers = document.getElementById('modify-consumers'),
     // modalModifyConsumers = document.getElementById('modal-modify-consumers'),
@@ -1585,45 +1633,45 @@ mapLayoutOSM.addEventListener('click', function () {
     map.addLayer(map.OSM);
     map.removeLayer(map.bright);
     map.removeLayer(map.bright_v2);
-    map.removeLayer(map.winter_V2);
+    map.removeLayer(map.winter_v2);
     mapLayoutOSM.classList.add('is-info');
     mapLayoutwinter_v2.classList.remove('is-info');
     mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightV2.classList.remove('is-info');
+    mapLayoutBrightv2.classList.remove('is-info');
 });
 
 mapLayoutwinter_v2.addEventListener('click', function () {
     map.removeLayer(map.OSM);
-    map.addLayer(map.winter_V2);
+    map.addLayer(map.winter_v2);
     map.removeLayer(map.bright);
     map.removeLayer(map.bright_v2);
     mapLayoutOSM.classList.remove('is-info');
     mapLayoutwinter_v2.classList.add('is-info');
     mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightV2.classList.remove('is-info');
+    mapLayoutBrightv2.classList.remove('is-info');
 });
 
 mapLayoutBright.addEventListener('click', function () {
     map.removeLayer(map.OSM);
-    map.removeLayer(map.winter_V2);
+    map.removeLayer(map.winter_v2);
     map.addLayer(map.bright);
     map.removeLayer(map.bright_v2);
     mapLayoutOSM.classList.remove('is-info');
     mapLayoutwinter_v2.classList.remove('is-info');
     mapLayoutBright.classList.add('is-info');
-    mapLayoutBrightV2.classList.remove('is-info');
+    mapLayoutBrightv2.classList.remove('is-info');
 });
 
 
-mapLayoutBrightV2.addEventListener('click', function () {
+mapLayoutBrightv2.addEventListener('click', function () {
     map.removeLayer(map.OSM);
-    map.removeLayer(map.winter_V2);
+    map.removeLayer(map.winter_v2);
     map.removeLayer(map.bright);
     map.addLayer(map.bright_v2);
     mapLayoutOSM.classList.remove('is-info');
     mapLayoutwinter_v2.classList.remove('is-info');
     mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightV2.classList.add('is-info');
+    mapLayoutBrightv2.classList.add('is-info');
 });
 
 
