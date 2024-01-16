@@ -11,6 +11,10 @@ if (urlParams.has('lang')) {
     lang = 'es';
 }
 console.log(lang+lang_init);
+if (lang_init != "es" && lang_init != "en") {
+    // console.log(lang_init)
+    window.location.replace("index.html?lang=es");
+}
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
@@ -2348,12 +2352,16 @@ $('#language-toggle').on('click', function(){
     // console.log(style)
     console.log('current language before click: ' + lang);
     console.log('lang_init: ' + lang_init)
-    if (lang_init =="en") {
-        updateContent('en')    
+    if (lang_init !="es" && lang_init != 'null') {
+        updateContent(lang_init)    
         lang_init='null';
         console.log('lang_init: '+ lang_init)
         console.log(typeof(lang_init))
-    } else {
+    } 
+    //     if (lang_init!="en" || lang_init != "es") {
+    // 
+    // }
+    else {
         if (lang==="en") {
             updateContent("es"); 
             lang="es";
@@ -2384,6 +2392,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // if (lang == "en") {
     //     $('#language-toggle').click();
     // }
+
     showMap();
 
     // Fetch the GeoJSON data from the URL
