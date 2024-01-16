@@ -55,10 +55,10 @@ if (lang=="es") {
         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
         { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-        { name_lang: 'Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
+        { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Papel y celulosa', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
         { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
 } else if(lang=="en") {
     buttonData = [
@@ -72,7 +72,7 @@ if (lang=="es") {
         { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Cellulose and paper', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
         { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Fossil thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
 }
 
@@ -86,7 +86,9 @@ buttonData.forEach(data => {
   
     // Set the button's text to the name from the data
     button.textContent = data.name_lang;
-  
+    // Text wird aber über die en.js  bzw. es.js sowieso überschrieben!
+    // Aber damit es konsistent mit der Tabelle ist, müssen Textänderungen an beiden Stellen vorgenommen werden.
+    
     // Set the button's ID to the ID from the data
     button.id = data.id;
   
@@ -461,7 +463,11 @@ function showMap(reload, language, zoomlevel, center, style) {
         zoom: zoom, // roughly show Europe from 1 to 18 -- decrease to zoom out, increase to zoom in)
         scrollWheelZoom: false,
         zoomControl: false, // to put the zoom butons on the right
-        minZoom: 4 // damit man nicht zu weit rauszoomen kann
+        minZoom: 4, // damit man nicht zu weit rauszoomen kann
+        maxBounds: [
+            [-19.658649421657355, -80.40861805520363],
+            [-56.5930829396799, -48.81193766169215]
+        ]
     })
 
     L.control.zoom({
@@ -469,25 +475,25 @@ function showMap(reload, language, zoomlevel, center, style) {
     }).addTo(map);
 
     map.OSM = L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
         apiKey: key,
         style: 'openstreetmap', // optional
     });
 
     map.winter_v2 = L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
         apiKey: key,
         style: 'winter-v2', // optional
     });
     
     map.bright= L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
         apiKey: key,
         style:'bright',
     });
 
     map.bright_v2 = L.maptilerLayer({
-        attribution: 'TEST TEST TEST',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
         apiKey: key,
         style:'bright-v2',
     })

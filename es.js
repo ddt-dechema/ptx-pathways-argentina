@@ -93,18 +93,19 @@ var translations_es = {
   Dado que la información pública disponible sobre emisiones de CO<sub>2</sub> es limitada, en algunos casos fue necesario realizar una estimación usando un factor de emisiones asumido. Por lo tanto, el valor de emisiones presentado puede no ser totalmente coincidente con el valor real para algunas de las fuentes identificadas. \n
   Adicionalmente, este mapa no es exhaustivo, pudiendo existir fuentes que no han sido identificadas. \n
   Los socios del consorcio no se hacen responsables por la interpretación y el uso de la información provista por este mapa.`,
-  legal: `<h3>Aviso legal</h3><p style="color:red";>This Map of CO2 sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.</p>`,
+  legal: `<h3>Aviso legal</h3>
+  Este Mapa de fuentes de CO<sub>2</sub> en Argentina ha sido publicado por el PtX Hub. El PtX Hub es una iniciativa del Gobierno Federal alemán. Está financiado principalmente por la Iniciativa Internacional sobre el Clima (IKI) y ejecutado por la GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). Las opiniones y recomendaciones expresadas no reflejan necesariamente las posiciones de las instituciones encargantes o de la agencia ejecutora.`,
   // ...
   button_Aluminium: `Aluminio`,
   button_Steel: `Acero`,
   button_cement: `Cemento`,
   button_refinery: `Refinerías`,
-  button_thermal: `Termoeléctricas`,
+  button_thermal: `Termoeléctricas fósiles`,
   button_ammonia: `Amoniaco`,
   button_etileno: `Etileno`,
   button_methanol: `Metanol`,
   button_bioethanol: `Bioetanol`,
-  button_biogas: `Biogás`,
+  button_biogas: `Termoeléctricas Biogás `,
   button_cellulose: `Papel y celulosa`,
   table_header_industry_type: `Industria`,
   table_header_total_emissions: `Emisiones totales (toneladas)`

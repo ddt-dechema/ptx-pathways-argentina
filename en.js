@@ -95,18 +95,18 @@ var translations_en = {
   In addition, this map is not complete and there may be sources that have not been identified. \n
   The consortium partners are not responsible for the interpretation and use of the information provided by this map.`,
   legal: `<h3>Aviso legal</h3>
-  <p style="color:red";>This Map of CO2 sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.</p>`,
+  This Map of CO<sub>2</sub> sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
   // ...
   button_Aluminium: `Aluminium`,
   button_Steel: `Steel`,
   button_cement: `Cement`,
   button_refinery: `Refinery`,
-  button_thermal: `Thermal power plant`,
+  button_thermal: `Fossil thermal power plant`,
   button_ammonia: `Ammonia`,
   button_etileno: `Etileno`,
   button_methanol: `Methanol`,
   button_bioethanol: `Bioethanol`,
-  button_biogas: `Biogas`,
+  button_biogas: `Biogas power plant`,
   button_cellulose: `Cellulose and Paper`,
   table_header_industry_type: `Industry`,
   table_header_total_emissions: `Total Emissions (Tonnes)`,
