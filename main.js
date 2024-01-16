@@ -434,26 +434,31 @@ function showMap(reload, language, zoomlevel, center, style) {
         position = center;
     }
 
-    if(language) {
-        if (language==="es") {
-            maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
-        } else if (language==="en") {
-            maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
-        }
-    } else {
-        if (lang==="es") {
-            maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
-        } else if (lang==="en") {
-            maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
-        }
-    }
+    // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+    // if(language) {
+    //     if (language==="es") {
+    //         maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+    //     } else if (language==="en") {
+    //         maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+    //     }
+    // } else {
+    //     if (lang==="es") {
+    //         maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+    //     } else if (lang==="en") {
+    //         maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+    //     }
+    // }
     
-    if (reload=="reload") {
-        if(map != 'undefined' || map != null) {
-            map.off();
-            map.remove(); 
-        } 
-    }
+    // Dadurch ist ein Reload nicht mehr notwendig
+    // if (reload=="reload") {
+    //     if(map != 'undefined' || map != null) {
+    //         map.off();
+    //         map.remove(); 
+    //     } 
+    // }
+    maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+
+
     // in potana-dev gab es folgenden Teil
     // map.layout = { }
 
@@ -2335,7 +2340,12 @@ if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style")
 /* And finally load all json data and display it */
 /*************************************************/
 document.addEventListener('DOMContentLoaded', (event) => {
-    showMap()
+    // der Übersetzer-Knopf ist default-mäßig auf spanisch="on" gestellt
+    // falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
+    if (lang == "en") {
+        $('#language-toggle').click();
+    }
+    showMap();
 
     // Fetch the GeoJSON data from the URL
     fetch(geojsonURL)
