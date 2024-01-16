@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Converter tool from csv list</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="utf-8">
+	</script>
+	<!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
+	<script src='https://unpkg.com/csv2geojson@5.0.2/csv2geojson.js'>
+	</script>
+</head>
+
+<body>
+	<script>	
+	
+		let globalChemParks;
+
+		/* Load all csv data files and create menu*/
+		getChemparkData('../polyol plants europe v2.csv')
+
+
+		function getChemparkData(file) {			
+			fetch(file)
+				.then(response => response.text())
+				.then(myBlob => convertCSV(myBlob))
+		}
+
+		function convertCSV(myBlob) {
+			return new Promise((resolve, reject) => {
+				csv2geojson.csv2geojson(myBlob, {
+					latfield: 'latitude',
+					lonfield: 'longitude',
+					delimiter: ';',
+				}, (err, geojson) => {
+					if (err) {
+						console.error(err);
+						reject(err);
+					} else {
+						console.log(geojson);
+						globalChemParks = geojson;
+						resolve(geojson);
+					}
+				});
+			});
+		};
+	</script>
+</body>
+
+</html>

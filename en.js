@@ -8,11 +8,11 @@ var translations_en = {
     This map aims to identify carbon sources (in the form of CO<sub>2</sub>) in Argentina to collaborate in the search for opportunities to develop PtX projects in the country. To do this, the main point sources of CO<sub>2</sub> in Argentina are shown, indicating their location, type of source and size.`,
   project: `<h3>PtX Pathways-Project</h3> The PtX Pathways project aims to support partner countries in developing a sustainable market for the production, use and export of green hydrogen and its derivatives (PtX). It is funded by the German Federal Ministry of Economics and Climate Protection (BMWK) through the International Climate Initiative (IKI). The project's implementing partners are the German Society for International Cooperation (GIZ), Agora Energiewende, DECHEMA e.V, the Argentine Energy Secretariat, the Centro de Estudios de la Actividad Regulatoria Energética (CEARE) and the Fundación Torcuato Di Tella (FTDT), in close collaboration with the International PtX Hub.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
-  languge_switch_link: `If you want to link to the map in a specific language, use the 
-    <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">english</a>
-    or <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">spanish</a>
-    link`,
-
+  languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
+  <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">inglés</a>
+  o <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">español</a>
+  `,
+   
   filter_title: `Different categories/sources of carbon`,
   filter_text: `A distinction is made between industrial and biogenic sources. Industrial sources include the manufacture of chemical products (ammonia, methanol, ethylene), metals (aluminum and steel) and cement, as well as refineries and thermoelectric power plants. Biogenic sources include biogas and bioethanol production.`,
   manual_filter_title: `Or filter manually`,

@@ -36,7 +36,7 @@
 				// 	window.location.replace("index.html?lang=es");
 				// }	
 				// console.log(language);
-				
+				console.log('updateContent before: ' + language);
 				if(language==="es") {
 					$("#language_button_es").addClass('lang_active');
 				} else if (language==="en") {
@@ -114,55 +114,47 @@
 				$('#industry_type_button-bioethanol').html(translations.button_bioethanol);
 				$('#industry_type_button-biogas').html(translations.button_biogas);
 				$('#industry_type_button-cellulose').html(translations.button_cellulose);				
+				console.log('updatedContent: ' + language)
 			}
 							
 			$(document).ready(function () {
-				$('#language_button_es').on("click", updateContent('es'));
-				$('#language_button_en').on("click", updateContent('en'));
+				// $('#language_button_es').on("click", updateContent('es'));
+				// $('#language_button_en').on("click", updateContent('en'));
 				
-				let lang;
+				// let lang;
 
-				const urlParams = new URLSearchParams(window.location.search);
-				if (urlParams.has('lang')) {
-					lang = urlParams.get('lang');
-				}
+				// const urlParams = new URLSearchParams(window.location.search);
+				// if (urlParams.has('lang')) {
+				// 	lang = urlParams.get('lang');
+				// }
+				console.log(lang);
 				// Now you can create the translations variable dynamically based on the selected language
-				let translations = window['translations_' + lang];
 				
-				if (!translations) {
-					// Handle cases where the selected language is not found
-					lang = 'es';
-					console.log('Language not found. Falling back to spanish.');
-					translations = window['translations_' + lang];
-					// console.log(translations)
-					// window.location.replace("index.html?lang=es");
-				}	
-				$('#language-toggle').on('click', function(){
-					let zoomlevel = map.getZoom();
-					let center = map.getCenter();
-					let style=getActiveLayers();
-					// console.log(style)
+				// Text immer zuerst default mäßig auf spanisch. 
+				// Und am Ende, wenn die Seite geladen ist, den Knopf drücken und umstellen
 
-					if (lang==="en") {
-						updateContent("es"); 
-						lang="es";
-						// Change Map Labels to language as well	
-						// Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
-						// Dadurch ist ein Reload nicht mehr notwendig
-						// showMap('reload', lang, zoomlevel, center, style);
-						// toggleAllLayers();
-					} else if (lang==="es") {
-						updateContent("en"); 
-						lang="en";
-						// Change Map Labels to language as well
-						// Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
-						// Dadurch ist ein Reload nicht mehr notwendig
-						// showMap('reload', lang, zoomlevel, center, style);
-						// toggleAllLayers();
-					}
-				});
-				updateContent(lang); 
+				// let translations = window['translations_' + lang];
 				
+				// if (!translations) {
+				// 	// Handle cases where the selected language is not found
+				// 	lang = 'es';
+				// 	console.log('Language not found. Falling back to spanish.');
+				// 	translations = window['translations_' + lang];
+				// 	// console.log(translations)
+				// 	// window.location.replace("index.html?lang=es");
+				// }	
+
+				let translations = window['translations_es'];
+
+				updateContent('es'); 
+				// console.log(lang);
+
+				// der Übersetzer-Knopf ist default-mäßig auf spanisch="on" gestellt
+				// falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
+				console.log(lang)
+				if (lang == "en") {
+					$('#language-toggle').click();
+				}
 			});
 		</script> 
 

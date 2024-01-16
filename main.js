@@ -1,10 +1,16 @@
-let lang = 'es'; // Default language
-			// var lang = getUrlParameter('lang');
-
+// let lang = 'es'; // Default language
+let lang; // Default language
+let lang_init;
+// var lang = getUrlParameter('lang');
+            
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('lang')) {
     lang = urlParams.get('lang');
+    lang_init = urlParams.get('lang');
+} else {
+    lang = 'es';
 }
+console.log(lang+lang_init);
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
@@ -2335,16 +2341,54 @@ function translucidColor(colorString, opacity = 0.6) {
 var url = new URL(window.location.href)
 if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
-
+$('#language-toggle').on('click', function(){
+    // let zoomlevel = map.getZoom();
+    // let center = map.getCenter();
+    let style=getActiveLayers();
+    // console.log(style)
+    console.log('current language before click: ' + lang);
+    console.log('lang_init: ' + lang_init)
+    if (lang_init != 'null') {
+        if (lang_init=="en") {
+            console.log('gaga')
+            updateContent('en')
+        } else {
+            console.log('gigi')
+        }
+        lang_init='null';
+        console.log('lang_init: '+ lang_init)
+        console.log(typeof(lang_init))
+    } else {
+        if (lang==="en") {
+            updateContent("es"); 
+            lang="es";
+        // Change Map Labels to language as well	
+        // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+        // Dadurch ist ein Reload nicht mehr notwendig
+        // showMap('reload', lang, zoomlevel, center, style);
+        // toggleAllLayers();
+        } else if (lang==="es") {
+            updateContent("en"); 
+            lang="en";
+            // Change Map Labels to language as well
+            // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+            // Dadurch ist ein Reload nicht mehr notwendig
+            // showMap('reload', lang, zoomlevel, center, style);
+            // toggleAllLayers();
+        }
+    }
+    console.log('current language after click: ' + lang);
+});
 /*************************************************/
 /* And finally load all json data and display it */
 /*************************************************/
 document.addEventListener('DOMContentLoaded', (event) => {
     // der Übersetzer-Knopf ist default-mäßig auf spanisch="on" gestellt
     // falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
-    if (lang == "en") {
-        $('#language-toggle').click();
-    }
+    console.log(lang)
+    // if (lang == "en") {
+    //     $('#language-toggle').click();
+    // }
     showMap();
 
     // Fetch the GeoJSON data from the URL
