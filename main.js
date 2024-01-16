@@ -2348,13 +2348,8 @@ $('#language-toggle').on('click', function(){
     // console.log(style)
     console.log('current language before click: ' + lang);
     console.log('lang_init: ' + lang_init)
-    if (lang_init != 'null') {
-        if (lang_init=="en") {
-            console.log('gaga')
-            updateContent('en')
-        } else {
-            console.log('gigi')
-        }
+    if (lang_init =="en") {
+        updateContent('en')    
         lang_init='null';
         console.log('lang_init: '+ lang_init)
         console.log(typeof(lang_init))
