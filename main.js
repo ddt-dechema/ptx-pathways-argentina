@@ -1,31 +1,6 @@
-// let lang = 'es'; // Default language
-let lang; // Default language
-let lang_init;
-// var lang = getUrlParameter('lang');
-            
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('lang')) {
-    lang = urlParams.get('lang');
-    lang_init = urlParams.get('lang');
-} else {
-    lang = 'es';
-}
-console.log(lang+lang_init);
-if (lang_init != "es" && lang_init != "en") {
-    // console.log(lang_init)
-    window.location.replace("index.html?lang=es");
-}
 
 var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
-
-if (lang==="en") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
-} else if (lang==="es") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
-}
 
 // Define a GeoJSON URL
 var geojsonURL = 'argentina_emissions.geojson';
@@ -53,6 +28,27 @@ var biogenicLayers = [
     "Bioethanol", 
     "Cellulose and paper"
 ];
+
+////////////////////////////////////////////////////
+//
+//   LANGUAGE
+//
+////////////////////////////////////////////////////
+let lang; // Default language
+           
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('lang')) {
+    lang = urlParams.get('lang');
+    // lang_init = urlParams.get('lang');
+} else {
+    lang = 'es';
+}
+
+if (lang != "es" && lang != "en") {
+    window.location.replace("index.html?lang=es");
+    // if possible (and requested)
+    // TODO: show popup ,that the desired language is not available
+}
 
 let buttonData;
 // Define a list of button names
@@ -84,6 +80,16 @@ if (lang=="es") {
         { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
         { name_lang: 'Fossil thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
+}
+
+
+// Prepare tables for the data which will be loaded and can be filtered
+if (lang==="en") {
+    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
+} else if (lang==="es") {
+    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
 }
 
 // Get a reference to the container element
@@ -129,6 +135,150 @@ buttonData.forEach(data => {
   buttonContainer.appendChild(button);
 
 });
+
+function updateContent(language) {
+    // not necessary anymore, because another language toggler is used
+    // $('#language_button_es, #language_button_en').removeClass('lang_active');
+    
+    let translations = window['translations_' + language];
+    // console.log(translations)
+    // if (!translations) {
+    // 	// Handle cases where the selected language is not found
+    // 	lang = 'es';
+    // 	console.log('Language not found. Falling back to spanish.');
+    // 	translations = window['translations_' + lang];
+    // 	// console.log(translations)
+    // 	window.location.replace("index.html?lang=es");
+    // }	
+    // console.log(language);
+    // console.log('updateContent before: ' + language);
+
+    // not necessary anymore, because another language toggler is used
+    // if(language==="es") {
+    // 	$("#language_button_es").addClass('lang_active');
+    // } else if (language==="en") {
+    // 	$("#language_button_en").addClass('lang_active');
+    // }
+
+    $("#introduction_title").html(translations.introduction_title);
+    $("#introduction_text").html(translations.introduction_text);
+    $("#project").html(translations.project);	
+    $("#language_picker").html(translations.language_picker);	
+    $("#languge_switch_link").html(translations.languge_switch_link);	
+
+    $("#sidebar_title").html(translations.sidebar_title);
+    $("#filter_title").html(translations.filter_title);
+    $("#filter_text").html(translations.filter_text);
+    $("#filter_text").html(translations.filter_text);
+    
+    $("#manual_filter_title").html(translations.manual_filter_title);
+    $("#emission_type").html(translations.emission_type);
+    $("#toggle-industrial-button").html(translations.industrial_button);
+    $("#toggle-biogenic-button").html(translations.biogenic_button);
+    $("#only_selected_plants").html(translations.only_selected_plants);
+    $("#toggle-all-button").html(translations.deselect_all_button);
+    
+    $("#statistics_title").html(translations.statistics_title);
+    $("#statistics").html(translations.statistics);
+    $("#statistics_total").html(translations.statistics_total);		
+    $("#table_emissions_title").html(translations.table_emissions_title);		
+    
+    $("#circle_title").html(translations.circle_title);
+    $("#circle_size").html(translations.circle_size);
+    $("#zoom_factor").html(translations.zoom_factor);		
+    $("#scale_title").html(translations.scale_title);
+    $("#disclaimer_title").html(translations.disclaimer_title);
+    
+    // $("#ToIncludeIntroduction").load("introduction.html", function() {
+    // }); 
+
+    // $("#ToIncludeData").load("data.html", function() {
+    // }); 
+    $("#data_title").html(translations.data_title);
+    $("#methods").html(translations.methods);
+    $("#sources").html(translations.sources);			
+    $("#download_text").html(translations.download_text);
+    $("#download_csv").html(translations.download_csv);
+    $("#download_geojson").html(translations.download_geojson);		
+
+    $("#map_programming").html(translations.map_programming);	
+    $("#contact").html(translations.contact);
+    $("#disclaimer").html(translations.disclaimer);
+    $("#legal").html(translations.legal);
+    
+    // update button and table texts, which are generated in main.js
+    $('#button-Aluminium').html(translations.button_Aluminium);
+    $('#button-Steel').html(translations.button_Steel);
+    $('#button-cement').html(translations.button_cement);
+    $('#button-refinery').html(translations.button_refinery);
+    $('#button-thermal').html(translations.button_thermal);
+    $('#button-ammonia').html(translations.button_ammonia);
+    $('#button-etileno').html(translations.button_etileno);
+    $('#button-methanol').html(translations.button_methanol);
+    $('#button-bioethanol').html(translations.button_bioethanol);
+    $('#button-biogas').html(translations.button_biogas);
+    $('#button-cellulose').html(translations.button_cellulose);
+    $('#table_header_industry_type').html(translations.table_header_industry_type);
+    $('#table_header_total_emissions').html(translations.table_header_total_emissions);
+    $('#industry_type_button-Aluminium').html(translations.button_Aluminium);
+    $('#industry_type_button-Steel').html(translations.button_Steel);
+    $('#industry_type_button-cement').html(translations.button_cement);
+    $('#industry_type_button-refinery').html(translations.button_refinery);
+    $('#industry_type_button-thermal').html(translations.button_thermal);
+    $('#industry_type_button-ammonia').html(translations.button_ammonia);
+    $('#industry_type_button-etileno').html(translations.button_etileno);
+    $('#industry_type_button-methanol').html(translations.button_methanol);
+    $('#industry_type_button-bioethanol').html(translations.button_bioethanol);
+    $('#industry_type_button-biogas').html(translations.button_biogas);
+    $('#industry_type_button-cellulose').html(translations.button_cellulose);				
+    // console.log('updatedContent: ' + language)
+}
+    
+
+$('#language-toggle').on('click', function(){
+    // let zoomlevel = map.getZoom();
+    // let center = map.getCenter();
+    let style=getActiveLayers();
+    // console.log(style)
+    // console.log('current language before click: ' + lang);
+    // console.log('lang_init: ' + lang_init)
+    // if (lang_init !="es" && lang_init != 'null') {
+    //     updateContent(lang_init)    
+    //     lang_init='null';
+    //     console.log('lang_init: '+ lang_init)
+    //     console.log(typeof(lang_init))
+    // } 
+    //     if (lang_init!="en" || lang_init != "es") {
+    // 
+    // }
+    // else {
+    if (lang==="en") {
+        updateContent("es"); 
+        lang="es";
+    // Change Map Labels to language as well	
+    // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+    // Dadurch ist ein Reload nicht mehr notwendig
+    // showMap('reload', lang, zoomlevel, center, style);
+    // toggleAllLayers();
+    } else if (lang==="es") {
+        updateContent("en"); 
+        lang="en";
+        // Change Map Labels to language as well
+        // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+        // Dadurch ist ein Reload nicht mehr notwendig
+        // showMap('reload', lang, zoomlevel, center, style);
+        // toggleAllLayers();
+    }
+    // }
+    // console.log('current language after click: ' + lang);
+});
+
+////////////////////////////////////////////////////
+//
+//  
+//
+////////////////////////////////////////////////////
+
 
 const element = document.getElementById('sidebar');
 element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
@@ -2345,54 +2495,19 @@ function translucidColor(colorString, opacity = 0.6) {
 var url = new URL(window.location.href)
 if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
-$('#language-toggle').on('click', function(){
-    // let zoomlevel = map.getZoom();
-    // let center = map.getCenter();
-    let style=getActiveLayers();
-    // console.log(style)
-    console.log('current language before click: ' + lang);
-    console.log('lang_init: ' + lang_init)
-    if (lang_init !="es" && lang_init != 'null') {
-        updateContent(lang_init)    
-        lang_init='null';
-        console.log('lang_init: '+ lang_init)
-        console.log(typeof(lang_init))
-    } 
-    //     if (lang_init!="en" || lang_init != "es") {
-    // 
-    // }
-    else {
-        if (lang==="en") {
-            updateContent("es"); 
-            lang="es";
-        // Change Map Labels to language as well	
-        // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
-        // Dadurch ist ein Reload nicht mehr notwendig
-        // showMap('reload', lang, zoomlevel, center, style);
-        // toggleAllLayers();
-        } else if (lang==="es") {
-            updateContent("en"); 
-            lang="en";
-            // Change Map Labels to language as well
-            // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
-            // Dadurch ist ein Reload nicht mehr notwendig
-            // showMap('reload', lang, zoomlevel, center, style);
-            // toggleAllLayers();
-        }
-    }
-    console.log('current language after click: ' + lang);
-});
 /*************************************************/
 /* And finally load all json data and display it */
 /*************************************************/
 document.addEventListener('DOMContentLoaded', (event) => {
     // der Übersetzer-Knopf ist default-mäßig auf spanisch="on" gestellt
     // falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
-    console.log(lang)
-    // if (lang == "en") {
-    //     $('#language-toggle').click();
-    // }
-
+    // console.log('DOMContent: lang ' + lang)
+    if (lang=="en") {
+        $('#language-toggle').prop('checked', true);
+        updateContent('en');
+    } else {
+        updateContent('es');
+    }
     showMap();
 
     // Fetch the GeoJSON data from the URL
@@ -2531,50 +2646,50 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /***********************************/
 /* Helper functions (cookies etc.) */
 /***********************************/
-const setCookie = (name, value, days = 100, path = '/') => {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString()
-    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
-}
+// const setCookie = (name, value, days = 100, path = '/') => {
+//     const expires = new Date(Date.now() + days * 864e5).toUTCString()
+//     document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+// }
 
-const getCookie = (name) => {
-    return document.cookie.split('; ').reduce((r, v) => {
-        const parts = v.split('=')
-        return parts[0] === name ? decodeURIComponent(parts[1]) : r
-    }, '')
-}
+// const getCookie = (name) => {
+//     return document.cookie.split('; ').reduce((r, v) => {
+//         const parts = v.split('=')
+//         return parts[0] === name ? decodeURIComponent(parts[1]) : r
+//     }, '')
+// }
 
-const deleteCookie = (name, path = "/") => {
-    setCookie(name, '', -1, path)
-}
+// const deleteCookie = (name, path = "/") => {
+//     setCookie(name, '', -1, path)
+// }
 
-function clone(obj) {
-    var copy;
-    // Handle the 3 simple types, and null or undefined
-    if (null == obj || "object" != typeof obj) return obj;
-    // Handle Date
-    if (obj instanceof Date) {
-        copy = new Date();
-        copy.setTime(obj.getTime());
-        return copy;
-    }
-    // Handle Array
-    if (obj instanceof Array) {
-        copy = [];
-        for (var i = 0, len = obj.length; i < len; i++) {
-            copy[i] = clone(obj[i]);
-        }
-        return copy;
-    }
-    // Handle Object
-    if (obj instanceof Object) {
-        copy = {};
-        for (var attr in obj) {
-            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
-        }
-        return copy;
-    }
-    throw new Error("Unable to copy obj! Its type isn't supported.");
-}
+// function clone(obj) {
+//     var copy;
+//     // Handle the 3 simple types, and null or undefined
+//     if (null == obj || "object" != typeof obj) return obj;
+//     // Handle Date
+//     if (obj instanceof Date) {
+//         copy = new Date();
+//         copy.setTime(obj.getTime());
+//         return copy;
+//     }
+//     // Handle Array
+//     if (obj instanceof Array) {
+//         copy = [];
+//         for (var i = 0, len = obj.length; i < len; i++) {
+//             copy[i] = clone(obj[i]);
+//         }
+//         return copy;
+//     }
+//     // Handle Object
+//     if (obj instanceof Object) {
+//         copy = {};
+//         for (var attr in obj) {
+//             if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+//         }
+//         return copy;
+//     }
+//     throw new Error("Unable to copy obj! Its type isn't supported.");
+// }
 
 /***********************************/
 /* Intro.js tour                   */
