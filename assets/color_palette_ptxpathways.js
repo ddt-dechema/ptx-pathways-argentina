@@ -31,30 +31,27 @@ let baseColors = {
     "ptx_fourth": "rgb(255, 187, 0)"
     }, 
     emissionColors_D = {
-        // "CO2, AIR": 'rgb(241, 177, 48)',
-        // "CO, AIR": 'rgb(234,110,57)'
         "industrial": "rgb(84, 114, 155)",
         "biogenic": "rgb(57, 137, 126)" 
     },
     emissionTypeColors_D = {
-        // "chemical parks": "rgb(0,168,189)",
-        // "polyol plants": "rgb(12,168,118)",
-        // "steel mills": "yellow"
         "Aluminium": "rgb(113, 184, 210, 1)",
         "Cement": "rgb(113, 184, 210, 0.8)",
         "Steel": "rgb(113, 184, 210, 0.6)",
-        
-        "Refinery": "rgb(164, 146, 220, 1)",
-        "Thermal power plant": "rgb(164, 146, 220, 0.8)",
         
         "Ammonia": "rgb(241, 219, 38, 1)",
         "Etileno": "rgb(241, 219, 38, 0.8)",
         "Methanol": "rgb(241, 219, 38, 0.6)",
         
+        "Refinery": "rgb(164, 146, 220, 1)",
+        "Thermal power plant": "rgb(164, 146, 220, 0.8)",
+        
+        "Pulp and paper": "rgb(143, 196, 146, 0.6)",
+        
         "Bioethanol": "rgb(143, 196, 146, 1)",
-        "Biogas Power Plant": "rgb(143, 196, 146, 0.8)",
-        "Cellulose and paper": "rgb(143, 196, 146, 0.6)"
+        "Biogas Power Plant": "rgb(143, 196, 146, 0.8)"
     }
+
 
 // Aluminium
 // Steel

@@ -3,30 +3,31 @@ var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
 
 // Define a GeoJSON URL
-var geojsonURL = 'argentina_emissions.geojson';
+var geojsonURL = 'argentina_emissions_20240117.geojson';
 var geojsonLayer; // Declare a variable to hold the GeoJSON layer
-var aluminiumLayer, steelLayer, cementLayer, celluloseLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
+var aluminiumLayer, steelLayer, cementLayer, paperLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
 var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
 
-var activeLayers; // Declare a variable to hold the active map layers
+// not necessary anymore - only one layer
+// var activeLayers; // Declare a variable to hold the active map layers
 
 // Group layers by source type
 var industrialLayers = [
     "Aluminium", 
-    "Steel", 
     "Cement", 
-    "Thermal power plant", 
-    "Refinery", 
+    "Steel", 
     "Ammonia", 
+    "Etileno",
     "Methanol", 
-    "Etileno"
+    "Refinery", 
+    "Fossil thermal power plant", 
+    "Pulp and paper"
     ];
 var biogenicLayers = [
     "Biogas Power Plant", 
-    "Bioethanol", 
-    "Cellulose and paper"
+    "Bioethanol"
 ];
 
 ////////////////////////////////////////////////////
@@ -60,11 +61,11 @@ if (lang=="es") {
         { name_lang: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
         { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
         { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
-        { name_lang: 'Papel y celulosa', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
-        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
     ];
 } else if(lang=="en") {
     buttonData = [
@@ -74,11 +75,11 @@ if (lang=="es") {
         { name_lang: 'Ammonia', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
         { name_lang: 'Methanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
-        { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-        { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
-        { name_lang: 'Cellulose and paper', name: 'Cellulose and paper', id: 'button-cellulose', industry: 'biogenic'},
         { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
         { name_lang: 'Fossil thermal power plant', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Pulp and paper', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
+        { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+        { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
     ];
 }
 
@@ -217,7 +218,7 @@ function updateContent(language) {
     $('#button-methanol').html(translations.button_methanol);
     $('#button-bioethanol').html(translations.button_bioethanol);
     $('#button-biogas').html(translations.button_biogas);
-    $('#button-cellulose').html(translations.button_cellulose);
+    $('#button-paper').html(translations.button_paper);
     $('#table_header_industry_type').html(translations.table_header_industry_type);
     $('#table_header_total_emissions').html(translations.table_header_total_emissions);
     $('#industry_type_button-Aluminium').html(translations.button_Aluminium);
@@ -230,7 +231,7 @@ function updateContent(language) {
     $('#industry_type_button-methanol').html(translations.button_methanol);
     $('#industry_type_button-bioethanol').html(translations.button_bioethanol);
     $('#industry_type_button-biogas').html(translations.button_biogas);
-    $('#industry_type_button-cellulose').html(translations.button_cellulose);				
+    $('#industry_type_button-paper').html(translations.button_paper);
     // console.log('updatedContent: ' + language)
 }
     
@@ -238,7 +239,7 @@ function updateContent(language) {
 $('#language-toggle').on('click', function(){
     // let zoomlevel = map.getZoom();
     // let center = map.getCenter();
-    let style=getActiveLayers();
+    // let style=getActiveLayers();
     // console.log(style)
     // console.log('current language before click: ' + lang);
     // console.log('lang_init: ' + lang_init)
@@ -639,44 +640,46 @@ function showMap(reload, language, zoomlevel, center, style) {
         position: 'topright'
     }).addTo(map);
 
-    map.OSM = L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
-        apiKey: key,
-        style: 'openstreetmap', // optional
-    });
+    // map.OSM = L.maptilerLayer({
+    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+    //     apiKey: key,
+    //     style: 'openstreetmap', // optional
+    // });
 
-    map.winter_v2 = L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
-        apiKey: key,
-        style: 'winter-v2', // optional
-    });
+    // map.winter_v2 = L.maptilerLayer({
+    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+    //     apiKey: key,
+    //     style: 'winter-v2', // optional
+    // });
     
     map.bright= L.maptilerLayer({
         attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
         apiKey: key,
-        style:'bright',
-    });
+        style:'bright', // we take this one
+    }).addTo(map);
 
-    map.bright_v2 = L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
-        apiKey: key,
-        style:'bright-v2',
-    })
+    // map.bright_v2 = L.maptilerLayer({
+    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+    //     apiKey: key,
+    //     style:'bright-v2',
+    // })
 
-    if(style) {
-        // console.log(style)
-        eval(style+'.addTo(map)');
-    } else {
-        map.OSM.addTo(map);
-    }
+    // The decision is to only take the bright (V1) as the default layer
+    //
+    // if(style) {
+    //     // console.log(style)
+    //     eval(style+'.addTo(map)');
+    // } else {
+    //     map.OSM.addTo(map);
+    // }
 
     // Define an object to store the active layers
-    activeLayers = {
-        'map.bright': map.bright,
-        'map.bright_v2': map.bright_v2,
-        'map.winter_v2': map.winter_v2,
-        'map.OSM': map.OSM
-    };
+    // activeLayers = {
+    //     'map.bright': map.bright,
+    //     'map.bright_v2': map.bright_v2,
+    //     'map.winter_v2': map.winter_v2,
+    //     'map.OSM': map.OSM
+    // };
 
 
     /* Carto light-gray basemap tiles with labels */
@@ -750,18 +753,19 @@ function showMap(reload, language, zoomlevel, center, style) {
 	// }).addTo(map);
 }
 
+// not needed anymore, because only one layer is requested
 // Function to check which layers are currently active
-function getActiveLayers() {
-    var activeLayerNames = [];
+// function getActiveLayers() {
+//     var activeLayerNames = [];
 
-    // Iterate over the layers in the activeLayers object
-    for (var layerName in activeLayers) {
-        if (map.hasLayer(activeLayers[layerName])) {
-            activeLayerNames.push(layerName);
-        }
-    }
-    return activeLayerNames;
-}
+//     // Iterate over the layers in the activeLayers object
+//     for (var layerName in activeLayers) {
+//         if (map.hasLayer(activeLayers[layerName])) {
+//             activeLayerNames.push(layerName);
+//         }
+//     }
+//     return activeLayerNames;
+// }
 
 
 
@@ -1800,50 +1804,51 @@ let mapLayoutOSM = document.getElementById('map-layout-OSM'),
 // mapLayoutGreen.addEventListener('click', toggleMapLayout('green'))
 // mapLayoutSpanish.addEventListener('click', toggleMapLayout('spanish'))
 // mapLayoutLight.addEventListener('click', toggleMapLayout('light'))
-mapLayoutOSM.addEventListener('click', function () {
-    map.addLayer(map.OSM);
-    map.removeLayer(map.bright);
-    map.removeLayer(map.bright_v2);
-    map.removeLayer(map.winter_v2);
-    mapLayoutOSM.classList.add('is-info');
-    mapLayoutwinter_v2.classList.remove('is-info');
-    mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightv2.classList.remove('is-info');
-});
 
-mapLayoutwinter_v2.addEventListener('click', function () {
-    map.removeLayer(map.OSM);
-    map.addLayer(map.winter_v2);
-    map.removeLayer(map.bright);
-    map.removeLayer(map.bright_v2);
-    mapLayoutOSM.classList.remove('is-info');
-    mapLayoutwinter_v2.classList.add('is-info');
-    mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightv2.classList.remove('is-info');
-});
+// we dont need this anymore, because only one layer is used
+// mapLayoutOSM.addEventListener('click', function () {
+//     map.addLayer(map.OSM);
+//     map.removeLayer(map.bright);
+//     map.removeLayer(map.bright_v2);
+//     map.removeLayer(map.winter_v2);
+//     mapLayoutOSM.classList.add('is-info');
+//     mapLayoutwinter_v2.classList.remove('is-info');
+//     mapLayoutBright.classList.remove('is-info');
+//     mapLayoutBrightv2.classList.remove('is-info');
+// });
 
-mapLayoutBright.addEventListener('click', function () {
-    map.removeLayer(map.OSM);
-    map.removeLayer(map.winter_v2);
-    map.addLayer(map.bright);
-    map.removeLayer(map.bright_v2);
-    mapLayoutOSM.classList.remove('is-info');
-    mapLayoutwinter_v2.classList.remove('is-info');
-    mapLayoutBright.classList.add('is-info');
-    mapLayoutBrightv2.classList.remove('is-info');
-});
+// mapLayoutwinter_v2.addEventListener('click', function () {
+//     map.removeLayer(map.OSM);
+//     map.addLayer(map.winter_v2);
+//     map.removeLayer(map.bright);
+//     map.removeLayer(map.bright_v2);
+//     mapLayoutOSM.classList.remove('is-info');
+//     mapLayoutwinter_v2.classList.add('is-info');
+//     mapLayoutBright.classList.remove('is-info');
+//     mapLayoutBrightv2.classList.remove('is-info');
+// });
 
+// mapLayoutBright.addEventListener('click', function () {
+//     map.removeLayer(map.OSM);
+//     map.removeLayer(map.winter_v2);
+//     map.addLayer(map.bright);
+//     map.removeLayer(map.bright_v2);
+//     mapLayoutOSM.classList.remove('is-info');
+//     mapLayoutwinter_v2.classList.remove('is-info');
+//     mapLayoutBright.classList.add('is-info');
+//     mapLayoutBrightv2.classList.remove('is-info');
+// });
 
-mapLayoutBrightv2.addEventListener('click', function () {
-    map.removeLayer(map.OSM);
-    map.removeLayer(map.winter_v2);
-    map.removeLayer(map.bright);
-    map.addLayer(map.bright_v2);
-    mapLayoutOSM.classList.remove('is-info');
-    mapLayoutwinter_v2.classList.remove('is-info');
-    mapLayoutBright.classList.remove('is-info');
-    mapLayoutBrightv2.classList.add('is-info');
-});
+// mapLayoutBrightv2.addEventListener('click', function () {
+//     map.removeLayer(map.OSM);
+//     map.removeLayer(map.winter_v2);
+//     map.removeLayer(map.bright);
+//     map.addLayer(map.bright_v2);
+//     mapLayoutOSM.classList.remove('is-info');
+//     mapLayoutwinter_v2.classList.remove('is-info');
+//     mapLayoutBright.classList.remove('is-info');
+//     mapLayoutBrightv2.classList.add('is-info');
+// });
 
 
 // function toggleShowConsumers() {
@@ -2493,7 +2498,7 @@ function translucidColor(colorString, opacity = 0.6) {
 /* Change layout with get parameters */
 /*************************************/
 var url = new URL(window.location.href)
-if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
+// if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
 /*************************************************/
 /* And finally load all json data and display it */
@@ -2614,7 +2619,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     addGeoJSONLayer('Aluminium');
     addGeoJSONLayer('Steel');
     addGeoJSONLayer('Cement');
-    addGeoJSONLayer('Cellulose and paper');
+    addGeoJSONLayer('Pulp and paper');
     addGeoJSONLayer('Thermal power plant');
     addGeoJSONLayer('Refinery');
     addGeoJSONLayer('Biogas Power Plant'); // vorher: addGeoJSONLayer('Biogas Power Plant');

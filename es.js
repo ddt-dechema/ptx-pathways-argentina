@@ -100,13 +100,13 @@ var translations_es = {
   button_Steel: `Acero`,
   button_cement: `Cemento`,
   button_refinery: `Refinerías`,
-  button_thermal: `Termoeléctricas fósiles`,
+  button_thermal: `Termoeléctricas fuentes fósiles`,
   button_ammonia: `Amoniaco`,
   button_etileno: `Etileno`,
   button_methanol: `Metanol`,
   button_bioethanol: `Bioetanol`,
   button_biogas: `Termoeléctricas Biogás `,
-  button_cellulose: `Papel y celulosa`,
+  button_paper: `Celulosa y papel`,
   table_header_industry_type: `Industria`,
   table_header_total_emissions: `Emisiones totales (toneladas)`
 };
