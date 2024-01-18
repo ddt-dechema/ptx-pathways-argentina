@@ -87,6 +87,15 @@ if (lang != "es" && lang != "en") {
     // TODO: show popup ,that the desired language is not available
 }
 
+// Prepare tables for the data which will be loaded and can be filtered
+if (lang==="en") {
+    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
+} else if (lang==="es") {
+    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
+    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
+}
+
 let buttonData;
 // Define a list of button names
 if (lang=="es") {
@@ -117,16 +126,6 @@ if (lang=="es") {
         { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
     ];
-}
-
-
-// Prepare tables for the data which will be loaded and can be filtered
-if (lang==="en") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
-} else if (lang==="es") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
 }
 
 // Get a reference to the container element
@@ -312,14 +311,12 @@ $('#language-toggle').on('click', function(){
 
 ////////////////////////////////////////////////////
 //
-//  
+//  CALCULATIONS for the 2nd TAB - total emissions and emissions per categories
 //
 ////////////////////////////////////////////////////
 
-
 const element = document.getElementById('sidebar');
 element.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
-
 
 // Initialize an object to store total emissions for each industry type
 var totalEmissions = {};
@@ -360,7 +357,6 @@ var sliderValue_old = 1;
 // Add an event listener to the slider
 radius_slider.addEventListener('input', function () {
     // Get the current slider value
-    
     sliderValue = parseFloat(radius_slider.value);
 
     maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue
@@ -368,7 +364,6 @@ radius_slider.addEventListener('input', function () {
     createScale(sliderValue);
 
     // Call the function to update circle sizes
-
     for (const [key, layername] of Object.entries(layers)) {
         // console.log(`${key}: ${value}`);
         updateCircleSizes(sliderValue_old, sliderValue, layername);
@@ -379,8 +374,6 @@ radius_slider.addEventListener('input', function () {
     // console.log('AFTER CHANGE Old Value: ' + sliderValue_old);
     // console.log('New Value: ' + sliderValue);
 });
-
-// Assuming you have an existing GeoJSON layer named 'geojsonLayer'
 
 // Function to update circle sizes
 function updateCircleSizes(oldValue, newValue, layer) {
@@ -403,6 +396,7 @@ function updateCircleSizes(oldValue, newValue, layer) {
 }
 
 // Function to check if an object is empty
+// used when loading the geojsonLayers
 function isEmptyObject(obj) {
     for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
@@ -542,6 +536,7 @@ function toggleIndustrialLayers() {
     // console.log('biogenicLayersVisible: ',biogenicLayersVisible);
     // console.log('allLayersVisible: ',allLayersVisible);
 }
+
 function toggleBiogenicLayers() {
     // Filter and show layers with industrial source
     if (biogenicLayersVisible) {
@@ -590,28 +585,21 @@ function toggleBiogenicLayers() {
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// OLLI
-// define global variables
+////////////////////////////////////////////////////
+//
+//  CREATE THE MAP and its properties
+//
+////////////////////////////////////////////////////
+
 let map, format1Dec, formatSI,
     CO2globalButton = document.getElementById("CO2-global-button"),
     scale = document.getElementById("scale")
     CO2_argentinaButton = document.getElementById("CO2-argentina-button");
 
 // https://docs.maptiler.com/sdk-js/examples/language-map/
-// DDTs personal key
+// DDTs personal key (!!!)
 const key = 'tqfuJhSDIhJBFNXpuIIr';
 
-
-
-// // const map = L.map('map').setView([0, 0], 1); //starting position
-// const mtLayer = L.maptilerLayer({
-//   apiKey: key,
-//   style: L.MaptilerStyle.STREETS, // optional
-// }).addTo(map);
-
-// Argentina center 
-// -38.45155,-63.5988853
 function showMap(reload, language, zoomlevel, center, style) {
     /* allows us to create filters within a Leaflet GeoJSON layer */
     L.GeoJSON.include({
@@ -624,6 +612,9 @@ function showMap(reload, language, zoomlevel, center, style) {
     })
     
     let zoom = 5;
+
+    // Argentina center 
+    // -38.45155,-63.5988853
     let position = [-38.45155, -63.5988853];
 
     if (zoomlevel && center) {
@@ -653,8 +644,9 @@ function showMap(reload, language, zoomlevel, center, style) {
     //         map.remove(); 
     //     } 
     // }
-    maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
 
+    // SET DEFAULT LANGUAGE OF THE NAMES OF LOCATIONS ON THE MAP TO SPANISH
+    maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
 
     // in potana-dev gab es folgenden Teil
     // map.layout = { }
@@ -666,7 +658,7 @@ function showMap(reload, language, zoomlevel, center, style) {
         scrollWheelZoom: false,
         zoomControl: false, // to put the zoom butons on the right
         minZoom: 4, // damit man nicht zu weit rauszoomen kann
-        maxBounds: [
+        maxBounds: [    // damit man nicht nach links,rechts,oben, unten schieben kann
             [-19.658649421657355, -80.40861805520363],
             [-56.5930829396799, -48.81193766169215]
         ]
@@ -676,6 +668,14 @@ function showMap(reload, language, zoomlevel, center, style) {
         position: 'topright'
     }).addTo(map);
 
+    // The decision is to only take the bright (V1) as the default layer
+    map.bright= L.maptilerLayer({
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+        apiKey: key,
+        style:'bright', // we take this one
+    }).addTo(map);
+
+    // If other tiles should be used:
     // map.OSM = L.maptilerLayer({
     //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
     //     apiKey: key,
@@ -688,19 +688,12 @@ function showMap(reload, language, zoomlevel, center, style) {
     //     style: 'winter-v2', // optional
     // });
     
-    map.bright= L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
-        apiKey: key,
-        style:'bright', // we take this one
-    }).addTo(map);
-
     // map.bright_v2 = L.maptilerLayer({
     //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
     //     apiKey: key,
     //     style:'bright-v2',
     // })
 
-    // The decision is to only take the bright (V1) as the default layer
     //
     // if(style) {
     //     // console.log(style)
@@ -761,18 +754,19 @@ function showMap(reload, language, zoomlevel, center, style) {
     map.on('blur', () => {
         map.scrollWheelZoom.disable()
     })
+
     /* This is to put the emissions in the foreground on high zoom levels */
-    map.on("zoomend", function (e) {
-        for (type in chemicalParkMarkers) {
-            if (e.target._zoom > 7 && !chemicalParkMarkers.isBack) {
-                chemicalParkMarkers[type].bringToBack()
-                chemicalParkMarkers[type].isBack = true
-            } else {
-                chemicalParkMarkers[type].bringToFront()
-                chemicalParkMarkers[type].isBack = false
-            }
-        }
-    })
+    // map.on("zoomend", function (e) {
+    //     for (type in chemicalParkMarkers) {
+    //         if (e.target._zoom > 7 && !chemicalParkMarkers.isBack) {
+    //             chemicalParkMarkers[type].bringToBack()
+    //             chemicalParkMarkers[type].isBack = true
+    //         } else {
+    //             chemicalParkMarkers[type].bringToFront()
+    //             chemicalParkMarkers[type].isBack = false
+    //         }
+    //     }
+    // })
 
     // in potana-dev kam noch das hier:
     // map.createPane('labels')
@@ -802,8 +796,6 @@ function showMap(reload, language, zoomlevel, center, style) {
 //     }
 //     return activeLayerNames;
 // }
-
-
 
 /*********************************************************/
 /* Definitions of colors, NACE categories etc. */
@@ -1002,6 +994,9 @@ function toggleLayerLegend(button, layer, legend) {
 // 	}
 // }); //.addTo(map);
 
+//
+// Define Popups when clicking on the circles
+//
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
@@ -1034,183 +1029,6 @@ function addCO2argentinaPopupHandler(feature) {
 		console.log(feature);
 	}
 }
-
-
-
-/// Argentina CO2 - selective for industry type
-// as points
-// var CO2_argentina = new L.GeoJSON.AJAX(['convertcsv.geojson'], {
-// 	pointToLayer: function(feature, latlng) {
-// 		return L.circleMarker(latlng, {
-// 			radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-// 			color: "black",
-// 			/*fillColor: feature.properties.color,*/
-// 			fillColor: "black",
-// 			weight: 1,
-// 			opacity: 0.7,
-// 			fillOpacity: 0.4
-// 		}).bindPopup(addCO2argentinaPopupHandler(feature));
-// 	}
-// }); //.addTo(map);
-
-// function addCO2argentinaPopupHandler(feature) {
-// 	// let nace = globalModel.emissions.categories.naceCategories.items
-// 	if (feature.properties) {
-// 		let thisEmission =
-//         formatSI(feature.properties.Tonnes) + " Tonnes CO<sub>2</sub>/year";
-// 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
-// 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
-// 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
-// 		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-// 		return `<h2>${feature.properties.Name} (${feature.properties.Company})</h2>
-//                         Emissions:
-//                         <br>${thisEmission}<br>
-//                         Source: 
-//                         <br>${feature.properties.source}<br>
-//                         Industry: 
-//                         <br>${feature.properties.industry}<br>
-//                         </div>`;
-// 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
-// 	} else {
-// 		console.log(feature);
-// 	}
-// }
-
-// ToDo: replace all this with a global data model and assign all buttons, functions etc. to the right model category.
-// For now this is just an example
-
-// let globalModel = {
-//     emissions: {
-//         categories: {
-//             gasType: {
-//                 buttons: {
-//                     containerId: 'gas-type-buttons',
-//                     onClick: function(){},
-//                     createFunction: function(){}
-//                 },
-//                 items: {
-//                     "CO2, industrial": {
-//                         color: emissionColors_D.biogas,
-//                         filterButton: document.getElementById('pollutant-filter-CO2-button')
-//                     },
-//                     "CO2, biogenic": {
-//                         color: emissionColors_D.industrial,
-//                         filterButton: document.getElementById('pollutant-filter-CO-button')
-//                     }
-//                 }
-//             },
-
-//             // naceCategories: {
-//             //     buttons: {
-//             //         containerId: 'nace-categories',
-//             //         onClick: (button) => {
-//             //             return function(){
-//             //                 activateCompatButton(compatFilterManualButton)
-//             //                 // update nace object
-//             //                 toggleNaceButton(button)
-//             //                 // only display active emissions
-//             //                 updateEmissionsFilter()
-//             //             }
-//             //         },
-//             //         createButtons: () => {
-//             //             return new Promise(resolve => {                            
-//             //                 let nace = globalModel.emissions.categories.naceCategories
-//             //                 let catDiv = document.getElementById('nace-categories')
-//             //                 for (var name in nace.items) {
-//             //                     let emissionSums = formatSI(globalEmissionData.stats.totals['CO2, industrial'][name]) + ' Megatonnes CO2/year, ' + formatSI(globalEmissionData.stats.totals['CO2, biogenic'][name]) + ' Megatonnes CO/year';
-//             //                     nace.items[name].button = document.createElement('a')
-//             //                     nace.items[name].button.className = 'button is-small is-activated is-fullwidth nace-button ' + nace.items[name].style
-//             //                     nace.items[name].button.title = emissionSums
-//             //                     nace.items[name].button.text = name
-//             //                     nace.items[name].button.onclick = nace.buttons.onClick(nace.items[name].button)
-//             //                     catDiv.append(nace.items[name].button)
-//             //                 }
-//             //                 nace.buttons.allButtons = document.getElementsByClassName('nace-button')
-//             //                 resolve()
-//             //             })
-//             //         },
-//             //         allButtons: []
-//             //     },
-//             //     items: {
-//             //         "Aluminium": {
-//             //             style: 'emitters-aluminium',
-//             //             color: '#ff0000',
-//             //             looping: true,
-//             //             catalytic: true,
-//             //             active: true,
-
-//             //         },
-//             //         "Steel": {
-//             //             style: 'emitters-steel',
-//             //             color: 'rgb(214,70,111)',
-//             //             looping: true,
-//             //             catalytic: true,
-//             //             active: true
-//             //         },
-//             //         "Cement": {
-//             //             style: 'emitters-cement',
-//             //             color: 'rgb(190,85,153)',
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         },
-//             //         "Cellulose and paper": {
-//             //             style: 'emitters-cellulose',
-//             //             color: 'rgb(151,133,176)', // find color
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         },
-//             //         "Refinery": {
-//             //             style: 'emitters-refinery',
-//             //             color: 'rgb(103,155,186)',
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         },
-//             //         "Ammonia": {
-//             //             style: 'emitters-ammonia',
-//             //             color: '#5a6067',
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         },
-//             //         "Methanol": {
-//             //             style: 'emitters-methanol',
-//             //             color: '#000000',
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         },
-//             //         "Etileno": {
-//             //             style: 'emitters-etileno',
-//             //             color: '#938e99',
-//             //             looping: true,
-//             //             catalytic: false,
-//             //             active: true
-//             //         }
-//             //     }
-//             // }
-//         }
-//     }
-// }
-
-
-
-
-// Add event listener to the button
-// document.getElementById('show-geojson-button').addEventListener('click', function() {
-//     addGeoJSONLayer();
-// });
-
-// Add event listener to the button
-// To Do DDT
-// document.getElementById('industrial-CO2-button').addEventListener('click', function() {
-//     addGeoJSONLayer('source', 'Industrial point source');
-// });
-// document.getElementById('biogenic-CO2-button').addEventListener('click', function() {
-//     addGeoJSONLayer('source', 'Biogenic point source');
-// });
 
 // Function to toggle layer visibility
 function toggleLayer(layer, layerName, button_id, industryType) {
@@ -1302,21 +1120,21 @@ let co2FilteredSumOutput = document.getElementById('sumCO2'),
  * @param {*} button
  * @param {boolean} [forceState=false] if forceState = "active" force active, if forceState != "active" and != false, force inactive
  */
-function toggleNaceButton(button, forceState = false){
-    let nace = globalModel.emissions.categories.naceCategories
-    if (!forceState){
-        nace.items[button.text].active = !nace.items[button.text].active
-    }
-    else {
-        nace.items[button.text].active = (forceState == "active")
-    }
-    if (nace.items[button.text].active) {
-        button.classList.add('is-activated', nace.items[button.text].style)
-    }
-    else {
-        button.classList.remove('is-activated', nace.items[button.text].style)
-    }
-}
+// function toggleNaceButton(button, forceState = false){
+//     let nace = globalModel.emissions.categories.naceCategories
+//     if (!forceState){
+//         nace.items[button.text].active = !nace.items[button.text].active
+//     }
+//     else {
+//         nace.items[button.text].active = (forceState == "active")
+//     }
+//     if (nace.items[button.text].active) {
+//         button.classList.add('is-activated', nace.items[button.text].style)
+//     }
+//     else {
+//         button.classList.remove('is-activated', nace.items[button.text].style)
+//     }
+// }
 
 
 /**
@@ -1324,22 +1142,22 @@ function toggleNaceButton(button, forceState = false){
  *
  * @param {event} event the click event on a compat button
  */
-function toggleCompatFilter(event) {
-    let nace = globalModel.emissions.categories.naceCategories.items
-    activateCompatButton(event.target)
-    if (event.target == compatFilterCatButton) {
-        for (name in nace) {
-            nace[name].active = nace[name].catalytic
-            toggleNaceButton(nace[name].button, nace[name].active ? "active" : "not")
-        }
-    } else if (event.target == compatFilterLoopButton) {
-        for (name in nace) {
-            nace[name].active = nace[name].looping
-            toggleNaceButton(nace[name].button, nace[name].active ? "active" : "not")
-        }
-    }
-    updateEmissionsFilter()
-}
+// function toggleCompatFilter(event) {
+//     let nace = globalModel.emissions.categories.naceCategories.items
+//     activateCompatButton(event.target)
+//     if (event.target == compatFilterCatButton) {
+//         for (name in nace) {
+//             nace[name].active = nace[name].catalytic
+//             toggleNaceButton(nace[name].button, nace[name].active ? "active" : "not")
+//         }
+//     } else if (event.target == compatFilterLoopButton) {
+//         for (name in nace) {
+//             nace[name].active = nace[name].looping
+//             toggleNaceButton(nace[name].button, nace[name].active ? "active" : "not")
+//         }
+//     }
+//     updateEmissionsFilter()
+// }
 // for (var i = 0; i < compatFilterButtons.length; i++) {
 //     compatFilterButtons[i].addEventListener('click', toggleCompatFilter)
 // }
@@ -1351,23 +1169,23 @@ function toggleCompatFilter(event) {
 //     button.classList.add('is-info')
 // }
 
-function returnTogglePollutantFilter(button) {
-    return function () {
-        button.classList.toggle('is-activated')
-        if (button.classList.contains('is-activated')) button.style.background = emissionColors[button.id.includes("CO2") ? "CO2, industrial" : "CO2, biogenic"]
-        else button.style.background = '#fff'
-        getFilteredTotals()
-        toggleFilterEmittersByPollutant(button.id.includes("CO2") ? "CO2, industrial" : "CO2, biogenic")
-    }
-}
+// function returnTogglePollutantFilter(button) {
+//     return function () {
+//         button.classList.toggle('is-activated')
+//         if (button.classList.contains('is-activated')) button.style.background = emissionColors[button.id.includes("CO2") ? "CO2, industrial" : "CO2, biogenic"]
+//         else button.style.background = '#fff'
+//         getFilteredTotals()
+//         toggleFilterEmittersByPollutant(button.id.includes("CO2") ? "CO2, industrial" : "CO2, biogenic")
+//     }
+// }
 
-function toggleFilterEmittersByPollutant(pollutant) {
-    if (map.hasLayer(markers[pollutant])) {
-        map.removeLayer(markers[pollutant])
-    } else {
-        map.addLayer(markers[pollutant]), AIR
-    }
-}
+// function toggleFilterEmittersByPollutant(pollutant) {
+//     if (map.hasLayer(markers[pollutant])) {
+//         map.removeLayer(markers[pollutant])
+//     } else {
+//         map.addLayer(markers[pollutant]), AIR
+//     }
+// }
 // pollutantFilterCO2biogasButton.addEventListener('click', returnTogglePollutantFilter(pollutantFilterCO2biogasButton))
 // pollutantFilterCO2industrialButton.addEventListener('click', returnTogglePollutantFilter(pollutantFilterCO2industrialButton))
 
@@ -1451,10 +1269,6 @@ function getEmissionsSelected() {
 
 // }
 // naceDeselectButton.addEventListener('click', toggleAllNaceFilter)
-
-
-
-
 
 /***********************/
 /* Chemical plants tab */
@@ -1625,34 +1439,34 @@ function getEmissionsSelected() {
 /**
  * Decide for each emission if it should be displayed depending on all active filters
 //  */
-function updateEmissionsFilter() {
-    let nace = globalModel.emissions.categories.naceCategories.items
-    // let chemParkFilterOn = chemParkFilterButton.classList.contains('is-info')
-    // let polyolPlantFilterOn = polyolFilterButton.classList.contains('is-info')
-    for (marker in markers) {
-        var m = markers[marker]
-        m.setFilter(globalEmissionData[marker], function (feature) {
-            let isVisible = true
-            isVisible = (nace[feature.properties.NACEMainEconomicActivityName].active)
-            // if selected, only show those next to chemParks
-            // if (isVisible && radiusFilterButton.classList.contains('is-info')) {
-            //     isVisible =
-            //         // if the chemical parks are not limited to polyol plants, check for distance to chemParks
-            //         (chemParkFilterOn && decideIfInDistance(feature, 'chemical parks'))
-            //         // and always check for distance to polyol plants
-            //         ||
-            //         (polyolPlantFilterOn && decideIfInDistance(feature, 'polyol plants'))
-            //     // if selected, only show clusters with enough CO for x kt polyol
-            //     if (isVisible && sizeFilterButton.classList.contains('is-info')) {
-            //         isVisible = decideIfInVisibleCluster(feature)
-            //     }
-            // }
-            return isVisible
-        })
-    }
-    getFilteredTotals()
-    // getActiveChemPlants()
-}
+// function updateEmissionsFilter() {
+//     let nace = globalModel.emissions.categories.naceCategories.items
+//     // let chemParkFilterOn = chemParkFilterButton.classList.contains('is-info')
+//     // let polyolPlantFilterOn = polyolFilterButton.classList.contains('is-info')
+//     for (marker in markers) {
+//         var m = markers[marker]
+//         m.setFilter(globalEmissionData[marker], function (feature) {
+//             let isVisible = true
+//             isVisible = (nace[feature.properties.NACEMainEconomicActivityName].active)
+//             // if selected, only show those next to chemParks
+//             // if (isVisible && radiusFilterButton.classList.contains('is-info')) {
+//             //     isVisible =
+//             //         // if the chemical parks are not limited to polyol plants, check for distance to chemParks
+//             //         (chemParkFilterOn && decideIfInDistance(feature, 'chemical parks'))
+//             //         // and always check for distance to polyol plants
+//             //         ||
+//             //         (polyolPlantFilterOn && decideIfInDistance(feature, 'polyol plants'))
+//             //     // if selected, only show clusters with enough CO for x kt polyol
+//             //     if (isVisible && sizeFilterButton.classList.contains('is-info')) {
+//             //         isVisible = decideIfInVisibleCluster(feature)
+//             //     }
+//             // }
+//             return isVisible
+//         })
+//     }
+//     getFilteredTotals()
+//     // getActiveChemPlants()
+// }
 /**
  * Checks if the feature is within the radius of a chemical cluster that has enough CO emissions
  *
@@ -1797,9 +1611,9 @@ function updateEmissionsFilter() {
 /****************/
 /* Settings tab */
 let mapLayoutOSM = document.getElementById('map-layout-OSM'),
-    mapLayoutwinter_v2 = document.getElementById('map-layout-winterv2'),
+    // mapLayoutwinter_v2 = document.getElementById('map-layout-winterv2'),
     mapLayoutBright = document.getElementById('map-layout-bright'),
-    mapLayoutBrightv2 = document.getElementById('map-layout-bright-v2'),
+    // mapLayoutBrightv2 = document.getElementById('map-layout-bright-v2'),
     // mapShowConsumers = document.getElementById('map-show-consumers'),
     // modifyConsumers = document.getElementById('modify-consumers'),
     // modalModifyConsumers = document.getElementById('modal-modify-consumers'),
@@ -2269,9 +2083,9 @@ function convertCsvsToJSON() {
 /***********************/
 
 // keep reference to the markers for filtering
-var markers = {}
-var chemicalParkMarkers = {}
-var globalPipelines = {}
+// var markers = {}
+// var chemicalParkMarkers = {}
+// var globalPipelines = {}
 
 // /** 
 //  * convert json to map layer with circlemarkers
@@ -2433,19 +2247,19 @@ var globalPipelines = {}
 // }
 
 
-function loadScript(url, callback) {
-    // Adding the script tag to the head as suggested before
-    var head = document.head
-    var script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = url
-    // Then bind the event to the callback function.
-    // There are several events for cross browser compatibility.
-    script.onreadystatechange = callback
-    script.onload = callback
-    // Fire the loading
-    head.appendChild(script)
-}
+// function loadScript(url, callback) {
+//     // Adding the script tag to the head as suggested before
+//     var head = document.head
+//     var script = document.createElement('script')
+//     script.type = 'text/javascript'
+//     script.src = url
+//     // Then bind the event to the callback function.
+//     // There are several events for cross browser compatibility.
+//     script.onreadystatechange = callback
+//     script.onload = callback
+//     // Fire the loading
+//     head.appendChild(script)
+// }
 
 /**
  * Convert a geojson to a layer with circles and popups
@@ -2454,18 +2268,18 @@ function loadScript(url, callback) {
  * @param {string} type the name of the geoJSON inside the data
  * @returns {layer} a geoJSON layer
  */
-function convertGeoJSONToChemLayer(data, type) {
-    return L.geoJson(data[type], {
-        pointToLayer: function (feature, latlng) {
-            feature.properties['type'] = type
-            return L.circle(latlng, distanceChemicalPlantOutput.value * 1000, { // radius expected in m, slider in km
-                fillColor: chemicalColors[feature.properties.type],
-                weight: 0,
-                fillOpacity: 0.4
-            }).bindPopup(addConsumerPopupHandler(feature, type))
-        }
-    })
-}
+// function convertGeoJSONToChemLayer(data, type) {
+//     return L.geoJson(data[type], {
+//         pointToLayer: function (feature, latlng) {
+//             feature.properties['type'] = type
+//             return L.circle(latlng, distanceChemicalPlantOutput.value * 1000, { // radius expected in m, slider in km
+//                 fillColor: chemicalColors[feature.properties.type],
+//                 weight: 0,
+//                 fillOpacity: 0.4
+//             }).bindPopup(addConsumerPopupHandler(feature, type))
+//         }
+//     })
+// }
 
 /**
  *Add a popup to a GeoJSON feature of a certain type
@@ -2474,16 +2288,16 @@ function convertGeoJSONToChemLayer(data, type) {
  * @param {string} type The name of the category, in this case "chemical parks" or "polyol plant" 
  * @returns
  */
-function addConsumerPopupHandler(feature) {
-    if (feature.properties) {
-        return `<h2>${feature.properties.FacilityName}</h2>
-                ${feature.properties.CountryName}
-                <br><b><i class="${feature.properties.type.replace(" ", "-") + "-popup"}">${feature.properties.type}</i></b>
-                <br>` + consumerPopupAvailability(feature)
-    } else {
-        console.log(feature)
-    }
-}
+// function addConsumerPopupHandler(feature) {
+//     if (feature.properties) {
+//         return `<h2>${feature.properties.FacilityName}</h2>
+//                 ${feature.properties.CountryName}
+//                 <br><b><i class="${feature.properties.type.replace(" ", "-") + "-popup"}">${feature.properties.type}</i></b>
+//                 <br>` + consumerPopupAvailability(feature)
+//     } else {
+//         console.log(feature)
+//     }
+// }
 
 /**
  * Create a box with available emissions around a consumer
@@ -2491,23 +2305,23 @@ function addConsumerPopupHandler(feature) {
  * @param {*} feature the consumer
  * @returns a DOM string containing a div with the availability
  */
-function consumerPopupAvailability(feature) {
-    let p = feature.properties
-    p.availability = {
-        ['CO2, industrial']: 0,
-        ['CO2, biogenic']: 0
-    }
-    if (p.distances != undefined) {
-        for (n in p.distances) {
-            if (p.distances[n].distance < distanceChemicalPlantOutput.value * 1000) {
-                p.availability[p.distances[n].type] += p.distances[n].amount
-            }
-        }
-    }
-    return '<div class="popup-em" style="background:' + translucidColor(chemicalColors[feature.properties.type]) + '">Available emissions:<br>(in a radius of ' + distanceChemicalPlantOutput.value + '&nbsp;km)<br>' +
-        formatSI(feature.properties.availability['CO2, industrial']) + '&nbsp;Megatonnes CO<sub>2</sub>/year<br>' +
-        formatSI(feature.properties.availability['CO2, biogenic']) + '&nbsp;Megatonnes CO/year</div>'
-}
+// function consumerPopupAvailability(feature) {
+//     let p = feature.properties
+//     p.availability = {
+//         ['CO2, industrial']: 0,
+//         ['CO2, biogenic']: 0
+//     }
+//     if (p.distances != undefined) {
+//         for (n in p.distances) {
+//             if (p.distances[n].distance < distanceChemicalPlantOutput.value * 1000) {
+//                 p.availability[p.distances[n].type] += p.distances[n].amount
+//             }
+//         }
+//     }
+//     return '<div class="popup-em" style="background:' + translucidColor(chemicalColors[feature.properties.type]) + '">Available emissions:<br>(in a radius of ' + distanceChemicalPlantOutput.value + '&nbsp;km)<br>' +
+//         formatSI(feature.properties.availability['CO2, industrial']) + '&nbsp;Megatonnes CO<sub>2</sub>/year<br>' +
+//         formatSI(feature.properties.availability['CO2, biogenic']) + '&nbsp;Megatonnes CO/year</div>'
+// }
 
 /**
  * create a translucid color from a color string for the popups
@@ -2516,11 +2330,11 @@ function consumerPopupAvailability(feature) {
  * @param {number} [opacity=0.6]
  * @returns color
  */
-function translucidColor(colorString, opacity = 0.6) {
-    let c = d3.color(colorString)
-    c.opacity = opacity
-    return c
-}
+// function translucidColor(colorString, opacity = 0.6) {
+//     let c = d3.color(colorString)
+//     c.opacity = opacity
+//     return c
+// }
 
 /**
  * Create circles with different sizes as a legend
@@ -2533,7 +2347,7 @@ function translucidColor(colorString, opacity = 0.6) {
 /*************************************/
 /* Change layout with get parameters */
 /*************************************/
-var url = new URL(window.location.href)
+// var url = new URL(window.location.href)
 // if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
 /*************************************************/
