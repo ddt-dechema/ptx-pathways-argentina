@@ -83,17 +83,17 @@ var translations_es = {
   disclaimer_title: `Datos, licencias y privacidad`,
   map_programming: `<h3>Elaboración del mapa</h3>Este mapa fue elaborado por Dinh Du Tran (DECHEMA e.V.) con información recolectada por DECHEMA y la GIZ Argentina.`,
   contact: `<h3>Contacto</h3>
-  Luisa López<br>
-  <a href="mailto:luisa.lopez@dechema.de">luisa.lopez@dechema.de</a><br>
-  DECHEMA e.V.<br><br>
-  
   Verónica Chorkulak<br>
   <a href="mailto:veronica.chorkulak@giz.de">veronica.chorkulak@giz.de</a><br>
   GIZ Argentina<br><br>
   
   Sebastián Murúa<br>
   <a href="mailto:sebastian.murua@giz.de">sebastian.murua@giz.de</a><br>
-  GIZ Argentina`,
+  GIZ Argentina<br><br>
+  
+  Luisa López<br>
+  <a href="mailto:luisa.lopez@dechema.de">luisa.lopez@dechema.de</a><br>
+  DECHEMA e.V.`,
   disclaimer: `<h3>Exoneración de responsabilidad.</h3> El objetivo de este mapa es proveer información para la investigación y para el desarrollo de proyectos de PtX.\n
   Dado que la información pública disponible sobre emisiones de CO<sub>2</sub> es limitada, en algunos casos fue necesario realizar una estimación usando un factor de emisiones asumido. Por lo tanto, el valor de emisiones presentado puede no ser totalmente coincidente con el valor real para algunas de las fuentes identificadas. \n
   Adicionalmente, este mapa no es exhaustivo, pudiendo existir fuentes que no han sido identificadas. \n
