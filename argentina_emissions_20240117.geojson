@@ -1132,7 +1132,7 @@
      "properties": {
      "Name":"ALUAR SA - GENERADOR",
      "Company":"Aluar",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":210445,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1149,7 +1149,7 @@
      "properties": {
      "Name":"ARCOR MARIO SEVESO ARROYITO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":93267,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1166,7 +1166,7 @@
      "properties": {
      "Name":"C. TERMICAS MENDOZA PLUS",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":788702,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1183,7 +1183,7 @@
      "properties": {
      "Name":"C. TERMICAS MENDOZA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":297745,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1200,7 +1200,7 @@
      "properties": {
      "Name":"C.COSTA ATLANTICA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":509899,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1217,7 +1217,7 @@
      "properties": {
      "Name":"C.T. AES PARANA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1717893,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1234,7 +1234,7 @@
      "properties": {
      "Name":"C.T. AGUA DEL CAJON",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1108638,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1251,7 +1251,7 @@
      "properties": {
      "Name":"C.T. ALMIRANTE BROWN",
      "Company":"Excell Power S.R.L.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7094,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1268,7 +1268,7 @@
      "properties": {
      "Name":"C.T. LOMA DE LA LATA S.A.",
      "Company":"C.T. LOMA DE LA LATA S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1779653,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1285,7 +1285,7 @@
      "properties": {
      "Name":"C.T. PATAGONICAS SA",
      "Company":"CENTRALES TERMICAS PATAGONICAS S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":27712,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1302,7 +1302,7 @@
      "properties": {
      "Name":"C.T. SALTA (TERMOANDES)",
      "Company":"AES",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1004183,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1319,7 +1319,7 @@
      "properties": {
      "Name":"C.TERMICA ALTO VALLE",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":198282,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1336,7 +1336,7 @@
      "properties": {
      "Name":"C.TERMICA GUEMES S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":139062,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1353,7 +1353,7 @@
      "properties": {
      "Name":"C.TERMICA SAN NICOLAS",
      "Company":"AES",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2158549,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1370,7 +1370,7 @@
      "properties": {
      "Name":"C.TERMICA SORRENTO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":20821,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1387,7 +1387,7 @@
      "properties": {
      "Name":"CAPEX S.A. AUTOGENERADOR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1075683,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1404,7 +1404,7 @@
      "properties": {
      "Name":"CENTRAL DIQUE S.A.",
      "Company":"CENTRAL DIQUE S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":478,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1421,7 +1421,7 @@
      "properties": {
      "Name":"CENTRAL DOCK SUD",
      "Company":"Central Dock Sud",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2101890,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1438,7 +1438,7 @@
      "properties": {
      "Name":"CENTRAL PIEDRA BUENA S.A.",
      "Company":"Pampa Energía",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":243763,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1455,7 +1455,7 @@
      "properties": {
      "Name":"CENTRAL PUERTO SA",
      "Company":"Central Puerto S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3481800,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1472,7 +1472,7 @@
      "properties": {
      "Name":"CENTRAL TÉRMICA LOMITA AUTOG.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":59300,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1489,7 +1489,7 @@
      "properties": {
      "Name":"CENTRAL TERMICA PIQUIRENDA",
      "Company":"Pampa Energía",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":25963,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1506,7 +1506,7 @@
      "properties": {
      "Name":"COOP. MNO. MORENO BS. AS.GENER",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":668,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1523,7 +1523,7 @@
      "properties": {
      "Name":"CT 9 de JULIO C Cost ATLANTICA",
      "Company":"Centrales de la Costa Atlántica S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":221258,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1540,7 +1540,7 @@
      "properties": {
      "Name":"CT ACONCAGUA ENERGÍA AUTOGENER",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":17,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1557,7 +1557,7 @@
      "properties": {
      "Name":"CT ALEM - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":35577,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1574,7 +1574,7 @@
      "properties": {
      "Name":"CT ANCHORIS - METHAX",
      "Company":"EMESA",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":50825,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1591,7 +1591,7 @@
      "properties": {
      "Name":"CT AÑATUYA - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":11557,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1608,7 +1608,7 @@
      "properties": {
      "Name":"CT AÑATUYA II - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4840,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1625,7 +1625,7 @@
      "properties": {
      "Name":"CT ARISTOBU.DEL VALLE-SOENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":24495,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1642,7 +1642,7 @@
      "properties": {
      "Name":"CT ARRECIFES-AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":8081,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1659,7 +1659,7 @@
      "properties": {
      "Name":"CT BANDERA SgoEstero - ENARSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4539,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1676,7 +1676,7 @@
      "properties": {
      "Name":"CT BARILOCHE",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1392,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1693,7 +1693,7 @@
      "properties": {
      "Name":"CT BARKER CIERRE CC",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":636102,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1710,7 +1710,7 @@
      "properties": {
      "Name":"CT BARRAGAN - ENARSA",
      "Company":"ENARSA",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":319657,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1727,7 +1727,7 @@
      "properties": {
      "Name":"CT BARRANQUERAS Chaco",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3373,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1744,7 +1744,7 @@
      "properties": {
      "Name":"CT BELL VILLE - SULLAIR",
      "Company":"SULLAIR ARGENTINA S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":6459,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1761,7 +1761,7 @@
      "properties": {
      "Name":"CT BRACHO CIERRE CC- Y-GEN S.A",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1242878,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1778,7 +1778,7 @@
      "properties": {
      "Name":"CT BRAGADO - EMGASUD",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7559,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1795,7 +1795,7 @@
      "properties": {
      "Name":"CT BRAGADO 2 - GENNEIA",
      "Company":"Genneia",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":79138,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1812,7 +1812,7 @@
      "properties": {
      "Name":"CT BRAGADO 3 - GENNEIA",
      "Company":"Genneia",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":92453,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1829,7 +1829,7 @@
      "properties": {
      "Name":"CT BRIGADIER LOPEZ",
      "Company":"Central Puerto S.A.",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":64572,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1846,7 +1846,7 @@
      "properties": {
      "Name":"CT CAIMANCITO -SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":62571,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1863,7 +1863,7 @@
      "properties": {
      "Name":"CT CAÑADA DE GOMEZ - SECCO",
      "Company":"Secco",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":105744,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1880,7 +1880,7 @@
      "properties": {
      "Name":"CT CAPITAN SARMIENTO - SECCO",
      "Company":"Secco",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10205,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1897,7 +1897,7 @@
      "properties": {
      "Name":"CT CASTELLI - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":9440,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1914,7 +1914,7 @@
      "properties": {
      "Name":"CT CATAMARCA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10013,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1931,7 +1931,7 @@
      "properties": {
      "Name":"CT CERES - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3924,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1948,7 +1948,7 @@
      "properties": {
      "Name":"CT CHARATA - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7334,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1965,7 +1965,7 @@
      "properties": {
      "Name":"CT CHILECITO - SECCO",
      "Company":"Secco",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4810,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -1982,7 +1982,7 @@
      "properties": {
      "Name":"CT CIPOLLETI - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":501,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -1999,7 +1999,7 @@
      "properties": {
      "Name":"CT COLON BS.AS - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":5222,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2016,7 +2016,7 @@
      "properties": {
      "Name":"CT CORRIENTES - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7204,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2033,7 +2033,7 @@
      "properties": {
      "Name":"CT EZEIZA ETAPA1 G MEDITERRANE",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":56618,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2050,7 +2050,7 @@
      "properties": {
      "Name":"CT EZEIZA ETAPA2 G MEDITERRANE",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":32456,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2067,7 +2067,7 @@
      "properties": {
      "Name":"CT FORMOSA - APR ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":5006,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2084,7 +2084,7 @@
      "properties": {
      "Name":"CT GENERAL ROJO CIERRE CC",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":619957,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2101,7 +2101,7 @@
      "properties": {
      "Name":"CT GOYA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4754,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2118,7 +2118,7 @@
      "properties": {
      "Name":"CT GRAL. VILLEGAS - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":14209,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2135,7 +2135,7 @@
      "properties": {
      "Name":"CT INDEPEND. ETAPA1 G MEDITERR",
      "Company":"Grupo Albanesi",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10088,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2152,7 +2152,7 @@
      "properties": {
      "Name":"CT INDEPEND. ETAPA2 G MEDITERR",
      "Company":"Grupo Albanesi",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":9463,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2169,7 +2169,7 @@
      "properties": {
      "Name":"CT ING JUAREZ - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2692,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2186,7 +2186,7 @@
      "properties": {
      "Name":"CT INTA CATAMARCA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3559,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2203,7 +2203,7 @@
      "properties": {
      "Name":"CT ISLA VERDE - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7670,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2220,7 +2220,7 @@
      "properties": {
      "Name":"CT ITATI - TURBODISEL",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1498,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2237,7 +2237,7 @@
      "properties": {
      "Name":"CT JUNIN",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":14479,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2254,7 +2254,7 @@
      "properties": {
      "Name":"CT LA PAZ Entre Rios - ENARSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2674,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2271,7 +2271,7 @@
      "properties": {
      "Name":"CT LA PLATA - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":14048,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2288,7 +2288,7 @@
      "properties": {
      "Name":"CT LA RIOJA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7688,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2305,7 +2305,7 @@
      "properties": {
      "Name":"CT LA RIOJA SUR- SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3506,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2322,7 +2322,7 @@
      "properties": {
      "Name":"CT LAGUNA BLANCA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4457,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2339,7 +2339,7 @@
      "properties": {
      "Name":"CT LAS ARMAS II - EMGASUD",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":606,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2356,7 +2356,7 @@
      "properties": {
      "Name":"CT LAS PALMAS 2 - ARAUCARIA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":100667,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2373,7 +2373,7 @@
      "properties": {
      "Name":"CT LAS PALMAS -TURBODISEL",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":543,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2390,7 +2390,7 @@
      "properties": {
      "Name":"CT LIBERTADOR GSM - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3331,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2407,7 +2407,7 @@
      "properties": {
      "Name":"CT LINCOLN",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":5898,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"Electrical energy",
@@ -2424,7 +2424,7 @@
      "properties": {
      "Name":"CT LOBOS BS.AS - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":23328,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2441,7 +2441,7 @@
      "properties": {
      "Name":"CT LOMA CAMPANA 1 -YPF",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":93992,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2458,7 +2458,7 @@
      "properties": {
      "Name":"CT LOMA CAMPANA 2 -Y-GEN ELECT",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":164946,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2475,7 +2475,7 @@
      "properties": {
      "Name":"CT LOMA DE LA LATA II(NEUQEUN)",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":228867,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2492,7 +2492,7 @@
      "properties": {
      "Name":"CT LUJAN II - ARAUCARIA ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":68363,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2509,7 +2509,7 @@
      "properties": {
      "Name":"CT MAGDALENA - APR ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4433,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2526,7 +2526,7 @@
      "properties": {
      "Name":"CT MATHEU II - APR ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1875,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2543,7 +2543,7 @@
      "properties": {
      "Name":"CT MIRAMAR I - ENERGYST",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":23587,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2560,7 +2560,7 @@
      "properties": {
      "Name":"CT ORAN - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3717,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2577,7 +2577,7 @@
      "properties": {
      "Name":"CT PARQUE INDUSTR.CATAM-SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":8843,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2594,7 +2594,7 @@
      "properties": {
      "Name":"CT PASO LA PATRIA-TURBODISEL",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1189,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2611,7 +2611,7 @@
      "properties": {
      "Name":"CT PEREZ - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":109776,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2628,7 +2628,7 @@
      "properties": {
      "Name":"CT PIEDRABUENA MG(L.LATA)",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":173945,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2645,7 +2645,7 @@
      "properties": {
      "Name":"CT PILAR - EPEC",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1055603,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2662,7 +2662,7 @@
      "properties": {
      "Name":"CT PILAR BS AS- PAMPA ENERGÍA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":187528,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2679,7 +2679,7 @@
      "properties": {
      "Name":"CT PIRANE - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10675,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2696,7 +2696,7 @@
      "properties": {
      "Name":"CT PRESIDENCIA ROCA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1276,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2713,7 +2713,7 @@
      "properties": {
      "Name":"CT RAFAELA - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7300,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2730,7 +2730,7 @@
      "properties": {
      "Name":"CT REALICO - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":6721,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2747,7 +2747,7 @@
      "properties": {
      "Name":"CT RENOVA - ALBANESI ENERGIA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":457321,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2764,7 +2764,7 @@
      "properties": {
      "Name":"CT RIO TERCERO II - SoENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":30138,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2781,7 +2781,7 @@
      "properties": {
      "Name":"CT ROCA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":502028,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2798,7 +2798,7 @@
      "properties": {
      "Name":"CT RUFINO Sta Fe - ENARSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":8965,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2815,7 +2815,7 @@
      "properties": {
      "Name":"CT SAENZ PEÑA - APR ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":3654,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2832,7 +2832,7 @@
      "properties": {
      "Name":"CT SAENZ PEÑA II- AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4626,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2849,7 +2849,7 @@
      "properties": {
      "Name":"CT SALTO 2 - SoENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":103648,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2866,7 +2866,7 @@
      "properties": {
      "Name":"CT SAN MARTIN Chaco",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1320,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2883,7 +2883,7 @@
      "properties": {
      "Name":"CT SAN PEDRO - CIERRE CC",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":33804,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2900,7 +2900,7 @@
      "properties": {
      "Name":"CT SAN PEDRO - SPI ENERGY SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":46087,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2917,7 +2917,7 @@
      "properties": {
      "Name":"CT SAN SALVADOR E.Rios -ENARSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1815,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2934,7 +2934,7 @@
      "properties": {
      "Name":"CT SAN VICENTE BsAs - ENARSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4595,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2951,7 +2951,7 @@
      "properties": {
      "Name":"CT SANTA ROSA -TURBODISEL",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1988,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2968,7 +2968,7 @@
      "properties": {
      "Name":"CT TEREVINTOS - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2652,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -2985,7 +2985,7 @@
      "properties": {
      "Name":"CT TINOGASTA - SULLAIR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4169,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3002,7 +3002,7 @@
      "properties": {
      "Name":"CT VENADO TUERTO - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7617,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3019,7 +3019,7 @@
      "properties": {
      "Name":"CT VIALE - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4529,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3036,7 +3036,7 @@
      "properties": {
      "Name":"CT VILLA ANGELA - AGGREKO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4977,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3053,7 +3053,7 @@
      "properties": {
      "Name":"CT VILLA GESELL-CATLANT.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":333196,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3070,7 +3070,7 @@
      "properties": {
      "Name":"CT VILLA MARIA CIERRE CC-UENSA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":630749,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3087,7 +3087,7 @@
      "properties": {
      "Name":"CT VILLA OCAMPO - SECCO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":32945,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3104,7 +3104,7 @@
      "properties": {
      "Name":"CT VUELTA DE OBLIGADO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1829953,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3121,7 +3121,7 @@
      "properties": {
      "Name":"CT ZAPPALORTO - APR ENERGY",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":15249,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3138,7 +3138,7 @@
      "properties": {
      "Name":"EDECAT GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":397,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3155,7 +3155,7 @@
      "properties": {
      "Name":"EDELAR GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":18733,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3172,7 +3172,7 @@
      "properties": {
      "Name":"EDEN GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1627,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3189,7 +3189,7 @@
      "properties": {
      "Name":"ELECTROPATAGONIA-C.RIV-C.COMB.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":15137,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3206,7 +3206,7 @@
      "properties": {
      "Name":"EMP.DIS.S.ESTERO GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":4901,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3223,7 +3223,7 @@
      "properties": {
      "Name":"EMSA GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10472,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3240,7 +3240,7 @@
      "properties": {
      "Name":"ENDESA COSTANERA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2518331,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3257,7 +3257,7 @@
      "properties": {
      "Name":"ENERGIA DEL SUR S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":226761,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3274,7 +3274,7 @@
      "properties": {
      "Name":"EPEC GENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":15814,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3291,7 +3291,7 @@
      "properties": {
      "Name":"GEN.MEDITERRANEA (CONT.PLUS)",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":36744,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3308,7 +3308,7 @@
      "properties": {
      "Name":"GEN.MEDITERRANEA GRUPO 5",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":27675,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3325,7 +3325,7 @@
      "properties": {
      "Name":"GENELBA - PETROBRAS",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1898589,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3342,7 +3342,7 @@
      "properties": {
      "Name":"GENELBA - RES.287",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1396334,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3359,7 +3359,7 @@
      "properties": {
      "Name":"GENERACION FRIAS S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":15755,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3376,7 +3376,7 @@
      "properties": {
      "Name":"GENERACION INDEPENDENCIA S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":28961,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3393,7 +3393,7 @@
      "properties": {
      "Name":"GENERACION LA BANDA S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2514,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3410,7 +3410,7 @@
      "properties": {
      "Name":"GENERACION MEDITERRANEA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":6470,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3427,7 +3427,7 @@
      "properties": {
      "Name":"GENERACION MEDITERRANEA 220",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":31381,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3444,7 +3444,7 @@
      "properties": {
      "Name":"GENERACION RIOJANA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":13132,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3461,7 +3461,7 @@
      "properties": {
      "Name":"GENERADORA CORDOBA S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1537,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3478,7 +3478,7 @@
      "properties": {
      "Name":"GENERADORA ELEC.TUCUMAN SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":9198,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3495,7 +3495,7 @@
      "properties": {
      "Name":"HIDROTERMICA SAN JUAN",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":6068,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3512,7 +3512,7 @@
      "properties": {
      "Name":"LA PLATA COGENERACION SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":339665,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3529,7 +3529,7 @@
      "properties": {
      "Name":"LEDESMA SAAI",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":7544,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3546,7 +3546,7 @@
      "properties": {
      "Name":"LUJAN DE CUYO COGENERAC.PUERTO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":265976,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3563,7 +3563,7 @@
      "properties": {
      "Name":"MOLINOS AGRO AG.(Ex.Mol Rio P)",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":222,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3580,7 +3580,7 @@
      "properties": {
      "Name":"MOTOGENERADORES COSTANERA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":47985,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3597,7 +3597,7 @@
      "properties": {
      "Name":"NIDERA SAFORCADA-Junin",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":20,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3614,7 +3614,7 @@
      "properties": {
      "Name":"PAMPA ENERGIA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":78724,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3631,7 +3631,7 @@
      "properties": {
      "Name":"REFINERIA LA PLATA AUTOG",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":10998,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3648,7 +3648,7 @@
      "properties": {
      "Name":"SHELL CAPSA PTA. DOCK SUD",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":25501,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3665,7 +3665,7 @@
      "properties": {
      "Name":"SIDERAR PTA. IND. SAN NICOLAS",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":31,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3682,7 +3682,7 @@
      "properties": {
      "Name":"SINOPEC Arg. - El Huemul",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":29407,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3699,7 +3699,7 @@
      "properties": {
      "Name":"SINOPEC Arg. - Meseta Espinosa",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":13683,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3716,7 +3716,7 @@
      "properties": {
      "Name":"SOLALBAN ENERGIA SA",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":42405,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3733,7 +3733,7 @@
      "properties": {
      "Name":"TERMINAL 6 COGENERACION PUERTO",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":209988,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3750,7 +3750,7 @@
      "properties": {
      "Name":"TERMOELE. JOSE SAN MARTIN S.A",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2045982,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3767,7 +3767,7 @@
      "properties": {
      "Name":"TERMOELECTRICA GUILLERMO BROWN",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1021465,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3784,7 +3784,7 @@
      "properties": {
      "Name":"TERMOELECTRICA M.BELGRANO S.A.",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":2150020,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3801,7 +3801,7 @@
      "properties": {
      "Name":"YAC.ENTRE LOMAS AUTOGENERADOR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":27680,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3818,7 +3818,7 @@
      "properties": {
      "Name":"YPF Autogenerador Pza. Huincul",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":161867,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3835,7 +3835,7 @@
      "properties": {
      "Name":"YPF CT MANANTIALES BEHR II AG",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":8767,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3852,7 +3852,7 @@
      "properties": {
      "Name":"YPF EL TREBOL CT MANANT. BEHR",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":6,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3869,7 +3869,7 @@
      "properties": {
      "Name":"YPF ENERGÍA ELECTR.ex PLUSPETG",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":1400041,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3886,7 +3886,7 @@
      "properties": {
      "Name":"YPF LA PLATA COGENERACION",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":228277,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3903,7 +3903,7 @@
      "properties": {
      "Name":"YPF LOS PERALES AUTOG",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":68352,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",
@@ -3920,7 +3920,7 @@
      "properties": {
      "Name":"YPF YAC P.HERNANDEZ AUTOG",
      "Company":"",
-     "Industry":"Thermal power plant",
+     "Industry":"Fossil thermal power plant",
      "CO2_emissions_t":26,
      "Source_CO2_emissions":"Industrial point source",
      "Source":"",

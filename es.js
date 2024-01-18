@@ -14,7 +14,12 @@ var translations_es = {
   `,
 
   filter_title: `Diferentes categorías/fuentes de carbono`,
-  filter_text: `Se diferencia entre fuentes industriales y biogénicas. Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, metanol, etileno), metales (aluminio y acero) y cemento, así como las refinerías y centrales termoeléctricas. Las fuentes biogénicas incluyen la producción de biogás y bioetanol.`,
+  filter_text: `Se diferencia entre fuentes industriales <span class="rect dot_industrial"></span> y biogénicas<span class="rect dot_biogenic"></span>. 
+  Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, etileno, metanol) <span class="dot dot_chemicals"></span>,
+  metales (aluminio y acero) y cemento <span class="dot dot_metals"></span>,
+  celulosa y papel <span class="dot dot_paper"></span>
+  y otros como las refinerías y centrales termoeléctricas <span class="dot dot_others"></span>.<br>
+  Las fuentes biogénicas incluyen la producción de biogás y bioetanol <span class="dot dot_bio"></span>.`,
   manual_filter_title: `O filtrar manualmente`,
   emission_type: `Tipo de emisión de CO<sub>2</sub>:`,
   industrial_button: `fuentes industriales/energéticas`,

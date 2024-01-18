@@ -3,13 +3,29 @@
     --ptx-secondary-color: rgb(191, 226, 71);
     --ptx-fourth-color: rgb(255, 187, 0);
     /* Add more colors as needed */
+    --ptx-industrial: rgb(84, 114, 155);
+    --ptx-biogenic: rgb(57, 137, 126);
+
+    --ptx-metals: rgb(113, 184, 210, 1);
+    --ptx-chemicals: rgb(241, 219, 38, 1);
+    --ptx-others: rgb(164, 146, 220, 1);
+    --ptx-paper: rgb(209, 146, 198, 1);
+    --ptx-bio: rgb(143, 196, 146, 1);
   }
 
 .dot {
   height: 25px;
   width: 25px;
-  background-color: #bbb;
+  /* background-color: #bbb; */
   border-radius: 50%;
+  display: inline-block;
+}
+
+.rect {
+  height: 10px;
+  width: 10px;
+  /* background-color: #bbb; */
+  /* border-radius: 50%; */
   display: inline-block;
 }
 
@@ -276,3 +292,35 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
   stroke-dasharray: 4, 2;
   fill: none;
 }
+
+
+/* dots for legends of categoies */
+.dot {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+}
+
+.dot_industrial {
+  background-color: var(--ptx-industrial);
+}
+.dot_biogenic {
+  background-color: var(--ptx-biogenic);
+}
+
+.dot_chemicals {
+  background-color: var(--ptx-chemicals);
+}
+.dot_metals {
+  background-color: var(--ptx-metals);
+}
+.dot_paper {
+  background-color: var(--ptx-paper);
+}
+.dot_others {
+  background-color: var(--ptx-others);
+}
+.dot_bio {
+  background-color: var(--ptx-bio);
+}
+

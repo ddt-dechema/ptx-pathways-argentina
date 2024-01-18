@@ -14,10 +14,12 @@ var translations_en = {
   `,
    
   filter_title: `Different categories/sources of carbon`,
-  filter_text: `A distinction is made between industrial PUNKT and biogenic sources PUNKT. 
-  Industrial sources include the manufacture of chemical products (ammonia, methanol, ethylene) PUNKT, metals (aluminum and steel) and cement PUNKT, 
-  and others, including refineries and thermoelectric power plants PUNKT. <br>
-  Biogenic sources include biogas and bioethanol production.`,
+  filter_text: `A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
+  Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
+  metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
+  Pulp and paper <span class="dot dot_paper"></span>,
+  and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
+  Biogenic sources include biogas and bioethanol production.<span class="dot dot_bio"></span>`,
   manual_filter_title: `Or filter manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
