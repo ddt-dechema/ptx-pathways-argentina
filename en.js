@@ -36,29 +36,29 @@ var translations_en = {
   scale_title: `Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">Mt</span>/year`,
   data_title: `Data and sources`,
   methods: `<h2>Sources and Methodology</h2>
-  This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below.:
+  This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below:
   <b>Aluminum</b>
-  <br>Valor estimado con la capacidad de producción reportada en la página de Aluar [1], un factor de producción de 83% (promedio de la producción de cinco años relativa a la capacidad [1] y un factor de emisión de 1,6 toneladas de CO<sub>2</sub> por toneladas de aluminio [2].
-  <br><b>Acero</b>
-  <br>Datos de capacidad de producción obtenidos de [3] y factores de emisión obtenidos de los reportes de sustentabilidad de las empresas productoras de acero [4]–[8].
+  <br>Estimated value with the production capacity reported in the website of Aluar [1], a production factor of 83% (five-year average of production relative to capacity) [1] and an emission factor of 1.6 tonnes of CO2 per tonne of alluminium [2].
+  <br><b>Steel</b>
+  <br>Production capacity data obtained from [3] and emission factors obtained from the sustainability reports of steel producing companies [4]–[8].
   <br><b>Cemento</b>
-  <br>Valor estimado con la capacidad de produccion de clincker [9], un factor de clincker de 0,681 y un factor de emisión promedio de 0,519 toneladas de CO<sub>2</sub> por toneladas de cemento [10]. 
-  <br><b>Celulosa y papel</b>
-  <br>Datos de capacidad anual de producción y factor de utilización obtenidos del Relevamiento 2020 de la industria de la celulosa y el papel[11] y un factor de emisión promedio de 2,5 toneladas de CO<sub>2</sub> por toneladas de celulosa estimación realizada por [12].
-  <br><b>Termoeléctrica</b>
-  <br>Datos obtenidos de CAMMESA [13]
-  <br><b>Refinerías</b>
-  <br>A partir de las emisiones directas totales del sector de refinación reportadas en el inventario nacional de 2018 [14], se estimaron las emisiones por refinería considerando que sus emisiones fueron proporcionales a su capacidad instalada. Esta estimación asume dos cosas: factores de emisión iguales para todas las refinerías y factores de usos iguales de todas las refinerías en 2018. 
-  <br><b>Amoniaco</b>
-  <br>El valor para la empresa Profertil se obtuvo directamente de su informe de sustentabilidad [15]. Para las otras dos plantas se usó la capacidad instalada de producción [16], un factor de producción asumido de 80% y un factor de emisión de 0,91 toneladas de CO<sub>2</sub> por tonelada de amoniaco [2].
-  <br><b>Metanol</b>
-  <br>La producción anual de 2018 se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], y se utilizó un factor de emisión de 0,67 toneladas de CO<sub>2</sub> por tonelada de metanol [2].
-  <br><b>Etileno</b>
-  <br>La capacidad instalada de producción se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], un factor de utilización asumido del 98%, y se utilizó un factor de emisión de 0,84 toneladas de CO<sub>2</sub> por tonelada de etileno [2].
-  <br><b>Biogás</b>
-  <br>A partir de datos obtenidos de CAMMESA [13], se identificaron las plantas de biogás que producen energía eléctrica y se encuentran conectadas al Sistema Argentino de Interconexión (SADI), y su respectiva potencia instalada (MW). El factor de emisión fue estimado en 18 toneladas de CO<sub>2</sub> por día por MW instalado. 
-  <br><b>Bioetanol</b>
-  <br>Valor estimado con la capacidad instalada de cada planta, un factor de emisión de 1,053 toneladas de CO<sub>2</sub> por toneladas de bioetanol y una producción del 80% de la capacidad instalada.`,
+  <br>Estimated value with the clinker production capacity [9], a clinker factor of 0.681 and an average emission factor of 0.519 tonnes of CO2 per tonnes of cement [10]. 
+  <br><b>Pulp and Paper</b>
+  <br>Annual production capacity data and utilization factor obtained from the 2020 Survey of the pulp and paper industry [11] and an average emission factor of 2.5 tonnes of CO2 per tonne of pulp. Estimation done by [12].
+  <br><b>Fossil thermal power plant</b>
+  <br>Data obtained from CAMMESA [13].
+  <br><b>Refineries</b>
+  <br>From the total direct emissions of the refining sector reported in the 2018 national inventory [14], emissions per refinery were estimated considering that their emissions were proportional to their installed capacity. This estimate has two assumptions: equal emission factors for all refineries and equal use factors for all refineries in 2018.
+  <br><b>Ammonia</b>
+  <br>The value for the company Profertil was obtained directly from its sustainability report [15]. For the other two plants, the installed production capacity [16], and assumed production factor of 80% and an emission factor of 0.91 tonnes of CO2 per tonne of ammonia [2], were used.
+  <br><b>Methanol</b>
+  <br>The annual production of 2018 was obtained from the annual report of the Argentine Petrochemical Institute (Instituto Petroquímico Argentino - IPA) [16], and an emission factor of 0.67 tonnes of CO2 per tonne of methanol was used [2].
+  <br><b>Ethylene</b>
+  <br>The installed production capacity was obtained from the annual report of the Argentine Petrochemical Institute (Instituto Petroquímico Argentino – IPA) [16], an assumed utilization factor of 98% and an emission factor of 0.84 tonnes of CO2 pero tonne of ethylene was used [2].
+  <br><b>Biogas power plant</b>
+  <br>Based on data obtained from CAMMESA [13], biogas plants that produce electricity and are connected to the Argentine Interconnection System (SADI) and their respective installed power (MW) were identified. The emission factor was estimated at 18 tonnes of CO2 per day per MW installed. 
+  <br><b>Bioethanol</b>
+  <br>Estimated value with the installed capacity of each plant, an emission factor of 1.053 tonnes of CO2 per tonne of bioethanol and a production of 80% of the installed capacity.`,
   sources: `<h3>Literature</h3>
   [1]	“Aluar en cifras.” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32" target="_blank">https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32</a>
   <br>[2]	MAyDS, “Informe Nacional de Inventario del Cuarto Informe Bienal de Actualización de la República Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC).” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf" target="_blank">https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf</a>

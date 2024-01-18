@@ -35,29 +35,30 @@ var translations_es = {
   zoom_factor: `Factor de zoom`,
   scale_title: `Emisiones en <span title="Megatonnes o 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">Mt</span>/año`,
   data_title: `Datos y fuentes`,
-  methods: `<h2>Fuentes y metodología</h2>Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
+  methods: `<h2>Fuentes y metodología</h2>
+  Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
   <b>Aluminio</b>
-  <br>Valor estimado con la capacidad de producción reportada en la página de Aluar [1], un factor de producción de 83% (promedio de la producción de cinco años relativa a la capacidad [1] y un factor de emisión de 1,6 toneladas de CO<sub>2</sub> por toneladas de aluminio [2].
+  <br>Valor estimado con la capacidad de producción reportada en la página de Aluar [1], un factor de producción de 83% (promedio de la producción de cinco años relativa a la capacidad [1] y un factor de emisión de 1,6 toneladas de CO2 por toneladas de aluminio [2].
   <br><b>Acero</b>
   <br>Datos de capacidad de producción obtenidos de [3] y factores de emisión obtenidos de los reportes de sustentabilidad de las empresas productoras de acero [4]–[8].
   <br><b>Cemento</b>
   <br>Valor estimado con la capacidad de produccion de clincker [9], un factor de clincker de 0,681 y un factor de emisión promedio de 0,519 toneladas de CO<sub>2</sub> por toneladas de cemento [10]. 
   <br><b>Celulosa y papel</b>
-  <br>Datos de capacidad anual de producción y factor de utilización obtenidos del Relevamiento 2020 de la industria de la celulosa y el papel[11] y un factor de emisión promedio de 2,5 toneladas de CO<sub>2</sub> por toneladas de celulosa estimación realizada por [12].
-  <br><b>Termoeléctrica</b>
-  <br>Datos obtenidos de CAMMESA [13]
+  <br>Datos de capacidad anual de producción y factor de utilización obtenidos del Relevamiento 2020 de la industria de la celulosa y el papel[11] y un factor de emisión promedio de 2,5 toneladas de CO2 por toneladas de celulosa estimación realizada por [12].
+  <br><b>Termoeléctricas fuentes fósiles</b>
+  Datos obtenidos de CAMMESA [13]  
   <br><b>Refinerías</b>
   <br>A partir de las emisiones directas totales del sector de refinación reportadas en el inventario nacional de 2018 [14], se estimaron las emisiones por refinería considerando que sus emisiones fueron proporcionales a su capacidad instalada. Esta estimación asume dos cosas: factores de emisión iguales para todas las refinerías y factores de usos iguales de todas las refinerías en 2018. 
   <br><b>Amoniaco</b>
-  <br>El valor para la empresa Profertil se obtuvo directamente de su informe de sustentabilidad [15]. Para las otras dos plantas se usó la capacidad instalada de producción [16], un factor de producción asumido de 80% y un factor de emisión de 0,91 toneladas de CO<sub>2</sub> por tonelada de amoniaco [2].
+  <br>El valor para la empresa Profertil se obtuvo directamente de su informe de sustentabilidad [15]. Para las otras dos plantas se usó la capacidad instalada de producción [16], un factor de producción asumido de 80% y un factor de emisión de 0,91  toneladas de CO2 por tonelada de amoniaco [2].
   <br><b>Metanol</b>
-  <br>La producción anual de 2018 se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], y se utilizó un factor de emisión de 0,67 toneladas de CO<sub>2</sub> por tonelada de metanol [2].
+  <br>La producción anual de 2018 se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], y se utilizó un factor de emisión de 0,67 toneladas de CO2 por tonelada de metanol [2].
   <br><b>Etileno</b>
-  <br>La capacidad instalada de producción se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], un factor de utilización asumido del 98%, y se utilizó un factor de emisión de 0,84 toneladas de CO<sub>2</sub> por tonelada de etileno [2].
-  <br><b>Biogás</b>
-  <br>A partir de datos obtenidos de CAMMESA [13], se identificaron las plantas de biogás que producen energía eléctrica y se encuentran conectadas al Sistema Argentino de Interconexión (SADI), y su respectiva potencia instalada (MW). El factor de emisión fue estimado en 18 toneladas de CO<sub>2</sub> por día por MW instalado. 
+  <br>La capacidad instalada de producción se obtuvo del informe anual del Instituto Petroquímico Argentino (IPA) [16], un factor de utilización asumido del 98%, y se utilizó un factor de emisión de 0,84 toneladas de CO2 por tonelada de etileno [2].
+  <br><b>Thermoeléctricas Biogás</b>
+  <br>A partir de datos obtenidos de CAMMESA [13], se identificaron las plantas de biogás que producen energía eléctrica y se encuentran conectadas al Sistema Argentino de Interconexión (SADI), y su respectiva potencia instalada (MW). El factor de emisión fue estimado en 18 toneladas de CO2 por día por MW instalado. 
   <br><b>Bioetanol</b>
-  <br>Valor estimado con la capacidad instalada de cada planta, un factor de emisión de 1,053 toneladas de CO<sub>2</sub> por toneladas de bioetanol y una producción del 80% de la capacidad instalada.`,
+  <br>Valor estimado con la capacidad instalada de cada planta, un factor de emisión de 1,053 toneladas de CO2 por toneladas de bioetanol y una producción del 80% de la capacidad instalada.`,
   sources: `<h3>Literatura</h3>
   [1]	“Aluar en cifras.” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32" target="_blank">https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32</a>
   <br>[2]	MAyDS, “Informe Nacional de Inventario del Cuarto Informe Bienal de Actualización de la República Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC).” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf" target="_blank">https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf</a>
