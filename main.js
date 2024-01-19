@@ -3,7 +3,8 @@ var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
 
 // Define a GeoJSON URL
-var geojsonURL = 'argentina_emissions_20240117.geojson';
+var geojsonURL = 'argentina_emissions_2.geojson';
+// var geojsonURL = 'argentina_emissions_20240117.geojson';
 
 // not necessary anymore - only one layer
 // var activeLayers; // Declare a variable to hold the active map layers
@@ -108,7 +109,8 @@ if (lang=="es") {
         { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
         { name_lang: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
         { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        // { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
         { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
     ];
@@ -1000,7 +1002,8 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
+		// let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
+        let thisEmission = Number(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";// let thisEmission = " kTonnes CO<sub>2</sub>/year";
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
@@ -1201,8 +1204,8 @@ function getEmissionsSelected() {
         }
     })
     formattedEmissions_selected = formattedEmissions_selected.toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
     });
 
     table_selected.innerHTML=formattedEmissions_selected;
@@ -1774,39 +1777,39 @@ let mapLayoutOSM = document.getElementById('map-layout-OSM'),
 // }
 // modifyConsumersCreateJSON.addEventListener('click', modifyConsumersJSON)
 
-function convertCsvsToJSON() {
-    return new Promise((resolve) => {
-        // only load csv2geojson if needed
-        var script = document.createElement('script')
-        script.onload = function () {
-            let csvs = {
-                // "chemical parks": csvChemicalParks.value,
-                // "polyol plants": csvPolyolPlants.value
-                "argentina CO2 emittents": csvArgentinaCO2Emissions.value
-                // "polyol plants": csvPolyolPlants.value            
-            }
-            let json = {}
-            for (type in csvs) {
-                csv2geojson.csv2geojson(csvs[type], {
-                    latfield: 'latitude',
-                    lonfield: 'longitude',
-                    delimiter: ';',
-                }, (err, geojson) => {
-                    if (err) {
-                        console.error(err)
-                    } else {
-                        //console.log(csvs, geojson)
-                        json[type] = geojson
-                    }
-                })
-            }
-            //console.log(globalChemicalData)
-            resolve(json)
-        }
-        script.src = 'vendor/csv2geojson.js'
-        document.head.appendChild(script)
-    })
-}
+// function convertCsvsToJSON() {
+//     return new Promise((resolve) => {
+//         // only load csv2geojson if needed
+//         var script = document.createElement('script')
+//         script.onload = function () {
+//             let csvs = {
+//                 // "chemical parks": csvChemicalParks.value,
+//                 // "polyol plants": csvPolyolPlants.value
+//                 "argentina CO2 emittents": csvArgentinaCO2Emissions.value
+//                 // "polyol plants": csvPolyolPlants.value            
+//             }
+//             let json = {}
+//             for (type in csvs) {
+//                 csv2geojson.csv2geojson(csvs[type], {
+//                     latfield: 'latitude',
+//                     lonfield: 'longitude',
+//                     delimiter: ';',
+//                 }, (err, geojson) => {
+//                     if (err) {
+//                         console.error(err)
+//                     } else {
+//                         //console.log(csvs, geojson)
+//                         json[type] = geojson
+//                     }
+//                 })
+//             }
+//             //console.log(globalChemicalData)
+//             resolve(json)
+//         }
+//         script.src = 'vendor/csv2geojson.js'
+//         document.head.appendChild(script)
+//     })
+// }
 
 // function addDistances(emissions, chemParks) {
 //     return new Promise((resolve, reject) => {
@@ -2367,82 +2370,85 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Fetch the GeoJSON data from the URL
     fetch(geojsonURL)
+    // console.log("fetched")
     .then(response => response.json())
+    // console.log("responded")
     .then(data => {
         // Check if the GeoJSON data contains features
         // Loop through the features to find the maximum value
         // only consider those geojson features, which actually have coordinates.
-                // Iterate through GeoJSON data features
-                data.features.forEach(function (feature) {
-                    var Industry = feature.properties.Industry;
-                    var emissions = parseFloat(feature.properties.CO2_emissions_t);
-                    // Update the total emissions for the industry type
-                    if (typeof emissions === 'number' && !isNaN(emissions)) {
-                        if (!totalEmissions[Industry]) {
-                            totalEmissions[Industry] = 0;
-                        // console.log('hi')
-                        }
-                        totalEmissions[Industry] += emissions;
-                        // if(Industry=="Steel") {
-                            // console.log('Industry',Industry)
-                        // }
-                        // console.log('total Emissions Steel',totalEmissions['Steel'])
-                    }   
-                });
-                // console.log('Aluminium: ',totalEmissions['Aluminium'])
-                // Create an HTML table to display the aggregated data
-                
-                // TO DO DDT
-                // append to the HTML table, to be able to change the text to other languages
-
-                // var table = "<tr id='table_emissions_header'><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
-                
-                // Iterate through the totalEmissions object and populate the table
-                // 3.1.2024 - iterate through button order 
-                for (let i = 0; i < buttonData.length; i++) {
-                    const industryValue = buttonData[i]['name'];
-                    var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                      });
-                      let industry_lang = buttonData.find(item => item.name === industryValue)?.name_lang;                      
-                      let industry_short = buttonData.find(item => item.name === industryValue)?.id;                      
-                    //   console.log(industry_short)
-                    table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
-                    + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
-                }
-                // for (var industry in totalEmissions) {
-                //     var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
-                //         minimumFractionDigits: 2,
-                //         maximumFractionDigits: 2
-                //       });
-                //       let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
-                //       let industry_short = buttonData.find(item => item.name === industry)?.id;                      
-                //     //   console.log(industry_short)
-                //     table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
-                //     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+        // Iterate through GeoJSON data features
+        data.features.forEach(function (feature) {
+            var Industry = feature.properties.Industry;
+            var emissions = parseFloat(feature.properties.CO2_emissions_t);
+            // Update the total emissions for the industry type
+            if (typeof emissions === 'number' && !isNaN(emissions)) {
+                if (!totalEmissions[Industry]) {
+                    totalEmissions[Industry] = 0;
+                // console.log('hi')
+            }
+            totalEmissions[Industry] += emissions;
+            // if(Industry=="Steel") {
+                // console.log('Industry',Industry)
                 // }
-
-                for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
-                    // console.log(IndustryEmissions)
-                    // console.log(totalEmissions_total)
-                    totalEmissions_total += IndustryEmissions;
-                    // console.log('totalEmissions_total: ',totalEmissions_total);
-                }
-                
-                formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                });
-                
-                formattedEmissions_selected = formattedEmissions_total;
-
-                table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";       
+                // console.log('total Emissions Steel',totalEmissions['Steel'])
+            }   
+        });
+        // console.log(totalEmissions)
+        // Create an HTML table to display the aggregated data
         
-                // Display the table in a specific HTML element
-                table_all.innerHTML = table;
-                // table_all.appendChild(table);
-                table_selected.innerHTML=formattedEmissions_total;
+        // TO DO DDT
+        // append to the HTML table, to be able to change the text to other languages
+
+        // var table = "<tr id='table_emissions_header'><th>Industry</th><th style='text-align: right;'>Total Emissions (Tonnes)</th></tr>";
+        
+        // Iterate through the totalEmissions object and populate the table
+        // 3.1.2024 - iterate through button order 
+        for (let i = 0; i < buttonData.length; i++) {
+            const industryValue = buttonData[i]['name'];
+            var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+                });
+                let industry_lang = buttonData.find(item => item.name === industryValue)?.name_lang;                      
+                let industry_short = buttonData.find(item => item.name === industryValue)?.id;                      
+            // console.log(industry_short)
+            table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
+            + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+        }
+        
+        // for (var industry in totalEmissions) {
+        //     var formattedEmissions = totalEmissions[industry].toLocaleString('en-US', {
+        //         minimumFractionDigits: 2,
+        //         maximumFractionDigits: 2
+        //       });
+        //       let industry_lang = buttonData.find(item => item.name === industry)?.name_lang;                      
+        //       let industry_short = buttonData.find(item => item.name === industry)?.id;                      
+        //     //   console.log(industry_short)
+        //     table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
+        //     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+        // }
+
+        for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
+            // console.log(IndustryEmissions)
+            // console.log(totalEmissions_total)
+            totalEmissions_total += IndustryEmissions;
+            // console.log('totalEmissions_total: ',totalEmissions_total);
+        }
+        
+        formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        
+        formattedEmissions_selected = formattedEmissions_total;
+
+        table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";       
+
+        // Display the table in a specific HTML element
+        table_all.innerHTML = table;
+        // table_all.appendChild(table);
+        table_selected.innerHTML=formattedEmissions_total;
         
         data.features.forEach(function (feature) {
             var propertyValue = feature.properties[propertyToFindMax];
@@ -2454,11 +2460,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // console.log('current Max Emissions: '+maxEmissionsArgentina)
         });
         maxRadius_Mt = maxEmissionsArgentina / 1000000;
+        // console.log(maxRadius_Mt)
         // console.log("Maximum value of '" + propertyToFindMax + "': " + maxEmissionsArgentina);
         // maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
-        loadGlobalDefs()
+loadGlobalDefs()
         createScale(1); 
+        loadGlobalDefs()
 
         
     })
