@@ -108,11 +108,12 @@ var translations_en = {
   button_refinery: `Refinery`,
   button_thermal: `Fossil thermal power plant`,
   button_ammonia: `Ammonia`,
-  button_etileno: `Etileno`,
+  button_etileno: `Ethylene`,
   button_methanol: `Methanol`,
   button_bioethanol: `Bioethanol`,
   button_biogas: `Biogas power plant`,
   button_paper: `Pulp and Paper`,
+  button_biomass: `Biomass power plant`,
   table_header_industry_type: `Industry`,
   table_header_total_emissions: `Total Emissions (Tonnes)`,
 };

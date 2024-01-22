@@ -3,7 +3,7 @@ var table_all = document.getElementById('table-all-emissions');
 var table_selected = document.getElementById('table-selected-emissions');
 
 // Define a GeoJSON URL
-var geojsonURL = 'argentina_emissions_2.geojson';
+var geojsonURL = 'argentina_emissions.geojson';
 // var geojsonURL = 'argentina_emissions_20240117.geojson';
 
 // not necessary anymore - only one layer
@@ -18,27 +18,56 @@ var geojsonURL = 'argentina_emissions_2.geojson';
 ////////////////////////////////////////////////////
 
 var geojsonLayer; // Declare a variable to hold the GeoJSON layer
-var aluminiumLayer, steelLayer, cementLayer, paperLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
+// var aluminiumLayer, steelLayer, cementLayer, paperLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
 var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
 
 // Group layers by source type
-var industrialLayers = [
-    "Ammonia", 
-    "Etileno",
-    "Methanol", 
-    "Aluminium", 
-    "Steel", 
-    "Cement", 
-    "Pulp and paper",
-    "Refinery", 
-    "Fossil thermal power plant"
+var allLayers = [
+        { name_en: 'Ammonia', name_es: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+        { name_en: 'Ethylene', name_es: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+        { name_en: 'Methanol', name_es: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+        { name_en: 'Aluminium', name_es: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+        { name_en: 'Steel', name_es: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+        { name_en: 'Cement', name_es: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
+        { name_en: 'Pulp and Paper', name_es: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'industrial'},
+        { name_en: 'Refineries', name_es: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+        { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_en: 'Biogas Power Plant', name_es: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
+        { name_en: 'Bioethanol', name_es: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+        { name_en: 'Biomass Power Plant', name_es: 'Termoeléctricas Biomasa', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'}
     ];
-var biogenicLayers = [
-    "Biogas Power Plant", 
-    "Bioethanol"
-];
+
+var industrialLayers = [];
+var biogenicLayers = [];
+
+// var industrialLayers = [
+//     "Ammonia", 
+//     "Etileno",
+//     "Methanol", 
+//     "Aluminium", 
+//     "Steel", 
+//     "Cement", 
+//     "Pulp and paper",
+//     "Refinery", 
+//     "Fossil thermal power plant"
+//     ];
+// var biogenicLayers = [
+//     "Biogas Power Plant", 
+//     "Bioethanol",
+//     "Biomass Power Plant"
+// ];
+
+allLayers.forEach(data => {
+    if(data.industry=="industrial") {
+        industrialLayers.push(data.name);}
+    });
+allLayers.forEach(data => {
+    if(data.industry=="biogenic") {
+        biogenicLayers.push(data.name);}
+    });
+
 
 let baseColors = {
     "ptx_first": "rgb(0, 182, 157)",
@@ -64,7 +93,8 @@ let baseColors = {
         "Fossil thermal power plant": "rgb(164, 146, 220, 0.8)",
         
         "Biogas Power Plant": "rgb(143, 196, 146, 1)",
-        "Bioethanol": "rgb(143, 196, 146, 0.8)"
+        "Bioethanol": "rgb(143, 196, 146, 0.8)",
+        "Biomass Power Plant": "rgb(143, 196, 146, 0.6)"
     }
 
 ////////////////////////////////////////////////////
@@ -97,49 +127,55 @@ if (lang==="en") {
     <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
 }
 
-let buttonData;
-// Define a list of button names
-if (lang=="es") {
-    buttonData = [
-        { name_lang: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
-        { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
-        { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
-        { name_lang: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
-        { name_lang: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
-        { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
-        { name_lang: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
-        { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        // { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
-        { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-    ];
-} else if(lang=="en") {
-    buttonData = [
-        { name_lang: 'Ammonia', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
-        { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
-        { name_lang: 'Methanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
-        { name_lang: 'Aluminium', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
-        { name_lang: 'Steel', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
-        { name_lang: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
-        { name_lang: 'Pulp and paper', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
-        { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Fossil thermal power plant', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
-        { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
-        { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
-    ];
-}
+// let buttonData;
+// // Define a list of button names
+// if (lang=="es") {
+//     buttonData = [
+//         { name_lang: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+//         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+//         { name_lang: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+//         { name_lang: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+//         { name_lang: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+//         { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
+//         { name_lang: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
+//         { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+//         // { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+//         { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+//         { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
+//         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+//         { name_lang: 'Termoeléctricas Biomasa', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'},
+//     ];
+// } else if(lang=="en") {
+//     buttonData = [
+//         { name_lang: 'Ammonia', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+//         { name_lang: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+//         { name_lang: 'Methanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
+//         { name_lang: 'Aluminium', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+//         { name_lang: 'Steel', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
+//         { name_lang: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
+//         { name_lang: 'Pulp and paper', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
+//         { name_lang: 'Refinery', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
+//         { name_lang: 'Fossil thermal power plant', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+//         { name_lang: 'Biogas Power Plant', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
+//         { name_lang: 'Bioethanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
+//         { name_lang: 'Biomass Power Plant', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'},
+//     ];
+// }
 
 // Get a reference to the container element
 const buttonContainer = document.getElementById('button-container');
 
 // Loop through the button data and create buttons
-buttonData.forEach(data => {
+allLayers.forEach(data => {
     // Create a button element
     const button = document.createElement('button');
   
     // Set the button's text to the name from the data
-    button.textContent = data.name_lang;
+    if(lang=="en") {
+        button.textContent = data.name_en;
+    } else if (lang=="es") {
+        button.textContent = data.name_es;
+    }
     // Text wird aber über die en.js  bzw. es.js sowieso überschrieben!
     // Aber damit es konsistent mit der Tabelle ist, müssen Textänderungen an beiden Stellen vorgenommen werden.
     
@@ -148,6 +184,7 @@ buttonData.forEach(data => {
   
     // Add a class for styling (if needed)
     button.classList.add('custom-button-class', 'toggle-layer-button', 'button', 'is-fullwidth');
+    button.classList.add(data.id);
   
     // Set the button's background color from the data
     button.style.backgroundColor = emissionTypeColors_D[data.name];
@@ -245,30 +282,23 @@ function updateContent(language) {
     $("#legal").html(translations.legal);
     
     // update button and table texts, which are generated in main.js
-    $('#button-Aluminium').html(translations.button_Aluminium);
-    $('#button-Steel').html(translations.button_Steel);
-    $('#button-cement').html(translations.button_cement);
-    $('#button-refinery').html(translations.button_refinery);
-    $('#button-thermal').html(translations.button_thermal);
-    $('#button-ammonia').html(translations.button_ammonia);
-    $('#button-etileno').html(translations.button_etileno);
-    $('#button-methanol').html(translations.button_methanol);
-    $('#button-bioethanol').html(translations.button_bioethanol);
-    $('#button-biogas').html(translations.button_biogas);
-    $('#button-paper').html(translations.button_paper);
+    // here, classes are used, because the button texts and the rows in the table, where total emissions are calculated
+    // are updated to the same text.
+    $('.button-Aluminium').html(translations.button_Aluminium);
+    $('.button-Steel').html(translations.button_Steel);
+    $('.button-cement').html(translations.button_cement);
+    $('.button-refinery').html(translations.button_refinery);
+    $('.button-thermal').html(translations.button_thermal);
+    $('.button-ammonia').html(translations.button_ammonia);
+    $('.button-etileno').html(translations.button_etileno);
+    $('.button-methanol').html(translations.button_methanol);
+    $('.button-bioethanol').html(translations.button_bioethanol);
+    $('.button-biogas').html(translations.button_biogas);
+    $('.button-paper').html(translations.button_paper);
+    $('.button-biomass').html(translations.button_biomass);
+
     $('#table_header_industry_type').html(translations.table_header_industry_type);
     $('#table_header_total_emissions').html(translations.table_header_total_emissions);
-    $('#industry_type_button-Aluminium').html(translations.button_Aluminium);
-    $('#industry_type_button-Steel').html(translations.button_Steel);
-    $('#industry_type_button-cement').html(translations.button_cement);
-    $('#industry_type_button-refinery').html(translations.button_refinery);
-    $('#industry_type_button-thermal').html(translations.button_thermal);
-    $('#industry_type_button-ammonia').html(translations.button_ammonia);
-    $('#industry_type_button-etileno').html(translations.button_etileno);
-    $('#industry_type_button-methanol').html(translations.button_methanol);
-    $('#industry_type_button-bioethanol').html(translations.button_bioethanol);
-    $('#industry_type_button-biogas').html(translations.button_biogas);
-    $('#industry_type_button-paper').html(translations.button_paper);
     // console.log('updatedContent: ' + language)
 }
     
@@ -661,7 +691,8 @@ function showMap(reload, language, zoomlevel, center, style) {
         zoomControl: false, // to put the zoom butons on the right
         minZoom: 4, // damit man nicht zu weit rauszoomen kann
         maxBounds: [    // damit man nicht nach links,rechts,oben, unten schieben kann
-            [-19.658649421657355, -80.40861805520363],
+            // [-19.658649421657355, -80.40861805520363],
+            [11.8492524,-102.4750762],
             [-56.5930829396799, -48.81193766169215]
         ]
     })
@@ -1005,18 +1036,21 @@ function addCO2argentinaPopupHandler(feature) {
 		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
         // let thisEmission = Number(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";// let thisEmission = " kTonnes CO<sub>2</sub>/year";
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
-		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
+		let thisNameCompany = feature.properties.Name 
+        if (feature.properties.Company) {
+            thisNameCompany += "<br>("+feature.properties.Company+")";
+        }
+        //if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
 		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
 		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-		return `<h2>
-                    ${feature.properties.Name}<br>
-                    (${feature.properties.Company}) 
+        return `<h2>
+                    ${thisNameCompany}
                     <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
                     <p><b>City: </b>
                         <br>${feature.properties.City}</p>
                     <p><b>Province: </b>
-                        <br>${feature.properties.Provincia}</p>
+                        <br>${feature.properties.Province}</p>
                     <p><b>Industry:</b>
                         <br>${feature.properties.Industry}<br>
                         </p>
@@ -1072,7 +1106,6 @@ toggleButtons.forEach(button => {
 
         var layerName = button.getAttribute('data-layer');
         var industryType = button.getAttribute('industry-type');
-        console.log(layerName);
         // console.log(industryType);
         // addGeoJSONLayer(industryType, layerName);
         var layer = layers[layerName];
@@ -1197,7 +1230,16 @@ let co2FilteredSumOutput = document.getElementById('sumCO2'),
 function getEmissionsSelected() {
     formattedEmissions_selected = 0;
 
-    buttonData.forEach(function(name) {
+    // buttonData.forEach(function(name) {
+    //     if (map.hasLayer(layers[name.name])) {
+    //         if(totalEmissions[name.name]){
+    //             formattedEmissions_selected += totalEmissions[name.name];
+    //         }
+    //     } else {
+    //     }
+    // })
+
+    allLayers.forEach(function(name) {
         if (map.hasLayer(layers[name.name])) {
             if(totalEmissions[name.name]){
                 formattedEmissions_selected += totalEmissions[name.name];
@@ -1205,6 +1247,7 @@ function getEmissionsSelected() {
         } else {
         }
     })
+
     formattedEmissions_selected = formattedEmissions_selected.toLocaleString('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -2406,16 +2449,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         // Iterate through the totalEmissions object and populate the table
         // 3.1.2024 - iterate through button order 
-        for (let i = 0; i < buttonData.length; i++) {
-            const industryValue = buttonData[i]['name'];
+        // for (let i = 0; i < buttonData.length; i++) {
+        //     const industryValue = buttonData[i]['name'];
+        //     var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
+        //         minimumFractionDigits: 2,
+        //         maximumFractionDigits: 2
+        //         });
+        //         let industry_lang = buttonData.find(item => item.name === industryValue)?.name_lang;                      
+        //         let industry_short = buttonData.find(item => item.name === industryValue)?.id;                      
+        //     // console.log(industry_short)
+        //     table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
+        //     + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+        // }
+
+        for (let i = 0; i < allLayers.length; i++) {
+            const industryValue = allLayers[i]['name'];
             var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
                 });
-                let industry_lang = buttonData.find(item => item.name === industryValue)?.name_lang;                      
-                let industry_short = buttonData.find(item => item.name === industryValue)?.id;                      
+                let industry_lang;
+                if(lang=="en") {
+                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_en;
+                }
+                if(lang=="es") {
+                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_es;
+                }
+                let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
             // console.log(industry_short)
-            table += "<tr><td id='industry_type_"+industry_short+"'>" + industry_lang 
+            table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
             + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
         }
         
@@ -2466,9 +2528,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // console.log("Maximum value of '" + propertyToFindMax + "': " + maxEmissionsArgentina);
         // maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
-loadGlobalDefs()
+        loadGlobalDefs();
         createScale(1); 
-        loadGlobalDefs()
+        loadGlobalDefs();
 
         
     })
@@ -2476,17 +2538,21 @@ loadGlobalDefs()
         console.error(`Error loading GeoJSON data: ${error}`);
     });
     
-    addGeoJSONLayer('Ammonia');
-    addGeoJSONLayer('Etileno');
-    addGeoJSONLayer('Methanol');
-    addGeoJSONLayer('Aluminium');
-    addGeoJSONLayer('Steel');
-    addGeoJSONLayer('Cement');
-    addGeoJSONLayer('Pulp and paper');
-    addGeoJSONLayer('Refinery');
-    addGeoJSONLayer('Fossil thermal power plant');
-    addGeoJSONLayer('Biogas Power Plant'); // vorher: addGeoJSONLayer('Biogas Power Plant');
-    addGeoJSONLayer('Bioethanol');
+    allLayers.forEach(data => {
+        addGeoJSONLayer(data.name)
+    });
+    // addGeoJSONLayer('Ammonia');
+    // addGeoJSONLayer('Etileno');
+    // addGeoJSONLayer('Methanol');
+    // addGeoJSONLayer('Aluminium');
+    // addGeoJSONLayer('Steel');
+    // addGeoJSONLayer('Cement');
+    // addGeoJSONLayer('Pulp and paper');
+    // addGeoJSONLayer('Refinery');
+    // addGeoJSONLayer('Fossil thermal power plant');
+    // addGeoJSONLayer('Biogas Power Plant'); // vorher: addGeoJSONLayer('Biogas Power Plant');
+    // addGeoJSONLayer('Bioethanol');
+    // addGeoJSONLayer('Biomass Power Plant');
     // addGeoJSONLayer('industrial', 'Initially add the layer to the map');
   
 

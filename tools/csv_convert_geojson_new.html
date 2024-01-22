@@ -320,7 +320,7 @@
                         source_col_name,
                         lat_col_number,
                         lon_col_number);
-			        console.log(preprocessedCSV);
+			        // console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
 			        convertCSV(preprocessedCSV, lat_col_name, lon_col_name, emissions_t_col_name)
                     
@@ -404,6 +404,7 @@
             headerRow = headerRow.replace(emissions_t_col_name,"CO2_emissions_t");
             headerRow = headerRow.replace(emission_type_col_name,"Source_CO2_emissions");
             headerRow = headerRow.replace(city_col_name,"City");
+            headerRow = headerRow.replace(province_col_name,"Province");
             headerRow = headerRow.replace(source_col_name,"Source");
 			// Initialize an array to store valid rows
 			const validRows = [];

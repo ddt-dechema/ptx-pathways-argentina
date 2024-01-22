@@ -112,6 +112,7 @@ var translations_es = {
   button_methanol: `Metanol`,
   button_bioethanol: `Bioetanol`,
   button_biogas: `Termoeléctricas Biogás `,
+  button_biomass: `Termoeléctricas Biomasa`,
   button_paper: `Celulosa y papel`,
   table_header_industry_type: `Industria`,
   table_header_total_emissions: `Emisiones totales (toneladas)`
