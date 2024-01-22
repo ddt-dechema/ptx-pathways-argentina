@@ -109,8 +109,8 @@ if (lang=="es") {
         { name_lang: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
         { name_lang: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'biogenic'},
         { name_lang: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
-        // { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        // { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_lang: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
         { name_lang: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_lang: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
     ];
@@ -1002,8 +1002,8 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-		// let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
-        let thisEmission = Number(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";// let thisEmission = " kTonnes CO<sub>2</sub>/year";
+		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
+        // let thisEmission = Number(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";// let thisEmission = " kTonnes CO<sub>2</sub>/year";
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
 		//if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
 		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
@@ -1015,6 +1015,8 @@ function addCO2argentinaPopupHandler(feature) {
                     <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
                     <p><b>City: </b>
                         <br>${feature.properties.City}</p>
+                    <p><b>Province: </b>
+                        <br>${feature.properties.Provincia}</p>
                     <p><b>Industry:</b>
                         <br>${feature.properties.Industry}<br>
                         </p>

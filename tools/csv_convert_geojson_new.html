@@ -9,6 +9,8 @@
 	<!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
 	<script src='../assets/csv2geojson_new.js'></script>
 	<link href="../assets/styles.css" rel="stylesheet">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/bootstrap.bundle.min.js"></script>
     <style>
         table, th, td {
             border: 1px solid black;
@@ -18,18 +20,87 @@
 </head>
 
 <body>
-    </div>
+    <div class="container">
         <h2>Use this page to convert your CSV into a geojson file.</h2>
         
         <p>Please be aware of the following things:</p>
         <ul>
-            <li>The CSV should use semicolons as a separator</li>
-            <li><s>latitude and longitude should be in the 9th and 10th column, respectively</s></li>
-            <li><s>the columns must be named "Latitude" and "Longitude" (Capital letters!)</s></li>
-            <li><s>Name and Company should be in the 1st and 2nd column</s></li>
+            <li>The CSV must use semicolons as a separator</li>
+            <li>The numbers must be separated by a dot (.) instead of a comma (,). <br>
+                E.g. when working with german computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.</li>
+            <li>Any separator for thousands (1.000,00 t) should not be used!</li>
+            <li>Enter the most relevant information below regarding the columns in the CSV.<br>
+            <b>This is necessary, because the map uses fixed names and any changes in the original data hinders a correct rendering of the data on the map.</b></li>
+            <li>You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
         </ul>
         <ul>
-            <li><h3>Enter the most relevant information below regarding the columns in the CSV</h3></li>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alternativeConverter" aria-expanded="false" aria-controls="collapseTwo">
+                    Alternatives to convert the CSV
+                  </button>
+                </h2>
+                <div id="alternativeConverter" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    If all this does not work, you can use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, to convert the csv to the geojson.<br>
+            The solution provided with the website here is a fallback, if the link mentioned above does not provide the service anymore.</p>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Console" aria-expanded="true" aria-controls="collapseOne">
+                    Some more useful information
+                </button>
+              </h2>
+              <div id="Console" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    If you open the developer tools (F12) and open the console, you will get some information:
+                </p>
+                <ul>
+                    <li>After converting the CSV, the console will tell you which rows could not be processed. <br>
+                        Those row DO NOT contain geo-information (latitude/longitude is missing)</li>
+                    <li>After the conversion, you can either download the geojson-file directly (button will appear below, after you successfully converted the file) <br>
+                        or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.<br>
+                        I suggest, that you "test" the geojson with the website above (geojson.io) so that it makes the geojson appear more "readable".</li>
+                    <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
+                    <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#IndustryTypes" aria-expanded="true" aria-controls="collapseOne">
+                      Types of industries used in the map
+                  </button>
+                </h2>
+                <div id="IndustryTypes" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <p>Unfortunately, the map is "hard-coded" regarding the number of industries and their naming.<br>
+                        It is therefore crucial, that the TYPE OF INDUSTRYs used are named like this:<br>
+                        (The colors correspond to how they will be grouped/shown on the map)
+                        <span class="badge rounded-pill badge_ammonia"> Ammonia </span>
+                        <span class="badge rounded-pill badge_etileno"> Etileno </span>
+                        <span class="badge rounded-pill badge_methanol"> Methanol </span>
+                        <span class="badge rounded-pill badge_aluminium"> Aluminium </span>
+                        <span class="badge rounded-pill badge_steel"> Steel </span>
+                        <span class="badge rounded-pill badge_cement"> Cement </span>
+                        <span class="badge rounded-pill badge_pulp"> Pulp and Paper </span>
+                        <span class="badge rounded-pill badge_refinery"> Refinery </span>
+                        <span class="badge rounded-pill badge_fossil_thermal"> Fossil thermal power plant </span>
+                        <span class="badge rounded-pill badge_biogas"> Biogas power plant </span>
+                        <span class="badge rounded-pill badge_bioethanol"> Bioethanol </span>
+                        </p>
+                  
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        <!-- <li><h3>Some more useful information</h3></li>
         </ul>
         <p>
             If you open the developer tools (F12) and open the console, you will get some information:
@@ -41,82 +112,162 @@
                 Like this, the file will look more "readable".</li>
             <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
             <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
-        </ul>
-
-        <p> If all this does not work, you can use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, to convert the csv to the geojson.<br>
-        The solution provided with the website here is a fallback, if the link mentioned above does not provide the service anymore.</p>
-        <p> You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </p>
+        </ul> -->
            
         <hr>
 
-            <s><h2>Data structure of the CSV:</h2>
-        <p>To correctly display the information on the map, the csv should look like this.</p>
-        <ul>
-            <li>Only the order of the lat and lon column, as well as the Name and Company of the emitter is important (see above).</li>
-            <li>For the rest, it is crucial, that the spelling is identical to the exemplary table below (please note all the capital letters)</li>
-        </ul></s>
-        <table>
-            <colgroup>
-            <col style="width: 49px">
-            <col style="width: 73px">
-            <col style="width: 64px">
-            <col style="width: 142px">
-            <col style="width: 114px">
-            <col style="width: 61px">
-            <col style="width: 57px">
-            <col style="width: 68px">
-            <col style="width: 63px">
-            <col style="width: 77px">
-            </colgroup>
+        <div class="alert alert-warning" role="alert">
+            Data structure of the last known CSV
+        </div> 
+        <p> The default values in the input fields were taken from the last CSV file (provided on Januar 18th, 2024).<br>
+        Please override them, if you have changed the name or the order of the columns.</p>
+        <table class="table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Company</th>
-                <th>Industry</th>
-                <th>CO2_emissions_t</th>
-                <th>Source_CO2 _emissions</th>
-                <th>Source</th>
-                <th>City</th>
-                <th>Province</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Type of industry</th>
+                <th scope="col">CO2 emissions [t]</th>
+                <th scope="col">Type of source</th>
+                <th scope="col">Location (city)</th>
+                <th scope="col">Provincia</th>
+                <th scope="col">Location (latitude)</th>
+                <th scope="col">Location (longitude)</th>
+                <th scope="col">Source CO2 emissions</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
         </table>
+
         <hr>
-<br>
-        <input type="file" id="csvFile" accept=".csv"><br><br>
-            (Default values of last known Excel are already entered)
-            <b>
-                <p>The CSV must have Semicolon as a separator and the numbered values (CO2 emissions [t], Lat, Lon) must be separated  by a dot.<br>
-                Any separator for thousands (1.000,00 t) should not be used!</p>
-            </b>
-        Column where Latitude is saved <input value="8" type="number" id="lat_col"><br>
-        Name Column where Latitude is saved <input value="Location (latitude)" type="text" id="lat_col_name"><br>
 
-        Column where longitude is saved <input value="9" type="number" id="lon_col"><br>
-        Name of Column where longitude is saved <input value="Location (longitude)" type="text" id="lon_col_name"><br><br>
+        <h3> Convert the csv file</h3>
+        <div class="container card">
+            <br>
+            <!-- <div class="input-group mb-3"> -->
+                <input class="form-control" type="file" id="csvFile" accept=".csv"><br><br>
+            <!-- </div> -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of the Carbon <b>Source</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Name" id="name_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="1" id="name_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of the <b>Company</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Company" id="company_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="2" id="company_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Type of <b>industry</b></label>
+                <div class="form-text" id="basic-addon4">see above</div>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Type of industry" id="industry_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="3" id="industry_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">CO2 <b>emissions</b> in tonnes</label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="CO2 emissions [t]" id="emissions_t_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="4" id="emissions_t_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Type of emissions <b>source</b></label>
+                <div class="form-text" id="basic-addon4">industrial/biogenic</div>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Type of source" id="emission_type_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="5" id="emission_type_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Location</b> (city)</label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (city)" id="city_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="6" id="city_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Province</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Provincia" id="province_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="7" id="province_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Location <b>Latitude</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (latitude)" id="lat_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="8" id="lat_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Location <b>Longitude</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (longitude)" id="lon_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="9" id="lon_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Source</b> (of information)</label>
+                <div class="form-text" id="basic-addon4">whether it is estimated or data exists somewhere</div>
 
-        Name of Industry Column <input value="Type of industry" type="text" id="industry_col_name"><br>
-        Name of Emissions Column <input value="CO2 emissions [t]" type="text" id="emissions_col_name"><br>
-        Column where CO2 emissions (in t) are stored <input value="4" type="number" id="emissions_col"><br>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Source CO2 emissions" id="source_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="10" id="source_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+
+            <button type="button" class="btn btn-primary" id="convertButton">Convert to GeoJSON</button>
+            <br>
+            <a class="button" id="downloadLink" style="display: none;">Download GeoJSON</a>
+
+        </div>
+        <!-- Please enter the information regarding the header name and column ordner below. -->
+        
+        <!-- Column where Latitude is saved <input value="8" type="number" id="lat_col"><br>
+        Name Column where Latitude is saved <input value="Location (latitude)" type="text" id="lat_col_name"><br> -->
+
+        <!-- Column where longitude is saved <input value="9" type="number" id="lon_col"><br>
+        Name of Column where longitude is saved <input value="Location (longitude)" type="text" id="lon_col_name"><br><br> -->
+
+        <!-- Name of Industry Column <input value="Type of industry" type="text" id="industry_col_name"><br> -->
+        <!-- Name of Emissions Column <input value="CO2 emissions [t]" type="text" id="emissions_t_col_name"><br> -->
+        <!-- Column where CO2 emissions (in t) are stored <input value="4" type="number" id="emissions_col"><br> -->
         <br>
-        <button id="convertButton">Convert to GeoJSON</button>
-        <a class="button" id="downloadLink" style="display: none;">Download GeoJSON</a>
     </div>
 
 	<script>	
@@ -125,17 +276,27 @@
 		const convertButton = document.getElementById('convertButton');
 		const downloadLink = document.getElementById('downloadLink');
         
-        
 		var argentina_emissions = {}
         
-        convertButton.addEventListener('click', () => {
-            const lat_col = Number(document.getElementById('lat_col').value) - 1;
-            const lon_col = Number(document.getElementById('lon_col').value) - 1;
-            const lat_col_name = document.getElementById('lat_col_name').value;
-            const lon_col_name = document.getElementById('lon_col_name').value;
+        convertButton.addEventListener('click', () => {           
+            const company_col_name = document.getElementById('company_col_name').value;
+            const company_col_number = Number(document.getElementById('company_col_number').value) - 1;
             const industry_col_name = document.getElementById('industry_col_name').value;
-            const emissions_col_name = document.getElementById('emissions_col_name').value;
-            const emissions_col = Number(document.getElementById('emissions_col').value) - 1;
+            const industry_col_number = Number(document.getElementById('industry_col_number').value) - 1;
+            const emissions_t_col_name = document.getElementById('emissions_t_col_name').value;
+            const emissions_t_col_number = Number(document.getElementById('emissions_t_col_number').value) - 1;
+            const emission_type_col_name = document.getElementById('emission_type_col_name').value;
+            const emission_type_col_number = Number(document.getElementById('emission_type_col_number').value) - 1;
+            const city_col_name = document.getElementById('city_col_name').value;
+            const city_col_number = Number(document.getElementById('city_col_number').value) - 1;
+            const province_col_name = document.getElementById('province_col_name').value;
+            const province_col_number = Number(document.getElementById('province_col_number').value) - 1;
+            const lat_col_name = document.getElementById('lat_col_name').value;
+            const lat_col_number = Number(document.getElementById('lat_col_number').value) - 1;
+            const lon_col_name = document.getElementById('lon_col_name').value;
+            const lon_col_number = Number(document.getElementById('lon_col_number').value) - 1;
+            const source_col_name = document.getElementById('source_col_name').value;
+            const source_col_number = Number(document.getElementById('source_col_number').value) - 1;
             // console.log(lat_col_name+lon_col_name)
 
             const fileInput = document.getElementById('csvFile');
@@ -147,33 +308,26 @@
                     const csvData = event.target.result;
                     // Call your CSV to GeoJSON conversion function here
                     
-                    
                     const preprocessedCSV = preprocessCSV(csvData, 
-                        lat_col, lon_col, 
-                        lat_col_name, lon_col_name,
-                        industry_col_name, emissions_col_name,
-                        emissions_col);
+                        company_col_name,
+                        industry_col_name,
+                        emissions_t_col_name,
+                        emission_type_col_name,
+                        city_col_name,
+                        province_col_name,
+                        lat_col_name,
+                        lon_col_name,
+                        source_col_name,
+                        lat_col_number,
+                        lon_col_number);
 			        console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
-			        convertCSV(preprocessedCSV, lat_col_name, lon_col_name, emissions_col_name)
+			        convertCSV(preprocessedCSV, lat_col_name, lon_col_name, emissions_t_col_name)
                     
                     // Create a download link for the user
-                    // downloadLink.href = URL.createObjectURL(argentina_emissions);
-                    // downloadLink.href = window.URL.createObjectURL(new Blob(argentina_emissions, {type: "application/json"}))
-
-                    //this works
                     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(argentina_emissions));
                     downloadLink.href = dataStr
-
-                    // const geojson = argentina_emissions;
-                    // const url = URL.createObjectURL(geojson);
-                    // Convert GeoJSON to a formatted string with line breaks and indentation
-                    // const formattedGeoJSON = JSON.stringify(geojson, null, 2);
-                    // Create a Blob from the GeoJSON data
-                    // const blob = new Blob([JSON.stringify(formattedGeoJSON)], { type: 'application/json' });
-                    // const url = URL.createObjectURL(blob);
-                    // downloadLink.href= url
-                    
+                 
                     downloadLink.download = 'argentina_emissions.geojson';
                     downloadLink.style.display = 'block';
                 };
@@ -188,7 +342,7 @@
             }
         });
                     	
-		function convertCSV(myBlob, lat_col_name, lon_col_name, emissions_col_name, name) {
+		function convertCSV(myBlob, lat_col_name, lon_col_name, emissions_t_col_name, name) {
 			return new Promise((resolve, reject) => {
 				csv2geojson.csv2geojson(myBlob, {
 					latfield: lat_col_name,
@@ -228,10 +382,17 @@
 		}
 
 		function preprocessCSV(csvData, 
-        lat_col, lon_col, 
-        lat_col_name, lon_col_name,
-        industry_col_name, emissions_col_name,
-        emissions_col
+            company_col_name,
+            industry_col_name,
+            emissions_t_col_name,
+            emission_type_col_name,
+            city_col_name,
+            province_col_name,
+            lat_col_name,
+            lon_col_name,
+            source_col_name,
+            lat_col_number,
+            lon_col_number
         ) {
 			// Split the CSV data into rows
 			const rows = csvData.split('\n');
@@ -240,8 +401,10 @@
   			var headerRow = rows[0];
 
             headerRow = headerRow.replace(industry_col_name,"Industry");
-            headerRow = headerRow.replace(emissions_col_name,"CO2_emissions_t");
-            headerRow = headerRow.replace("Type of source","Source_CO2_emissions");
+            headerRow = headerRow.replace(emissions_t_col_name,"CO2_emissions_t");
+            headerRow = headerRow.replace(emission_type_col_name,"Source_CO2_emissions");
+            headerRow = headerRow.replace(city_col_name,"City");
+            headerRow = headerRow.replace(source_col_name,"Source");
 			// Initialize an array to store valid rows
 			const validRows = [];
 			
@@ -279,7 +442,7 @@
 
                 } else if (header === industry_col_name) {
 				    IndustryIndex = 'Industry';
-                } else if (header === emissions_col_name) {
+                } else if (header === emissions_t_col_name) {
 				    CO2EmissionsIndex = 'CO2_emissions_t';
 				}
 
@@ -294,7 +457,7 @@
                 // console.log('lat_col: '+lat_col)
                 // console.log('lon_col: '+lon_col)
 				// Check if the row has both latitude and longitude fields
-				if (fields[lat_col] !== '' && fields[lon_col] !== '') { 
+				if (fields[lat_col_number] !== '' && fields[lon_col_number] !== '') { 
                     // row[emissions_col] = row[emissions_col] + ".0";
                     // console.log(fields[emissions_col]);
                     // let emission_old = fields[emissions_col];

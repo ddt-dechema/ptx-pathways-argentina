@@ -324,3 +324,37 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
   background-color: var(--ptx-bio);
 }
 
+
+.badge_ammonia {
+  background-color: var(--ptx-chemicals);
+}
+.badge_etileno {
+  background-color: var(--ptx-chemicals);
+}
+.badge_methanol {
+  background-color: var(--ptx-chemicals);
+}
+.badge_aluminium {
+  background-color: var(--ptx-metals);
+}
+.badge_steel {
+  background-color: var(--ptx-metals);
+}
+.badge_cement {
+  background-color: var(--ptx-metals);
+}
+.badge_pulp {
+  background-color: var(--ptx-paper);
+}
+.badge_refinery {
+  background-color: var(--ptx-others);
+}
+.badge_fossil_thermal {
+  background-color: var(--ptx-others);
+}
+.badge_biogas {
+  background-color: var(--ptx-bio);
+}
+.badge_bioethanol {
+  background-color: var(--ptx-bio);
+}
