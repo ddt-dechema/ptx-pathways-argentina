@@ -9,6 +9,7 @@
 	<!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
 	<script src='../assets/csv2geojson_new.js'></script>
 	<link href="../assets/styles.css" rel="stylesheet">
+    <script src="../assets/jquery-3.7.1.min.js"></script>
     <link href="../assets/bootstrap.min.css" rel="stylesheet">
     <script src="../assets/bootstrap.bundle.min.js"></script>
     <style>
@@ -27,13 +28,112 @@
         <ul>
             <li>The CSV must use semicolons as a separator</li>
             <li>The numbers must be separated by a dot (.) instead of a comma (,). <br>
-                E.g. when working with german computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.</li>
-            <li>Any separator for thousands (1.000,00 t) should not be used!</li>
-            <li>Enter the most relevant information below regarding the columns in the CSV.<br>
-            <b>This is necessary, because the map uses fixed names and any changes in the original data hinders a correct rendering of the data on the map.</b></li>
-            <li>You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
+                E.g. when working with german computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.</li>    
+                <li>Any separator for thousands (1.000,00 t) should not be used!</li>
+                <li>Enter the most relevant information below regarding the columns in the CSV.<br>
+                <b>This is necessary, because the map uses fixed names and any changes in the original data hinders a correct rendering of the data on the map.</b></li>
+                <li>You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
         </ul>
-        <ul>
+        
+
+        
+<!-- Button trigger modal -->
+    <!-- dont use the button. Let the conversion handle it -->
+    <button type="button" id="btn-show-modal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ConversionResultsmodal" style="display:none;">
+        Launch demo modal
+    </button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="ConversionResultsmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Conversion Result</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>I have found the following types of industry in your CSV. <br><br>
+                    Please check whether they already match the column on the right, which are used for the map!<br>
+                    They should match identically!
+                </p>
+                <table class="table" id="ResultsTable">
+                    <thead>
+                        <tr>
+                            <td>Converted CSV</td>
+                            <td>Names used on the Map</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="industry_type-1"></td>
+                            <td><span class="badge rounded-pill badge_aluminium">Aluminium</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-2"></td>
+                            <td><span class="badge rounded-pill badge_ammonia">Ammonia</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-3"></td>
+                            <td><span class="badge rounded-pill badge_bioethanol">Bioethanol</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-4"></td>
+                            <td><span class="badge rounded-pill badge_biogas">Biogas Power Plant</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-5"></td>
+                            <td><span class="badge rounded-pill badge_biomass">Biomass Power Plant</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-6"></td>
+                            <td><span class="badge rounded-pill badge_cement">Cement</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-7"></td>
+                            <td><span class="badge rounded-pill badge_etileno">Etileno</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-8"></td>
+                            <td><span class="badge rounded-pill badge_fossil_thermal">Fossil Thermal Power Plant</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-9"></td>
+                            <td><span class="badge rounded-pill badge_methanol">Methanol</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-10"></td>
+                            <td><span class="badge rounded-pill badge_pulp">Pulp and Paper</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-11"></td>
+                            <td><span class="badge rounded-pill badge_refinery">Refinery</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-12"></td>
+                            <td><span class="badge rounded-pill badge_steel">Steel</span></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-13"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-14"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="industry_type-15"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+                   
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
@@ -90,9 +190,11 @@
                         <span class="badge rounded-pill badge_cement"> Cement </span>
                         <span class="badge rounded-pill badge_pulp"> Pulp and Paper </span>
                         <span class="badge rounded-pill badge_refinery"> Refinery </span>
-                        <span class="badge rounded-pill badge_fossil_thermal"> Fossil thermal power plant </span>
-                        <span class="badge rounded-pill badge_biogas"> Biogas power plant </span>
+                        <span class="badge rounded-pill badge_fossil_thermal"> Fossil Thermal Power Plant </span>
+                        <span class="badge rounded-pill badge_biogas"> Biogas Power Plant </span>
                         <span class="badge rounded-pill badge_bioethanol"> Bioethanol </span>
+                        <span class="badge rounded-pill badge_biomass"> Biomass Power Plant </span>
+
                         </p>
                   
                   </div>
@@ -253,7 +355,7 @@
 
             <button type="button" class="btn btn-primary" id="convertButton">Convert to GeoJSON</button>
             <br>
-            <a class="button" id="downloadLink" style="display: none;">Download GeoJSON</a>
+            <a type="button" class="btn btn-success" id="downloadLink" style="display: none;">Download GeoJSON</a>
 
         </div>
         <!-- Please enter the information regarding the header name and column ordner below. -->
@@ -268,6 +370,8 @@
         <!-- Name of Emissions Column <input value="CO2 emissions [t]" type="text" id="emissions_t_col_name"><br> -->
         <!-- Column where CO2 emissions (in t) are stored <input value="4" type="number" id="emissions_col"><br> -->
         <br>
+
+
     </div>
 
 	<script>	
@@ -275,7 +379,11 @@
         
 		const convertButton = document.getElementById('convertButton');
 		const downloadLink = document.getElementById('downloadLink');
-        
+        let ConversionResultsModal = document.getElementById('ConversionResultsmodal');
+        // show all types of industrys found in the CSV
+        // define an empty array
+        let industry_types = [];
+
 		var argentina_emissions = {}
         
         convertButton.addEventListener('click', () => {           
@@ -311,8 +419,10 @@
                     const preprocessedCSV = preprocessCSV(csvData, 
                         company_col_name,
                         industry_col_name,
+                        industry_col_number,
                         emissions_t_col_name,
                         emission_type_col_name,
+                        emission_type_col_number,
                         city_col_name,
                         province_col_name,
                         lat_col_name,
@@ -384,8 +494,10 @@
 		function preprocessCSV(csvData, 
             company_col_name,
             industry_col_name,
+            industry_col_number,
             emissions_t_col_name,
             emission_type_col_name,
+            emission_type_col_number,
             city_col_name,
             province_col_name,
             lat_col_name,
@@ -455,22 +567,45 @@
                 // console.log(row);
 				// Split the row into fields using the delimiter (e.g., ';')
 				const fields = row.split(';');
-                // console.log('lat_col: '+lat_col)
-                // console.log('lon_col: '+lon_col)
+                
+                
 				// Check if the row has both latitude and longitude fields
 				if (fields[lat_col_number] !== '' && fields[lon_col_number] !== '') { 
-                    // row[emissions_col] = row[emissions_col] + ".0";
-                    // console.log(fields[emissions_col]);
-                    // let emission_old = fields[emissions_col];
-                    // let emission_new = fields[emissions_col]+",01";
-                    // row_new = row.replace(emission_old,emission_new)
-                    // validRows.push(row_new);
                     validRows.push(row);
+
+                    // give me the industry type
+                    // console.log(fields[industry_col_number]);
+                    //write into an array, if a new industry was found
+                    if(!industry_types.includes(fields[industry_col_number])) {
+                        industry_types.push(fields[industry_col_number]);
+                    }
 				} else if (companyIndex !== -1 && nameIndex !== -1) {
-					// Log rows without coordinates, including "Company" and "Name" columns
+                    // Log rows without coordinates, including "Company" and "Name" columns
 					invalidRows.push(`${fields[companyIndex]};${fields[nameIndex]}`);
 				}
 			}
+            
+            industry_types.sort(function (a, b) {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+                });
+            industry_types.sort();
+            console.log(industry_types)
+            
+            let k = 0;
+            for (let i = 1; i < industry_types.length; i++) {
+                $('#industry_type-'+i).append(industry_types[i-1]);
+			
+                if ($('#industry_type-'+i).text() != $('#industry_type-'+i).next('td').text()) {
+                    $('#industry_type-'+i).addClass('table-danger');
+                }
+			}
+            $('#btn-show-modal').click();
 
 			// Log rows without coordinates
 			console.log('Rows without coordinates:');

@@ -33,11 +33,12 @@ var allLayers = [
         { name_en: 'Cement', name_es: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
         { name_en: 'Pulp and Paper', name_es: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'industrial'},
         { name_en: 'Refineries', name_es: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas fuentes fósiles', name: 'Fossil thermal power plant', id: 'button-thermal', industry: 'industrial'},
+        { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas fuentes fósiles', name: 'Fossil Thermal Power Plant', id: 'button-thermal', industry: 'industrial'},
         { name_en: 'Biogas Power Plant', name_es: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_en: 'Bioethanol', name_es: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
         { name_en: 'Biomass Power Plant', name_es: 'Termoeléctricas Biomasa', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'}
     ];
+    // 12 in total
 
 var industrialLayers = [];
 var biogenicLayers = [];
@@ -90,7 +91,7 @@ let baseColors = {
         "Pulp and paper": "rgb(209, 146, 198, 1)",
         
         "Refinery": "rgb(164, 146, 220, 1)",
-        "Fossil thermal power plant": "rgb(164, 146, 220, 0.8)",
+        "Fossil Thermal Power Plant": "rgb(164, 146, 220, 0.8)",
         
         "Biogas Power Plant": "rgb(143, 196, 146, 1)",
         "Bioethanol": "rgb(143, 196, 146, 0.8)",
