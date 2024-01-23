@@ -563,10 +563,6 @@ function toggleIndustrialLayers() {
             document.getElementById('toggle-all-button').text = 'Deselect all';
         }
     }
-
-    // console.log('industrialLayersVisible: ',industrialLayersVisible);
-    // console.log('biogenicLayersVisible: ',biogenicLayersVisible);
-    // console.log('allLayersVisible: ',allLayersVisible);
 }
 
 function toggleBiogenicLayers() {
@@ -610,10 +606,6 @@ function toggleBiogenicLayers() {
             document.getElementById('toggle-all-button').text = 'Deselect all';
         }
     }
-
-    // console.log('industrialLayersVisible: ',industrialLayersVisible);
-    // console.log('biogenicLayersVisible: ',biogenicLayersVisible);
-    // console.log('allLayersVisible: ',allLayersVisible);
 }
 
 
@@ -938,16 +930,16 @@ let createScale = (sliderValue) => {
     //     "steel mills": "yellow"
     // }
 
-function toggleLayer(button, layer) {
-    return function() {
-        button.classList.toggle("is-info");
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-        } else {
-            map.addLayer(layer);
-        }
-    };
-}
+// function toggleLayer(button, layer) {
+//     return function() {
+//         button.classList.toggle("is-info");
+//         if (map.hasLayer(layer)) {
+//             map.removeLayer(layer);
+//         } else {
+//             map.addLayer(layer);
+//         }
+//     };
+// }
 
 function toggleLayerScale(button, layer, scale) {
     return function() {
@@ -1095,6 +1087,44 @@ function toggleLayer(layer, layerName, button_id, industryType) {
     } else {
         layer.addTo(map);
         button.style.backgroundColor = emissionTypeColors_D[layerName];
+        
+        // check if all layers are visible.
+        // if so, then turn on the toggle state of the overarching button for industrial and biogenic sources
+        
+        // pretend that all layers are visible
+        biogenicLayersVisible = true;
+        // if at least one of layers in the biogenicLayers is not active, turn of the toggle state.
+        biogenicLayers.forEach(data => {
+            if(!(map.hasLayer(layers[data]))) {
+                biogenicLayersVisible = false;
+            }        
+        });
+        // repeat for industrial layers
+        industrialLayersVisible = true;
+        industrialLayers.forEach(data => {
+            if(!(map.hasLayer(layers[data]))) {
+                industrialLayersVisible = false;
+            }        
+        });
+        if(biogenicLayersVisible==true) {
+            toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
+        }
+        if(industrialLayersVisible==true) {
+            toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+        }
+
+        // repeat for the ALL Layers button
+        allLayersVisible = true;
+        if (!biogenicLayersVisible || !industrialLayersVisible) {
+            allLayersVisible = false;
+        } else if (biogenicLayersVisible && industrialLayersVisible) {
+            allLayersVisible = true;
+            if (lang==="es") {
+                document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
+            } else if (lang==="en") {
+                document.getElementById('toggle-all-button').text = 'Deselect all';
+            }
+        }
     }
     }
 
