@@ -291,7 +291,7 @@
                 <input class="form-control" type="file" id="csvFile" accept=".csv"><br><br>
             <!-- </div> -->
             <div class="mb-3">
-                <label for="separator" class="form-label">Separator</label>
+                <label for="separator" class="form-label"><b>Separator</b></label>
                 <div class="input-group">
                     <select id="csv_separator" class="form-select" aria-label="Default select example">
                         <option value=";">; (semicolon)</option>
@@ -466,7 +466,7 @@
             const source_col_name = document.getElementById('source_col_name').value;
             const source_col_number = Number(document.getElementById('source_col_number').value) - 1;
             const csv_separator = document.getElementById('csv_separator').value;
-            console.log(csv_separator);
+            // console.log(csv_separator);
 
             const fileInput = document.getElementById('csvFile');
             const file = fileInput.files[0];
@@ -498,7 +498,11 @@
                         csv_separator);
 			        // console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
-			        convertCSV(preprocessedCSV, lat_col_name, lon_col_name, emissions_t_col_name)
+			        convertCSV(preprocessedCSV, 
+                    lat_col_name, 
+                    lon_col_name, 
+                    emissions_t_col_name, 
+                    csv_separator)
                     
                     // Create a download link for the user
                     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(argentina_emissions));
@@ -518,12 +522,13 @@
             }
         });
                     	
-		function convertCSV(myBlob, lat_col_name, lon_col_name, emissions_t_col_name, name) {
+		function convertCSV(myBlob, lat_col_name, lon_col_name, emissions_t_col_name, csv_separator, name) {
 			return new Promise((resolve, reject) => {
 				csv2geojson.csv2geojson(myBlob, {
 					latfield: lat_col_name,
 					lonfield: lon_col_name,
-					delimiter: ';',
+					// delimiter: ';',
+                    delimiter: csv_separator,
                     numericFields : 'CO2_emissions_t',
 				}, (err, geojson) => {
 					if (err) {
