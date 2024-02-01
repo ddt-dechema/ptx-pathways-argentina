@@ -28,15 +28,16 @@
             This should be always done when the data from the web map needs to be updated. 
             To do that, please take into account following considerations:</p>
         <ul>
-            <li>The CSV must use semicolons as a <b>separator</b><br>
-                Maybe I will change the script, so that it can read both commas and semicolons in the future</li>
             <li>The <b>decimal numbers</b> must be separated by a dot (.) instead of a comma (,). <br>
                 E.g. when working with German computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.<br>
                 <b>Before that, make sure that the CSV uses semicolons as a separator!</b></li>
-                <li>No thounsands separator should be used! (e.g. use "1000.00" instead of "1,000.00")</li>
-                <li>To read the data contained in the document correctly, please enter the information below regarding the columns headers and numbers in the CSV.<br>
-                <b>This is necessary, because the map uses fixed names and any changes in the original data file hinders a correct rendering of the data on the map.</b></li>
-                <li>You can test the resulting geojson file via several online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
+            <li>No thounsands separator should be used! (e.g. use "1000.00" instead of "1,000.00")</li>
+            <li>To read the data contained in the document correctly, please enter the information below regarding the columns headers and numbers in the CSV.<br>
+                    <b>This is necessary, because the map uses fixed names and any changes in the original data file hinders a correct rendering of the data on the map.</b></li>
+            <li>You can test the resulting geojson file via several online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
+            <li>Please choose the <b>separator</b> of the columns in your csv.<br> 
+                Typically they are commas (,), but on German computers, it could be semicolons (;).<br>
+                Please be aware of the value- and the decimal separator.</li>
         </ul>
         
 <!-- Button trigger modal -->
