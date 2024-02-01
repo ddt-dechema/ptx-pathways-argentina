@@ -195,7 +195,7 @@
                     If the steps above do not work, you can alternatively use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, 
                     to convert the csv into a geojson file.<br>
                     The solution provided with this website is a fallback, in case the link mentioned above does not provide the service anymore.<br>
-                    <b>Please note, that the converted geojson still needs to match the types of industrys, etc. which is done automatically by this website, here.</b></p>
+                    <b>Please note, that the converted geojson still needs to match the types of industries, etc. which is done automatically by this website, here.</b></p>
                   </div>
                 </div>
               </div>
@@ -234,7 +234,7 @@
                 <div id="IndustryTypes" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                       <p>Unfortunately, the map is "hard-coded" regarding the number of industries and their naming.<br>
-                        It is therefore crucial, that the TYPE OF INDUSTRYs used are named like this:<br>
+                        It is therefore crucial, that the TYPE OF INDUSTRIEs used are named like this:<br>
                         (The colors correspond to how they will be grouped/shown on the map)
                         <span class="badge rounded-pill badge_ammonia"> Ammonia </span>
                         <span class="badge rounded-pill badge_etileno"> Etileno </span>
@@ -284,7 +284,7 @@
 
         <h3> Convert the csv file</h3>
         <p>The headers of the table containing all information are listed below. 
-            Please check if the header if each column and column numbers from the new csv coincide with the default configuration given below. 
+            Please check if the header of each column and column numbers from the new csv coincide with the default configuration given below. 
             If not, please correct them in the corresponding field. </p>
         <div class="container card">
             <br>
@@ -292,7 +292,7 @@
                 <input class="form-control" type="file" id="csvFile" accept=".csv"><br><br>
             <!-- </div> -->
             <div class="mb-3">
-                <label for="separator" class="form-label"><b>Separator</b></label>
+                <label for="separator" class="form-label"><b>Column Separator</b> (not the decimal separator, because there shouldn't be any)</label>
                 <div class="input-group">
                     <select id="csv_separator" class="form-select" aria-label="Default select example">
                         <option value=";">; (semicolon)</option>
