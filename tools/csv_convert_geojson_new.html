@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Converter tool from csv list</title>
+	<title>Converter - CSV to GeoJSON</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta charset="utf-8">
 	</script>
@@ -22,21 +22,22 @@
 
 <body>
     <div class="container">
-        <h2>Use this page to convert your CSV into a geojson file.</h2>
+        <h2>CSV into geojson file convertor</h2>
         
-        <p>Please be aware of the following things:</p>
+        <p>Use this page to convert your CSV file into a geojson file. 
+            This should be always done when the data from the web map needs to be updated. 
+            To do that, please take into account following considerations:</p>
         <ul>
-            <li>The CSV must use semicolons as a separator<br>
-                Maybe I will change the script, so that it can read both commas and semicolons in the <future class=""></future></li>
-            <li>Regarding decimals: The numbers must be separated by a dot (.) instead of a comma (,). <br>
-                E.g. when working with german computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.</li>    
-                <li>Any separator for thousands (1,000.00 t) should not be used!</li>
-                <li>Enter the most relevant information below regarding the columns in the CSV.<br>
-                <b>This is necessary, because the map uses fixed names and any changes in the original data hinders a correct rendering of the data on the map.</b></li>
-                <li>You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
+            <li>The CSV must use semicolons as a <b>separator</b><br>
+                Maybe I will change the script, so that it can read both commas and semicolons in the future</li>
+            <li>The <b>decimal numbers</b> must be separated by a dot (.) instead of a comma (,). <br>
+                E.g. when working with German computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.<br>
+                <b>Before that, make sure that the CSV uses semicolons as a separator!</b></li>
+                <li>No thounsands separator should be used! (e.g. use "1000.00" instead of "1,000.00")</li>
+                <li>To read the data contained in the document correctly, please enter the information below regarding the columns headers and numbers in the CSV.<br>
+                <b>This is necessary, because the map uses fixed names and any changes in the original data file hinders a correct rendering of the data on the map.</b></li>
+                <li>You can test the resulting geojson file via several online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
         </ul>
-        
-
         
 <!-- Button trigger modal -->
     <!-- dont use the button. Let the conversion handle it -->
@@ -53,8 +54,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="modal-body">
-            
+            <div class="modal-body">         
                 <div class="accordion" id="ModalAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -66,8 +66,9 @@
                             <div class="accordion-body">
                                 I have found the following types of industry in your CSV. <br><br>
                                 Please check whether they already match the column on the right, which are used for the map!<br>
-                                They should match identically!
-
+                                <b>They should match identically!</b><br>
+                                In case of a field with a red background, the type of industry does not match with its counterpart of the right.<br>
+                                Please note that both columns are <b>sorted alphabetically</b>, which might be the reason, why they do not match.
                                 <table class="table" id="ResultsTable">
                                     <thead>
                                         <tr>
@@ -153,11 +154,9 @@
                             There are <b><span id="MissingCoordinatesTotal"></span></b> entries.
                             <table class="table" id="MissingCoordinatesTable">
                             </table>
-                            
                           </div>
                         </div>
                       </div>
-
                       <div class="accordion-item">
                         <h2 class="accordion-header">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#MissingEmissionsAccordion" aria-expanded="false" aria-controls="collapseTwo">
@@ -166,16 +165,14 @@
                         </h2>
                         <div id="MissingEmissionsAccordion" class="accordion-collapse collapse" data-bs-parent="#ModalAccordion">
                           <div class="accordion-body">
-                            The following entries have either 0 CO2-emissions or no information.
+                            The following entries either have no CO<sub>2</sub>-emissions or no information regarding the emissions in the corresponding column.
                             There are <b><span id="MissingEmissionsTotal"></span></b> entries.
                             <table class="table" id="MissingEmissionsTable">
-                            </table>
-                            
+                            </table>                   
                           </div>
                         </div>
                       </div>
                 </div>
-
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -194,8 +191,10 @@
                 </h2>
                 <div id="alternativeConverter" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    If all this does not work, you can use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, to convert the csv to the geojson.<br>
-            The solution provided with the website here is a fallback, if the link mentioned above does not provide the service anymore.</p>
+                    If the steps above do not work, you can alternatively use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, 
+                    to convert the csv into a geojson file.<br>
+                    The solution provided with this website is a fallback, in case the link mentioned above does not provide the service anymore.<br>
+                    <b>Please note, that the converted geojson still needs to match the types of industrys, etc. which is done automatically by this website, here.</b></p>
                   </div>
                 </div>
               </div>
@@ -207,14 +206,18 @@
               </h2>
               <div id="Console" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    If you open the developer tools (F12) and open the console, you will get some information:
+                    If you open the developer tools (F12) and open the console, you will get some useful information:
                 </p>
                 <ul>
                     <li>After converting the CSV, the console will tell you which rows could not be processed. <br>
-                        Those row DO NOT contain geo-information (latitude/longitude is missing)</li>
+                        These non-processable rows mean, that they DO NOT contain any geo-information (latitude/longitude is missing) and are therefore omitted in the geojson-file.</li>
                     <li>After the conversion, you can either download the geojson-file directly (button will appear below, after you successfully converted the file) <br>
-                        or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.<br>
-                        I suggest, that you "test" the geojson with the website above (geojson.io) so that it makes the geojson appear more "readable".</li>
+                        or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.
+                        <b>Please note that the original name of the geojson-file must be used.</b><br>
+                        I suggest, that you "test" the functionality of the newly created geojson-file. For this, you can use the website mentioned above (geojson.io).<br>
+                        Also, the newly created geojson does not look very "readable" (just open the newly created file, and you'll see).
+                        So by copying it to this website (geojson.io) and testing it,you directly make it look more readable and you can then copy & paste it back to your file.
+                        </li>
                     <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
                     <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
                 </ul>
@@ -251,21 +254,7 @@
                 </div>
               </div>
           </div>
-
-        <!-- <li><h3>Some more useful information</h3></li>
-        </ul>
-        <p>
-            If you open the developer tools (F12) and open the console, you will get some information:
-        </p>
-        <ul>
-            <li>After converting the CSV the console will tell you, which rows could not processed. Those do not contain geo-information (missing lat/lon)</li>
-            <li>You can either download the geojson-file directly (button will appear, after you successfully convert the file) <br>
-                or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.<br>
-                Like this, the file will look more "readable".</li>
-            <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
-            <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
-        </ul> -->
-           
+         
         <hr>
 
         <div class="alert alert-warning" role="alert">
@@ -293,11 +282,27 @@
         <hr>
 
         <h3> Convert the csv file</h3>
+        <p>The headers of the table containing all information are listed below. 
+            Please check if the header if each column and column numbers from the new csv coincide with the default configuration given below. 
+            If not, please correct them in the corresponding field. </p>
         <div class="container card">
             <br>
             <!-- <div class="input-group mb-3"> -->
                 <input class="form-control" type="file" id="csvFile" accept=".csv"><br><br>
             <!-- </div> -->
+            <div class="mb-3">
+                <label for="separator" class="form-label">Separator</label>
+                <div class="input-group">
+                    <select id="csv_separator" class="form-select" aria-label="Default select example">
+                        <option value=";">; (semicolon)</option>
+                        <option value=",">, (comma)</option>
+                        <option value=".">. (dot)</option>
+                      </select>
+                    <!-- <span class="input-group-text">Column #</span>
+                        <input type="number" class="form-control" value="1" id="name_col_number"> -->
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Name of the Carbon <b>Source</b></label>
                 <div class="input-group">
@@ -460,7 +465,8 @@
             const lon_col_number = Number(document.getElementById('lon_col_number').value) - 1;
             const source_col_name = document.getElementById('source_col_name').value;
             const source_col_number = Number(document.getElementById('source_col_number').value) - 1;
-            // console.log(lat_col_name+lon_col_name)
+            const csv_separator = document.getElementById('csv_separator').value;
+            console.log(csv_separator);
 
             const fileInput = document.getElementById('csvFile');
             const file = fileInput.files[0];
@@ -488,7 +494,8 @@
                         lon_col_name,
                         source_col_name,
                         lat_col_number,
-                        lon_col_number);
+                        lon_col_number,
+                        csv_separator);
 			        // console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
 			        convertCSV(preprocessedCSV, lat_col_name, lon_col_name, emissions_t_col_name)
@@ -567,7 +574,8 @@
             lon_col_name,
             source_col_name,
             lat_col_number,
-            lon_col_number
+            lon_col_number,
+            csv_separator
         ) {
 			// Split the CSV data into rows
 			const rows = csvData.split('\n');
@@ -628,7 +636,8 @@
 				const row = rows[i];
                 // console.log(row);
 				// Split the row into fields using the delimiter (e.g., ';')
-				const fields = row.split(';');
+                const fields = row.split(csv_separator);
+				// const fields = row.split(';');
                 
 				// Check if the row has both latitude and longitude fields
 				if (fields[lat_col_number] !== '' && fields[lon_col_number] !== '') { 
