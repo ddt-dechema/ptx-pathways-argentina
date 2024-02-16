@@ -253,6 +253,7 @@ function updateContent(language) {
         $("#languge_switch_link").html(translations.languge_switch_link);	
         
         $("#sidebar_title").html(translations.sidebar_title);
+        $("#sidebar_header_filters").html(translations.sidebar_header_filters);
         $("#filter_title").html(translations.filter_title);
         $("#filter_text").html(translations.filter_text);
         $("#filter_text").html(translations.filter_text);

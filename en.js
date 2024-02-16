@@ -5,21 +5,24 @@ var translations_en = {
   introduction_title: `<h2>General information</h2>`,
   introduction_text: `<h3>Introduction</h3>
   CO<sub>2</sub> is a greenhouse gas produced in many cases as an industrial byproduct, which is currently emitted into the atmosphere in most of the processes that produce it. However, this gas has the potential to be used as raw material for Power-to-X (PtX) products that contain carbon in their molecules, such as e-methanol or synthetic fuels (e-fuels). The competitiveness of these products can be highly affected by the availability and quality of the CO<sub>2</sub> source that will be used.
-    This map aims to identify carbon sources (in the form of CO<sub>2</sub>) in Argentina to collaborate in the search for opportunities to develop PtX projects in the country. To do this, the main point sources of CO<sub>2</sub> in Argentina are shown, indicating their location, type of source and size.`,
-  project: `<h3>PtX Pathways-Project</h3> The PtX Pathways project aims to support partner countries in developing a sustainable market for the production, use and export of green hydrogen and its derivatives (PtX). It is funded by the German Federal Ministry of Economics and Climate Protection (BMWK) through the International Climate Initiative (IKI). The project's implementing partners are the German Society for International Cooperation (GIZ), Agora Energiewende, DECHEMA e.V, the Argentine Energy Secretariat, the Centro de Estudios de la Actividad Regulatoria Energética (CEARE) and the Fundación Torcuato Di Tella (FTDT), in close collaboration with the International PtX Hub.`,
+    This map aims to identify carbon sources (in the form of CO<sub>2</sub>) in Argentina to collaborate in the search for opportunities to develop PtX projects in the country. To do this, the main point sources of CO<sub>2</sub> in Argentina are shown, indicating their location, type of source and size.<br>
+    <br>CO<sub>2</sub> can be obtained from different sources such as industrial and biogenic point sources. This map attempts to be comprehensive with respect to the availability of all carbon sources in the country. It should be nevertheless noted that in the long term, the carbon needed for PtX applications should stem from a non-fossil, closed carbon cycle, to ensure carbon neutrality. DAC and biogenic point sources could meet this requirement, provided that sustainability criteria are taken into account.`,
+  project: `<h3>The PtX Hub Project</h3> The International PtX Hub is implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH on behalf of the German Federal Ministry for Economic Affairs and Climate Action (BMWK). Financed by the International Climate Initiative (Internationale Klimaschutzinitiative, IKI), the International PtX Hub is a contribution to the German National Hydrogen Strategy of 2020 and represents one of the four pillars of the BMUV’s PtX action programme initiated in 2019.
+
+  In Argentina, the project's implementing partners are GIZ, the Argentine Secretariat of Energy, the Centre of studies of the energy regulatory activity (CEARE), the Fundación Torcuato Di Tella (FTDT), Agora Energiewende and DECHEMA e.V, in close collaboration with the International PtX Hub.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
   languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
   <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">inglés</a>
   o <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">español</a>
   `,
-   
+  sidebar_header_filters: `Filters`,
   filter_title: `Different categories/sources of carbon`,
   filter_text: `A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
   Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
   metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
   Pulp and paper <span class="dot dot_paper"></span>,
   and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
-  Biogenic sources include biogas and bioethanol production.<span class="dot dot_bio"></span>`,
+  Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>`,
   manual_filter_title: `Or filter manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
@@ -41,7 +44,7 @@ var translations_en = {
   <br>Estimated value with the production capacity reported in the website of Aluar [1], a production factor of 83% (five-year average of production relative to capacity) [1] and an emission factor of 1.6 tonnes of CO2 per tonne of alluminium [2].
   <br><b>Steel</b>
   <br>Production capacity data obtained from [3] and emission factors obtained from the sustainability reports of steel producing companies [4]–[8].
-  <br><b>Cemento</b>
+  <br><b>Cement</b>
   <br>Estimated value with the clinker production capacity [9], a clinker factor of 0.681 and an average emission factor of 0.519 tonnes of CO2 per tonnes of cement [10]. 
   <br><b>Pulp and Paper</b>
   <br>Annual production capacity data and utilization factor obtained from the 2020 Survey of the pulp and paper industry [11] and an average emission factor of 2.5 tonnes of CO2 per tonne of pulp. Estimation done by [12].
@@ -58,7 +61,9 @@ var translations_en = {
   <br><b>Biogas power plant</b>
   <br>Based on data obtained from CAMMESA [13], biogas plants that produce electricity and are connected to the Argentine Interconnection System (SADI) and their respective installed power (MW) were identified. The emission factor was estimated at 18 tonnes of CO2 per day per MW installed. 
   <br><b>Bioethanol</b>
-  <br>Estimated value with the installed capacity of each plant, an emission factor of 1.053 tonnes of CO2 per tonne of bioethanol and a production of 80% of the installed capacity.`,
+  <br>Estimated value with the installed capacity of each plant, an emission factor of 1.053 tonnes of CO2 per tonne of bioethanol and a production of 80% of the installed capacity.
+  <br><b>Biomass power plant</b>
+  <br>Based on data obtained from CAMMESA [13], biomass plants that produce electricity and are connected to the Argentine Interconnection System (SADI) and their respective electrical energy generated (MWh) were identified. The emission factor was estimated based on [17], using 112,000 kg CO2/TJ by thermal energy from biomass and 40% of electrical efficiency.`,
   sources: `<h3>Literature</h3>
   [1]	“Aluar en cifras.” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32" target="_blank">https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32</a>
   <br>[2]	MAyDS, “Informe Nacional de Inventario del Cuarto Informe Bienal de Actualización de la República Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC).” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf" target="_blank">https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf</a>
@@ -68,7 +73,7 @@ var translations_en = {
   <br>[6]	ArcelorMittal Acindar, “Reporte integrado 2022,” Aug. 2023. Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.acindar.com.ar/wp-content/uploads/2023/08/ACI_Reporte2022.pdf" target="_blank">https://www.acindar.com.ar/wp-content/uploads/2023/08/ACI_Reporte2022.pdf</a>
   <br>[7]	Votorantim Siderurgia, “Informe de sustentabilidad 2015.” Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.acerbrag.com/pdf/Reporte_Sustentabilidad_2015.pdf" target="_blank">https://www.acerbrag.com/pdf/Reporte_Sustentabilidad_2015.pdf</a>
   <br>[8]	GERDAU, “GERDAU - Planta Perez.” Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.siderurgia.org.ar/conf18/gerdau.html" target="_blank">https://www.siderurgia.org.ar/conf18/gerdau.html</a>
-  <br>[9]	“Cement Review.”
+  <br>[9]	“Cement Review.” [online] Available: <a href="https://www.cemnet.com/Publications/Item/171926/international-cement-review-magazine.html" target="_blank">https://www.cemnet.com/Publications/Item/171926/international-cement-review-magazine.html</a>
   <br>[10]	Asociación de Fabricantes de Cemento Portland (AFCP), “Informe de indicadores de sostenibilidad de la industria argentina del cemento 2020 - 2021,” Aug. 2022. Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.afcp.org.ar/informes-de-sostenibilidad" target="_blank">https://www.afcp.org.ar/informes-de-sostenibilidad</a>
   <br>[11]	Ministerio de Agricultura, Ganadería y Pesca, Argentina, “Relevamiento de la Industria de la Celulosa y el Papel 2020,” Jul. 2022. Accessed: Oct. 06, 2022. [Online]. Available: <a href="https://www.magyp.gob.ar/sitio/areas/desarrollo-foresto-industrial/foresto-industria/_archivos//000001_Informes%20Anuales%20de%20la%20Industria/000002_2020/002020_Relevamiento%20de%20la%20Industria%20de%20la%20Celulosa%20y%20el%20Papel%202020.pdf" target="_blank">https://www.magyp.gob.ar/sitio/areas/desarrollo-foresto-industrial/foresto-industria/_archivos//000001_Informes%20Anuales%20de%20la%20Industria/000002_2020/002020_Relevamiento%20de%20la%20Industria%20de%20la%20Celulosa%20y%20el%20Papel%202020.pdf</a>
   <br>[12]	K. Kuparinen, E. Vakkilainen, and T. Tynjälä, “Biomass-based carbon capture and utilization in kraft pulp mills,” Mitig Adapt Strateg Glob Change, vol. 24, no. 7, pp. 1213–1230, Oct. 2019, doi: 10.1007/s11027-018-9833-9.
@@ -76,6 +81,7 @@ var translations_en = {
   <br>[14]	Ministerio de Ambiente y Desarrollo Sostenible Argentina, “Cuarto Informe Bienal de Actualización de Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC),” 2021. Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://www4.unfccc.int/sites/SubmissionsStaging/NationalReports/Documents/3752416_Argentina-BUR4-1-4to%20Informe%20Bienal%20de%20la%20Rep%C3%BAblica%20Argentina.pdf" target="_blank">https://www4.unfccc.int/sites/SubmissionsStaging/NationalReports/Documents/3752416_Argentina-BUR4-1-4to%20Informe%20Bienal%20de%20la%20Rep%C3%BAblica%20Argentina.pdf</a>
   <br>[15]	Profertil, “Reporte de Sostenibilidad 2022.” Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://rs.profertil.com.ar/wp-content/uploads/2023/09/Reporte-de-Sostenibilidad-2022.pdf" target="_blank">https://rs.profertil.com.ar/wp-content/uploads/2023/09/Reporte-de-Sostenibilidad-2022.pdf</a>
   <br>[16]	Instituto Petroquímico Argentino (IPA), “Reporte Anual Instituto Petroquímico Argentino,” 2021. Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf" target="_blank">https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf</a>
+  <br>[17] 2006 IPCC Guidelines for National Greenhouse Gas Inventories. Chapter 2: Stationary Combustion. Tabla 2.2. Publications - IPCC-TFI (iges.or.jp)
   `,
   download_text: `Download the data`,
   download_csv: `Download the sources of CO₂ in Argentina (csv)`,

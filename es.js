@@ -5,21 +5,24 @@ var translations_es = {
   introduction_title: `<h2>Información general</h2>`,
   introduction_text: `<h3>Introducción</h3>
     El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
-    El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño.  `,
-  project: `<h3>Proyecto PtX Pathways</h3>El Proyecto PtX Pathways tiene como objetivo apoyar a los países socios en el desarrollo de un mercado sostenible para la producción, el uso y la exportación de hidrógeno verde y sus derivados (PtX). Se encuentra financiado por el Ministerio Federal Alemán de Economía y Protección del Clima (BMWK) a través de la Iniciativa Climática Internacional (IKI). Los socios en la ejecución del proyecto son la Sociedad Alemana para la Cooperación Internacional (GIZ), Agora Energiewende, DECHEMA e.V, la Secretaría de Energía de Argentina, el Centro de Estudios de la Actividad Regulatoria Energética (CEARE) y la Fundación Torcuato Di Tella (FTDT), en estrecha colaboración con el International PtX Hub.`,
+    El presente mapa tiene como objetivo identificar fuentes de carbono (en forma de CO<sub>2</sub>) en Argentina para colaborar en la búsqueda de oportunidades para desarrollar proyectos de PtX en el país. Para ello, se muestran las principales fuentes puntuales de CO<sub>2</sub> en Argentina, indicando su ubicación, tipo de fuente y tamaño.  <br>
+    <br>El CO<sub>2</sub> puede obtenerse de diferentes fuentes, como las fuentes puntuales industriales y biogénicas. Este mapa intenta ser exhaustivo con respecto a la disponibilidad de todas las fuentes de carbono del país. No obstante, cabe señalar que, a largo plazo, el carbono necesario para las aplicaciones de PtX debe proceder de un ciclo de carbono cerrado y no fósil, para garantizar la neutralidad de carbono. DAC y las fuentes puntuales biogénicas podrían cumplir este requisito, siempre y cuando se tengan en cuenta criterios de sustentabilidad.`,
+  project: `<h3>Proyecto PtX Hub</h3>El International PtX Hub está organizado por la Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH en nombre del Ministerio Federal Alemán de Economía y Acción por el Clima (BMWK). Financiado por la Iniciativa Internacional sobre el Clima (IKI), el International PtX Hub es una contribución a la Estrategia Nacional del Hidrógeno 2020 y es uno de los cuatro pilares del Programa de Acción PtX de la BMUV, que se lanzó en 2019.
+
+  En Argentina, la GIZ, la Secretaría de Energía de Argentina, el Centro de Estudios de Regulación Energética (CEARE), la Fundación Torcuato Di Tella (FTDT), Agora Energiewende y DECHEMA e.V. son los socios ejecutores del proyecto en estrecha colaboración con el International PtX Hub.`,
   language_picker: `<h3>Change the language</h3>`,
   languge_switch_link: `If you want to link to the map in a specific language, use the 
   <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">english</a>
   or <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">spanish</a> link
   `,
-
+  sidebar_header_filters: `Filtros`,
   filter_title: `Diferentes categorías/fuentes de carbono`,
   filter_text: `Se diferencia entre fuentes industriales <span class="rect dot_industrial"></span> y biogénicas<span class="rect dot_biogenic"></span>. 
   Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, etileno, metanol) <span class="dot dot_chemicals"></span>,
   metales (aluminio y acero) y cemento <span class="dot dot_metals"></span>,
   celulosa y papel <span class="dot dot_paper"></span>
   y otros como las refinerías y centrales termoeléctricas <span class="dot dot_others"></span>.<br>
-  Las fuentes biogénicas incluyen la producción de biogás y bioetanol <span class="dot dot_bio"></span>.`,
+  Las fuentes biogénicas incluyen la producción de biogás, biomasa y bioetanol <span class="dot dot_bio"></span>.`,
   manual_filter_title: `O filtrar manualmente`,
   emission_type: `Tipo de emisión de CO<sub>2</sub>:`,
   industrial_button: `fuentes industriales/energéticas`,
@@ -68,7 +71,7 @@ var translations_es = {
   <br>[6]	ArcelorMittal Acindar, “Reporte integrado 2022,” Aug. 2023. Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.acindar.com.ar/wp-content/uploads/2023/08/ACI_Reporte2022.pdf" target="_blank">https://www.acindar.com.ar/wp-content/uploads/2023/08/ACI_Reporte2022.pdf</a>
   <br>[7]	Votorantim Siderurgia, “Informe de sustentabilidad 2015.” Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.acerbrag.com/pdf/Reporte_Sustentabilidad_2015.pdf" target="_blank">https://www.acerbrag.com/pdf/Reporte_Sustentabilidad_2015.pdf</a>
   <br>[8]	GERDAU, “GERDAU - Planta Perez.” Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.siderurgia.org.ar/conf18/gerdau.html" target="_blank">https://www.siderurgia.org.ar/conf18/gerdau.html</a>
-  <br>[9]	“Cement Review.”
+  <br>[9]	“Cement Review.” [online] Available: <a href="https://www.cemnet.com/Publications/Item/171926/international-cement-review-magazine.html" target="_blank">https://www.cemnet.com/Publications/Item/171926/international-cement-review-magazine.html</a>
   <br>[10]	Asociación de Fabricantes de Cemento Portland (AFCP), “Informe de indicadores de sostenibilidad de la industria argentina del cemento 2020 - 2021,” Aug. 2022. Accessed: Oct. 06, 2023. [Online]. Available: <a href="https://www.afcp.org.ar/informes-de-sostenibilidad" target="_blank">https://www.afcp.org.ar/informes-de-sostenibilidad</a>
   <br>[11]	Ministerio de Agricultura, Ganadería y Pesca, Argentina, “Relevamiento de la Industria de la Celulosa y el Papel 2020,” Jul. 2022. Accessed: Oct. 06, 2022. [Online]. Available: <a href="https://www.magyp.gob.ar/sitio/areas/desarrollo-foresto-industrial/foresto-industria/_archivos//000001_Informes%20Anuales%20de%20la%20Industria/000002_2020/002020_Relevamiento%20de%20la%20Industria%20de%20la%20Celulosa%20y%20el%20Papel%202020.pdf" target="_blank">https://www.magyp.gob.ar/sitio/areas/desarrollo-foresto-industrial/foresto-industria/_archivos//000001_Informes%20Anuales%20de%20la%20Industria/000002_2020/002020_Relevamiento%20de%20la%20Industria%20de%20la%20Celulosa%20y%20el%20Papel%202020.pdf</a>
   <br>[12]	K. Kuparinen, E. Vakkilainen, and T. Tynjälä, “Biomass-based carbon capture and utilization in kraft pulp mills,” Mitig Adapt Strateg Glob Change, vol. 24, no. 7, pp. 1213–1230, Oct. 2019, doi: 10.1007/s11027-018-9833-9.
@@ -76,6 +79,7 @@ var translations_es = {
   <br>[14]	Ministerio de Ambiente y Desarrollo Sostenible Argentina, “Cuarto Informe Bienal de Actualización de Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC),” 2021. Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://www4.unfccc.int/sites/SubmissionsStaging/NationalReports/Documents/3752416_Argentina-BUR4-1-4to%20Informe%20Bienal%20de%20la%20Rep%C3%BAblica%20Argentina.pdf" target="_blank">https://www4.unfccc.int/sites/SubmissionsStaging/NationalReports/Documents/3752416_Argentina-BUR4-1-4to%20Informe%20Bienal%20de%20la%20Rep%C3%BAblica%20Argentina.pdf</a>
   <br>[15]	Profertil, “Reporte de Sostenibilidad 2022.” Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://rs.profertil.com.ar/wp-content/uploads/2023/09/Reporte-de-Sostenibilidad-2022.pdf" target="_blank">https://rs.profertil.com.ar/wp-content/uploads/2023/09/Reporte-de-Sostenibilidad-2022.pdf</a>
   <br>[16]	Instituto Petroquímico Argentino (IPA), “Reporte Anual Instituto Petroquímico Argentino,” 2021. Accessed: Oct. 09, 2023. [Online]. Available: <a href="https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf" target="_blank">https://noticiasutnfrn.files.wordpress.com/2020/04/anuario-ipa-2019.pdf</a>
+  <br>[17] 2006 IPCC Guidelines for National Greenhouse Gas Inventories. Chapter 2: Stationary Combustion. Tabla 2.2. Publications - IPCC-TFI (iges.or.jp)
   `,
   download_text: `Descargar los datos`,
   download_csv: `Descargar las fuentes de CO₂ en Argentina (csv)`,
