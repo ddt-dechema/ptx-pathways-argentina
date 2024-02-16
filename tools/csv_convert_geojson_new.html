@@ -677,11 +677,13 @@
             
             let k = 0;
             for (let i = 1; i < industry_types.length; i++) {
-                $('#industry_type-'+i).append(industry_types[i-1]);
-			
-                if ($('#industry_type-'+i).text() != $('#industry_type-'+i).next('td').text()) {
-                    $('#industry_type-'+i).addClass('table-danger');
-                }
+                (function ($) {
+                    $('#industry_type-'+i).append(industry_types[i-1]);
+
+                    if ($('#industry_type-'+i).text() != $('#industry_type-'+i).next('td').text()) {
+                        $('#industry_type-'+i).addClass('table-danger');
+                    }
+                })(jQuery);
 			}
             
             // 
@@ -690,26 +692,34 @@
             $('#MissingEmissionsTotal').html(zeroEmissionRows.length);
 
             for (let i = 0; i < zeroEmissionRows.length; i++) {
-                $('#MissingEmissionsTable').append(
-                    '<tr>\
-                        <td>'+zeroEmissionRows[i]+'</td>\
-                       </tr> '
-                    );
+                (function ($) {
+                    $('#MissingEmissionsTable').append(
+                        '<tr>\
+                            <td>'+zeroEmissionRows[i]+'</td>\
+                            </tr> '
+                            );
+                })(jQuery);
             };
 
 			// Log rows without coordinates
-            $('#MissingCoordinatesTotal').html(invalidRows.length);
+            (function ($) {
+                $('#MissingCoordinatesTotal').html(invalidRows.length);
+            })(jQuery);
 
             for (let i = 0; i < invalidRows.length; i++) {
-                $('#MissingCoordinatesTable').append(
-                    '<tr>\
+                (function ($) {
+                    $('#MissingCoordinatesTable').append(
+                        '<tr>\
                         <td>'+invalidRows[i]+'</td>\
-                       </tr> '
+                        </tr> '
                     );
+                })(jQuery);
             };
             
             // Show the modal with the information
-            $('#btn-show-modal').click();
+            (function ($) {
+                $('#btn-show-modal').click();
+            })(jQuery);
 
             console.log('Rows without coordinates:');
 			console.log(invalidRows);
