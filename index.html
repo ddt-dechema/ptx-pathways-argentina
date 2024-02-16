@@ -20,50 +20,6 @@
 
 		<script src="assets/jquery-3.7.1.min.js"></script>
 
-		<script> 
-			$(document).ready(function () {
-				// idealerweise nur das ODER das in main.js nutzen ('DOMContentLoaded')
-
-				// $('#language_button_es').on("click", updateContent('es'));
-				// $('#language_button_en').on("click", updateContent('en'));
-				
-				// let lang;
-
-				// const urlParams = new URLSearchParams(window.location.search);
-				// if (urlParams.has('lang')) {
-				// 	lang = urlParams.get('lang');
-				// }
-				// console.log(lang);
-				// Now you can create the translations variable dynamically based on the selected language
-				
-				// Text immer zuerst default mäßig auf spanisch. 
-				// Und am Ende, wenn die Seite geladen ist, den Knopf drücken und umstellen
-
-				// let translations = window['translations_' + lang];
-				
-				// if (!translations) {
-				// 	// Handle cases where the selected language is not found
-				// 	lang = 'es';
-				// 	console.log('Language not found. Falling back to spanish.');
-				// 	translations = window['translations_' + lang];
-				// 	// console.log(translations)
-				// 	// window.location.replace("index.html?lang=es");
-				// }	
-
-				// let translations = window['translations_es'];
-
-				// updateContent('es'); 
-				// console.log(lang);
-
-				// der Übersetzer-Knopf ist default-mäßig auf spanisch="on" gestellt
-				// falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
-				// console.log(lang)
-				// if (lang == "en") {
-				// 	$('#language-toggle').click();
-				// }
-			});
-		</script> 
-
 		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 		<link rel="shortcut icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
 		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
@@ -358,9 +314,9 @@
 		<!-- <script src="vendor/leaflet.js" defer></script> -->
 		<script src="assets/leaflet.js"></script>
 		<script type="text/javascript" src="assets/leaflet.ajax.js"></script>
-		<script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.js"></script>
-		<link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
-		<script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
+		<script src="assets/maptiler-sdk.umd.js"></script>
+		<link href="assets/maptiler-sdk.css" rel="stylesheet" />
+		<script src="assets/leaflet-maptilersdk.js"></script>
 
 		<script src="assets/d3.min.js" defer></script>
 		<script src="assets/bulma-slider.min.js" defer></script>
