@@ -235,112 +235,126 @@ function updateContent(language) {
     // } else if (language==="en") {
     // 	$("#language_button_en").addClass('lang_active');
     // }
+    // in the context of wordpress, jQuery functionalities must be called like this:
 
-    $("#introduction_title").html(translations.introduction_title);
-    $("#introduction_text").html(translations.introduction_text);
-    $("#project").html(translations.project);	
-    $("#language_picker").html(translations.language_picker);	
-    $("#languge_switch_link").html(translations.languge_switch_link);	
+    // (function ($) {
+    // ... 
+    // code 
+    // ...
+    // })(jQuery);
+    
+    (function ($){
+        $("#introduction_title").html(translations.introduction_title);
+        $("#introduction_title").html(translations.introduction_title);
+        
+        $("#introduction_text").html(translations.introduction_text);
+        $("#project").html(translations.project);	
+        $("#language_picker").html(translations.language_picker);	
+        $("#languge_switch_link").html(translations.languge_switch_link);	
+        
+        $("#sidebar_title").html(translations.sidebar_title);
+        $("#filter_title").html(translations.filter_title);
+        $("#filter_text").html(translations.filter_text);
+        $("#filter_text").html(translations.filter_text);
+        
+        $("#manual_filter_title").html(translations.manual_filter_title);
 
-    $("#sidebar_title").html(translations.sidebar_title);
-    $("#filter_title").html(translations.filter_title);
-    $("#filter_text").html(translations.filter_text);
-    $("#filter_text").html(translations.filter_text);
-    
-    $("#manual_filter_title").html(translations.manual_filter_title);
-    $("#emission_type").html(translations.emission_type);
-    $("#toggle-industrial-button").html(translations.industrial_button);
-    $("#toggle-biogenic-button").html(translations.biogenic_button);
-    $("#only_selected_plants").html(translations.only_selected_plants);
-    $("#toggle-all-button").html(translations.deselect_all_button);
-    
-    $("#statistics_title").html(translations.statistics_title);
-    $("#statistics").html(translations.statistics);
-    $("#statistics_total").html(translations.statistics_total);		
-    $("#table_emissions_title").html(translations.table_emissions_title);		
-    
-    $("#circle_title").html(translations.circle_title);
-    $("#circle_size").html(translations.circle_size);
-    $("#zoom_factor").html(translations.zoom_factor);		
-    $("#scale_title").html(translations.scale_title);
-    $("#disclaimer_title").html(translations.disclaimer_title);
-    
-    // $("#ToIncludeIntroduction").load("introduction.html", function() {
-    // }); 
+        $("#emission_type").html(translations.emission_type);
+        $("#toggle-industrial-button").html(translations.industrial_button);
+        $("#toggle-biogenic-button").html(translations.biogenic_button);
+        $("#only_selected_plants").html(translations.only_selected_plants);
+        $("#toggle-all-button").html(translations.deselect_all_button);
+        
+        $("#statistics_title").html(translations.statistics_title);
+        $("#statistics").html(translations.statistics);
+        $("#statistics_total").html(translations.statistics_total);		
+        $("#table_emissions_title").html(translations.table_emissions_title);		
+        
+        $("#circle_title").html(translations.circle_title);
+        $("#circle_size").html(translations.circle_size);
+        $("#zoom_factor").html(translations.zoom_factor);		
+        $("#scale_title").html(translations.scale_title);
+        $("#disclaimer_title").html(translations.disclaimer_title);
+        
+        // $("#ToIncludeIntroduction").load("introduction.html", function() {
+        // }); 
 
-    // $("#ToIncludeData").load("data.html", function() {
-    // }); 
-    $("#data_title").html(translations.data_title);
-    $("#methods").html(translations.methods);
-    $("#sources").html(translations.sources);			
-    $("#download_text").html(translations.download_text);
-    $("#download_csv").html(translations.download_csv);
-    $("#download_geojson").html(translations.download_geojson);		
+        // $("#ToIncludeData").load("data.html", function() {
+        // }); 
+        $("#data_title").html(translations.data_title);
+        $("#methods").html(translations.methods);
+        $("#sources").html(translations.sources);			
+        $("#download_text").html(translations.download_text);
+        $("#download_csv").html(translations.download_csv);
+        $("#download_geojson").html(translations.download_geojson);		
 
-    $("#map_programming").html(translations.map_programming);	
-    $("#contact").html(translations.contact);
-    $("#disclaimer").html(translations.disclaimer);
-    $("#legal").html(translations.legal);
-    
-    // update button and table texts, which are generated in main.js
-    // here, classes are used, because the button texts and the rows in the table, where total emissions are calculated
-    // are updated to the same text.
-    $('.button-Aluminium').html(translations.button_Aluminium);
-    $('.button-Steel').html(translations.button_Steel);
-    $('.button-cement').html(translations.button_cement);
-    $('.button-refinery').html(translations.button_refinery);
-    $('.button-thermal').html(translations.button_thermal);
-    $('.button-ammonia').html(translations.button_ammonia);
-    $('.button-etileno').html(translations.button_etileno);
-    $('.button-methanol').html(translations.button_methanol);
-    $('.button-bioethanol').html(translations.button_bioethanol);
-    $('.button-biogas').html(translations.button_biogas);
-    $('.button-paper').html(translations.button_paper);
-    $('.button-biomass').html(translations.button_biomass);
+        $("#map_programming").html(translations.map_programming);	
+        $("#contact").html(translations.contact);
+        $("#disclaimer").html(translations.disclaimer);
+        $("#legal").html(translations.legal);
+        
+        // update button and table texts, which are generated in main.js
+        // here, classes are used, because the button texts and the rows in the table, where total emissions are calculated
+        // are updated to the same text.
+        $('.button-Aluminium').html(translations.button_Aluminium);
+        $('.button-Steel').html(translations.button_Steel);
+        $('.button-cement').html(translations.button_cement);
+        $('.button-refinery').html(translations.button_refinery);
+        $('.button-thermal').html(translations.button_thermal);
+        $('.button-ammonia').html(translations.button_ammonia);
+        $('.button-etileno').html(translations.button_etileno);
+        $('.button-methanol').html(translations.button_methanol);
+        $('.button-bioethanol').html(translations.button_bioethanol);
+        $('.button-biogas').html(translations.button_biogas);
+        $('.button-paper').html(translations.button_paper);
+        $('.button-biomass').html(translations.button_biomass);
 
-    $('#table_header_industry_type').html(translations.table_header_industry_type);
-    $('#table_header_total_emissions').html(translations.table_header_total_emissions);
-    // console.log('updatedContent: ' + language)
-}
-    
+        $('#table_header_industry_type').html(translations.table_header_industry_type);
+        $('#table_header_total_emissions').html(translations.table_header_total_emissions);
+        // console.log('updatedContent: ' + language)
+    })(jQuery);
+};
 
-$('#language-toggle').on('click', function(){
-    // let zoomlevel = map.getZoom();
-    // let center = map.getCenter();
-    // let style=getActiveLayers();
-    // console.log(style)
-    // console.log('current language before click: ' + lang);
-    // console.log('lang_init: ' + lang_init)
-    // if (lang_init !="es" && lang_init != 'null') {
-    //     updateContent(lang_init)    
-    //     lang_init='null';
-    //     console.log('lang_init: '+ lang_init)
-    //     console.log(typeof(lang_init))
-    // } 
-    //     if (lang_init!="en" || lang_init != "es") {
-    // 
-    // }
-    // else {
-    if (lang==="en") {
-        updateContent("es"); 
-        lang="es";
-    // Change Map Labels to language as well	
-    // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
-    // Dadurch ist ein Reload nicht mehr notwendig
-    // showMap('reload', lang, zoomlevel, center, style);
-    // toggleAllLayers();
-    } else if (lang==="es") {
-        updateContent("en"); 
-        lang="en";
-        // Change Map Labels to language as well
+(function ($) {
+    $('#language-toggle').on('click', function(){
+        // let zoomlevel = map.getZoom();
+        // let center = map.getCenter();
+        // let style=getActiveLayers();
+        // console.log(style)
+        // console.log('current language before click: ' + lang);
+        // console.log('lang_init: ' + lang_init)
+        // if (lang_init !="es" && lang_init != 'null') {
+        //     updateContent(lang_init)    
+        //     lang_init='null';
+        //     console.log('lang_init: '+ lang_init)
+        //     console.log(typeof(lang_init))
+        // } 
+        //     if (lang_init!="en" || lang_init != "es") {
+        // 
+        // }
+        // else {
+        if (lang==="en") {
+            updateContent("es"); 
+            lang="es";
+        // Change Map Labels to language as well	
         // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
         // Dadurch ist ein Reload nicht mehr notwendig
         // showMap('reload', lang, zoomlevel, center, style);
         // toggleAllLayers();
-    }
-    // }
-    // console.log('current language after click: ' + lang);
-});
+        } else if (lang==="es") {
+            updateContent("en"); 
+            lang="en";
+            // Change Map Labels to language as well
+            // Auf Wunsch vom PtX Hub soll ausschließlich die spanischen Beschriftung angezeigt werden
+            // Dadurch ist ein Reload nicht mehr notwendig
+            // showMap('reload', lang, zoomlevel, center, style);
+            // toggleAllLayers();
+        }
+        // }
+        // console.log('current language after click: ' + lang);
+    });
+})(jQuery);
+
 
 ////////////////////////////////////////////////////
 //
@@ -2437,7 +2451,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // falls jemand die Seite aber initial auf englisch aufruft, muss das natürlich einmal umgestellt werden
     // console.log('DOMContent: lang ' + lang)
     if (lang=="en") {
-        $('#language-toggle').prop('checked', true);
+        (function ($) {
+            $('#language-toggle').prop('checked', true);
+        })(jQuery);
         updateContent('en');
     } else {
         updateContent('es');
