@@ -4,7 +4,6 @@ var table_selected = document.getElementById('table-selected-emissions');
 
 // Define a GeoJSON URL
 var geojsonURL = 'argentina_emissions.geojson';
-// var geojsonURL = 'argentina_emissions_20240117.geojson';
 
 // not necessary anymore - only one layer
 // var activeLayers; // Declare a variable to hold the active map layers
@@ -31,7 +30,7 @@ var allLayers = [
         { name_en: 'Aluminium', name_es: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
         { name_en: 'Steel', name_es: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
         { name_en: 'Cement', name_es: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
-        { name_en: 'Pulp and Paper', name_es: 'Celulosa y papel', name: 'Pulp and paper', id: 'button-paper', industry: 'industrial'},
+        { name_en: 'Pulp and Paper', name_es: 'Celulosa y papel', name: 'Pulp and Paper', id: 'button-paper', industry: 'industrial'},
         { name_en: 'Refineries', name_es: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
         { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas fuentes fósiles', name: 'Fossil Thermal Power Plant', id: 'button-thermal', industry: 'industrial'},
         { name_en: 'Biogas Power Plant', name_es: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
@@ -2487,6 +2486,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // console.log('total Emissions Steel',totalEmissions['Steel'])
             }   
         });
+        
         // console.log(totalEmissions)
         // Create an HTML table to display the aggregated data
         
@@ -2512,9 +2512,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         for (let i = 0; i < allLayers.length; i++) {
             const industryValue = allLayers[i]['name'];
-            var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
+
+            if(totalEmissions[industryValue]) {
+
+                var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
                 });
                 let industry_lang;
                 if(lang=="en") {
@@ -2524,9 +2527,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     industry_lang = allLayers.find(item => item.name === industryValue)?.name_es;
                 }
                 let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
-            // console.log(industry_short)
-            table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
-            + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+
+                table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
+                + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+            } else {
+                console.log(industryValue + ' could not be found in the geojson.')
+            }
         }
         
         // for (var industry in totalEmissions) {
@@ -2579,8 +2585,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         loadGlobalDefs();
         createScale(1); 
         loadGlobalDefs();
-
-        
     })
     .catch(error => {
         console.error(`Error loading GeoJSON data: ${error}`);
