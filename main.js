@@ -87,7 +87,7 @@ let baseColors = {
         "Steel": "rgb(113, 184, 210, 0.8)",
         "Cement": "rgb(113, 184, 210, 0.6)",
         
-        "Pulp and paper": "rgb(209, 146, 198, 1)",
+        "Pulp and Paper": "rgb(209, 146, 198, 1)",
         
         "Refinery": "rgb(164, 146, 220, 1)",
         "Fossil Thermal Power Plant": "rgb(164, 146, 220, 0.8)",
