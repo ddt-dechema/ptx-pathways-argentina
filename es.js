@@ -61,7 +61,9 @@ var translations_es = {
   <br><b>Thermoeléctricas Biogás</b>
   <br>A partir de datos obtenidos de CAMMESA [13], se identificaron las plantas de biogás que producen energía eléctrica y se encuentran conectadas al Sistema Argentino de Interconexión (SADI), y su respectiva potencia instalada (MW). El factor de emisión fue estimado en 18 toneladas de CO2 por día por MW instalado. 
   <br><b>Bioetanol</b>
-  <br>Valor estimado con la capacidad instalada de cada planta, un factor de emisión de 1,053 toneladas de CO2 por toneladas de bioetanol y una producción del 80% de la capacidad instalada.`,
+  <br>Valor estimado con la capacidad instalada de cada planta, un factor de emisión de 1,053 toneladas de CO2 por toneladas de bioetanol y una producción del 80% de la capacidad instalada.
+  <br><b></b>
+  <br>A partir de datos obtenidos de CAMMESA [13], se identificaron las centrales de biomasa productoras de energía eléctrica conectadas al Sistema Argentino de Interconexión (SADI) y su respectiva energía eléctrica generada (MWh). El factor de emisión se estimó en base a [17], utilizando 112.000 kg CO<sub>2</sub>/TJ por energía térmica a partir de biomasa y 40% de eficiencia eléctrica.`,
   sources: `<h3>Literatura</h3>
   [1]	“Aluar en cifras.” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32" target="_blank">https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32</a>
   <br>[2]	MAyDS, “Informe Nacional de Inventario del Cuarto Informe Bienal de Actualización de la República Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC).” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf" target="_blank">https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf</a>

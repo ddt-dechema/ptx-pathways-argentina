@@ -63,7 +63,7 @@ var translations_en = {
   <br><b>Bioethanol</b>
   <br>Estimated value with the installed capacity of each plant, an emission factor of 1.053 tonnes of CO2 per tonne of bioethanol and a production of 80% of the installed capacity.
   <br><b>Biomass power plant</b>
-  <br>Based on data obtained from CAMMESA [13], biomass plants that produce electricity and are connected to the Argentine Interconnection System (SADI) and their respective electrical energy generated (MWh) were identified. The emission factor was estimated based on [17], using 112,000 kg CO2/TJ by thermal energy from biomass and 40% of electrical efficiency.`,
+  <br>Based on data obtained from CAMMESA [13], biomass plants that produce electricity and are connected to the Argentine Interconnection System (SADI) and their respective electrical energy generated (MWh) were identified. The emission factor was estimated based on [17], using 112,000 kg CO<sub>2</sub>/TJ by thermal energy from biomass and 40% of electrical efficiency.`,
   sources: `<h3>Literature</h3>
   [1]	“Aluar en cifras.” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32" target="_blank">https://www.aluar.com.ar/seccion/descripci-n-de-la-empresa/2/32</a>
   <br>[2]	MAyDS, “Informe Nacional de Inventario del Cuarto Informe Bienal de Actualización de la República Argentina a la Convención Marco de las Naciones Unidas para el Cambio Climático (CMNUCC).” Accessed: Sep. 20, 2023. [Online]. Available: <a href="https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf" target="_blank">https://unfccc.int/sites/default/files/resource/Informe%20Nacional%20de%20Inventario%20del%20IBA%204.pdf</a>
