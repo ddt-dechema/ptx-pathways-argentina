@@ -18,26 +18,25 @@ This online map uses various 3rd party libraries. Some of those are to display t
 * [leaflet](https://leafletjs.com/) is an open-source JavaScript library for mobile-friendly interactive maps. The whole map is based on leaflet. 
 The [sidebar2 plugin](https://github.com/noerw/leaflet-sidebar-v2) is used on top, to create to sidebar, which is a free software and can be redistributed under the MIT license, as described [here](https://github.com/Leaflet/Leaflet/blob/main/LICENSE).
 The associated and necessary files for them to work are found in the folder `/assets`
-    * /leaflet.js
-    * /leaflet.css
-    * /leaflet-sidebar2.min.js
-    * /leaflet-sidebar2.min.css
+    * `/leaflet.js`
+    * `/leaflet.css`
+    * `/leaflet-sidebar2.min.js`
+    * `/leaflet-sidebar2.min.css`
 
 * [bootstrap v5.0](https://getbootstrap.com/docs/5.0/components/buttons/#outline-buttons) is a framework to build the responsive sites, which includes styling of text, buttons, forms etc. it is released under the MIT license and is copyright 2021 Twitter. The usage is possible due to the following condititions listed [here](https://getbootstrap.com/docs/5.0/about/license/). The files used are listed here:
-    * /bootstrap.min.css
-    * /bootstrap.bundle.min.js
+    * `/bootstrap.min.css`
+    * `/bootstrap.bundle.min.js`
 
 * Alternatively, in a previous version of the map, bulma is used as a CSS framework. Its source code is licensed under MIT, described [here](https://github.com/jgthms/bulma/blob/master/LICENSE).
 The main framework and the extensions are listed below:
 The associated and necessary files for them to work are found in the folder `/assets`.
-    * /bulma.min.css and /bulma-slider.min.css where downloaded from [here](https://bulma.io/)
-    * /bulma-slider.min.js is a [bulma extension](https://wikiki.github.io/form/slider/)
+    * `/bulma.min.css` and `/bulma-slider.min.css` where downloaded from [here](https://bulma.io/)
+    * `/bulma-slider.min.js` is a [bulma extension](https://wikiki.github.io/form/slider/)
 
 * [jQuery](https://jquery.com/) is a JavaScript library, which makes many common JS events, animations, etc. simpler to use and handle. For this map, version 3.7.1 is used. The jQuery library is [licensed](https://jquery.com/license/) under MIT terms.
-    * /jquery-3.7.1.min.js
+    * `/jquery-3.7.1.min.js`
 
-* [maptiler](https://www.maptiler.com/) is a map service provider but also software development company. It is used as a cloud hoster for this online map and provides the map tiles. The tiles contain information about the map itself, e.g. the styles, like if they should display a satellite version, whether water is depicted in blue and landscapes in green, or how hills are shown, but also contain datasets, such as names of countrys, border lines, but also.
-The files used to display . The tiles were downloaded from a cdn initially.
+* [maptiler](https://www.maptiler.com/) is a map service provider but also software development company. It is used as a cloud hoster for this online map and provides the map tiles. The tiles contain information about the map itself, e.g. the styles, like if they should display a satellite version, whether water is depicted in blue and landscapes in green, or how hills are shown, but also contain datasets, such as names of countrys, border lines. The tiles were downloaded from a cdn initially.
 The similarities and differences between maps, tiles and data are described on their own [website](https://documentation.maptiler.com/hc/en-us/articles/4405446399505-Maps-Tiles-Data-What-are-they-and-how-do-they-differ).
 
     For the current version of the carbon sources in Argentina, a personal account was created. After the login, each user receives a so-called API-key, which is included in the `main.js` file. In this file, one can also decide, which "style" to  be used. The current version uses `bright`.
@@ -46,14 +45,14 @@ The similarities and differences between maps, tiles and data are described on t
     When the quote is reached on this free plan, the service will halt until the next month.
 
     As an example: in January 2024, when the map was shown to other colleagues within GIZ, the number of requests and sessions went up to 325 and 942, respectively.
-    If one would want to increase this numbers to make sure that it will always be available, a flex and unlimited plan of maptiler is also available (currently going for 25 USD or 295 USD per month).
+    If one would want to increase this numbers to make sure that it will always be available, a `Flex` and an `Unlimited` plan of maptiler is also available (currently going for 25 USD or 295 USD per month).
 
     The files from maptiler which are necessary for the map to work are listed below:
-    * assets/maptiler-sdk.umd.js and assets/maptiler-sdk.css were downloaded from the [github source](https://github.com/maptiler/maptiler-sdk-js) 
-    * assets/leaflet-maptilersdk.js is a plugin to make leaflet and maptiler compatible and was downloaded from [here](https://docs.maptiler.com/leaflet/)
+    * `assets/maptiler-sdk.umd.js` and `assets/maptiler-sdk.css` were downloaded from the [github source](https://github.com/maptiler/maptiler-sdk-js) 
+    * `assets/leaflet-maptilersdk.js` is a plugin to make leaflet and maptiler compatible and was downloaded from [here](https://docs.maptiler.com/leaflet/)
 
 * [d3](https://d3js.org/) is a JavaScript library for data visualization. In this map, it is used to display the circles and calculate the sizes according to the carbon source. It is also used to show the numbers in a uniform format, regarding comma and dot separation. The license to use this library is described [here] (https://github.com/d3/d3/blob/main/LICENSE).
-    * /d3.min.js
+    * `assets/d3.min.js` is the file used for this map
 
 * For the self-built converter from CSV to geojson, additionally to some of the libraries mentioned above, the CSV2geojson library is used, which source code is avilable on [github](https://github.com/mapbox/csv2geojson) and licensed under MIT terms. 
     * The only file required for this is saved under `assets/` as `csv2geojson_new.js`.
