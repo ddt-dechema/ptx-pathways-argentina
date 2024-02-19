@@ -10,8 +10,10 @@
 		<link href="assets/leaflet.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/leaflet-sidebar2.min.css" />
 		<!-- A CSS framework for easy styling -->
-		<link href="assets/bulma.min.css" rel="stylesheet" />
+		<!-- <link href="assets/bulma.min.css" rel="stylesheet" /> -->
 		<!-- <link href="assets/bulma-slider.min.css" rel="stylesheet" /> -->
+		<link href="assets/bootstrap.min.css" rel="stylesheet">
+		<script src="assets/bootstrap.bundle.min.js"></script>
 
 		<!-- <link href="vendor/introjs.min.css" rel="stylesheet" /> -->
 		<!-- Boring layer selection <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.min.css" integrity="sha256-2nki7eLxn91r/RI3QQq+ArnIltknk6gz4wSoQHFrJnA=" crossorigin="anonymous" /> -->
@@ -23,7 +25,7 @@
 		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 		<link rel="shortcut icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
 		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-		<link rel="icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
+		<link rel="icon" href="img/cropped-PtX-Hub_favicon-192x192.png	" type="image/x-icon">
 	</head>
 
 	<body>
@@ -224,21 +226,23 @@
 					<div class="filterGroup">
 						<p id="emission_type">Types of CO<sub>2</sub> emissions:</p>
 						<div class="buttons" id="gas-type-buttons">
-							<a id="toggle-industrial-button" class="button is-activated is-small">
+							<a id="toggle-industrial-button" class="btn btn-sm button is-activated is-small">
 								<span>industrial/energetic sources</span></a>
-							<a id="toggle-biogenic-button" class="button is-activated is-small">
+							<a id="toggle-biogenic-button" class="btn btn-sm button is-activated is-small">
 								<span>biogenic sources</span></a>
 						</div>
 					</div>
 					<div class="filterGroup">
 						<div>
 							<span class="is-pulled-left" id="only_selected_plants">Only selected plant types: </span>
-							<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;"><a
-									class="button is-small" id="toggle-all-button">Deselect all</a></span>
-							<span class=" is-clearfix"></span>
+							<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;">
+								<a class="button is-small btn btn-sm btn-outline-secondary" id="toggle-all-button">Deselect all</a>
+								</span>
+							<span class=" is-clearfix"></span><br><br>
 						</div>
 						<!-- <div class="buttons" id="nace-categories"></div> -->
-						<div id="button-container"></div>
+						<div id="button-container"  class="d-grid gap-2">
+						</div>
 					</div>
 					<div> 
 						<h2 id="statistics_title">Statistics</h2>
@@ -313,7 +317,7 @@
 
 		<!-- <script src="vendor/leaflet.js" defer></script> -->
 		<script src="assets/leaflet.js"></script>
-		<script type="text/javascript" src="assets/leaflet.ajax.js"></script>
+		<!-- <script type="text/javascript" src="assets/leaflet.ajax.js"></script> -->
 		<script src="assets/maptiler-sdk.umd.js"></script>
 		<link href="assets/maptiler-sdk.css" rel="stylesheet" />
 		<script src="assets/leaflet-maptilersdk.js"></script>

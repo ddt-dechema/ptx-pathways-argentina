@@ -184,7 +184,7 @@ allLayers.forEach(data => {
     button.id = data.id;
   
     // Add a class for styling (if needed)
-    button.classList.add('custom-button-class', 'toggle-layer-button', 'button', 'is-fullwidth');
+    button.classList.add('btn', 'btn-block', 'custom-button-class', 'toggle-layer-button', 'button', 'is-fullwidth', );
     button.classList.add(data.id);
   
     // Set the button's background color from the data
