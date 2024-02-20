@@ -689,6 +689,9 @@ function showMap(reload, language, zoomlevel, center, style) {
 
     // in potana-dev gab es folgenden Teil
     // map.layout = { }
+    bounds = new L.LatLngBounds(new L.LatLng(13.721181, -33.134403), new L.LatLng(-58.777227, -96.623767));
+    // bounds = [14.555447, -29.003678],   // northeastern bounds
+        // [-58.777227, -96.623767]        // southwestern bounds
 
     /* Set up the map with initial center and zoom level */
     map = L.map('map', {
@@ -696,12 +699,14 @@ function showMap(reload, language, zoomlevel, center, style) {
         zoom: zoom, // roughly show Europe from 1 to 18 -- decrease to zoom out, increase to zoom in)
         scrollWheelZoom: false,
         zoomControl: false, // to put the zoom butons on the right
-        minZoom: 4, // damit man nicht zu weit rauszoomen kann
-        maxBounds: [    // damit man nicht nach links,rechts,oben, unten schieben kann
+        minZoom: 5,     // damit man nicht zu weit rauszoomen kann
+        maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
             // [-19.658649421657355, -80.40861805520363],
-            [11.8492524,-102.4750762],
-            [-56.5930829396799, -48.81193766169215]
-        ]
+            //     [11.8492524,-102.4750762],
+            //     [-56.5930829396799, -48.81193766169215]
+        // ],
+        maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
+                                // 0: bouncing back; 1: no panning at all possible
     })
 
     L.control.zoom({
