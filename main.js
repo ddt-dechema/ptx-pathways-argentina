@@ -22,6 +22,9 @@ var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
 
+// Declare counter for each type of industry
+var counts = [];
+
 // Group layers by source type
 var allLayers = [
         { name_en: 'Ammonia', name_es: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
@@ -30,9 +33,9 @@ var allLayers = [
         { name_en: 'Aluminium', name_es: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
         { name_en: 'Steel', name_es: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
         { name_en: 'Cement', name_es: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
-        { name_en: 'Pulp and Paper', name_es: 'Celulosa y papel', name: 'Pulp and Paper', id: 'button-paper', industry: 'industrial'},
+        { name_en: 'Pulp and Paper', name_es: 'Celulosa y Papel', name: 'Pulp and Paper', id: 'button-paper', industry: 'industrial'},
         { name_en: 'Refineries', name_es: 'Refinerías', name: 'Refinery', id: 'button-refinery', industry: 'industrial'},
-        { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas fuentes fósiles', name: 'Fossil Thermal Power Plant', id: 'button-thermal', industry: 'industrial'},
+        { name_en: 'Fossil Thermal Power Plant', name_es: 'Termoeléctricas Fuentes Fósiles', name: 'Fossil Thermal Power Plant', id: 'button-thermal', industry: 'industrial'},
         { name_en: 'Biogas Power Plant', name_es: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_en: 'Bioethanol', name_es: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
         { name_en: 'Biomass Power Plant', name_es: 'Termoeléctricas Biomasa', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'}
@@ -120,11 +123,19 @@ if (lang != "es" && lang != "en") {
 
 // Prepare tables for the data which will be loaded and can be filtered
 if (lang==="en") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industry</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th></tr>";
+    var table = "<table>\
+        <tr>\
+            <th id='table_header_industry_type'>Industry</th>\
+            <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th>\
+            <th style='text-align: right;' id='table_header_number_entries'>Number of Entries</th>\
+        </tr>";
 } else if (lang==="es") {
-    var table = "<table><tr><th id='table_header_industry_type'>Industria</th>\
-    <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th></tr>";
+    var table = "<table>\
+        <tr>\
+            <th id='table_header_industry_type'>Industria</th>\
+            <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th>\
+            <th style='text-align: right;' id='table_header_number_entries'>Número de entradas</th>\
+        </tr>";
 }
 
 // let buttonData;
@@ -311,6 +322,7 @@ function updateContent(language) {
 
         $('#table_header_industry_type').html(translations.table_header_industry_type);
         $('#table_header_total_emissions').html(translations.table_header_total_emissions);
+        $('#table_header_number_entries').html(translations.table_header_number_entries);
         // console.log('updatedContent: ' + language)
     })(jQuery);
 };
@@ -381,13 +393,16 @@ var toggleAllButton = document.getElementById('toggle-all-button'); // Replace w
 
 var toggleBiogenicButton = document.getElementById('toggle-biogenic-button'); // Replace with your button's ID
     toggleBiogenicButton.addEventListener('click', toggleBiogenicLayers);
-    toggleBiogenicButton.style.backgroundColor = emissionColors_D['biogenic'];
-    toggleBiogenicButton.style.color="white";
+    // toggleBiogenicButton.style.backgroundColor = emissionColors_D['biogenic'];
+    // toggleBiogenicButton.style.color="white";
+    toggleBiogenicButton.classList.add('toggle-biogenic-button');
+
 
 var toggleIndustrialButton = document.getElementById('toggle-industrial-button'); // Replace with your button's ID
     toggleIndustrialButton.addEventListener('click', toggleIndustrialLayers);
-    toggleIndustrialButton.style.backgroundColor = emissionColors_D['industrial'];
-    toggleIndustrialButton.style.color="white";
+    // toggleIndustrialButton.style.backgroundColor = emissionColors_D['industrial'];
+    // toggleIndustrialButton.style.color="white";
+    toggleIndustrialButton.classList.add('toggle-industrial-button');
 
 // Specify the property you want to find the maximum value for
 var propertyToFindMax = 'CO2_emissions_t';
@@ -522,6 +537,15 @@ function toggleAllLayers() {
         if(!biogenicLayersVisible) {
             toggleBiogenicLayers();
         }
+        if (lang==="es") {
+            document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Deselect all';
+        }
+        // // console.log('alle aus');
+        // document.getElementById("toggle-all-button").classList.add('btn-secondary');
+        // document.getElementById("toggle-all-button").classList.remove('btn-outline-secondary');
+
     } else 
     // wenn alle bereits zu sehen sind (und nicht nur ein Teil), dann alle ausschalten
     if(allLayersVisible) {  
@@ -531,7 +555,16 @@ function toggleAllLayers() {
         if(biogenicLayersVisible) {
             toggleBiogenicLayers();
         }
+        if (lang === "es") {
+            document.getElementById('toggle-all-button').text = 'Seleccionar todo';
+        } else if (lang==="en") {
+            document.getElementById('toggle-all-button').text = 'Select all';
+        }
+        // document.getElementById("toggle-all-button").classList.add('btn-outline-secondary');
+        // document.getElementById("toggle-all-button").classList.remove('btn-secondary');
+        // // console.log('alle an');
     }
+
 }
 
 function toggleIndustrialLayers() {
@@ -543,28 +576,41 @@ function toggleIndustrialLayers() {
             } else {
                 map.addLayer(layers[layerName]);
             }
-            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+            // document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "";
+            
+            let button_id = allLayers.find(item => item.name === layerName)?.id;
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").classList.add(button_id+'-outline');
         });
-        toggleIndustrialButton.style.backgroundColor="white";
-        toggleIndustrialButton.style.color="black";
+        // toggleIndustrialButton.style.backgroundColor="white";
+        // toggleIndustrialButton.style.color="black";
+        toggleIndustrialButton.classList.remove("toggle-industrial-button");
+        toggleIndustrialButton.classList.add("toggle-industrial-button-outline");
 
         if (lang === "es") {
             document.getElementById('toggle-all-button').text = 'Seleccionar todo';
         } else if (lang==="en") {
             document.getElementById('toggle-all-button').text = 'Select all';
         }
-
+        document.getElementById("toggle-all-button").classList.add('btn-outline-secondary');
+        document.getElementById("toggle-all-button").classList.remove('btn-secondary');
+        // console.log('alle an');
         allLayersVisible = false;
-        // TO DO DDT
-        // TOGGLE SELECT ALL BUTTON and the STATE 
-        // Also for the select all button
+        
     } else {
         industrialLayers.forEach(function (layerName) {
             map.addLayer(layers[layerName]);
-                document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = emissionTypeColors_D[layerName];
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = emissionTypeColors_D[layerName];
+
+            let button_id = allLayers.find(item => item.name === layerName)?.id;
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").classList.remove(button_id+'-outline');
+
         });
-        toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
-        toggleIndustrialButton.style.color="white";
+        toggleIndustrialButton.classList.remove("toggle-industrial-button-outline");
+        toggleIndustrialButton.classList.add("toggle-industrial-button");
+
+        // toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+        // toggleIndustrialButton.style.color="white";
     }
     industrialLayersVisible = !industrialLayersVisible; // Toggle the state
 
@@ -572,11 +618,15 @@ function toggleIndustrialLayers() {
         allLayersVisible = false;
     } else if (biogenicLayersVisible && industrialLayersVisible) {
         allLayersVisible = true;
+
         if (lang==="es") {
             document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
         } else if (lang==="en") {
             document.getElementById('toggle-all-button').text = 'Deselect all';
         }
+        document.getElementById("toggle-all-button").classList.remove('btn-outline-secondary');
+        document.getElementById("toggle-all-button").classList.add('btn-secondary');
+        // console.log('alle an');
     }
 }
 
@@ -589,25 +639,40 @@ function toggleBiogenicLayers() {
             } else {
                 map.addLayer(layers[layerName]);
             }
-            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+            // document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "white";
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = "";
+            let button_id = allLayers.find(item => item.name === layerName)?.id;
+            document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").classList.add(button_id+'-outline');
+
         });
-        toggleBiogenicButton.style.backgroundColor="white";
-        toggleBiogenicButton.style.color="black";
-        // TO DO DDT
+        // toggleBiogenicButton.style.backgroundColor="white";
+        // toggleBiogenicButton.style.color="black";
+        // toggleBiogenicButton.style.backgroundColor="";
+        toggleBiogenicButton.classList.remove("toggle-biogenic-button");
+        toggleBiogenicButton.classList.add("toggle-biogenic-button-outline");
+
+        // TOGGLE SELECT ALL BUTTON and the STATE
         allLayersVisible = false;
         if (lang==="es") {
             document.getElementById('toggle-all-button').text = 'Seleccionar todo';
         } else if (lang==="en") {
             document.getElementById('toggle-all-button').text = 'Select all';
         }
-        // TOGGLE SELECT ALL BUTTON and the STATE
+        document.getElementById("toggle-all-button").classList.add('btn-outline-secondary');
+        document.getElementById("toggle-all-button").classList.remove('btn-secondary');
+        // console.log('alle an');
     } else {
         biogenicLayers.forEach(function (layerName) {
             map.addLayer(layers[layerName]);
                 document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").style.backgroundColor = emissionTypeColors_D[layerName];
+                let button_id = allLayers.find(item => item.name === layerName)?.id;
+                document.querySelector("[data-layer=" + CSS.escape(layerName) + "]").classList.remove(button_id+'-outline');
         });
-        toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
-        toggleBiogenicButton.style.color="white";
+        toggleBiogenicButton.classList.add("toggle-biogenic-button");
+        toggleBiogenicButton.classList.remove("toggle-biogenic-button-outline");
+        // toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
+        // toggleBiogenicButton.style.color="white";
+
     }
     biogenicLayersVisible = !biogenicLayersVisible; // Toggle the state
 
@@ -620,6 +685,9 @@ function toggleBiogenicLayers() {
         } else if (lang==="en") {
             document.getElementById('toggle-all-button').text = 'Deselect all';
         }
+        document.getElementById("toggle-all-button").classList.remove('btn-outline-secondary');
+        document.getElementById("toggle-all-button").classList.add('btn-secondary');
+        // console.log('alle an');
     }
 }
 
@@ -715,27 +783,28 @@ function showMap(reload, language, zoomlevel, center, style) {
 
     // The decision is to only take the bright (V1) as the default layer
     map.bright= L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
         apiKey: key,
         style:'bright', // we take this one
     }).addTo(map);
 
     // If other tiles should be used:
     // map.OSM = L.maptilerLayer({
-    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
     //     apiKey: key,
     //     style: 'openstreetmap', // optional
     // });
 
     // map.winter_v2 = L.maptilerLayer({
-    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
     //     apiKey: key,
     //     style: 'winter-v2', // optional
     // });
     
     // map.bright_v2 = L.maptilerLayer({
-    //     attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> PtX Pathways - Argentina</a>',
-    //     apiKey: key,
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+        // apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+
     //     style:'bright-v2',
     // })
 
@@ -1050,31 +1119,65 @@ function addCO2argentinaPopupHandler(feature) {
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
 		let thisNameCompany = feature.properties.Name 
         if (feature.properties.Company) {
-            thisNameCompany += "<br>("+feature.properties.Company+")";
+            thisNameCompany += " ("+feature.properties.Company+")";
         }
-        //if (feature.properties.co2Amount) otherEmission += formatSI(feature.properties.co2Amount) + ' Megatonnes CO<sub>2</sub>/year'
-		//if (feature.properties.coAmount) otherEmission += formatSI(feature.properties.coAmount) + ' Megatonnes CO/year'
-		//let thisEmission = formatSI(feature.properties.MTonnes) + ' Megatonnes '
-		//let color = translucidColor(nace[feature.properties.NACEMainEconomicActivityName].color)
-        return `<h2>
-                    ${thisNameCompany}
-                    <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
-                    <p><b>City: </b>
-                        <br>${feature.properties.City}</p>
-                    <p><b>Province: </b>
-                        <br>${feature.properties.Province}</p>
-                    <p><b>Industry:</b>
-                        <br>${feature.properties.Industry}<br>
-                        </p>
-                    <b>Emissions:</b>
-                        <br>${thisEmission}
-                    <p><b>Source of CO2 Emissions:</b> 
-                        <br>${feature.properties.Source_CO2_emissions}<br>
-                        </p>
-                    <p><b>Data Source:</b> 
-                        <br>${thisSource}<br>
-                        </p>
-                        </div>`;
+        let thisYear = feature.properties.year_emission ? feature.properties.year_emission : "N/A";
+
+        // return `<h2>${thisNameCompany}
+        //             <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
+        //         <h4><b>Type of Industry:</b></h4>
+        //             ${feature.properties.Industry}
+        //         <h5>Type of Emission</h5>
+        //             ${feature.properties.Source_CO2_emissions}
+        //             <p></p>
+        //             <hr>
+        //             <b>Emissions:</b>
+        //             <br>${thisEmission}
+        //             <br>
+        //             <br><b>Reference year</b>
+        //             <br>${thisYear}
+        //             <p><b>Data Source:</b> 
+        //                 <br>${thisSource}<br>
+        //             </p>
+        //             <hr>
+        //             <p><b>City: </b>
+        //                 <br>${feature.properties.City}</p>
+        //             <p><b>Province: </b>
+        //                 <br>${feature.properties.Province}</p>
+        //                 </div>`;
+        return `
+            <div class="">
+                <div class="card border-0">
+                    <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
+                        ${thisNameCompany}
+                    </h5>
+                    <div class="card-body ptxhub-background ptxhub-text">
+                        <b>Type of Industry:</b>
+                            <br>${feature.properties.Industry}
+                        
+                            <br><br><b class="card-title">Type of Emission</b>
+                            <br>${feature.properties.Source_CO2_emissions}
+
+                        <hr class="hr">
+
+                        <b>Emissions:</b>
+                            <br>${thisEmission}
+                            <br>
+                            <br><b>Reference year</b>
+                            <br>${thisYear}
+                            <p><b>Data Source:</b> 
+                                <br>${thisSource}<br>
+                            </p>
+                            
+                        <hr class="hr">
+                            
+                            <p><b>City: </b>
+                                <br>${feature.properties.City}</p>
+                            <p><b>Province: </b>
+                                <br>${feature.properties.Province}</p>
+                    </div>
+                </div>
+            </div>`;
 		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
 	} else {
 		console.log(feature);
@@ -1084,14 +1187,19 @@ function addCO2argentinaPopupHandler(feature) {
 // Function to toggle layer visibility
 function toggleLayer(layer, layerName, button_id, industryType) {
     button=button_id;
+    // console.log(button_id)
     if (map.hasLayer(layer)) {
         map.removeLayer(layer);
         // console.log(layer)
-        button.style.backgroundColor="white";
+        button.style.backgroundColor="";
+        // let button_name = button_id.id+"-outline";
+        button.classList.add(button_id.id+"-outline");
+
         if (industryType=="industrial") {
             industrialLayersVisible = false;
-            toggleIndustrialButton.style.backgroundColor="white";
-            toggleIndustrialButton.style.color="black";
+            // toggleIndustrialButton.style.backgroundColor="white";
+            // toggleIndustrialButton.style.color="black";
+            toggleIndustrialButton.classList.add('toggle-industrial-button');
         } else if (industryType=="biogenic") {
             biogenicLayersVisible = false;
             toggleBiogenicButton.style.backgroundColor="white";
@@ -1106,6 +1214,7 @@ function toggleLayer(layer, layerName, button_id, industryType) {
         
     } else {
         layer.addTo(map);
+        button.classList.remove(button_id.id+"-outline")
         button.style.backgroundColor = emissionTypeColors_D[layerName];
         
         // check if all layers are visible.
@@ -2484,13 +2593,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     totalEmissions[Industry] = 0;
                 // console.log('hi')
             }
+            
+            // count number of entries:
+            if (!counts[Industry]) {
+                counts[Industry] = 1;
+            } else {
+                counts[Industry]++;
+            }
+            
             totalEmissions[Industry] += emissions;
             // if(Industry=="Steel") {
                 // console.log('Industry',Industry)
                 // }
                 // console.log('total Emissions Steel',totalEmissions['Steel'])
-            }   
+            } 
         });
+        let sum = 0;
+        
+        for (k in counts) {
+            sum += counts[k];
+        }
+        // console.log(sum);
         
         // console.log(totalEmissions)
         // Create an HTML table to display the aggregated data
@@ -2534,7 +2657,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
 
                 table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
-                + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td></tr>";
+                + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td>"
+                + "<td style='text-align: right;'>" + counts[industryValue] + "</td></tr>";
             } else {
                 console.log(industryValue + ' could not be found in the geojson.')
             }
@@ -2566,7 +2690,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         formattedEmissions_selected = formattedEmissions_total;
 
-        table += "<tr><th>TOTAL: </th><th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th></tr></table>";       
+        table += "<tr><th>TOTAL: </th>\
+                <th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th>\
+                <th style='text-align: right;border-top: 1px solid;'>" + sum + "</th>\
+            </tr></table>";       
 
         // Display the table in a specific HTML element
         table_all.innerHTML = table;

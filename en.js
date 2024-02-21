@@ -112,16 +112,17 @@ var translations_en = {
   button_Steel: `Steel`,
   button_cement: `Cement`,
   button_refinery: `Refinery`,
-  button_thermal: `Fossil thermal power plant`,
+  button_thermal: `Fossil Thermal Power Plant`,
   button_ammonia: `Ammonia`,
   button_etileno: `Ethylene`,
   button_methanol: `Methanol`,
   button_bioethanol: `Bioethanol`,
-  button_biogas: `Biogas power plant`,
+  button_biogas: `Biogas Power Plant`,
   button_paper: `Pulp and Paper`,
-  button_biomass: `Biomass power plant`,
+  button_biomass: `Biomass Power Plant`,
   table_header_industry_type: `Industry`,
   table_header_total_emissions: `Total Emissions (Tonnes)`,
+  table_header_number_entries: `Number of Entries`,
 };
 
 // Export the translations object (for use in other scripts)

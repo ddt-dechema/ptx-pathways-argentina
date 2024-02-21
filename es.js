@@ -111,16 +111,17 @@ var translations_es = {
   button_Steel: `Acero`,
   button_cement: `Cemento`,
   button_refinery: `Refinerías`,
-  button_thermal: `Termoeléctricas fuentes fósiles`,
+  button_thermal: `Termoeléctricas Fuentes Fósiles`,
   button_ammonia: `Amoniaco`,
   button_etileno: `Etileno`,
   button_methanol: `Metanol`,
   button_bioethanol: `Bioetanol`,
   button_biogas: `Termoeléctricas Biogás `,
   button_biomass: `Termoeléctricas Biomasa`,
-  button_paper: `Celulosa y papel`,
+  button_paper: `Celulosa y Papel`,
   table_header_industry_type: `Industria`,
-  table_header_total_emissions: `Emisiones totales (toneladas)`
+  table_header_total_emissions: `Emisiones totales (toneladas)`,
+  table_header_number_entries: `Número de entradas`
 };
 
 // Export the translations object (for use in other scripts)

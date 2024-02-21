@@ -408,6 +408,18 @@
                 </div>
                 <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
             </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Year</b> (of emission)</label>
+                <!-- <div class="form-text" id="basic-addon4">whether it is estimated or data exists somewhere</div> -->
+
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Year of emission data" id="year_emission_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="15" id="year_emission_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
 
             <button type="button" class="btn btn-primary" id="convertButton">Convert to GeoJSON</button>
             <br>
@@ -466,8 +478,10 @@
             const lon_col_number = Number(document.getElementById('lon_col_number').value) - 1;
             const source_col_name = document.getElementById('source_col_name').value;
             const source_col_number = Number(document.getElementById('source_col_number').value) - 1;
+            const year_emission_col_name = document.getElementById('year_emission_col_name').value;
+            const year_emission_col_number = Number(document.getElementById('year_emission_col_number').value) - 1;
             const csv_separator = document.getElementById('csv_separator').value;
-            // console.log(csv_separator);
+            console.log(year_emission_col_name);
 
             const fileInput = document.getElementById('csvFile');
             const file = fileInput.files[0];
@@ -496,6 +510,8 @@
                         source_col_name,
                         lat_col_number,
                         lon_col_number,
+                        year_emission_col_name,
+                        year_emission_col_number,
                         csv_separator);
 			        // console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
@@ -581,6 +597,8 @@
             source_col_name,
             lat_col_number,
             lon_col_number,
+            year_emission_col_name,
+            year_emission_col_number,
             csv_separator
         ) {
 			// Split the CSV data into rows
@@ -595,6 +613,8 @@
             headerRow = headerRow.replace(city_col_name,"City");
             headerRow = headerRow.replace(province_col_name,"Province");
             headerRow = headerRow.replace(source_col_name,"Source");
+
+            headerRow = headerRow.replace(year_emission_col_name,"year_emission");
 			// Initialize an array to store valid rows
 			const validRows = [];
 			
