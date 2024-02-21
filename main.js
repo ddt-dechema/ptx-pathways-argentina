@@ -1146,7 +1146,7 @@ function addCO2argentinaPopupHandler(feature) {
         //                 <br>${feature.properties.Province}</p>
         //                 </div>`;
         return `
-            <div class="">
+            <div class="popup-content">
                 <div class="card border-0">
                     <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
                         ${thisNameCompany}
