@@ -39,7 +39,7 @@ var translations_es = {
   data_title: `Datos y fuentes`,
   methods: `<h2>Fuentes y metodología</h2>
   Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
-  <b>Aluminio</b>
+  <br><b>Aluminio</b>
   <br>Valor estimado con la capacidad de producción reportada en la página de Aluar [1], un factor de producción de 83% (promedio de la producción de cinco años relativa a la capacidad [1] y un factor de emisión de 1,6 toneladas de CO2 por toneladas de aluminio [2].
   <br><b>Acero</b>
   <br>Datos de capacidad de producción obtenidos de [3] y factores de emisión obtenidos de los reportes de sustentabilidad de las empresas productoras de acero [4]–[8].

@@ -1114,71 +1114,56 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";
-        // let thisEmission = Number(feature.properties.CO2_emissions_t/1000) + " kTonnes CO<sub>2</sub>/year";// let thisEmission = " kTonnes CO<sub>2</sub>/year";
+		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
 		let thisNameCompany = feature.properties.Name 
         if (feature.properties.Company) {
             thisNameCompany += " ("+feature.properties.Company+")";
         }
-        let thisYear = feature.properties.year_emission ? feature.properties.year_emission : "N/A";
-
-        // return `<h2>${thisNameCompany}
-        //             <span class="dot" style="background-color: ${emissionTypeColors_D[feature.properties.Industry]}"></span></h2>
-        //         <h4><b>Type of Industry:</b></h4>
-        //             ${feature.properties.Industry}
-        //         <h5>Type of Emission</h5>
-        //             ${feature.properties.Source_CO2_emissions}
-        //             <p></p>
-        //             <hr>
-        //             <b>Emissions:</b>
-        //             <br>${thisEmission}
-        //             <br>
-        //             <br><b>Reference year</b>
-        //             <br>${thisYear}
-        //             <p><b>Data Source:</b> 
-        //                 <br>${thisSource}<br>
-        //             </p>
-        //             <hr>
-        //             <p><b>City: </b>
-        //                 <br>${feature.properties.City}</p>
-        //             <p><b>Province: </b>
-        //                 <br>${feature.properties.Province}</p>
-        //                 </div>`;
-        return `
-            <div class="popup-content">
-                <div class="card border-0">
-                    <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
-                        ${thisNameCompany}
-                    </h5>
-                    <div class="card-body ptxhub-background ptxhub-text">
-                        <b>Type of Industry:</b>
-                            <br>${feature.properties.Industry}
-                        
-                            <br><br><b class="card-title">Type of Emission</b>
-                            <br>${feature.properties.Source_CO2_emissions}
-
-                        <hr class="hr">
-
-                        <b>Emissions:</b>
-                            <br>${thisEmission}
-                            <br>
-                            <br><b>Reference year</b>
-                            <br>${thisYear}
-                            <p><b>Data Source:</b> 
-                                <br>${thisSource}<br>
-                            </p>
-                            
-                        <hr class="hr">
-                            
-                            <p><b>City: </b>
-                                <br>${feature.properties.City}</p>
-                            <p><b>Province: </b>
-                                <br>${feature.properties.Province}</p>
-                    </div>
+        return `<div class="popup-content">
+            <div class="card border-0">
+                <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
+                    ${thisNameCompany}
+                </h5>
+                <div class="card-body ptxhub-background ptxhub-text">
+                    <b>Type of Industry</b>
+                    <br>${feature.properties.Industry}
+                    <br><b>Type of Emission</b> 
+                        <br>${feature.properties.Source_CO2_emissions}
+                <hr class="hr">
+                        <b>Emissions (Reference year)</b>
+                    <br>${thisEmission} (${feature.properties.year_emission ? feature.properties.year_emission : "N/A"})
+                    <br><b>Data Source:</b> 
+                        <br>${thisSource}
+                <hr class="hr">
+                    <p><b>City / Province </b>
+                        <br>${feature.properties.City?feature.properties.City:"N/A"} / ${feature.properties.Province}
                 </div>
-            </div>`;
-		// <br><br><a href="${feature.properties.FacilityDetails}" target="_blank">More Facility details on E-PRTR page</a>`
+            </div>
+        </div>`;
+        // Version with tables
+        // return `<div class="popup-content">
+        //     <div class="card border-0">
+        //         <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
+        //             ${thisNameCompany}
+        //         </h5>
+        //         <div class="card-body ptxhub-background ptxhub-text">
+        //             <table class="table table-hover table-custom">
+        //                 <tr><th>Type of Industry</th><td>${feature.properties.Industry}</td></tr>
+        //                 <tr><th>Type of Emission</td><td>${feature.properties.Source_CO2_emissions}</td></tr>
+        //             <tbody class="ptx-table-group-divider">
+        //                 <tr><th>Emissions</td><td>${thisEmission}</td></tr>
+        //                 <tr><th>Reference year</td><td>${feature.properties.year_emission ? feature.properties.year_emission : "N/A"}</td></tr>
+        //                 <tr><th>Data Source</td><td>${thisSource}</td></tr>
+        //             </tbody>
+        //             <tbody class="ptx-table-group-divider">
+        //                 <tr><th>City</td><td>${feature.properties.City?feature.properties.City:"N/A"}</td></tr>
+        //                 <tr><th>Province</td><td>${feature.properties.Province}</td></tr>
+        //             </tbody>
+        //             </table>
+
+        //     </div>
+        // </div>`;
 	} else {
 		console.log(feature);
 	}

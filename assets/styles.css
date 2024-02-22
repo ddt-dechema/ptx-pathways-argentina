@@ -558,3 +558,11 @@ hr {
   --bs-btn-disabled-border-color:var(--ptx-biogenic);
   --bs-gradient:none
 }
+
+.ptx-table-group-divider {
+  border-top: 2px solid var(--ptx-fourth-color);
+}
+
+.table-custom tr td, table tr th {
+  background-color: rgba(255,255,255 , 0) !important;
+}
