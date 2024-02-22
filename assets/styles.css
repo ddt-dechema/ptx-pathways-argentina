@@ -422,8 +422,8 @@ hr {
 .button-cement-outline {
   --bs-btn-color:var(--ptx-metals);
   --bs-btn-border-color:var(--ptx-metals);
-  --bs-btn-hover-color:#fff;
-  --bs-btn-hover-bg:var(--ptx-metals);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-metals); */
   --bs-btn-hover-border-color:var(--ptx-metals);
   --bs-btn-focus-shadow-rgb:13,110,253;
   --bs-btn-active-color:#fff;
@@ -439,8 +439,8 @@ hr {
 .button-paper-outline {
   --bs-btn-color:var(--ptx-paper);
   --bs-btn-border-color:var(--ptx-paper);
-  --bs-btn-hover-color:#fff;
-  --bs-btn-hover-bg:var(--ptx-paper);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-paper); */
   --bs-btn-hover-border-color:var(--ptx-paper);
   --bs-btn-focus-shadow-rgb:13,110,253;
   --bs-btn-active-color:#fff;
@@ -457,8 +457,8 @@ hr {
 .button-thermal-outline {
   --bs-btn-color:var(--ptx-others);
   --bs-btn-border-color:var(--ptx-others);
-  --bs-btn-hover-color:#fff;
-  --bs-btn-hover-bg:var(--ptx-others);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-others); */
   --bs-btn-hover-border-color:var(--ptx-others);
   --bs-btn-focus-shadow-rgb:13,110,253;
   --bs-btn-active-color:#fff;
@@ -476,8 +476,8 @@ hr {
 .button-biomass-outline {
   --bs-btn-color:var(--ptx-bio);
   --bs-btn-border-color:var(--ptx-bio);
-  --bs-btn-hover-color:#fff;
-  --bs-btn-hover-bg:var(--ptx-bio);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-bio); */
   --bs-btn-hover-border-color:var(--ptx-bio);
   --bs-btn-focus-shadow-rgb:13,110,253;
   --bs-btn-active-color:#fff;
