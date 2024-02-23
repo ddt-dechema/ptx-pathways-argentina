@@ -783,27 +783,27 @@ function showMap(reload, language, zoomlevel, center, style) {
 
     // The decision is to only take the bright (V1) as the default layer
     map.bright= L.maptilerLayer({
-        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
         apiKey: key,
         style:'bright', // we take this one
     }).addTo(map);
 
     // If other tiles should be used:
     // map.OSM = L.maptilerLayer({
-        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
     //     apiKey: key,
     //     style: 'openstreetmap', // optional
     // });
 
     // map.winter_v2 = L.maptilerLayer({
-        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
     //     apiKey: key,
     //     style: 'winter-v2', // optional
     // });
     
     // map.bright_v2 = L.maptilerLayer({
-        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
-        // apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub - Argentina</a>',
+        // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
+        // apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
 
     //     style:'bright-v2',
     // })

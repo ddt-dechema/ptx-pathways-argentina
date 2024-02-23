@@ -122,7 +122,7 @@ var translations_en = {
   button_biomass: `Biomass Power Plant`,
   table_header_industry_type: `Industry`,
   table_header_total_emissions: `Total Emissions (Tonnes)`,
-  table_header_number_entries: `Number of Entries`,
+  table_header_number_entries: `Number of plants`,
 };
 
 // Export the translations object (for use in other scripts)
