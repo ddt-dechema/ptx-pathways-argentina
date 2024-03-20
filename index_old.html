@@ -8,15 +8,10 @@
 		Allows the user to interactively filter the data to conclude on possible replication sites for the Carbon4PUR technology to transform CO and CO2 streams to polyurethanes.">
 		<!-- Load Leaflet: instructions at http://leafletjs.com/download.html -->
 		<link href="assets/leaflet.css" rel="stylesheet" />
-		<!-- <link href="assets/source-sans-pro-v13-latin-regular.woff2" rel='stylesheet' type='text/css'> -->
-		<link href="assets/styles.css" rel="stylesheet">
-
 		<link rel="stylesheet" href="assets/leaflet-sidebar2.min.css" />
 		<!-- A CSS framework for easy styling -->
-		<!-- <link href="assets/bulma.min.css" rel="stylesheet" /> -->
+		<link href="assets/bulma.min.css" rel="stylesheet" />
 		<!-- <link href="assets/bulma-slider.min.css" rel="stylesheet" /> -->
-		<link href="assets/bootstrap.min.css" rel="stylesheet">
-		<script src="assets/bootstrap.bundle.min.js"></script>
 
 		<!-- <link href="vendor/introjs.min.css" rel="stylesheet" /> -->
 		<!-- Boring layer selection <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.min.css" integrity="sha256-2nki7eLxn91r/RI3QQq+ArnIltknk6gz4wSoQHFrJnA=" crossorigin="anonymous" /> -->
@@ -28,7 +23,7 @@
 		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 		<link rel="shortcut icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
 		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-		<link rel="icon" href="img/cropped-PtX-Hub_favicon-192x192.png	" type="image/x-icon">
+		<link rel="icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
 	</head>
 
 	<body>
@@ -136,7 +131,7 @@
 
 		<!-- Size legend -->
 		<div id="scale">
-			<p id="scale_title">Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">MT</span>/year</p>
+			<h3 id="scale_title">Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">MT</span>/year</h3>
 			<svg></svg>
 		</div>
 
@@ -178,7 +173,7 @@
 			</div>
 
 			<!-- Tab panes -->
-			<div class="sidebar-content ptxhub-background" id="sidebarcontent">
+			<div class="sidebar-content" id="sidebarcontent">
 				<div class="sidebar-pane active" id="info-content">
 					<h1 class="sidebar-header" id="sidebar_title"> 
 						Sources of Carbon in Argentina
@@ -187,7 +182,6 @@
 							<use xlink:href="#icon-play3"></use></svg>
 					</span>
 					<!-- <div id="ToIncludeIntroduction"></div> -->
-					
 					<div id="introduction_title"></div>
 
 					<div id="introduction_text">Information on this map</div>
@@ -230,30 +224,28 @@
 					<div class="filterGroup">
 						<p id="emission_type">Types of CO<sub>2</sub> emissions:</p>
 						<div class="buttons" id="gas-type-buttons">
-							<a id="toggle-industrial-button" class="btn btn-sm button is-small">
+							<a id="toggle-industrial-button" class="button is-activated is-small">
 								<span>industrial/energetic sources</span></a>
-							<a id="toggle-biogenic-button" class="btn btn-sm button is-small">
+							<a id="toggle-biogenic-button" class="button is-activated is-small">
 								<span>biogenic sources</span></a>
 						</div>
 					</div>
 					<div class="filterGroup">
 						<div>
 							<span class="is-pulled-left" id="only_selected_plants">Only selected plant types: </span>
-							<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;">
-								<a class="button is-small btn btn-sm btn-secondary" id="toggle-all-button">Deselect all</a>
-								</span>
-							<span class=" is-clearfix"></span><br><br>
+							<span class="is-pulled-right" style="margin-top:-5px; margin-bottom:10px;"><a
+									class="button is-small" id="toggle-all-button">Deselect all</a></span>
+							<span class=" is-clearfix"></span>
 						</div>
 						<!-- <div class="buttons" id="nace-categories"></div> -->
-						<div id="button-container"  class="d-grid gap-2">
-						</div>
+						<div id="button-container"></div>
 					</div>
 					<div> 
 						<h2 id="statistics_title">Statistics</h2>
 						<div id="statistics"></div>
 							<table>
 								<tr>
-									<th id="table-selected-emissions" style="width: 135px;text-align: right;">123 </th>
+									<th id="table-selected-emissions" style="width: 135px;text-align: right;">xxxx </th>
 									<th id="statistics_total">Tonnes per year</td></th>
 								</tr>
 							</table>
@@ -321,7 +313,7 @@
 
 		<!-- <script src="vendor/leaflet.js" defer></script> -->
 		<script src="assets/leaflet.js"></script>
-		<!-- <script type="text/javascript" src="assets/leaflet.ajax.js"></script> -->
+		<script type="text/javascript" src="assets/leaflet.ajax.js"></script>
 		<script src="assets/maptiler-sdk.umd.js"></script>
 		<link href="assets/maptiler-sdk.css" rel="stylesheet" />
 		<script src="assets/leaflet-maptilersdk.js"></script>

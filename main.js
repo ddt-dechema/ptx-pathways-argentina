@@ -126,14 +126,14 @@ if (lang==="en") {
     var table = "<table>\
         <tr>\
             <th id='table_header_industry_type'>Industry</th>\
-            <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (Tonnes)</th>\
+            <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (kilotonnes)</th>\
             <th style='text-align: right;' id='table_header_number_entries'>Number of Entries</th>\
         </tr>";
 } else if (lang==="es") {
     var table = "<table>\
         <tr>\
             <th id='table_header_industry_type'>Industria</th>\
-            <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (toneladas)</th>\
+            <th style='text-align: right;' id='table_header_total_emissions'>Emisiones totales (kilotoneladas)</th>\
             <th style='text-align: right;' id='table_header_number_entries'>Número de entradas</th>\
         </tr>";
 }
@@ -227,6 +227,21 @@ function updateContent(language) {
     // $('#language_button_es, #language_button_en').removeClass('lang_active');
     
     let translations = window['translations_' + language];
+    let current_url = window.location.href;
+    console.log(lang)
+    if(!current_url.includes('lang')) {
+        current_url+="?lang="+lang;
+    }
+    console.log(current_url);
+    let url_en, url_es;
+    if (lang=="en") {
+        url_en=current_url;
+        url_es=current_url.replace('en','es');
+    } else if (lang=="es"){
+        url_es=current_url;
+        url_en=current_url.replace('es','en');
+    }
+    
     // console.log(translations)
     // if (!translations) {
     // 	// Handle cases where the selected language is not found
@@ -323,6 +338,10 @@ function updateContent(language) {
         $('#table_header_industry_type').html(translations.table_header_industry_type);
         $('#table_header_total_emissions').html(translations.table_header_total_emissions);
         $('#table_header_number_entries').html(translations.table_header_number_entries);
+
+        $('#link_english').attr('href', url_en);
+        $('#link_spanish').attr('href', url_es);
+
         // console.log('updatedContent: ' + language)
     })(jQuery);
 };
@@ -409,7 +428,8 @@ var propertyToFindMax = 'CO2_emissions_t';
 // Initialize a variable to store the maximum value
 var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
 // var maxEmissionsArgentina_Mt = -Infinity; // Start with negative infinity as an initial value
-var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
+// var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
+var maxRadius_kt = -Infinity; // Start with negative infinity as an initial value
 
 var radius_slider = document.getElementById('radius_slider');
 var radius_slider_output = document.getElementById('radius_slider_output');
@@ -421,7 +441,8 @@ radius_slider.addEventListener('input', function () {
     // Get the current slider value
     sliderValue = parseFloat(radius_slider.value);
 
-    maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue
+    // maxRadius_Mt=maxEmissionsArgentina/1000000 * sliderValue;
+    maxRadius_kt=maxEmissionsArgentina/1000 * sliderValue;
     radius_slider_output.innerHTML = sliderValue;    
     createScale(sliderValue);
 
@@ -500,7 +521,8 @@ function addGeoJSONLayer(filterValue) {
                         return L.circleMarker(latlng, {
                             // radius: feature.properties.Tonnes / 100000, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
                             // radius: Math.sqrt(feature.properties.CO2_emissions_t / maxEmissionsArgentina)*50, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.
-                            radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_Mt * 1000000) )*50*sliderValue, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.                            color: emissionTypeColors_D[filterValue],
+                            // radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_Mt * 1000000) )*50*sliderValue, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.                            color: emissionTypeColors_D[filterValue],
+                            radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_kt * 1000) )*50*sliderValue, // statt 37.6 sollte dort die totalMax der Emissionen stehen - hier wurde nun der Wert der E-PRTR Json genommen.                            color: emissionTypeColors_D[filterValue],
                             color: emissionTypeColors_D[filterValue],
                             /*fillColor: feature.properties.color,*/
                             fillColor: emissionTypeColors_D[filterValue],
@@ -918,10 +940,27 @@ function showMap(reload, language, zoomlevel, center, style) {
 // BASIC FUNCTIONS
 
 
+
 function loadGlobalDefs() {
+    var es = d3.formatDefaultLocale({
+        "decimal": ",",
+        "thousands": ".",
+        "grouping": [3],
+        "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
+      });
+
+    var en = d3.formatDefaultLocale({
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
+    });
     // show all numbers with 1,000.00 format
     format1Dec = d3.format(',.1f')
-    formatSI = d3.format(',.2f') // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
+    // formatSI = d3.format(',.2f') // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
+    formatSI = en.format(',.0f'); // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
+    formatSI_es = es.format(',.0f'); // spanish works with 100.000,00
+    format_nodecimal=d3.format('.1r'); // round to 1st number
 }
 
 /* create scale for the index.html */
@@ -941,13 +980,19 @@ let createScale = (sliderValue) => {
 
     var size = d3.scaleSqrt()
 		// .domain([0, maxEmissionsArgentina_Mt]) // What's in the data, min-max
-        .domain([0, maxRadius_Mt]) // What's in the data, min-max
+        // .domain([0, maxRadius_Mt]) // What's in the data, min-max
+        .domain([0, maxRadius_kt]) // What's in the data, min-max
         // .range([0, 45]) // Size in pixel
         .range([0, 50*sliderValue]) // Size in pixel
 	;
 	// Add legend: circles
-	var valuesToShow = [maxRadius_Mt/100, maxRadius_Mt/2.5, maxRadius_Mt]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
-	var xCircle = 55*sliderValue;
+	// var valuesToShow = [maxRadius_Mt/100, maxRadius_Mt/2.5, maxRadius_Mt]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
+    legend_valueone = format_nodecimal(maxRadius_kt/100);
+    legend_valuetwo = format_nodecimal(maxRadius_kt/2.5);
+    legend_valuethree = format_nodecimal(maxRadius_kt);
+    var valuesToShow = [legend_valueone, legend_valuetwo, legend_valuethree]; // [globalEmissionData.stats.totalMax / 100, globalEmissionData.stats.totalMax / 10, globalEmissionData.stats.totalMax]
+    
+    var xCircle = 55*sliderValue;
 	var xLabel = 120*sliderValue;
 	var yCircle = 100*sliderValue;
 	svg
@@ -1002,7 +1047,8 @@ let createScale = (sliderValue) => {
 			return yCircle - size(d);
 		})
 		.text(function(d) {
-			return format1Dec(d);
+			// return format1Dec(d);
+            return format_nodecimal(d);
 		}) // to display in Mt
 		.style("font-size", 10)
 		.attr('alignment-baseline', 'middle');
@@ -1114,8 +1160,14 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-		let thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
+        let thisEmission = 0;
+        if(lang=="es") {
+            thisEmission = formatSI_es(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
+        } else if (lang=="en") {
+            thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
+        }
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
+        
 		let thisNameCompany = feature.properties.Name 
         if (feature.properties.Company) {
             thisNameCompany += " ("+feature.properties.Company+")";
@@ -1392,12 +1444,19 @@ function getEmissionsSelected() {
         }
     })
 
-    formattedEmissions_selected = formattedEmissions_selected.toLocaleString('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-    });
+    // formattedEmissions_selected = formattedEmissions_selected.toLocaleString('en-US', {
+    // minimumFractionDigits: 0,
+    // maximumFractionDigits: 0
+    // });
 
-    table_selected.innerHTML=formattedEmissions_selected;
+    // formattedEmissions_selected = new Intl.NumberFormat('en-US', { style: 'decimal', maximumFractionDigits: 0, }).format(
+    //     formattedEmissions_selected,
+    //   ),
+    if(lang=="es") {
+        table_selected.innerHTML=formatSI_es(formattedEmissions_selected/1000);
+    } else if (lang=="en") {
+        table_selected.innerHTML=formatSI(formattedEmissions_selected/1000);
+    }
 
 };
 
@@ -2559,6 +2618,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     showMap();
 
+    // load formatSI
+    loadGlobalDefs();
+
     // Fetch the GeoJSON data from the URL
     fetch(geojsonURL)
     // console.log("fetched")
@@ -2628,10 +2690,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if(totalEmissions[industryValue]) {
 
-                var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                });
+                // var formattedEmissions = totalEmissions[industryValue].toLocaleString('en-US', {
+                //     minimumFractionDigits: 0,
+                //     maximumFractionDigits: 0
+                // });
+
+                // var formattedEmissions = new Intl.NumberFormat('en-US', { style: 'decimal', maximumFractionDigits: 0, }).format(
+                //     totalEmissions[industryValue],
+                //   )
+
+                if (lang=="es") {
+                    var formattedEmissions = formatSI_es(totalEmissions[industryValue]/1000);
+                } else if(lang=="en"){
+                    var formattedEmissions = formatSI(totalEmissions[industryValue]/1000);
+                }
+
                 let industry_lang;
                 if(lang=="en") {
                     industry_lang = allLayers.find(item => item.name === industryValue)?.name_en;
@@ -2668,11 +2741,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // console.log('totalEmissions_total: ',totalEmissions_total);
         }
         
-        formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
+        // formattedEmissions_total = totalEmissions_total.toLocaleString('en-US', {
+        //     minimumFractionDigits: 0,
+        //     maximumFractionDigits: 0
+        // });
+        // formattedEmissions_total = new Intl.NumberFormat('en-US', { style: 'decimal', maximumFractionDigits: 0, }).format(
+        //     totalEmissions_total,
+        //   ),
         
+        if(lang=="es") {
+            formattedEmissions_total = formatSI_es(totalEmissions_total/1000)
+        } else if (lang=="en") {
+            formattedEmissions_total = formatSI(totalEmissions_total/1000)
+        }
         formattedEmissions_selected = formattedEmissions_total;
 
         table += "<tr><th>TOTAL: </th>\
@@ -2694,14 +2775,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
             // console.log('current Max Emissions: '+maxEmissionsArgentina)
         });
-        maxRadius_Mt = maxEmissionsArgentina / 1000000;
-        // console.log(maxRadius_Mt)
-        // console.log("Maximum value of '" + propertyToFindMax + "': " + maxEmissionsArgentina);
-        // maxEmissionsArgentina_Mt = maxEmissionsArgentina/1000000
+        // maxRadius_Mt = maxEmissionsArgentina / 1000000;
+        maxRadius_kt = format_nodecimal(maxEmissionsArgentina/1000);
+        // maxRadius_kt = format_nodecimal(maxRadius_kt);   
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
-        loadGlobalDefs();
+        
         createScale(1); 
-        loadGlobalDefs();
     })
     .catch(error => {
         console.error(`Error loading GeoJSON data: ${error}`);

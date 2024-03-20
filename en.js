@@ -12,8 +12,8 @@ var translations_en = {
     In Argentina, the political partner is the Argentine Secretariat of Energy. The implementing partners are CEARE – Centro de Estudios de la Actividad Regulatoria Energética, Fundación Torcuato Di Tella (FTDT), Agora Energiewende and DECHEMA e.V.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
   languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
-  <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">inglés</a>
-  o <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">español</a>
+  <a id="link_english">inglés</a>
+  o <a id="link_spanish">español</a>
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different categories/sources of carbon`,
@@ -32,11 +32,11 @@ var translations_en = {
   
   statistics_title: `Statistics`,
   statistics: `Total emissions in Argentina for selected filters:`,
-  statistics_total: ` &nbsp;Tons of CO<sub>2</sub> per years`,
+  statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per years`,
   circle_title: `Change the circle size`,
   circle_size: `Use this control if you want to change the scale (size) of the circles in order to see on the map the sites with lower emissions.`,
   zoom_factor: `Zoom factor`,
-  scale_title: `Emissions in <span title="Megatonnes or 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">Mt</span>/year`,
+  scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
   methods: `<h2>Sources and Methodology</h2>
   This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below:
@@ -121,7 +121,7 @@ var translations_en = {
   button_paper: `Pulp and Paper`,
   button_biomass: `Biomass Power Plant`,
   table_header_industry_type: `Industry`,
-  table_header_total_emissions: `Total Emissions (Tonnes)`,
+  table_header_total_emissions: `Total Emissions (kilotonnes)`,
   table_header_number_entries: `Number of plants`,
 };
 

@@ -11,8 +11,8 @@ var translations_es = {
     En Argentina, el socio político es la Secretaría de Energía de Argentina. Los socios implementadores son CEARE – Centro de Estudios de la Actividad Reguladora Energética, Fundación Torcuato Di Tella (FTDT), Agora Energiewende y DECHEMA e.V.`,
   language_picker: `<h3>Change the language</h3>`,
   languge_switch_link: `If you want to link to the map in a specific language, use the 
-  <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=en">english</a>
-  or <a href="https://ddt-dechema.github.io/ptx-pathways-argentina/index.html?lang=es">spanish</a> link
+  <a id="link_english">english</a>
+  or <a id="link_spanish">spanish</a> link
   `,
   sidebar_header_filters: `Filtros`,
   filter_title: `Diferentes categorías/fuentes de carbono`,
@@ -31,11 +31,11 @@ var translations_es = {
 
   statistics_title: `Estadísticas`,
   statistics: `Emisiones totales en Argentina para los filtros seleccionados:`,
-  statistics_total: ` &nbsp;toneladas de CO<sub>2</sub> por año`,
+  statistics_total: ` &nbsp;kilotoneladas de CO<sub>2</sub> por año`,
   circle_title: `Cambiar la escala de los círculos`,
   circle_size: `Use este control si desea cambiar la escala (el tamaño) de los círculos para poder ver en el mapa los sitios con emisiones más bajas`,
   zoom_factor: `Factor de zoom`,
-  scale_title: `Emisiones en <span title="Megatonnes o 1&nbsp;000&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">Mt</span>/año`,
+  scale_title: `Emisiones en <span title="kilotonnes o 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/año`,
   data_title: `Datos y fuentes`,
   methods: `<h2>Fuentes y metodología</h2>
   Este mapa utiliza como base estimaciones, fuentes de información pública y específica de cada industria, e información adquirida a partir de consultas realizadas a algunas asociaciones, como se explica a continuación:
@@ -120,7 +120,7 @@ var translations_es = {
   button_biomass: `Termoeléctricas Biomasa`,
   button_paper: `Celulosa y Papel`,
   table_header_industry_type: `Industria`,
-  table_header_total_emissions: `Emisiones totales (toneladas)`,
+  table_header_total_emissions: `Emisiones totales (kilotoneladas)`,
   table_header_number_entries: `Número de plantas`,
 };
 
