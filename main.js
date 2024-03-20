@@ -720,7 +720,7 @@ function toggleBiogenicLayers() {
 //
 ////////////////////////////////////////////////////
 
-let map, format1Dec, formatSI,
+let map, formatSI, //format1Dec, 
     CO2globalButton = document.getElementById("CO2-global-button"),
     scale = document.getElementById("scale")
     CO2_argentinaButton = document.getElementById("CO2-argentina-button");
@@ -942,25 +942,33 @@ function showMap(reload, language, zoomlevel, center, style) {
 
 
 function loadGlobalDefs() {
-    var es = d3.formatDefaultLocale({
-        "decimal": ",",
-        "thousands": ".",
-        "grouping": [3],
-        "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
-      });
+    // var es = d3.formatDefaultLocale({
+    //     "decimal": ",",
+    //     "thousands": ".",
+    //     "grouping": [3],
+    //     "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
+    //   });
 
-    var en = d3.formatDefaultLocale({
+    // var en = d3.formatDefaultLocale({
+    //     "decimal": ".",
+    //     "thousands": ",",
+    //     "grouping": [3],
+    //     "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
+    // });
+
+    var format_own = d3.formatDefaultLocale({
         "decimal": ".",
-        "thousands": ",",
+        "thousands": " ",
         "grouping": [3],
         "currency": ["€", ""] //if you want a space between €-sign and number, add it here in the first string 
     });
     // show all numbers with 1,000.00 format
-    format1Dec = d3.format(',.1f')
+    // format1Dec = d3.format(',.1f')
     // formatSI = d3.format(',.2f') // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
-    formatSI = en.format(',.0f'); // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
-    formatSI_es = es.format(',.0f'); // spanish works with 100.000,00
+    // formatSI = en.format(',.0f'); // DDT changed from ',.3f' to '.,2f' to easily distinguish between dot and comma :)
+    // formatSI_es = es.format(',.0f'); // spanish works with 100.000,00
     format_nodecimal=d3.format('.1r'); // round to 1st number
+    formatSI_own = format_own.format(',.0f');
 }
 
 /* create scale for the index.html */
@@ -1048,7 +1056,7 @@ let createScale = (sliderValue) => {
 		})
 		.text(function(d) {
 			// return format1Dec(d);
-            return format_nodecimal(d);
+            return formatSI_own(d);
 		}) // to display in Mt
 		.style("font-size", 10)
 		.attr('alignment-baseline', 'middle');
@@ -1160,12 +1168,8 @@ function toggleLayerLegend(button, layer, legend) {
 function addCO2argentinaPopupHandler(feature) {
 	// let nace = globalModel.emissions.categories.naceCategories.items
 	if (feature.properties) {
-        let thisEmission = 0;
-        if(lang=="es") {
-            thisEmission = formatSI_es(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
-        } else if (lang=="en") {
-            thisEmission = formatSI(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
-        }
+        let thisEmission = 0;    
+        thisEmission = formatSI_own(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
         let thisSource = (feature.properties.Source) ? feature.properties.Source : "-";
         
 		let thisNameCompany = feature.properties.Name 
@@ -1452,11 +1456,7 @@ function getEmissionsSelected() {
     // formattedEmissions_selected = new Intl.NumberFormat('en-US', { style: 'decimal', maximumFractionDigits: 0, }).format(
     //     formattedEmissions_selected,
     //   ),
-    if(lang=="es") {
-        table_selected.innerHTML=formatSI_es(formattedEmissions_selected/1000);
-    } else if (lang=="en") {
-        table_selected.innerHTML=formatSI(formattedEmissions_selected/1000);
-    }
+    table_selected.innerHTML=formatSI_own(formattedEmissions_selected/1000);
 
 };
 
@@ -2699,11 +2699,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 //     totalEmissions[industryValue],
                 //   )
 
-                if (lang=="es") {
-                    var formattedEmissions = formatSI_es(totalEmissions[industryValue]/1000);
-                } else if(lang=="en"){
-                    var formattedEmissions = formatSI(totalEmissions[industryValue]/1000);
-                }
+                var formattedEmissions = formatSI_own(totalEmissions[industryValue]/1000);
+
 
                 let industry_lang;
                 if(lang=="en") {
@@ -2749,11 +2746,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //     totalEmissions_total,
         //   ),
         
-        if(lang=="es") {
-            formattedEmissions_total = formatSI_es(totalEmissions_total/1000)
-        } else if (lang=="en") {
-            formattedEmissions_total = formatSI(totalEmissions_total/1000)
-        }
+        formattedEmissions_total = formatSI_own(totalEmissions_total/1000)
+
         formattedEmissions_selected = formattedEmissions_total;
 
         table += "<tr><th>TOTAL: </th>\
