@@ -346,7 +346,7 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
 .badge_ammonia {
   background-color: var(--ptx-chemicals);
 }
-.badge_etileno {
+.badge_ethylene {
   background-color: var(--ptx-chemicals);
 }
 .badge_methanol {
