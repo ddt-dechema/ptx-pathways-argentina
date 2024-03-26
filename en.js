@@ -114,7 +114,7 @@ var translations_en = {
   button_refinery: `Refinery`,
   button_thermal: `Fossil Thermal Power Plant`,
   button_ammonia: `Ammonia`,
-  button_etileno: `Ethylene`,
+  button_ethylene: `Ethylene`,
   button_methanol: `Methanol`,
   button_bioethanol: `Bioethanol`,
   button_biogas: `Biogas Power Plant`,

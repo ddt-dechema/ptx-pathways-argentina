@@ -16,7 +16,7 @@ let baseColors = {
     },
     emissionTypeColors_D = {
         "Ammonia": "rgb(241, 219, 38, 1)",
-        "Etileno": "rgb(241, 219, 38, 0.8)",
+        "Ethylene": "rgb(241, 219, 38, 0.8)",
         "Methanol": "rgb(241, 219, 38, 0.6)",
         
         "Aluminium": "rgb(113, 184, 210, 1)",
@@ -157,7 +157,7 @@ var counts = [];
 // if industries are renamed, also rename in en.js and es.js!
 var allLayers = [
         { name_en: 'Ammonia', name_es: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
-        { name_en: 'Ethylene', name_es: 'Etileno', name: 'Etileno', id: 'button-etileno', industry: 'industrial'},
+        { name_en: 'Ethylene', name_es: 'Etileno', name: 'Ethylene', id: 'button-ethylene', industry: 'industrial'},
         { name_en: 'Methanol', name_es: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
         { name_en: 'Aluminium', name_es: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
         { name_en: 'Steel', name_es: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},

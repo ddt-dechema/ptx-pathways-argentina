@@ -113,7 +113,7 @@ var translations_es = {
   button_refinery: `Refinerías`,
   button_thermal: `Termoeléctricas Fuentes Fósiles`,
   button_ammonia: `Amoniaco`,
-  button_etileno: `Etileno`,
+  button_ethylene: `Etileno`,
   button_methanol: `Metanol`,
   button_bioethanol: `Bioetanol`,
   button_biogas: `Termoeléctricas Biogás `,
