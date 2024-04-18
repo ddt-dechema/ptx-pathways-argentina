@@ -42,12 +42,13 @@ if (urlParams.has('lang')) {
     lang = urlParams.get('lang');
     // lang_init = urlParams.get('lang');
 } else {
-    lang = 'es';
+    // switched default language to english
+    lang = 'en';
 }
 
 if (lang != "es" && lang != "en") {
-    alert("Language not available!\nCurrently, texts are only available in english and spanish \n\nSite will reload with spanish as a default.");
-    window.location.replace("index.html?lang=es");
+    alert("Language not available!\nCurrently, texts are only available in english and spanish \n\nSite will reload with english as a default.");
+    window.location.replace("index.html?lang=en");
 }
 
 // Prepare tables for the data which will be loaded and can be filtered
