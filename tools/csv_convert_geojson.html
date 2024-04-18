@@ -2,13 +2,16 @@
 <html>
 
 <head>
-	<title>Converter tool from csv list</title>
+	<title>Converter - CSV to GeoJSON</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta charset="utf-8">
 	</script>
 	<!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
 	<script src='../assets/csv2geojson.js'></script>
 	<link href="../assets/styles.css" rel="stylesheet">
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/bootstrap.bundle.min.js"></script>
     <style>
         table, th, td {
             border: 1px solid black;
@@ -18,101 +21,468 @@
 </head>
 
 <body>
-    </div>
-        <h2>Use this page to convert your CSV into a geojson file.</h2>
+    <div class="container">
+        <h2>CSV into geojson file convertor</h2>
         
-        <p>Please be aware of the following things:</p>
+        <p>Use this page to convert your CSV file into a geojson file. 
+            This should be always done when the data from the web map needs to be updated. 
+            To do that, please take into account following considerations:</p>
         <ul>
-            <li>The CSV should use semicolons as a separator</li>
-            <li>latitude and longitude should be in the 9th and 10th column, respectively</li>
-            <li>the columns must be named "Latitude" and "Longitude" (Capital letters!)</li>
-            <li>Name and Company should be in the 1st and 2nd column</li>
+            <li>The <b>decimal numbers</b> must be separated by a dot (.) instead of a comma (,). <br>
+                E.g. when working with German computers, open the csv file with a text editor (other than excel) and replace every comma with a dot.<br>
+                <b>Before that, make sure that the CSV uses semicolons as a separator!</b></li>
+            <li>No thounsands separator should be used! (e.g. use "1000.00" instead of "1,000.00")</li>
+            <li>To read the data contained in the document correctly, please enter the information below regarding the columns headers and numbers in the CSV.<br>
+                    <b>This is necessary, because the map uses fixed names and any changes in the original data file hinders a correct rendering of the data on the map.</b></li>
+            <li>You can test the resulting geojson file via several online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </li>
+            <li>Please choose the <b>separator</b> of the columns in your csv.<br> 
+                Typically they are commas (,), but on German computers, it could be semicolons (;).<br>
+                Please be aware of the value- and the decimal separator.</li>
         </ul>
-        <p>
-            If you open the developer tools (F12) and open the console, you will get some information:
-        </p>
-        <ul>
-            <li>After converting the CSV the console will tell you, which rows could not processed. Those do not contain geo-information (missing lat/lon)</li>
-            <li>You can either download the geojson-file directly (button will appear, after you successfully convert the file) <br>
-                or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.<br>
-                Like this, the file will look more "readable".</li>
-            <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
-            <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
-        </ul>
+        
+<!-- Button trigger modal -->
+    <!-- dont use the button. Let the conversion handle it -->
+    <button type="button" id="btn-show-modal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ConversionResultsmodal" style="display:none;">
+        Conversion Result Modal
+    </button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="ConversionResultsmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Conversion Result</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-        <p> If all this does not work, you can use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, to convert the csv to the geojson.<br>
-        The solution provided with the website here is a fallback, if the link mentioned above does not provide the service anymore.</p>
-        <p> You can test the resulting geojson file via sevaral online solutions, e.g.: <a href="https://geojson.io/#map=2/0/20" target="blank">geojson.io</a> </p>
-           
+            <div class="modal-body">         
+                <div class="accordion" id="ModalAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#IndustryTypeAccordion" aria-expanded="false" aria-controls="collapseTwo">
+                            Industry Types
+                            </button>
+                        </h2>
+                        <div id="IndustryTypeAccordion" class="accordion-collapse collapse" data-bs-parent="#ModalAccordion">
+                            <div class="accordion-body">
+                                I have found the following types of industry in your CSV. <br><br>
+                                Please check whether they already match the column on the right, which are used for the map!<br>
+                                <b>They should match identically!</b><br>
+                                In case of a field with a red background, the type of industry does not match with its counterpart of the right.<br>
+                                Please note that both columns are <b>sorted alphabetically</b>, which might be the reason, why they do not match.
+                                <table class="table" id="ResultsTable">
+                                    <thead>
+                                        <tr>
+                                            <td>Converted CSV</td>
+                                            <td>Names used on the Map</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="industry_type-1"></td>
+                                            <td><span class="badge rounded-pill badge_aluminium">Aluminium</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-2"></td>
+                                            <td><span class="badge rounded-pill badge_ammonia">Ammonia</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-3"></td>
+                                            <td><span class="badge rounded-pill badge_bioethanol">Bioethanol</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-4"></td>
+                                            <td><span class="badge rounded-pill badge_biogas">Biogas Power Plant</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-5"></td>
+                                            <td><span class="badge rounded-pill badge_biomass">Biomass Power Plant</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-6"></td>
+                                            <td><span class="badge rounded-pill badge_cement">Cement</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-7"></td>
+                                            <td><span class="badge rounded-pill badge_ethylene">Ethylene</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-8"></td>
+                                            <td><span class="badge rounded-pill badge_fossil_thermal">Fossil Thermal Power Plant</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-9"></td>
+                                            <td><span class="badge rounded-pill badge_methanol">Methanol</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-10"></td>
+                                            <td><span class="badge rounded-pill badge_pulp">Pulp and Paper</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-11"></td>
+                                            <td><span class="badge rounded-pill badge_refinery">Refinery</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-12"></td>
+                                            <td><span class="badge rounded-pill badge_steel">Steel</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-13"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-14"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="industry_type-15"></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#MissingCoordinatesAccordion" aria-expanded="false" aria-controls="collapseTwo">
+                            Missing Coordinates
+                          </button>
+                        </h2>
+                        <div id="MissingCoordinatesAccordion" class="accordion-collapse collapse" data-bs-parent="#ModalAccordion">
+                          <div class="accordion-body">
+                            The following entries do not contain information regarding Latitude/Longitude:
+                            There are <b><span id="MissingCoordinatesTotal"></span></b> entries.
+                            <table class="table" id="MissingCoordinatesTable">
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#MissingEmissionsAccordion" aria-expanded="false" aria-controls="collapseTwo">
+                            Missing Emissions (t)
+                          </button>
+                        </h2>
+                        <div id="MissingEmissionsAccordion" class="accordion-collapse collapse" data-bs-parent="#ModalAccordion">
+                          <div class="accordion-body">
+                            The following entries either have no CO<sub>2</sub>-emissions or no information regarding the emissions in the corresponding column.
+                            There are <b><span id="MissingEmissionsTotal"></span></b> entries.
+                            <table class="table" id="MissingEmissionsTable">
+                            </table>                   
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+                   
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alternativeConverter" aria-expanded="false" aria-controls="collapseTwo">
+                    Alternatives to convert the CSV
+                  </button>
+                </h2>
+                <div id="alternativeConverter" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    If the steps above do not work, you can alternatively use the following <a href="https://www.convertcsv.com/csv-to-geojson.htm" target="_blank">link</a>, 
+                    to convert the csv into a geojson file.<br>
+                    The solution provided with this website is a fallback, in case the link mentioned above does not provide the service anymore.<br>
+                    <b>Please note, that the converted geojson still needs to match the types of industries, etc. which is done automatically by this website, here.</b></p>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Console" aria-expanded="true" aria-controls="collapseOne">
+                    Some more useful information
+                </button>
+              </h2>
+              <div id="Console" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    If you open the developer tools (F12) and open the console, you will get some useful information:
+                </p>
+                <ul>
+                    <li>After converting the CSV, the console will tell you which rows could not be processed. <br>
+                        These non-processable rows mean, that they DO NOT contain any geo-information (latitude/longitude is missing) and are therefore omitted in the geojson-file.</li>
+                    <li>After the conversion, you can either download the geojson-file directly (button will appear below, after you successfully converted the file) <br>
+                        or you can copy the resulting json file from the console ("copy object") and paste it into the existing geojson-file.
+                        <b>Please note that the original name of the geojson-file must be used.</b><br>
+                        I suggest, that you "test" the functionality of the newly created geojson-file. For this, you can use the website mentioned above (geojson.io).<br>
+                        Also, the newly created geojson does not look very "readable" (just open the newly created file, and you'll see).
+                        So by copying it to this website (geojson.io) and testing it,you directly make it look more readable and you can then copy & paste it back to your file.
+                        </li>
+                    <li>Please be aware that you should not rename the geojson file, because the map looks for "argentina_emissions.geojson"</li>
+                    <li>Also, the location of the saved file is important. The geojson-file must be placed in the parent folder, together with the "index.html" and "main.js"</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#IndustryTypes" aria-expanded="true" aria-controls="collapseOne">
+                      Types of industries used in the map
+                  </button>
+                </h2>
+                <div id="IndustryTypes" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <p>Unfortunately, the map is "hard-coded" regarding the number of industries and their naming.<br>
+                        It is therefore crucial, that the TYPE OF INDUSTRIEs used are named like this:<br>
+                        (The colors correspond to how they will be grouped/shown on the map)
+                        <span class="badge rounded-pill badge_ammonia"> Ammonia </span>
+                        <span class="badge rounded-pill badge_ethylene"> Ethylene </span>
+                        <span class="badge rounded-pill badge_methanol"> Methanol </span>
+                        <span class="badge rounded-pill badge_aluminium"> Aluminium </span>
+                        <span class="badge rounded-pill badge_steel"> Steel </span>
+                        <span class="badge rounded-pill badge_cement"> Cement </span>
+                        <span class="badge rounded-pill badge_pulp"> Pulp and Paper </span>
+                        <span class="badge rounded-pill badge_refinery"> Refinery </span>
+                        <span class="badge rounded-pill badge_fossil_thermal"> Fossil Thermal Power Plant </span>
+                        <span class="badge rounded-pill badge_biogas"> Biogas Power Plant </span>
+                        <span class="badge rounded-pill badge_bioethanol"> Bioethanol </span>
+                        <span class="badge rounded-pill badge_biomass"> Biomass Power Plant </span>
+
+                        </p>
+                  
+                  </div>
+                </div>
+              </div>
+          </div>
+         
         <hr>
 
-            <h2>Data structure of the CSV:</h2>
-        <p>To correctly display the information on the map, the csv should look like this.</p>
-        <ul>
-            <li>Only the order of the lat and lon column, as well as the Name and Company of the emitter is important (see above).</li>
-            <li>For the rest, it is crucial, that the spelling is identical to the exemplary table below (please note all the capital letters)</li>
-        </ul>
-        <table>
-            <colgroup>
-            <col style="width: 49px">
-            <col style="width: 73px">
-            <col style="width: 64px">
-            <col style="width: 142px">
-            <col style="width: 114px">
-            <col style="width: 61px">
-            <col style="width: 57px">
-            <col style="width: 68px">
-            <col style="width: 63px">
-            <col style="width: 77px">
-            </colgroup>
+        <div class="alert alert-warning" role="alert">
+            Data structure of the last known CSV
+        </div> 
+        <p> The default values in the input fields were taken from the last CSV file (provided on Januar 18th, 2024).<br>
+        Please override them, if you have changed the name or the order of the columns.</p>
+        <table class="table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Company</th>
-                <th>Industry</th>
-                <th>CO2_emissions_t</th>
-                <th>Source_CO2 _emissions</th>
-                <th>Source</th>
-                <th>City</th>
-                <th>Province</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Type of industry</th>
+                <th scope="col">CO2 emissions [t]</th>
+                <th scope="col">Type of source</th>
+                <th scope="col">Location (city)</th>
+                <th scope="col">Provincia</th>
+                <th scope="col">Location (latitude)</th>
+                <th scope="col">Location (longitude)</th>
+                <th scope="col">Source CO2 emissions</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-            </table>
+        </table>
 
-                <br><br>       
         <hr>
 
-        <input type="file" id="csvFile" accept=".csv"><br><br>
-        <button id="convertButton">Convert to GeoJSON</button><br><br>
+        <h3> Convert the csv file</h3>
+        <p>The headers of the table containing all information are listed below. 
+            Please check if the header of each column and column numbers from the new csv coincide with the default configuration given below. 
+            If not, please correct them in the corresponding field. </p>
+        <div class="container card">
+            <br>
+            <!-- <div class="input-group mb-3"> -->
+                <input class="form-control" type="file" id="csvFile" accept=".csv"><br><br>
+            <!-- </div> -->
+            <div class="mb-3">
+                <label for="separator" class="form-label"><b>Column Separator</b> (not the decimal separator and not the thousands separator)</label>
+                <div class="input-group">
+                    <select id="csv_separator" class="form-select" aria-label="Default select example">
+                        <option value=";">; (semicolon)</option>
+                        <option value=",">, (comma)</option>
+                        <option value=".">. (dot)</option>
+                      </select>
+                    <!-- <span class="input-group-text">Column #</span>
+                        <input type="number" class="form-control" value="1" id="name_col_number"> -->
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of the Carbon <b>Source</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Name" id="name_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="1" id="name_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of the <b>Company</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Company" id="company_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="2" id="company_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Type of <b>industry</b></label>
+                <div class="form-text" id="basic-addon4">see above</div>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Type of industry" id="industry_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="3" id="industry_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">CO2 <b>emissions</b> in tonnes</label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="CO2 emissions [t]" id="emissions_t_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="4" id="emissions_t_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Type of emissions <b>source</b></label>
+                <div class="form-text" id="basic-addon4">industrial/biogenic</div>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Type of source" id="emission_type_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="5" id="emission_type_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Location</b> (city)</label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (city)" id="city_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="6" id="city_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Province</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Provincia" id="province_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="7" id="province_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Location <b>Latitude</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (latitude)" id="lat_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="8" id="lat_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Location <b>Longitude</b></label>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Location (longitude)" id="lon_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="9" id="lon_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Source</b> (of information)</label>
+                <div class="form-text" id="basic-addon4">whether it is estimated or data exists somewhere</div>
 
-        <a class="button" id="downloadLink" style="display: none;">Download GeoJSON</a>
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Source CO2 emissions" id="source_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="10" id="source_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Year</b> (of emission)</label>
+                <!-- <div class="form-text" id="basic-addon4">whether it is estimated or data exists somewhere</div> -->
+
+                <div class="input-group">
+                <span class="input-group-text">Header</span>
+                    <input type="text" class="form-control" value="Year of emission data" id="year_emission_col_name">
+                <span class="input-group-text">Column #</span>
+                    <input type="number" class="form-control" value="15" id="year_emission_col_number">
+                </div>
+                <!-- <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div> -->
+            </div>
+
+            <button type="button" class="btn btn-primary" id="convertButton">Convert to GeoJSON</button>
+            <br>
+            <a type="button" class="btn btn-success" id="downloadLink" style="display: none;">Download GeoJSON</a>
+
+        </div>
+        <!-- Please enter the information regarding the header name and column ordner below. -->
+        
+        <!-- Column where Latitude is saved <input value="8" type="number" id="lat_col"><br>
+        Name Column where Latitude is saved <input value="Location (latitude)" type="text" id="lat_col_name"><br> -->
+
+        <!-- Column where longitude is saved <input value="9" type="number" id="lon_col"><br>
+        Name of Column where longitude is saved <input value="Location (longitude)" type="text" id="lon_col_name"><br><br> -->
+
+        <!-- Name of Industry Column <input value="Type of industry" type="text" id="industry_col_name"><br> -->
+        <!-- Name of Emissions Column <input value="CO2 emissions [t]" type="text" id="emissions_t_col_name"><br> -->
+        <!-- Column where CO2 emissions (in t) are stored <input value="4" type="number" id="emissions_col"><br> -->
+        <br>
+
+
     </div>
 
 	<script>	
 		const csvFileInput = document.getElementById('csvFile');
-		// const csvFileInput = "co2-argentina2_latlonzuerst.csv";
+        
 		const convertButton = document.getElementById('convertButton');
 		const downloadLink = document.getElementById('downloadLink');
-
+        let ConversionResultsModal = document.getElementById('ConversionResultsmodal');
+        // show all types of industrys found in the CSV
+        // define an empty array
+        let industry_types = [];
+        // Initialize an array to store rows without coordinates
+        let invalidRows = [];
+        // Initialize an array to store rows emissions
+        let zeroEmissionRows = [];
 		var argentina_emissions = {}
+        
+        convertButton.addEventListener('click', () => {           
+            const name_col_name = document.getElementById('name_col_name').value;
+            const name_col_number = Number(document.getElementById('name_col_number').value) - 1;
+            const company_col_name = document.getElementById('company_col_name').value;
+            const company_col_number = Number(document.getElementById('company_col_number').value) - 1;
+            const industry_col_name = document.getElementById('industry_col_name').value;
+            const industry_col_number = Number(document.getElementById('industry_col_number').value) - 1;
+            const emissions_t_col_name = document.getElementById('emissions_t_col_name').value;
+            const emissions_t_col_number = Number(document.getElementById('emissions_t_col_number').value) - 1;
+            const emission_type_col_name = document.getElementById('emission_type_col_name').value;
+            const emission_type_col_number = Number(document.getElementById('emission_type_col_number').value) - 1;
+            const city_col_name = document.getElementById('city_col_name').value;
+            const city_col_number = Number(document.getElementById('city_col_number').value) - 1;
+            const province_col_name = document.getElementById('province_col_name').value;
+            const province_col_number = Number(document.getElementById('province_col_number').value) - 1;
+            const lat_col_name = document.getElementById('lat_col_name').value;
+            const lat_col_number = Number(document.getElementById('lat_col_number').value) - 1;
+            const lon_col_name = document.getElementById('lon_col_name').value;
+            const lon_col_number = Number(document.getElementById('lon_col_number').value) - 1;
+            const source_col_name = document.getElementById('source_col_name').value;
+            const source_col_number = Number(document.getElementById('source_col_number').value) - 1;
+            const year_emission_col_name = document.getElementById('year_emission_col_name').value;
+            const year_emission_col_number = Number(document.getElementById('year_emission_col_number').value) - 1;
+            const csv_separator = document.getElementById('csv_separator').value;
+            console.log(year_emission_col_name);
 
-        convertButton.addEventListener('click', () => {
             const fileInput = document.getElementById('csvFile');
             const file = fileInput.files[0];
 			if (file) {
@@ -122,30 +492,39 @@
                     const csvData = event.target.result;
                     // Call your CSV to GeoJSON conversion function here
                     
-                    
-                    const preprocessedCSV = preprocessCSV(csvData);
-			        // console.log(preprocessedCSV)
+                    const preprocessedCSV = preprocessCSV(csvData, 
+                        name_col_name,
+                        name_col_number,
+                        company_col_name,
+                        company_col_number,
+                        industry_col_name,
+                        industry_col_number,
+                        emissions_t_col_name,
+                        emissions_t_col_number,
+                        emission_type_col_name,
+                        emission_type_col_number,
+                        city_col_name,
+                        province_col_name,
+                        lat_col_name,
+                        lon_col_name,
+                        source_col_name,
+                        lat_col_number,
+                        lon_col_number,
+                        year_emission_col_name,
+                        year_emission_col_number,
+                        csv_separator);
+			        // console.log(preprocessedCSV);
 			        // Now, pass the preprocessed CSV data to the conversion function
-			        convertCSV(preprocessedCSV)
+			        convertCSV(preprocessedCSV, 
+                    lat_col_name, 
+                    lon_col_name, 
+                    emissions_t_col_name, 
+                    csv_separator)
                     
                     // Create a download link for the user
-                    // downloadLink.href = URL.createObjectURL(argentina_emissions);
-                    // downloadLink.href = window.URL.createObjectURL(new Blob(argentina_emissions, {type: "application/json"}))
-
-                    //this works
                     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(argentina_emissions));
                     downloadLink.href = dataStr
-                    
-                    
-                    // const geojson = argentina_emissions;
-                    // const url = URL.createObjectURL(geojson);
-                    // Convert GeoJSON to a formatted string with line breaks and indentation
-                    // const formattedGeoJSON = JSON.stringify(geojson, null, 2);
-                    // Create a Blob from the GeoJSON data
-                    // const blob = new Blob([JSON.stringify(formattedGeoJSON)], { type: 'application/json' });
-                    // const url = URL.createObjectURL(blob);
-                    // downloadLink.href= url
-                    
+                 
                     downloadLink.download = 'argentina_emissions.geojson';
                     downloadLink.style.display = 'block';
                 };
@@ -160,12 +539,14 @@
             }
         });
                     	
-		function convertCSV(myBlob, name) {
+		function convertCSV(myBlob, lat_col_name, lon_col_name, emissions_t_col_name, csv_separator, name) {
 			return new Promise((resolve, reject) => {
 				csv2geojson.csv2geojson(myBlob, {
-					latfield: 'Latitude',
-					lonfield: 'Longitude',
-					delimiter: ';',
+					latfield: lat_col_name,
+					lonfield: lon_col_name,
+					// delimiter: ';',
+                    delimiter: csv_separator,
+                    numericFields : 'CO2_emissions_t',
 				}, (err, geojson) => {
 					if (err) {
 						// console.error(err);
@@ -198,68 +579,173 @@
 			});
 		}
 
-		function preprocessCSV(csvData) {
+		function preprocessCSV(csvData, 
+            name_col_name,
+            name_col_number,
+            company_col_name,
+            company_col_number,
+            industry_col_name,
+            industry_col_number,
+            emissions_t_col_name,
+            emissions_t_col_number,
+            emission_type_col_name,
+            emission_type_col_number,
+            city_col_name,
+            province_col_name,
+            lat_col_name,
+            lon_col_name,
+            source_col_name,
+            lat_col_number,
+            lon_col_number,
+            year_emission_col_name,
+            year_emission_col_number,
+            csv_separator
+        ) {
 			// Split the CSV data into rows
 			const rows = csvData.split('\n');
 
 			// Extract the header row
-  			const headerRow = rows[0];
+  			var headerRow = rows[0];
 
+            headerRow = headerRow.replace(industry_col_name,"Industry");
+            headerRow = headerRow.replace(emissions_t_col_name,"CO2_emissions_t");
+            headerRow = headerRow.replace(emission_type_col_name,"Source_CO2_emissions");
+            headerRow = headerRow.replace(city_col_name,"City");
+            headerRow = headerRow.replace(province_col_name,"Province");
+            headerRow = headerRow.replace(source_col_name,"Source");
+
+            headerRow = headerRow.replace(year_emission_col_name,"year_emission");
 			// Initialize an array to store valid rows
 			const validRows = [];
 			
-			// Initialize an array to store rows without coordinates
-			const invalidRows = [];
+
 			
 			// Extract column headers from the first row
-			const headers = rows[0].split(';');
-						
+			// const headers = rows[0].split(';');
+            
+            // Instead: Extract column headers from the UPDATED headers row
+            // const headers = headerRow.split(';');
+            // console.log('headers: '+headers)
 			// Initialize variables for the "latitude" and "longitude" columns
-			let latitudeIndex = -1;
-			let longitudeIndex = -1;
+			// let latitudeIndex = -1;
+			// let longitudeIndex = -1;
 
 			// Initialize variables for the "Company" and "Name" columns
-			let companyIndex = -1;
-			let nameIndex = -1;
+			// let companyIndex = -1;
+			// let nameIndex = -1;
+			// let CO2EmissionsIndex = -1;
+			// let IndustryIndex = -1;
 
 			// Iterate through each column header
-			headers.forEach((header, index) => {
-				if (header === 'latitude') {
-				latitudeIndex = index;
-				} else if (header === 'longitude') {
-				longitudeIndex = index;
-				} else if (header === 'Company') {
-				companyIndex = index;
-				} else if (header === 'Name') {
-				nameIndex = index;
-				}
-			});
+			// headers.forEach((header, index) => {
+				// if (header === 'latitude') {
+                // if (header === lat_col_name) {  
+				//     latitudeIndex = index;
+				// } else if (header === 'longitude') {
+                // } else if (header === lon_col_name) {
+				//     longitudeIndex = index;
+				// } else if (header === 'Company') {
+				//     companyIndex = index;
+				// if (header === 'Name') {
+				//     nameIndex = index;
+                // }
+                // } else if (header === industry_col_name) {
+				//     IndustryIndex = 'Industry';
+                // }
+                // } else if (header === emissions_t_col_name) {
+				//     CO2EmissionsIndex = 'CO2_emissions_t';
+				// }
+			// });
 
 			// Iterate through each row (skip the first row with headers)
 			for (let i = 1; i < rows.length; i++) {
 				const row = rows[i];
-
+                // console.log(row);
 				// Split the row into fields using the delimiter (e.g., ';')
-				const fields = row.split(';');
-
+                const fields = row.split(csv_separator);
+				// const fields = row.split(';');
+                
 				// Check if the row has both latitude and longitude fields
-				if (fields[8] !== '' && fields[9] !== '') { // hard coded! if lat/longitude columns are in different column numbers, then code will fail
-					validRows.push(row);
-				} else if (companyIndex !== -1 && nameIndex !== -1) {
-					// Log rows without coordinates, including "Company" and "Name" columns
-					invalidRows.push(`${fields[companyIndex]};${fields[nameIndex]}`);
+				if (fields[lat_col_number] !== '' && fields[lon_col_number] !== '') { 
+                    validRows.push(row);
+
+                    if (fields[emissions_t_col_number] == 0) {
+                        zeroEmissionRows.push(`${fields[name_col_number]};${fields[company_col_number]};${fields[lon_col_number]};${fields[lat_col_number]}`)
+                    }
+ 
+                    //write into an array, if a new industry was found
+                    if(!industry_types.includes(fields[industry_col_number])) {
+                        industry_types.push(fields[industry_col_number]);
+                    }
+				} else {
+                    // if (companyIndex !== -1 && nameIndex !== -1) {
+                    // Log rows without coordinates, including "Company" and "Name" columns
+					invalidRows.push(`${fields[name_col_number]};${fields[company_col_number]}`);
 				}
 			}
+            
+            industry_types.sort(function (a, b) {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+                });
+            industry_types.sort();
+            
+            let k = 0;
+            for (let i = 1; i < industry_types.length; i++) {
+                (function ($) {
+                    $('#industry_type-'+i).append(industry_types[i-1]);
+
+                    if ($('#industry_type-'+i).text() != $('#industry_type-'+i).next('td').text()) {
+                        $('#industry_type-'+i).addClass('table-danger');
+                    }
+                })(jQuery);
+			}
+            
+            // 
+            // Log rows without emissions
+
+            $('#MissingEmissionsTotal').html(zeroEmissionRows.length);
+
+            for (let i = 0; i < zeroEmissionRows.length; i++) {
+                (function ($) {
+                    $('#MissingEmissionsTable').append(
+                        '<tr>\
+                            <td>'+zeroEmissionRows[i]+'</td>\
+                            </tr> '
+                            );
+                })(jQuery);
+            };
 
 			// Log rows without coordinates
-			console.log('Rows without coordinates:');
-			console.log(invalidRows);
+            (function ($) {
+                $('#MissingCoordinatesTotal').html(invalidRows.length);
+            })(jQuery);
 
+            for (let i = 0; i < invalidRows.length; i++) {
+                (function ($) {
+                    $('#MissingCoordinatesTable').append(
+                        '<tr>\
+                        <td>'+invalidRows[i]+'</td>\
+                        </tr> '
+                    );
+                })(jQuery);
+            };
+            
+            // Show the modal with the information
+            (function ($) {
+                $('#btn-show-modal').click();
+            })(jQuery);
+
+            console.log('Rows without coordinates:');
+			console.log(invalidRows);
 			// Join the valid rows back into CSV format
 			return headerRow + '\n' + validRows.join('\n');
 		}
-
 	</script>
 </body>
-
 </html>

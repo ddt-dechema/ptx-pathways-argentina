@@ -10,7 +10,7 @@ The origin of the map is loosely based on the map of the EU-funded [Carbon4Pur p
 
 # Converting the excel to CSV to geojson
 The carbon sources and information about them were collected by GIZ and DECHEMA within the project. The information is stored in a excel while, which makes a conversion necessary for it to be displayed on the map. 
-It is possible to use free online-tools for that, but to make sure that in the future the conversion will stile work, a self-written tool is used here and accessible via the [csv_convert_geojson.html](https://ddt-dechema.github.io/ptx-pathways-argentina/tools/csv_convert_geojson_new.html) which is saved in the `tools/` folder as `csv_convert_geojson_new.html`. The website also contains instructions about the headers of the csv file, which are necessary to display all the relevant information on the map.
+It is possible to use free online-tools for that, but to make sure that in the future the conversion will stile work, a self-written tool is used here and accessible via the [csv_convert_geojson.html](https://ddt-dechema.github.io/ptx-pathways-argentina/tools/csv_convert_geojson.html) which is saved in the `tools/` folder as `csv_convert_geojson_new.html`. The website also contains instructions about the headers of the csv file, which are necessary to display all the relevant information on the map.
 
 # 3rd party libraries and software used in this map - Licenses
 This online map uses various 3rd party libraries. Some of those are to display the data in general on a map, others to make the "look & feel" more beautiful. Most of files needed for them to work, are downloaded beforehand and are accessed directly and locally from the web-application.
