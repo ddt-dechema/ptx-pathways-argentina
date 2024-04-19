@@ -1,0 +1,591 @@
+:root {
+    --ptx-primary-color: rgb(0, 182, 157);
+    --ptx-secondary-color: rgb(191, 226, 71);
+    --ptx-fourth-color: rgb(255, 187, 0);
+    /* Add more colors as needed */
+    --ptx-industrial: rgb(84, 114, 155);
+    --ptx-biogenic: rgb(57, 137, 126);
+
+    --ptx-chemicals: rgb(241, 219, 38, 1);
+    --ptx-metals: rgb(113, 184, 210, 1);
+    --ptx-paper: rgb(209, 146, 198, 1);
+    --ptx-others: rgb(164, 146, 220, 1);
+    --ptx-bio: rgb(143, 196, 146, 1);
+    --ptx-background-color: rgb(240,245,240);
+    --ptx-text-color: rgb(88,88,88);
+  }
+
+.dot {
+  height: 25px;
+  width: 25px;
+  /* background-color: #bbb; */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.rect {
+  height: 10px;
+  width: 10px;
+  /* background-color: #bbb; */
+  /* border-radius: 50%; */
+  display: inline-block;
+}
+
+input[type='range'] {
+  accent-color: var(--ptx-primary-color);
+}
+
+#language-buttons, .language-buttons {
+  /* margin: 10px; */
+  padding: 10px;
+  background-color: grey;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.lang_active {
+  background: #3498db;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.switch > span {
+  position: absolute;
+  top: 10px;
+  pointer-events: none;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+  width: 50%;
+  text-align: center;
+}
+
+input.check-toggle-round-flat:checked ~ .off {
+/*   color: #F36F25; */
+  color: var(--ptx-primary-color);
+}
+
+input.check-toggle-round-flat:checked ~ .on {
+  color: #fff;
+}
+
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+/*   color: #F36F25; */
+  color: var(--ptx-primary-color);
+}
+
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: #fff;
+/*   color: var(--ptx-primary-color); */
+}
+
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 97px;
+  height: 35px;
+/*   background-color: #F36F25; */
+  background-color: var(--ptx-primary-color);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+/*   background-color: #F36F25; */
+  background-color: var(--ptx-primary-color);
+  -webkit--moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: #fff;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+
+/* input.check-toggle-round-flat:checked + label {
+} */
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
+}
+
+
+/* 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif; 
+  font-size: small;
+}
+h2 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: large;
+}
+h3 {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 2px;
+  padding-bottom: 0px;
+} 
+*/
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 40px;
+}
+
+#map_2 {
+  position: absolute;
+  top: 200px;
+  bottom: 100px;
+  right: 0;
+  left: 40px;
+}
+
+#ptx_hub_header {
+  height:200px;
+}
+#ptx_hub_footer {
+  height:100px;
+}
+
+table, td, th > .table_custom {
+  --bs-table-bg: transparent !important;
+  border: none !important; /* funktionoiert nicht mehr überall */ 
+  border-collapse: collapse;
+}
+
+/* table,td,th{border:1px solid rgba(0,0,0,.1)} */
+
+ul.is-bullet {
+  list-style: disc;
+  margin-left: 2rem;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('source-sans-pro-v13-latin-regular.woff2')  format('woff');
+}
+
+body, .popup-content {
+  /* added to try to match the PtX Hub style */
+  font-family: "Source Sans Pro", arial, serif;
+  background-color: var(--ptx-background-color); /* funktioniert aber noch nicht richtig */ 
+  font-size: 15px;
+}
+
+body .sidebar, body .sidebar.sidebar-touch {
+  background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  position: absolute;
+  top: 200px;
+  bottom: 100px;
+  left: 0;
+}
+body .sidebar-tabs {
+  background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));  
+}
+
+body .sidebar-tabs > ul > li {
+  position: relative;
+  color: #fff;
+}
+
+.filterGroup {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* .button.is-activated {
+  border-color: transparent;
+} */
+
+svg {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+body .sidebar .sidebar-header {
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  /* background-image: url('https://www.carbon4pur.eu/wp-content/themes/carbon4pur/images/gradient-line-min.png'); */
+  background: linear-gradient(to left, var(--ptx-primary-color), var(--ptx-secondary-color));
+}
+
+body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
+  background-color: var(--ptx-fourth-color) !important;
+}
+.svgicon {
+  margin: 7px;
+  width: 30px;
+  height: 30px;
+}
+.svgicon > use {
+  width: 30px;
+  height: 30px;
+}
+.svgicon-small {
+  margin: 2px 2px 0 0;
+  width: 1rem;
+  height: 1rem;
+}
+.svgicon-small > use {
+  width: 1rem;
+  height: 1rem;
+}
+  
+/* popup */
+.popup-em {
+  display: inline-block;
+  padding: 0.5rem;  
+}
+
+/* intro tour */
+#set-cookie-no-tour {
+  margin-right: 0px;
+  margin-left: auto;
+  display: block;
+}
+  
+
+  
+/* Size legend styling */
+#scale {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1.5px solid rgba(0,0,0,.2);
+  z-index: 1000;
+  right: 10px;
+  /* bottom: 20px; */
+  bottom: 120px;
+  padding: 3px;
+  font: 10px sans-serif;
+}
+.legend path,
+.legend line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  opacity: 1;
+}
+.circle-legend line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.circle-legend circle {
+  stroke: #ccc;
+  stroke-dasharray: 4, 2;
+  fill: none;
+}
+
+
+/* dots for legends of categoies */
+.dot {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+}
+
+.dot_industrial {
+  background-color: var(--ptx-industrial);
+}
+.dot_biogenic {
+  background-color: var(--ptx-biogenic);
+}
+
+.dot_chemicals {
+  background-color: var(--ptx-chemicals);
+}
+.dot_metals {
+  background-color: var(--ptx-metals);
+}
+.dot_paper {
+  background-color: var(--ptx-paper);
+}
+.dot_others {
+  background-color: var(--ptx-others);
+}
+.dot_bio {
+  background-color: var(--ptx-bio);
+}
+
+
+.badge_ammonia {
+  background-color: var(--ptx-chemicals);
+}
+.badge_ethylene {
+  background-color: var(--ptx-chemicals);
+}
+.badge_methanol {
+  background-color: var(--ptx-chemicals);
+}
+.badge_aluminium {
+  background-color: var(--ptx-metals);
+}
+.badge_steel {
+  background-color: var(--ptx-metals);
+}
+.badge_cement {
+  background-color: var(--ptx-metals);
+}
+.badge_pulp {
+  background-color: var(--ptx-paper);
+}
+.badge_refinery {
+  background-color: var(--ptx-others);
+}
+.badge_fossil_thermal {
+  background-color: var(--ptx-others);
+}
+.badge_biogas {
+  background-color: var(--ptx-bio);
+}
+.badge_bioethanol {
+  background-color: var(--ptx-bio);
+}
+.badge_biomass {
+  background-color: var(--ptx-bio);
+}
+
+.leaflet-popup-content-wrapper, 
+.ptxhub-background {
+  background-color: var(--ptx-background-color);
+}
+
+.ptxhub-text {
+  color: var(--ptx-text-color);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: var(--ptx-fourth-color);
+  background-color: var(--ptx-fourth-color);  /* Modern Browsers */
+  height: 2px;
+}
+
+.button-ammonia-outline,
+.button-etileno-outline,
+.button-methanol-outline {
+  --bs-btn-color:var(--ptx-chemicals);
+  --bs-btn-border-color:var(--ptx-chemicals);
+  /* --bs-btn-hover-color:black; */
+  /* --bs-btn-hover-bg:var(--ptx-chemicals); */
+  --bs-btn-hover-border-color:var(--ptx-chemicals);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-chemicals);
+  --bs-btn-active-border-color:var(--ptx-chemicals);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-chemicals);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-chemicals);
+  --bs-gradient:none
+}
+
+.button-Aluminium-outline,
+.button-Steel-outline,
+.button-cement-outline {
+  --bs-btn-color:var(--ptx-metals);
+  --bs-btn-border-color:var(--ptx-metals);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-metals); */
+  --bs-btn-hover-border-color:var(--ptx-metals);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-metals);
+  --bs-btn-active-border-color:var(--ptx-metals);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-metals);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-metals);
+  --bs-gradient:none
+}
+
+.button-paper-outline {
+  --bs-btn-color:var(--ptx-paper);
+  --bs-btn-border-color:var(--ptx-paper);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-paper); */
+  --bs-btn-hover-border-color:var(--ptx-paper);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-paper);
+  --bs-btn-active-border-color:var(--ptx-paper);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-paper);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-paper);
+  --bs-gradient:none
+}
+
+.button-refinery-outline,
+.button-thermal-outline {
+  --bs-btn-color:var(--ptx-others);
+  --bs-btn-border-color:var(--ptx-others);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-others); */
+  --bs-btn-hover-border-color:var(--ptx-others);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-others);
+  --bs-btn-active-border-color:var(--ptx-others);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-others);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-others);
+  --bs-gradient:none
+}
+
+.button-biogas-outline,
+.button-bioethanol-outline,
+.button-biomass-outline {
+  --bs-btn-color:var(--ptx-bio);
+  --bs-btn-border-color:var(--ptx-bio);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-bio); */
+  --bs-btn-hover-border-color:var(--ptx-bio);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-bio);
+  --bs-btn-active-border-color:var(--ptx-bio);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-bio);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-bio);
+  --bs-gradient:none
+}
+
+
+.toggle-industrial-button{
+  --bs-btn-color:#fff;
+  --bs-btn-bg:var(--ptx-industrial);
+  --bs-btn-border-color:var(--ptx-industrial);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-industrial);
+  --bs-btn-hover-border-color:var(--ptx-industrial);
+  --bs-btn-focus-shadow-rgb:49,132,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-industrial);
+  --bs-btn-active-border-color:var(--ptx-industrial);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:#fff;
+  --bs-btn-disabled-bg:var(--ptx-industrial);
+  --bs-btn-disabled-border-color:var(--ptx-industrial)
+}
+
+.toggle-industrial-button-outline {
+  --bs-btn-color:var(--ptx-industrial);
+  --bs-btn-border-color:var(--ptx-industrial);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-industrial);
+  --bs-btn-hover-border-color:var(--ptx-industrial);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-industrial);
+  --bs-btn-active-border-color:var(--ptx-industrial);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-industrial);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-industrial);
+  --bs-gradient:none
+}
+
+.toggle-biogenic-button{
+  --bs-btn-color:#fff;
+  --bs-btn-bg:var(--ptx-biogenic);
+  --bs-btn-border-color:var(--ptx-biogenic);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-biogenic);
+  --bs-btn-hover-border-color:var(--ptx-biogenic);
+  --bs-btn-focus-shadow-rgb:49,132,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-biogenic);
+  --bs-btn-active-border-color:var(--ptx-biogenic);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:#fff;
+  --bs-btn-disabled-bg:var(--ptx-biogenic);
+  --bs-btn-disabled-border-color:var(--ptx-biogenic)
+}
+
+.toggle-biogenic-button-outline {
+  --bs-btn-color:var(--ptx-biogenic);
+  --bs-btn-border-color:var(--ptx-biogenic);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-biogenic);
+  --bs-btn-hover-border-color:var(--ptx-biogenic);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-biogenic);
+  --bs-btn-active-border-color:var(--ptx-biogenic);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-biogenic);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-biogenic);
+  --bs-gradient:none
+}
+
+.ptx-table-group-divider {
+  border-top: 2px solid var(--ptx-fourth-color);
+}
+
+.table-custom tr td, table tr th {
+  background-color: rgba(255,255,255 , 0) !important;
+}

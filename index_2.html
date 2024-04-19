@@ -6,9 +6,10 @@
 		<meta charset="utf-8">
 		<meta name="Description" content="An interactive map to show CO/CO2 emissions from different processes and a non-exhaustive number of chemical parks and polyol plants.
 		Allows the user to interactively filter the data to conclude on possible replication sites for the Carbon4PUR technology to transform CO and CO2 streams to polyurethanes.">
+		
+
 		<!-- Load Leaflet: instructions at http://leafletjs.com/download.html -->
 		<link href="assets/leaflet.css" rel="stylesheet" />
-		<link href="assets/styles.css" rel="stylesheet">
 
 		<link rel="stylesheet" href="assets/leaflet-sidebar2.min.css" />
 		<!-- A CSS framework for easy styling -->
@@ -17,15 +18,71 @@
 		<link href="assets/bootstrap.min.css" rel="stylesheet">
 		<script src="assets/bootstrap.bundle.min.js"></script>
 
+		<!-- Boring layer selection <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-groupedlayercontrol/0.6.1/leaflet.groupedlayercontrol.min.css" integrity="sha256-2nki7eLxn91r/RI3QQq+ArnIltknk6gz4wSoQHFrJnA=" crossorigin="anonymous" /> -->
+		<link href="assets/styles_2.css" rel="stylesheet">
+		<!-- <link href="index.css" rel="stylesheet"> -->
+
 		<script src="assets/jquery-3.7.1.min.js"></script>
 
 		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 		<link rel="shortcut icon" href="img/cropped-PtX-Hub_favicon-192x192.png" type="image/x-icon">
 		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 		<link rel="icon" href="img/cropped-PtX-Hub_favicon-192x192.png	" type="image/x-icon">
+
+		<link rel="stylesheet" id="generate-style-css" href="assets/ptx.css" media="all">
+		<link rel="stylesheet" id="generate-style-css" href="assets/all.min.css" media="all">
+
 	</head>
 
 	<body>
+
+		<!-- PTX Hub Header -->
+
+		<div >
+			<div id="ptx_hub_header">
+								<nav id="site-navigation" class="main-navigation sub-menu-right stuckElement" itemtype="https://schema.org/SiteNavigationElement" itemscope="" style="z-index: 100;">
+							<div class="inside-navigation grid-container grid-parent">
+								<a href="https://staging.ptx.civilisten.io" target="_self" class="ptx-menu-logo">
+					<img src="https://staging.ptx.civilisten.io/wp-content/uploads/2022/08/PtX-Hub_Logo_international_2207_RGB.svg" class="ptx-logo-svg" alt="PtX Hub Logo" loading="lazy"></a>
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+									<span class="screen-reader-text">Menu</span>				</button>
+								<div id="primary-menu" class="main-nav"><ul id="menu-main-menu" class=" menu sf-menu"><li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-347"><a href="https://staging.ptx.civilisten.io/about-us/">About us<span role="button" class="dropdown-menu-toggle" tabindex="0"></span></a>
+				<ul class="sub-menu">
+					<li id="menu-item-9720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9720"><a href="https://staging.ptx.civilisten.io/team/">Team</a></li>
+				</ul>
+				</li>
+				<li id="menu-item-1313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1313"><a href="https://staging.ptx.civilisten.io/how-ptx-works/">How PtX works</a></li>
+				<li id="menu-item-15819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15819"><a href="https://staging.ptx.civilisten.io/knowledge-base/">Knowledge Base</a></li>
+				<li id="menu-item-14565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14565"><a href="https://staging.ptx.civilisten.io/academy/">PtX.Academy<span role="button" class="dropdown-menu-toggle" tabindex="0"></span></a>
+				<ul class="sub-menu">
+					<li id="menu-item-14564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14564"><a href="https://staging.ptx.civilisten.io/training/">PtX.Training</a></li>
+					<li id="menu-item-14563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14563"><a href="https://staging.ptx.civilisten.io/train-of-trainers/">PtX.Train-of-Trainers</a></li>
+					<li id="menu-item-14566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14566"><a href="https://staging.ptx.civilisten.io/e-academy/">PtX.e-Academy</a></li>
+				</ul>
+				</li>
+				<li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-351"><a href="https://staging.ptx.civilisten.io/countries/">Countries<span role="button" class="dropdown-menu-toggle" tabindex="0"></span></a>
+				<ul class="sub-menu">
+					<li id="menu-item-9529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9529"><a href="https://staging.ptx.civilisten.io/algeria/">Algeria</a></li>
+					<li id="menu-item-5918" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5918"><a href="https://staging.ptx.civilisten.io/argentina/">Argentina</a></li>
+					<li id="menu-item-14160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14160"><a href="https://staging.ptx.civilisten.io/chile/">Chile</a></li>
+					<li id="menu-item-10048" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10048"><a href="https://staging.ptx.civilisten.io/colombia/">Colombia</a></li>
+					<li id="menu-item-14172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14172"><a href="https://staging.ptx.civilisten.io/india/">India</a></li>
+					<li id="menu-item-10976" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10976"><a href="https://staging.ptx.civilisten.io/jordan/">Jordan</a></li>
+					<li id="menu-item-11985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11985"><a href="https://staging.ptx.civilisten.io/kenya/">Kenya</a></li>
+					<li id="menu-item-5971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5971"><a href="https://staging.ptx.civilisten.io/morocco/">Morocco</a></li>
+					<li id="menu-item-10315" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10315"><a href="https://staging.ptx.civilisten.io/namibia/">Namibia</a></li>
+					<li id="menu-item-6031" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6031"><a href="https://staging.ptx.civilisten.io/south-africa/">South Africa</a></li>
+					<li id="menu-item-10951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10951"><a href="https://staging.ptx.civilisten.io/uruguay/">Uruguay</a></li>
+					<li id="menu-item-10282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10282"><a href="https://staging.ptx.civilisten.io/vietnam/">Vietnam</a></li>
+					<li id="menu-item-591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-591"><a href="https://staging.ptx.civilisten.io/proqr/">ProQR Brazil</a></li>
+				</ul>
+				</li>
+				<li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-350"><a href="https://staging.ptx.civilisten.io/news-and-events/">News and events</a></li>
+				</ul></div>			</div>
+						</nav>
+			</div>
+
+
 		<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
 			xmlns="http://www.w3.org/2000/svg">
 			<defs>
@@ -126,7 +183,7 @@
 
 
 		<!-- Map takes whole screen -->
-		<div id="map"></div>
+		<div id="map_2"></div>
 
 		<!-- Size legend -->
 		<div id="scale">
@@ -245,14 +302,14 @@
 					<div> 
 						<h2 id="statistics_title">Statistics</h2>
 						<div id="statistics"></div>
-							<table>
+							<table class="table_custom">
 								<tr>
 									<th id="table-selected-emissions" style="width: 135px;text-align: right;">123 </th>
 									<th id="statistics_total">Tonnes per year</td></th>
 								</tr>
 							</table>
 						<h3 id="table_emissions_title">Total Emissions</h3>
-						<table id="table-all-emissions">
+						<table id="table-all-emissions" class="table_custom">
 						</table>
 					</div>
 
@@ -311,7 +368,17 @@
 					
 				</div>
 			</div>
+			<div id="ptx_hub_footer">
+				<p>
+					PtX Hub Footer
+				</p>
+			</div>
 		</div>
+
+	</div>
+	
+	<!-- PTX Hub Header -->
+
 
 		<script src="assets/leaflet.js"></script>
 		<script src="assets/maptiler-sdk.umd.js"></script>
@@ -326,6 +393,6 @@
 		<!-- <script src="assets/color_palette_ptxpathways.js"></script> -->
 		<script src="es.js"></script>
 		<script src="en.js"></script>
-		<script src="main.js"></script>
+		<script src="main_2.js"></script>
 	</body>
 </html>
