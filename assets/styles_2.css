@@ -181,6 +181,8 @@ h3 {
 } 
 */
 
+
+
 #map {
   position: absolute;
   top: 0;
@@ -189,20 +191,7 @@ h3 {
   left: 40px;
 }
 
-#map_2 {
-  position: absolute;
-  top: 200px;
-  bottom: 100px;
-  right: 0;
-  left: 40px;
-}
 
-#ptx_hub_header {
-  height:200px;
-}
-#ptx_hub_footer {
-  height:100px;
-}
 
 table, td, th > .table_custom {
   --bs-table-bg: transparent !important;
@@ -228,7 +217,8 @@ body, .popup-content {
   font-size: 15px;
 }
 
-body .sidebar, body .sidebar.sidebar-touch {
+/* old */
+/* body .sidebar, body .sidebar.sidebar-touch {
   background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));
   border: 0 !important;
   border-radius: 0 !important;
@@ -237,7 +227,45 @@ body .sidebar, body .sidebar.sidebar-touch {
   top: 200px;
   bottom: 100px;
   left: 0;
+} */
+
+/* new */
+
+#initial_container {
+  position: relative;
 }
+
+#map_container {
+  position: relative;
+  height: 700px;
+}
+#map_2 {
+  position: absolute;
+  /* top: 200px; */
+  height: 100%;
+  /* bottom: 100px; */
+  right: 0;
+  left: 40px;
+}
+.sidebar, .sidebar.sidebar-touch {
+  background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#ptx_hub_header {
+  position: relative;
+}
+
+#ptx_hub_footer {
+  position: relative;
+}
+
 body .sidebar-tabs {
   background: linear-gradient(to top, var(--ptx-primary-color), var(--ptx-secondary-color));  
 }
@@ -307,6 +335,7 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
 /* Size legend styling */
 #scale {
   position: absolute;
+  /* position: relative; */
   background-color: white;
   border-radius: 5px;
   border: 1.5px solid rgba(0,0,0,.2);
@@ -317,6 +346,7 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
   padding: 3px;
   font: 10px sans-serif;
 }
+
 .legend path,
 .legend line {
   fill: none;
