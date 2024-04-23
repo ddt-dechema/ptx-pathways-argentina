@@ -399,7 +399,7 @@ hr {
 }
 
 .button-ammonia-outline,
-.button-etileno-outline,
+.button-ethylene-outline,
 .button-methanol-outline {
   --bs-btn-color:var(--ptx-chemicals);
   --bs-btn-border-color:var(--ptx-chemicals);
