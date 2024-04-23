@@ -1,0 +1,253 @@
+latitude,longitude,altitude,geometry,Name,Company,Industry,CO2_emissions_t,Source_CO2_emissions,City,Province,Primary product,Installed Capacity [t/a],Columna1,Utility of the installed capacity,Process,year_emission,Source,CO2 factor [tCO2/tproduct]
+-42.63615141,-65.1028453,,Point,Fábrica de aluminio de Aluar,Aluar,Aluminium,612057.6,Industrial point source,Puerto Madryn,Chubut,Aluminium,460000,,0.8316,,2021,Estimated. See sources and methodology.,1.6
+-34.09354048,-59.00465275,,Point,Bunge Campana,Bunge Argentina S.A,Ammonia,36382.5,Industrial point source,Campana,Buenos Aires,Ammonia,29700,,0.98,N-Ren,2021,Estimated. See sources and methodology.,1.25
+-38.78424491,-62.28168815,,Point,Profertil Bahia Blanca,Profertil S.A.,Ammonia,710621,Industrial point source,Bahia Blanca,Buenos Aires,Ammonia,790000,,0.98,Haldor Topsoe,2021,Sustainability report Profertil 2021,1.25
+-25.37919283,-64.65198658,,Point,Austin Powder,Austin Powder,Ammonia,73500,Industrial point source,El Galpón,Salta,Ammonia,60000,,0.98,Girdler Corp.,2021,Estimated. See sources and methodology.,1.25
+-27.3548157,-65.60294134,,Point,Bioenergía la Corona,Bioenergia La Corona S.A.,Bioethanol,21600,Biogenic point source,Concepción,Tucumán,Bioethanol,25644.6,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-28.48761165,-59.39684115,,Point,Bioenergías Agropecuarias S.A.,BIOENERGÍASAGROPECUARIAS S.A.,Bioethanol,22000,Biogenic point source,General Obligado,Santa Fe,Bioethanol,26119.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-27.22139848,-65.51695443,,Point,Ingenio Santa Rosa,Bioenergía Santa Rosa S.A.,Bioethanol,21600,Biogenic point source,Monteros,Tucumán,Bioethanol,25644.6,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-23.82436777,-64.78800974,,Point,Ingenio Ledesma,Bio Ledesma S.A.,Bioethanol,66000,Biogenic point source,Libertador General San Martin,Jujuy,Bioethanol,78358.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-24.6810765,-65.09802875,,Point,Bio San Isidro,Bio San Isidro S.A.,Bioethanol,9000,Biogenic point source,Campo Santo,Salta,Bioethanol,10685.25,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-26.82826317,-65.20884372,,Point,Biotrinidad,Biotrinidad S.A.,Bioethanol,19200,Biogenic point source,San Miguel de Tucumán,Tucumán,Bioethanol,22795.2,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-26.81731107,-65.08538766,,Point,Compañía Bioenergética La Florida,Compañía Bioenergética La Florida S.A.,Bioethanol,83333.33333,Biogenic point source,La Florida,Tucumán,Bioethanol,98937.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-27.4571049,-65.60985513,,Point,Energías Ecológicas de Tucumán,Energías Ecológicas de Tucumán - Grupo Colombres,Bioethanol,22000,Biogenic point source,Aguilares,Tucumán,Bioethanol,26119.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-27.0235712,-65.30157927,,Point,Fronterita Energía S.A.,Fronterita Energia S.A.,Bioethanol,21333.33333,Biogenic point source,Juan XXIII,Tucumán,Bioethanol,25328,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-24.31258742,-64.9683694,,Point,Ingenio Río Grande,Rio Grande Energia S.A.,Bioethanol,14400,Biogenic point source,La Mendieta,Jujuy,Bioethanol,17096.4,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-32.41597156,-63.16162482,,Point,ACA,Aca Bio Cooperativa Ltda.,Bioethanol,83333.33333,Biogenic point source,Villa María,Córdoba,Bioethanol,98937.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-33.17998671,-64.38329425,,Point,Bio IV,Bioetanol Rio Cuarto A.A.,Bioethanol,66666.66667,Biogenic point source,Río Cuarto,Córdoba,Bioethanol,79150,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-33.32563333,-66.36372385,,Point,Diaser,Derivados San Luis,Bioethanol,61600,Biogenic point source,San Luis,San Luis,Bioethanol,73134.6,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-31.37191425,-64.18185929,,Point,Maíz Energía,MAÍZ ENERGÍA S.A.,Bioethanol,39200,Biogenic point source,Ciudad de Córdoba,Córdoba,Bioethanol,46540.2,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-33.36537538,-63.71712134,,Point,Promaíz,Promaiz S.A.,Bioethanol,146666.6667,Biogenic point source,Alejandro Roca,Córdoba,Bioethanol,174130,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-31.62099492,-60.71499331,,Point,Vicentin,Vicentin S.A.I.C.,Bioethanol,76666.66667,Biogenic point source,Avellaneda,Santa Fe,Bioethanol,91022.5,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-23.2022408,-64.29616772,,Point,Seaboard Energía Renovables y Alimentos,Seaboard Energía Renovables y Alimentos,Bioethanol,165000,Biogenic point source,Orán,Salta,Bioethanol,195896.25,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-26.84424771,-65.14264897,,Point,Bioenergética Leales S.A.,Bioenergética Leales S.A.,Bioethanol,28000,Biogenic point source,Cevil Pozo,Tucumán,Bioethanol,33243,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-26.83469939,-65.15279485,,Point,Bio Atar S.A.,Bio Atar S.A.,Bioethanol,44000,Biogenic point source,Alderetes,Tucumán,Bioethanol,52239,,0.8,,,Estimated. See sources and methodology.,1.052853232
+-25.97573961,-54.63376934,,Point,Arauco Argentina S.A. ,Arauco Argentina S.A. ,Pulp and Paper,875000,Industrial point source,Puerto Esperanza,Misiones,Cellulose pulp,350000,,0.87,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-32.73646168,-60.70218034,,Point,Celulosa Argentina S.A.,Celulosa Argentina S.A.,Pulp and Paper,416400,Industrial point source,Capitan Bermudez,Santa Fe,Cellulose pulp,166560,,0.92,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-33.7216403,-59.62774924,,Point,Papel Prensa S.A.I.C.F.,Papel Prensa S.A.I.C.F.,Pulp and Paper,421762.5,Industrial point source,San Pedro,Buenos Aires,Cellulose pulp,168705,,0.66,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-26.93561856,-55.11980442,,Point,Papel Misionero,Papel Misionero,Pulp and Paper,272137.5,Industrial point source,Puerto Leoni,Misiones,Cellulose pulp,108855,,0.9,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-24.23195846,-65.23014529,,Point,Papelera del NOA S.A.,Papelera del NOA S.A.,Pulp and Paper,85425,Industrial point source,Río Blanco,Jujuy,Cellulose pulp,34170,,0.84,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-23.82765684,-64.79551334,,Point,Fábrica de Papel Ledesma,Fábrica de Papel Ledesma,Pulp and Paper,212250,Industrial point source,Libertador General San Martín,Jujuy,Cellulose pulp,84900,,0.67,,,"Estimation made by K. Kuparinen, E.  Vakkilainen, and T. Tinjala, ""Biomass-Based Carbon Capture and Utilization in kraft pulp mills"". See Sources and methodology",2.5
+-37.03607735,-60.29810249,,Point,Fábrica L'Amalí,Loma Negra,Cement,2442352.941,Industrial point source,Olavarría,Buenos Aires,Cement,3200000,,,Integrada,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-36.93725544,-60.16484634,,Point,Fábrica Olavarría,Loma Negra,Cement,1144852.941,Industrial point source,Olavarría,Buenos Aires,Cement,1500000,,,Integrada,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-28.46620076,-65.21491434,,Point,Fábrica Catamarca,Loma Negra,Cement,1373823.529,Industrial point source,El Alto,Catamarca,Cement,1800000,,,Integrada,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-38.89661841,-70.03773085,,Point,Fábrica Zapala,Loma Negra,Cement,305294.1176,Industrial point source,Zapala,Neuquén,Cement,400000,,,Integrada,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-32.7406102,-68.83721964,,Point,Planta Holcim Capdeville Mendoza,HOLCIM,Cement,534264.7059,Industrial point source,Las Heras,Mendoza,Cement,700000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-31.47714495,-64.35835512,,Point,Planta Holcim Malagueño,HOLCIM,Cement,2366029.412,Industrial point source,Malagueño,Córdoba,Cement,3100000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-24.49038325,-64.9570812,,Point,Planta Holcim Puesto Viejo,HOLCIM,Cement,763235.2941,Industrial point source,Puesto Viejo,Jujuy,Cement,1000000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-36.98156278,-60.24814569,,Point,San Jacinto,Cementos Avellaneda,Cement,1831764.706,Industrial point source,Olavarría,Buenos Aires,Cement,2400000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-32.799973,-66.85763867,,Point,El Grande,Cementos Avellaneda,Cement,839558.8235,Industrial point source,La Calera,San Luis,Cement,1100000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-46.78713825,-67.92954422,,Point,Fábrica Pico Truncado,PCR,Cement,457941.1765,Industrial point source,Pico Truncado,Santa Cruz,Cement,600000,,,,2021,Asociación de Fabricantes de Cemento Portland (AFCP),0.519
+-33.32260493,-60.15945416,,Point,Planta siderúrgica Ternium Siderar,Ternium Argentina S.A.,Steel,5286272,Industrial point source,Ramallo/San Nicolas,Buenos Aires,"Slabs and hot rolled flat products , cold rolled flat products , tinplate",3200000,,0.59375,Blast Furnace - Basic Oxygen Furnace (BF-BOF),2021,Estimated. See sources and methodology.,1.65196
+-34.152554,-58.977388,,Point,Planta siderúrgica TenarisSiderca,Ternaris S.A. / Siderca S.A.I.C.,Steel,650000,Industrial point source,Campana,Buenos Aires,Seamless pipes ,1300000,,0.538461538,Electric Arc Furnace (EAF),2021,Estimated. See sources and methodology.,0.5
+-33.256309,-60.292472,,Point,Acindar,Acindar Industria Argentina de Aceros S.A.,Steel,1015000,Industrial point source,Villa Constitución,Santa Fe,"Billets, rolled non-flat products ",1750000,,0.628571429,Electric Arc Furnace (EAF),2021,Estimated. See sources and methodology.,0.58
+-32.9912336,-60.7588733,,Point,Planta siderúrgica Gerdau Sipar Pérez,Gerdau SA,Steel,103031,Industrial point source,Pérez,Santa Fe,Rolled non-flat products ,650000,,0.207692308,Electric Arc Furnace (EAF),2021,Estimated. See sources and methodology.,0.17746
+-42.7438848,-65.04839927,,Point,ALUAR SA - GENERADOR,Aluar,Fossil Thermal Power Plant,210445,Industrial point source,Puerto Madryn,Chubut,Electrical energy,189,,,,2021,CAMMESA,1.94819592
+-31.42055514,-63.03885915,,Point,ARCOR MARIO SEVESO ARROYITO,,Fossil Thermal Power Plant,93267,Industrial point source,Arroyito,Córdoba,,,,,,2021,CAMMESA,1.94819592
+-33.02787784,-68.89874272,,Point,C. TERMICAS MENDOZA PLUS,,Fossil Thermal Power Plant,788702,Industrial point source,Lujan de Cuyo,Mendoza,,288.466,,,,2021,CAMMESA,1.94819592
+-36.30875528,-56.63689546,,Point,C.COSTA ATLANTICA,,Fossil Thermal Power Plant,509899,Industrial point source,La Plata,Buenos Aires,,455.88,,,,2021,CAMMESA,2.347655665
+-32.97092569,-60.1538909,,Point,C.T. AES PARANA,,Fossil Thermal Power Plant,1717893,Industrial point source,San Nicolás de los Arroyos,Buenos Aires,,869.51,,,,2021,CAMMESA,2.240478703
+-38.93531878,-68.35746075,,Point,C.T. AGUA DEL CAJON,,Fossil Thermal Power Plant,1108638,Industrial point source,Neuquén,Neuquén,Electrical energy,184.4,,,,2021,CAMMESA,1.94819592
+-34.83766034,-58.40568505,,Point,C.T. ALMIRANTE BROWN,Excell Power S.R.L.,Fossil Thermal Power Plant,7094,Industrial point source,Burazco,Buenos Aires,Electrical energy,25,,,,2021,CAMMESA,2.697170552
+-38.51178974,-68.60637825,,Point,C.T. LOMA DE LA LATA S.A.,C.T. LOMA DE LA LATA S.A.,Fossil Thermal Power Plant,1779653,Industrial point source,Neuquén,Neuquén,Electrical energy,675,,,,2021,CAMMESA,1.94819592
+-45.81390612,-67.44427712,,Point,C.T. PATAGONICAS SA,CENTRALES TERMICAS PATAGONICAS S.A.,Fossil Thermal Power Plant,27712,Industrial point source,Comodoro Rivadavia,Chubut,Electrical energy,160,,,,2021,CAMMESA,1.94819592
+-24.74271171,-65.05151496,,Point,C.T. SALTA (TERMOANDES),AES,Fossil Thermal Power Plant,1004183,Industrial point source,Cobos,Salta,Electrical energy,642.7,,,,2021,CAMMESA,1.94819592
+-38.95161594,-68.02174487,,Point,C.TERMICA ALTO VALLE,,Fossil Thermal Power Plant,198282,Industrial point source,Neuquén,Neuquén,Electrical energy,96,,,,2021,CAMMESA,1.94819592
+-24.75718674,-65.34767737,,Point,C.TERMICA GUEMES S.A.,,Fossil Thermal Power Plant,139062,Industrial point source,Gral. Güemes,Salta,,261,,,,2021,CAMMESA,1.94819592
+-33.35809074,-60.17476179,,Point,C.TERMICA SAN NICOLAS,AES,Fossil Thermal Power Plant,2158549,Industrial point source,San Nicolás de Los Arroyos,Buenos Aires,Electrical energy,675,,,,2021,CAMMESA,2.382121966
+-32.90624373,-60.68192663,,Point,C.TERMICA SORRENTO,,Fossil Thermal Power Plant,20821,Industrial point source,Rosario,Santa Fe,,217,,,,2021,CAMMESA,2.356224249
+-38.93576108,-68.35797573,,Point,CAPEX S.A. AUTOGENERADOR,,Fossil Thermal Power Plant,1075683,Industrial point source,Agua del Cajon,Neuquén,,477.1,,,,2021,CAMMESA,1.94819592
+-34.88987358,-57.93335436,,Point,CENTRAL DIQUE S.A.,CENTRAL DIQUE S.A.,Fossil Thermal Power Plant,478,Industrial point source,Ensenada,Buenos Aires,Electrical energy,55,,,,2021,CAMMESA,1.94819592
+-34.65327861,-58.34352059,,Point,CENTRAL DOCK SUD,Central Dock Sud,Fossil Thermal Power Plant,2101890,Industrial point source,Dock Sud,Buenos Aires,Electrical energy,869.5,,,,2021,CAMMESA,2.114634727
+-38.78482523,-62.25607271,,Point,CENTRAL PIEDRA BUENA S.A.,Pampa Energía,Fossil Thermal Power Plant,243763,Industrial point source,Ingeniero White,Buenos Aires,Electrical energy,,,,,2021,CAMMESA,2.40722779
+-34.56347462,-58.385489,,Point,CENTRAL PUERTO SA,Central Puerto S.A.,Fossil Thermal Power Plant,3481800,Industrial point source,Buenos Aires,Buenos Aires,Electrical energy,1777,,,,2021,CAMMESA,2.41650066
+-22.35004604,-63.76700533,,Point,CENTRAL TERMICA PIQUIRENDA,Pampa Energía,Fossil Thermal Power Plant,25963,Industrial point source,Piquirenda,Salta,Electrical energy,30.4,,,,2021,CAMMESA,1.94819592
+-38.04949391,-57.54553583,,Point,CT 9 de JULIO C Cost ATLANTICA,Centrales de la Costa Atlántica S.A.,Fossil Thermal Power Plant,221258,Industrial point source,Mar del Plata,Buenos Aires,Electrical energy,94.74,,,,2021,CAMMESA,2.247785773
+-27.55844357,-55.28616792,,Point,CT ALEM - AGGREKO,,Fossil Thermal Power Plant,35577,Industrial point source,LEANDRO N. ALEM,Misiones,,15,,,,2021,CAMMESA,2.697170552
+-33.3133564,-68.89151146,,Point,CT ANCHORIS - METHAX,EMESA,Fossil Thermal Power Plant,50825,Industrial point source,Tupungato,Mendoza,Electrical energy,40,,,,2021,CAMMESA,1.94819592
+-28.44584131,-62.85560319,,Point,CT AÑATUYA - SULLAIR,,Fossil Thermal Power Plant,11557,Industrial point source,Añatuya,Santiago del Estero,Electrical energy,19.2,,,,2021,CAMMESA,2.697170552
+-28.44584131,-62.85560319,,Point,CT AÑATUYA II - SULLAIR,,Fossil Thermal Power Plant,4840,Industrial point source,Añatuya,Santiago del Estero,Electrical energy,11.5,,,,2021,CAMMESA,2.697170552
+-27.09123769,-54.86344241,,Point,CT ARISTOBU.DEL VALLE-SOENERGY,,Fossil Thermal Power Plant,24495,Industrial point source,Aristóbulo del Valle,Misiones,Electrical energy,15,,,,2021,CAMMESA,2.697170552
+-27.79292098,-62.15515275,,Point,CT BANDERA SgoEstero - ENARSA,,Fossil Thermal Power Plant,4539,Industrial point source, La Banda,Santiago del Estero,,32.5,,,,2021,CAMMESA,2.697170552
+-41.0854318,-71.35591366,,Point,CT BARILOCHE,,Fossil Thermal Power Plant,1392,Industrial point source,Bariloche,Río Negro,,20,,,,2021,CAMMESA,2.697170552
+-37.54858826,-59.4506657,,Point,CT BARKER CIERRE CC,,Fossil Thermal Power Plant,636102,Industrial point source,Benito Juárez,Buenos Aires,Electrical energy,105.85,,,,2021,CAMMESA,2.230277275
+-34.85965751,-57.95577403,,Point,CT BARRAGAN - ENARSA,ENARSA,Fossil Thermal Power Plant,319657,Industrial point source,Ensenada,Buenos Aires,Electrical energy,567,,,,2021,CAMMESA,2.266510139
+-27.48591444,-58.93260519,,Point,CT BARRANQUERAS Chaco,,Fossil Thermal Power Plant,3373,Industrial point source,Barranqueras ,Chaco,,21.7,,,,2021,CAMMESA,2.697170552
+-32.61039562,-62.68583225,,Point,CT BELL VILLE - SULLAIR,SULLAIR ARGENTINA S.A.,Fossil Thermal Power Plant,6459,Industrial point source,Bell Ville,Córdoba,Electrical energy,15.6,,,,2021,CAMMESA,2.697170552
+-26.99529044,-65.17017867,,Point,CT BRACHO CIERRE CC- Y-GEN S.A,,Fossil Thermal Power Plant,1242878,Industrial point source,"El  Bracho, Cruz Alta",Tucumán,,199,,,,2021,CAMMESA,1.94819592
+-34.81288221,-60.40005,,Point,CT BRAGADO - EMGASUD,,Fossil Thermal Power Plant,7559,Industrial point source,Bragado,Buenos Aires,,,,,,2021,CAMMESA,2.135439578
+-35.13651396,-60.43241426,,Point,CT BRAGADO 2 - GENNEIA,Genneia,Fossil Thermal Power Plant,79138,Industrial point source,Bragado,Buenos Aires,Electrical energy,58.5,,,,2021,CAMMESA,2.251834284
+-35.13651396,-60.43241426,,Point,CT BRAGADO 3 - GENNEIA,Genneia,Fossil Thermal Power Plant,92453,Industrial point source,Bragado,Buenos Aires,Electrical energy,61.2,,,,2021,CAMMESA,2.220550332
+-31.71284154,-60.77930021,,Point,CT BRIGADIER LOPEZ,Central Puerto S.A.,Fossil Thermal Power Plant,64572,Industrial point source,Santa Fe,Santa Fe,Electrical energy,280,,,,2021,CAMMESA,2.322683236
+-23.73226891,-64.61399317,,Point,CT CAIMANCITO -SULLAIR,,Fossil Thermal Power Plant,62571,Industrial point source,Libertador Gral San Martín,Jujuy,Electrical energy,91,,,,2021,CAMMESA,1.94819592
+-32.78187222,-61.41843352,,Point,CT CAÑADA DE GOMEZ - SECCO,Secco,Fossil Thermal Power Plant,105744,Industrial point source,Cañada de Gómez,Santa Fe,Electrical energy,67.232,,,,2021,CAMMESA,2.671149063
+-34.16216899,-59.79574076,,Point,CT CAPITAN SARMIENTO - SECCO,Secco,Fossil Thermal Power Plant,10205,Industrial point source,CAPITAN SARMIENTO,Buenos Aires,,5,,,,2021,CAMMESA,2.697170552
+-25.94900872,-60.61986966,,Point,CT CASTELLI - AGGREKO,,Fossil Thermal Power Plant,9440,Industrial point source,GENERAL GUEMES,Chaco,,15,,,,2021,CAMMESA,2.697170552
+-28.4208082,-65.78776983,,Point,CT CATAMARCA - SECCO,,Fossil Thermal Power Plant,10013,Industrial point source,San Fernando del Valle de Catamarca,Catamarca,,19.2,,,,2021,CAMMESA,2.697170552
+-29.87387756,-61.92317816,,Point,CT CERES - SECCO,,Fossil Thermal Power Plant,3924,Industrial point source,SAN CRISTOBAL,Santa Fe,,18,,,,2021,CAMMESA,2.697170552
+-27.20868003,-61.18225793,,Point,CT CHARATA - SULLAIR,,Fossil Thermal Power Plant,7334,Industrial point source,CHACABUCO,Chaco,,19.8,,,,2021,CAMMESA,2.697170552
+-29.15733701,-67.50746666,,Point,CT CHILECITO - SECCO,Secco,Fossil Thermal Power Plant,4810,Industrial point source,Chilecito,La Rioja,Electrical energy,10,,,,2021,CAMMESA,2.697170552
+-38.86486771,-68.03632495,,Point,CT CIPOLLETI - AGGREKO,,Fossil Thermal Power Plant,501,Industrial point source,GENERAL ROCA,Río Negro,,5,,,,2021,CAMMESA,2.697170552
+-33.73201213,-61.09709894,,Point,CT COLON BS.AS - SULLAIR,,Fossil Thermal Power Plant,5222,Industrial point source,Colón,Buenos Aires,Electrical energy,15.3,,,,2021,CAMMESA,2.697170552
+-27.4710135,-58.80297303,,Point,CT CORRIENTES - AGGREKO,,Fossil Thermal Power Plant,7204,Industrial point source,Corrientes,Corrientes,,20,,,,2021,CAMMESA,2.697170552
+-34.90274362,-58.61692333,,Point,CT EZEIZA ETAPA1 G MEDITERRANE,,Fossil Thermal Power Plant,56618,Industrial point source,Carlos Spegazzini,Buenos Aires,Electrical energy,102.1,,,,2021,CAMMESA,2.197854131
+-34.90274362,-58.61692333,,Point,CT EZEIZA ETAPA2 G MEDITERRANE,,Fossil Thermal Power Plant,32456,Industrial point source,Carlos Spegazzini,Buenos Aires,Electrical energy,50,,,,2021,CAMMESA,2.197854131
+-26.17579564,-58.20978419,,Point,CT FORMOSA - APR ENERGY,,Fossil Thermal Power Plant,5006,Industrial point source,FORMOSA,Formosa,,30,,,,2021,CAMMESA,2.697170552
+-33.45541478,-60.28090222,,Point,CT GENERAL ROJO CIERRE CC,,Fossil Thermal Power Plant,619957,Industrial point source,San Nicolás de Los Arroyos,Buenos Aires,Electrical energy,107.65,,,,2021,CAMMESA,2.314715421
+-29.15821641,-59.27345715,,Point,CT GOYA - SECCO,,Fossil Thermal Power Plant,4754,Industrial point source,Goya,Corrientes,Electrical energy,13,,,,2021,CAMMESA,2.697170552
+-35.0345172,-62.99797308,,Point,CT GRAL. VILLEGAS - AGGREKO,,Fossil Thermal Power Plant,14209,Industrial point source,General Villegas,Buenos Aires,,23.5,,,,2021,CAMMESA,2.697170552
+-26.866966,-65.22182861,,Point,CT INDEPEND. ETAPA1 G MEDITERR,Grupo Albanesi,Fossil Thermal Power Plant,10088,Industrial point source,San Miguel de Tucumán,Tucumán,Electrical energy,49.6,,,,2021,CAMMESA,2.239463833
+-26.866966,-65.22182861,,Point,CT INDEPEND. ETAPA2 G MEDITERR,Grupo Albanesi,Fossil Thermal Power Plant,9463,Industrial point source,San Miguel de Tucumán,Tucumán,Electrical energy,49,,,,2021,CAMMESA,2.239463833
+-23.90901687,-61.83150245,,Point,CT ING JUAREZ - SECCO,,Fossil Thermal Power Plant,2692,Industrial point source,Ingeniero Juárez,Formosa,Electrical energy,4,,,,2021,CAMMESA,2.697170552
+-33.24178127,-62.39381422,,Point,CT ISLA VERDE - AGGREKO,,Fossil Thermal Power Plant,7670,Industrial point source,MARCOS JUAREZ,Córdoba,,24.5,,,,2021,CAMMESA,2.697170552
+-27.31887856,-58.23844011,,Point,CT ITATI - TURBODISEL,,Fossil Thermal Power Plant,1498,Industrial point source,Itati,Corrientes,,7.2,,,,2021,CAMMESA,2.697170552
+-34.55914506,-60.92796994,,Point,CT JUNIN,,Fossil Thermal Power Plant,14479,Industrial point source,Junin,Buenos Aires,,22,,,,2021,CAMMESA,2.697170552
+-30.74961413,-59.60149196,,Point,CT LA PAZ Entre Rios - ENARSA,,Fossil Thermal Power Plant,2674,Industrial point source, La Paz,Entre Ríos,,10.8,,,,2021,CAMMESA,2.697170552
+-34.9338664,-58.01640058,,Point,CT LA PLATA - SULLAIR,,Fossil Thermal Power Plant,14048,Industrial point source,San Carlos,Buenos Aires,Electrical energy,40.4,,,,2021,CAMMESA,2.697170552
+-29.35906756,-66.83395555,,Point,CT LA RIOJA - SECCO,,Fossil Thermal Power Plant,7688,Industrial point source,La Rioja,La Rioja,,19.2,,,,2021,CAMMESA,2.697170552
+-29.42128793,-66.82983567,,Point,CT LA RIOJA SUR- SECCO,,Fossil Thermal Power Plant,3506,Industrial point source,La Rioja,La Rioja,,10,,,,2021,CAMMESA,2.697170552
+-25.12695055,-58.25915073,,Point,CT LAGUNA BLANCA - SECCO,,Fossil Thermal Power Plant,4457,Industrial point source,Laguna Blanca,Formosa,Electrical energy,7,,,,2021,CAMMESA,2.697170552
+-37.07639032,-57.81773168,,Point,CT LAS ARMAS II - EMGASUD,,Fossil Thermal Power Plant,606,Industrial point source,MAIPU,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-34.07978591,-59.12506332,,Point,CT LAS PALMAS 2 - ARAUCARIA,,Fossil Thermal Power Plant,100667,Industrial point source,Zarate,Buenos Aires,,212.2,,,,2021,CAMMESA,2.274220172
+-27.03271109,-58.70358987,,Point,CT LAS PALMAS -TURBODISEL,,Fossil Thermal Power Plant,543,Industrial point source,Bermejo,Chaco,,7.2,,,,2021,CAMMESA,2.697170552
+-23.73223944,-64.61405755,,Point,CT LIBERTADOR GSM - SULLAIR,,Fossil Thermal Power Plant,3331,Industrial point source,LEDESMA,Jujuy,,15.26,,,,2021,CAMMESA,2.697170552
+-34.85716731,-61.52070383,,Point,CT LINCOLN,,Fossil Thermal Power Plant,5898,Industrial point source,Lincoln,Buenos Aires,Electrical energy,15,,,,2021,CAMMESA,2.697170552
+-35.18956801,-59.07850788,,Point,CT LOBOS BS.AS - SULLAIR,,Fossil Thermal Power Plant,23328,Industrial point source,LOBOS,Buenos Aires,,19.68,,,,2021,CAMMESA,2.697170552
+-37.92686761,-68.71536317,,Point,CT LOMA CAMPANA 1 -YPF,,Fossil Thermal Power Plant,93992,Industrial point source,Añelo,Neuquén,,105,,,,2021,CAMMESA,1.94819592
+-37.92686761,-68.71536317,,Point,CT LOMA CAMPANA 2 -Y-GEN ELECT,,Fossil Thermal Power Plant,164946,Industrial point source,Añelo,Neuquén,,107,,,,2021,CAMMESA,1.94819592
+-38.51180658,-68.6063997,,Point,CT LOMA DE LA LATA II(NEUQUEN),,Fossil Thermal Power Plant,228867,Industrial point source,Loma de la Lata,Neuquén,,105,,,,2021,CAMMESA,1.94819592
+-34.55594176,-59.03483213,,Point,CT LUJAN II - ARAUCARIA ENERGY,,Fossil Thermal Power Plant,68363,Industrial point source,Luján,Buenos Aires,,127.3,,,,2021,CAMMESA,2.013324149
+-35.100081,-57.483894,,Point,CT MAGDALENA - APR ENERGY,,Fossil Thermal Power Plant,4433,Industrial point source,MAGDALENA,Buenos Aires,,25,,,,2021,CAMMESA,2.697170552
+-34.39580865,-58.83489199,,Point,CT MATHEU II - APR ENERGY,,Fossil Thermal Power Plant,1875,Industrial point source,Pilar,Buenos Aires,,229,,,,2021,CAMMESA,1.94819592
+-38.24736618,-57.82379749,,Point,CT MIRAMAR I - ENERGYST,,Fossil Thermal Power Plant,23587,Industrial point source,Miramar,Buenos Aires,,20,,,,2021,CAMMESA,2.697170552
+-23.1386542,-64.31143463,,Point,CT ORAN - SECCO,,Fossil Thermal Power Plant,3717,Industrial point source,San Ramon de la Nueva Oran,Salta,,15,,,,2021,CAMMESA,2.697170552
+-28.52995995,-65.80098711,,Point,CT PARQUE INDUSTR.CATAM-SECCO,,Fossil Thermal Power Plant,8843,Industrial point source,VALLE VIEJO,Catamarca,,15,,,,2021,CAMMESA,2.697170552
+-27.32287605,-58.56667495,,Point,CT PASO LA PATRIA-TURBODISEL,,Fossil Thermal Power Plant,1189,Industrial point source,Paso de la Patria,Corrientes,,7.2,,,,2021,CAMMESA,2.697170552
+-33.01941125,-60.82494636,,Point,CT PEREZ - SECCO,,Fossil Thermal Power Plant,109776,Industrial point source,Perez,Santa Fe,,81.088,,,,2021,CAMMESA,2.654963545
+-38.03244943,-62.3371078,,Point,CT PIEDRABUENA MG(L.LATA),,Fossil Thermal Power Plant,173945,Industrial point source,Bahia Blanca,Buenos Aires,,100.02,,,,2021,CAMMESA,2.60588246
+-31.66577634,-63.83191433,,Point,CT PILAR - EPEC,,Fossil Thermal Power Plant,1055603,Industrial point source,Ciudad de Pilar,Córdoba,,466,,,,2021,CAMMESA,2.247785773
+-34.2986356,-58.95101224,,Point,CT PILAR BS AS- PAMPA ENERGÍA,,Fossil Thermal Power Plant,187528,Industrial point source,Pilar,Buenos Aires,,100.398,,,,2021,CAMMESA,2.624673504
+-25.67861,-59.07556,,Point,CT PIRANE - SULLAIR,,Fossil Thermal Power Plant,10675,Industrial point source,Pirané ,Formosa,,16.25,,,,2021,CAMMESA,2.697170552
+-26.15352072,-59.60000813,,Point,CT PRESIDENCIA ROCA,,Fossil Thermal Power Plant,1276,Industrial point source,Libertador General San Martín,Chaco,,6,,,,2021,CAMMESA,2.697170552
+-31.25667,-61.52028,,Point,CT RAFAELA - SECCO,,Fossil Thermal Power Plant,7300,Industrial point source,CASTELLANOS,Santa Fe,,19.2,,,,2021,CAMMESA,2.697170552
+-35.055,-64.24056,,Point,CT REALICO - SECCO,,Fossil Thermal Power Plant,6721,Industrial point source,REALICO,La Pampa,,24,,,,2021,CAMMESA,2.697170552
+-32.60348225,-60.79474192,,Point,CT RENOVA - ALBANESI ENERGIA,,Fossil Thermal Power Plant,457321,Industrial point source,Timbues,Santa Fe,,172,,,,2021,CAMMESA,2.168482577
+-32.16105961,-64.15478473,,Point,CT RIO TERCERO II - SoENERGY,,Fossil Thermal Power Plant,30138,Industrial point source,Río Tercero,Córdoba,,60,,,,2021,CAMMESA,2.306401179
+-38.64532632,-67.6716524,,Point,CT ROCA SA,,Fossil Thermal Power Plant,502028,Industrial point source,General Roca,Río Negro,,193.13,,,,2021,CAMMESA,2.135439578
+-34.28871794,-62.66959238,,Point,CT RUFINO Sta Fe - ENARSA,,Fossil Thermal Power Plant,8965,Industrial point source,Rufino,Santa Fe,,31.9,,,,2021,CAMMESA,2.697170552
+-26.81555556,-60.41138889,,Point,CT SAENZ PEÑA - APR ENERGY,,Fossil Thermal Power Plant,3654,Industrial point source,COMANDANTE FERNANDEZ,Chaco,,20,,,,2021,CAMMESA,2.697170552
+-26.81477999,-60.41267637,,Point,CT SAENZ PEÑA II- AGGREKO,,Fossil Thermal Power Plant,4626,Industrial point source,COMANDANTE FERNANDEZ,Chaco,,15,,,,2021,CAMMESA,2.697170552
+-34.20426055,-60.24871635,,Point,CT SALTO 2 - SoENERGY,,Fossil Thermal Power Plant,103648,Industrial point source,Salto,Buenos Aires,,63,,,,2021,CAMMESA,2.306401179
+-26.55845431,-59.32413238,,Point,CT SAN MARTIN Chaco,,Fossil Thermal Power Plant,1320,Industrial point source,General José de San Martín,Chaco,,15,,,,2021,CAMMESA,2.697170552
+-33.77667601,-59.72699232,,Point,CT SAN PEDRO - CIERRE CC,,Fossil Thermal Power Plant,33804,Industrial point source,San Pedro,Buenos Aires,,50.46,,,,2021,CAMMESA,1.94819592
+-33.77822014,-59.72715283,,Point,CT SAN PEDRO - SPI ENERGY SA,,Fossil Thermal Power Plant,46087,Industrial point source,San Pedro,Buenos Aires,,108,,,,2021,CAMMESA,2.266510139
+-31.60970051,-58.48874915,,Point,CT SAN SALVADOR E.Rios -ENARSA,,Fossil Thermal Power Plant,1815,Industrial point source,San Salvador,Entre Ríos,,10.8,,,,2021,CAMMESA,2.697170552
+-35.04344836,-58.32534848,,Point,CT SAN VICENTE BsAs - ENARSA,,Fossil Thermal Power Plant,4595,Industrial point source,San Vicente,Buenos Aires,,27.6,,,,2021,CAMMESA,2.697170552
+-28.26247793,-58.12262641,,Point,CT SANTA ROSA -TURBODISEL,,Fossil Thermal Power Plant,1988,Industrial point source,Santa Rosa,Corrientes,,7.2,,,,2021,CAMMESA,2.697170552
+-28.42876224,-65.78746942,,Point,CT TEREVINTOS - SECCO,,Fossil Thermal Power Plant,2652,Industrial point source,San Fernando del Valle de Catamarca,Catamarca,,8,,,,2021,CAMMESA,2.697170552
+-28.04904452,-67.56608993,,Point,CT TINOGASTA - SULLAIR,,Fossil Thermal Power Plant,4169,Industrial point source,TINOGASTA,Catamarca,,15,,,,2021,CAMMESA,2.697170552
+-33.75246685,-61.99327364,,Point,CT VENADO TUERTO - SECCO,,Fossil Thermal Power Plant,7617,Industrial point source,GENERAL LOPEZ,Santa Fe,,19.2,,,,2021,CAMMESA,2.697170552
+-31.89194,-60.01056,,Point,CT VIALE - AGGREKO,,Fossil Thermal Power Plant,4529,Industrial point source,PARANA,Entre Ríos,,10,,,,2021,CAMMESA,2.697170552
+-27.60214589,-60.74649601,,Point,CT VILLA ANGELA - AGGREKO,,Fossil Thermal Power Plant,4977,Industrial point source,MAYOR LUIS J. FONTANA,Chaco,,15,,,,2021,CAMMESA,2.697170552
+-37.24848426,-56.99724588,,Point,CT VILLA GESELL-CATLANT.,,Fossil Thermal Power Plant,333196,Industrial point source,Villa Gesell,Buenos Aires,,80,,,,2021,CAMMESA,2.168482577
+-32.42693676,-63.17188574,,Point,CT VILLA MARIA CIERRE CC-UENSA,,Fossil Thermal Power Plant,630749,Industrial point source,Villa Maria,Córdoba,,105.1,,,,2021,CAMMESA,2.318567991
+-28.51609309,-59.34577171,,Point,CT VILLA OCAMPO - SECCO,,Fossil Thermal Power Plant,32945,Industrial point source,Villa Ocampo,Santa Fe,,50.35,,,,2021,CAMMESA,2.934725729
+-32.48882628,-60.79097087,,Point,CT VUELTA DE OBLIGADO,,Fossil Thermal Power Plant,1829953,Industrial point source,Timbúes,Santa Fe,,846.565,,,,2021,CAMMESA,2.306401179
+-34.71869221,-58.73797554,,Point,CT ZAPPALORTO - APR ENERGY,,Fossil Thermal Power Plant,15249,Industrial point source,Merlo,Buenos Aires,,109.04,,,,2021,CAMMESA,2.152461729
+-28.19232818,-65.11339956,,Point,EDECAT GENERACION,,Fossil Thermal Power Plant,397,Industrial point source,San Fernando del Valle de Catamarca,Catamarca,,4.8,,,,2021,CAMMESA,2.697170552
+-34.05179982,-58.92965791,,Point,EDEN GENERACION,,Fossil Thermal Power Plant,1627,Industrial point source,San Nicolas,Buenos Aires,,27.728,,,,2021,CAMMESA,2.697170552
+-45.79136316,-67.52324552,,Point,ELECTROPATAGONIA-C.RIV-C.COMB.,,Fossil Thermal Power Plant,15137,Industrial point source,Comodoro Rivadavia,Chubut,,63,,,,2021,CAMMESA,1.94819592
+-34.62334842,-58.34179385,,Point,ENDESA COSTANERA SA,,Fossil Thermal Power Plant,2518331,Industrial point source,CABA,Buenos Aires,,2303.6,,,,2021,CAMMESA,2.263968409
+-45.79337549,-67.51392216,,Point,ENERGIA DEL SUR S.A.,,Fossil Thermal Power Plant,226761,Industrial point source,Comodoro Rivadavia,Chubut,,125.1,,,,2021,CAMMESA,1.94819592
+-33.15913174,-64.36424725,,Point,GEN.MEDITERRANEA (CONT.PLUS),,Fossil Thermal Power Plant,36744,Industrial point source,RIO CUARTO,Córdoba,,120,,,,2021,CAMMESA,2.197854131
+-33.15913174,-64.36424725,,Point,GEN.MEDITERRANEA GRUPO 5,,Fossil Thermal Power Plant,27675,Industrial point source,RIO CUARTO,Córdoba,,60,,,,2021,CAMMESA,2.197854131
+-34.9038311,-58.73254676,,Point,GENELBA - PETROBRAS,,Fossil Thermal Power Plant,1898589,Industrial point source,Marcos Paz,Buenos Aires,,684.4,,,,2021,CAMMESA,1.94819592
+-34.9038311,-58.73254676,,Point,GENELBA - RES.287,,Fossil Thermal Power Plant,1396334,Industrial point source,Marcos Paz,Buenos Aires,,381.19,,,,2021,CAMMESA,1.94819592
+-28.56386859,-65.12249001,,Point,GENERACION FRIAS S.A.,,Fossil Thermal Power Plant,15755,Industrial point source,Frias,Santiago del Estero,,60,,,,2021,CAMMESA,2.269185048
+-26.86672994,-65.22196012,,Point,GENERACION INDEPENDENCIA S.A.,,Fossil Thermal Power Plant,28961,Industrial point source, San Miguel de Tucumán,Tucumán,,120,,,,2021,CAMMESA,2.272076842
+-27.7529612,-64.26512026,,Point,GENERACION LA BANDA S.A.,,Fossil Thermal Power Plant,2514,Industrial point source,La Banda,Santiago del Estero,,26,,,,2021,CAMMESA,2.12103622
+-32.94821426,-64.37649144,,Point,GENERACION MEDITERRANEA,,Fossil Thermal Power Plant,6470,Industrial point source,Rio Cuarto,Córdoba,,68,,,,2021,CAMMESA,2.197854131
+-32.94821426,-64.37649144,,Point,GENERACION MEDITERRANEA 220,,Fossil Thermal Power Plant,31381,Industrial point source,Rio Cuarto,Córdoba,,94.961,,,,2021,CAMMESA,2.2923194
+-29.38221469,-66.83430162,,Point,GENERACION RIOJANA SA,,Fossil Thermal Power Plant,13132,Industrial point source,La Rioja,La Rioja,,88,,,,2021,CAMMESA,2.315874376
+-32.13195934,-64.15615033,,Point,GENERADORA Córdoba S.A.,,Fossil Thermal Power Plant,1537,Industrial point source,Rio tercero,Córdoba,,26,,,,2021,CAMMESA,2.381812812
+-26.99427143,-65.16588094,,Point,GENERADORA ELEC.Tucumán SA,,Fossil Thermal Power Plant,9198,Industrial point source,San Miguel de Tucumán,Tucumán,,232,,,,2021,CAMMESA,1.94819592
+-31.51232265,-68.53794739,,Point,HIDROTERMICA SAN JUAN,,Fossil Thermal Power Plant,6068,Industrial point source,Ullum,San Juan,,30,,,,2021,CAMMESA,2.152461729
+-34.88934876,-57.92261647,,Point,LA PLATA COGENERACION SA,,Fossil Thermal Power Plant,339665,Industrial point source,Ensenada,Buenos Aires,,128,,,,2021,CAMMESA,1.94819592
+-23.82178298,-64.78451309,,Point,LEDESMA SAAI,,Fossil Thermal Power Plant,7544,Industrial point source,Caimancito,Jujuy,,,,,,2021,CAMMESA,1.94819592
+-33.05228875,-68.97986675,,Point,LUJAN DE CUYO COGENERAC.PUERTO,,Fossil Thermal Power Plant,265976,Industrial point source, Luján de Cuyo,Mendoza,,95.32,,,,2021,CAMMESA,1.94819592
+-34.62294757,-58.34179446,,Point,MOTOGENERADORES COSTANERA,,Fossil Thermal Power Plant,47985,Industrial point source,CABA,Buenos Aires,,35.6,,,,2021,CAMMESA,2.922222825
+-34.58607819,-61.06726008,,Point,NIDERA SAFORCADA-Junin,,Fossil Thermal Power Plant,20,Industrial point source,Junin,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-24.68842844,-65.04387511,,Point,PAMPA ENERGIA SA,,Fossil Thermal Power Plant,78724,Industrial point source,Gral. Güemes,Salta,,295.25,,,,2021,CAMMESA,1.94819592
+-34.88980716,-57.92284166,,Point,REFINERIA LA PLATA AUTOG,,Fossil Thermal Power Plant,10998,Industrial point source,La Plata,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-34.65330519,-58.34357618,,Point,SHELL CAPSA PTA. DOCK SUD,,Fossil Thermal Power Plant,25501,Industrial point source, Dock Sud,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-33.35478022,-60.1730117,,Point,SIDERAR PTA. IND. SAN NICOLAS,,Fossil Thermal Power Plant,31,Industrial point source,San Nicolás de los Arroyos,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-49.33023006,-72.88361232,,Point,SINOPEC Arg. - El Huemul,,Fossil Thermal Power Plant,29407,Industrial point source,,Santa Cruz,,,,,,2021,CAMMESA,1.94819592
+-38.78541148,-62.25754249,,Point,SOLALBAN ENERGIA SA,,Fossil Thermal Power Plant,42405,Industrial point source,Ezeiza,Buenos Aires,,,,,,2021,CAMMESA,1.94819592
+-32.66237097,-60.74916497,,Point,TERMINAL 6 COGENERACION PUERTO,,Fossil Thermal Power Plant,209988,Industrial point source,San Lorenzo,Santa Fe,,380.04,,,,2021,CAMMESA,2.210337041
+-32.57020631,-60.79050355,,Point,TERMOELE. JOSE SAN MARTIN S.A,,Fossil Thermal Power Plant,2045982,Industrial point source,Timbúes,Santa Fe,,865.14,,,,2021,CAMMESA,2.297717415
+-38.68206102,-62.42135034,,Point,TERMOELECTRICA GUILLERMO BROWN,,Fossil Thermal Power Plant,1021465,Industrial point source,Daniel Cerri,Buenos Aires,,582.6,,,,2021,CAMMESA,2.236263086
+-34.14974236,-59.00582295,,Point,TERMOELECTRICA M.BELGRANO S.A.,,Fossil Thermal Power Plant,2150020,Industrial point source,Campana ,Buenos Aires,,873,,,,2021,CAMMESA,2.236263086
+-38.13400181,-68.00363319,,Point,YAC.ENTRE LOMAS AUTOGENERADOR,,Fossil Thermal Power Plant,27680,Industrial point source,Entre Lomas,Río Negro,,,,,,2021,CAMMESA,1.94819592
+-38.92994561,-69.16904786,,Point,YPF Autogenerador Pza. Huincul,,Fossil Thermal Power Plant,161867,Industrial point source,Plaza Huincul,Neuquén,,,,,,2021,CAMMESA,1.94819592
+-45.63426933,-67.80866884,,Point,YPF CT MANANTIALES BEHR II AG,,Fossil Thermal Power Plant,8767,Industrial point source,Manantiales Behr,Chubut,,,,,,2021,CAMMESA,1.94819592
+-45.67203528,-67.75657658,,Point,YPF EL TREBOL CT MANANT. BEHR,,Fossil Thermal Power Plant,6,Industrial point source,Manantiales Behr,Chubut,,,,,,2021,CAMMESA,1.94819592
+-34.89017736,-57.92279843,,Point,YPF LA PLATA COGENERACION,,Fossil Thermal Power Plant,228277,Industrial point source,Ensenada,Buenos Aires,,90.2,,,,2021,CAMMESA,2.135439578
+-46.1958354,-69.26507537,,Point,YPF LOS PERALES AUTOG,,Fossil Thermal Power Plant,68352,Industrial point source, Los Perales – Las Mesetas,Santa Cruz,,,,,,2021,CAMMESA,1.94819592
+-37.29578133,-69.06655773,,Point,YPF YAC P.HERNANDEZ AUTOG,,Fossil Thermal Power Plant,26,Industrial point source,Rincon de los Sauces,Neuquén,,,,,,2021,CAMMESA,1.94819592
+-29.1177703,-59.64047481,,Point,BIOGAS CT AVELLANEDA SECCO,,Biogas Power Plant,41391,Biogenic point source,General Obligado,Santa Fe,Electrical energy,6.3,,,,2022,CAMMESA/Bio4,18
+-33.17984121,-64.3831869,,Point,CENTRAL BIOELECTRICA R.CUARTO1,,Biogas Power Plant,13140,Biogenic point source,Rio Cuarto},Córdoba,Electrical energy,2,,,,2022,CAMMESA/Bio4,18
+-33.17824283,-64.37979659,,Point,C.BIOELECT.R.CUARTO1 REN2,,Biogas Power Plant,10249.2,Biogenic point source,Rio Cuarto},Córdoba,Electrical energy,1.56,,,,2022,CAMMESA/Bio4,18
+-33.18287626,-64.38488206,,Point,C.BIOELECT.R.CUARTO2 REN1,,Biogas Power Plant,7884,Biogenic point source,Rio Cuarto},Córdoba,Electrical energy,1.2,,,,2022,CAMMESA/Bio4,18
+-33.18400764,-64.38492497,,Point,C.BIOELECT.R.CUARTO2 REN2,,Biogas Power Plant,7884,Biogenic point source,Rio Cuarto},Córdoba,Electrical energy,1.2,,,,2022,CAMMESA/Bio4,18
+-26.84580608,-65.13499577,,Point,BIOGAS CTBG CITRUSVIL-ALCOVIL,,Biogas Power Plant,19710,Biogenic point source,Cevil Pozo,Tucumán,Electrical energy,3,,,,2022,CAMMESA/Bio4,18
+-34.86081282,-57.96314619,,Point,BIOGAS RS CT ENSENADA SECCO,,Biogas Power Plant,34821,Biogenic point source,Ensenada,Buenos Aires,Electrical energy,5.3,,,,2022,CAMMESA/Bio4,18
+-36.01532605,-60.10616456,,Point,CTBG GENERAL ALVEAR,,Biogas Power Plant,6570,Biogenic point source,General Alvear,Buenos Aires,Electrical energy,1,,,,2022,CAMMESA/Bio4,18
+-32.78552086,-64.19518873,,Point,BIOGAS CTBG GIGENA I,,Biogas Power Plant,7884,Biogenic point source,General Cabrera,Córdoba,Electrical energy,1.2,,,,2022,CAMMESA/Bio4,18
+-33.9234622,-65.15093963,,Point,BIOGAS CTBG JUSTO DARACT,,Biogas Power Plant,6570,Biogenic point source,Justo Daract,San Luis,Electrical energy,1,,,,2022,CAMMESA/Bio4,18
+-35.38242174,-59.44253713,,Point,BIOGAS CTBG PACUCA BIO ENERGÍA,,Biogas Power Plant,6570,Biogenic point source, Roque Pérez,Buenos Aires,Electrical energy,1,,,,2022,CAMMESA/Bio4,18
+-33.92388171,-60.53821415,,Point,BIOGAS CTBG PERGAMINO,,Biogas Power Plant,15768,Biogenic point source,Pergamino,Buenos Aires,Electrical energy,2.4,,,,2022,CAMMESA/Bio4,18
+-34.5315305,-58.6087694,,Point,C.T.SAN MARTIN NORTE 3A,,Biogas Power Plant,33507,Biogenic point source,SAN MIGUEL,Buenos Aires,Electrical energy,5.1,,,,2022,CAMMESA/Bio4,18
+-34.52484812,-58.61664438,,Point,CT SAN MIGUEL NORTE III-ENARSA,,Biogas Power Plant,75555,Biogenic point source,San Miguel,Buenos Aires,Electrical energy,11.5,,,,2022,CAMMESA/Bio4,18
+-34.18229245,-62.05263989,,Point,ENERGIA AGRO S.A.U,,Biogas Power Plant,9296.55,Biogenic point source,Christophersen,Santa Fe,Electrical energy,1.415,,,,2022,CAMMESA/Bio4,18
+-34.7468824,-65.24745477,,Point,BIOGAS CTBG TIGONBU,,Biogas Power Plant,13140,Biogenic point source,Buena Esperanza,San Luis,Electrical energy,2,,,,2022,CAMMESA/Bio4,18
+-31.57330076,-63.55084309,,Point,BIOGAS CTBG VILLA DEL ROS. CGY,,Biogas Power Plant,6570,Biogenic point source,Bajo Grande,Córdoba,Electrical energy,1,,,,2022,CAMMESA/Bio4,18
+-33.69118337,-62.04103717,,Point,BIOGAS CTBG VENADO TUERTO,,Biogas Power Plant,13797,Biogenic point source, Venado Tuerto,Santa Fe,Electrical energy,2.1,,,,2022,CAMMESA/Bio4,18
+-33.3801343,-65.58307536,,Point,BIO ENERGÍA YANQUETRUZ S.A.,,Biogas Power Plant,9855,Biogenic point source,Juan Llerena,San Luis,Electrical energy,1.5,,,,2022,CAMMESA/Bio4,18
+-33.41661903,-62.48488564,,Point,BIOGAS CTBG ENRECO,,Biogas Power Plant,13140,Biogenic point source,Guatimozin,Córdoba,Electrical energy,2,,,,2022,CAMMESA/Bio4,18
+-33.37826423,-65.56900085,,Point,CTBG BIO ENERGÍA YANQUETRUZ II,,Biogas Power Plant,5256,Biogenic point source,Juan Llerena,San Luis,Electrical energy,0.8,,,,2022,CAMMESA/Bio4,18
+-33.17284854,-64.40235703,,Point,CTBG BIO. SANTA CATALINA,,Biogas Power Plant,13140,Biogenic point source,Holmberg,Córdoba,Electrical energy,2,,,,2022,CAMMESA/Bio4,18
+-37.7688202,-67.70917058,,Point,BIOGAS CTBG AB ENERGÍA,,Biogas Power Plant,13140,Biogenic point source,25 de Mayo,La Pampa,Electrical energy,2,,,,2022,CAMMESA/Bio4,18
+-27.62976944,-55.43596538,,Point,CT BIOMASA MM BIOENERGÍA,,Biogas Power Plant,19710,Biogenic point source,Cerro Azul,Misiones,Electrical energy,3,,,,2022,CAMMESA/Bio4,18
+-34.52028708,-58.62735174,,Point,CTBRS SAN MARTÍN NORTE III-D,,Biogas Power Plant,33507,Biogenic point source,Tigre,Buenos Aires,Electrical energy,5.1,,,,2022,CAMMESA/Bio4,18
+-33.76336033,-60.09148466,,Point,BIOGAS CTBG ARRE BEEF SA,,Biogas Power Plant,9855,Biogenic point source,Ramallo,Buenos Aires,Electrical energy,1.5,,,,2022,CAMMESA/Bio4,18
+-38.69554547,-62.46569561,,Point,BIOGAS CT RESENER SA,,Biogas Power Plant,5256,Biogenic point source, Bahía Blanca,Buenos Aires,Electrical energy,0.8,,,,2022,CAMMESA/Bio4,18
+-31.19186042,-64.28926368,,Point,CTBG POLLOS SAN MATEO,,Biogas Power Plant,15768,Biogenic point source, Río Ceballos ,Córdoba,Electrical energy,2.4,,,,2022,CAMMESA/Bio4,18
+-34.99825504,-62.99354435,,Point,CTBG GENERAL VILLEGAS Ren 2,,Biogas Power Plant,8015.4,Biogenic point source,GENERAL VILLEGAS,Buenos Aires,Electrical energy,1.22,,,,2022,CAMMESA/Bio4,18
+-38.92880502,-69.18029111,,Point,YPF Plaza Huincul,YPF SA,Methanol,275370,Industrial point source,Plaza Huincul,Neuquén,Methanol,411000,,,Lurgi,2021,Estimated. See sources and methodology,0.67
+-32.65892352,-60.73470953,,Point,Arauco General San Martin,Arauco Argentina S.A. ,Methanol,33500,Industrial point source,Puerto General San Martín,Santa Fe,Methanol,50000,,,Lurgi,2021,Estimated. See sources and methodology,0.67
+-34.88514453,-57.91350126,,Point,La Plata Refinery,YPF SA,Refinery,2224965.517,Industrial point source,Ensenada,Buenos Aires,Combustible,190000,,,,,Estimated. See sources and methodology,
+-33.07089296,-68.97531701,,Point,Lujan de Cuyo Refinery,YPF SA,Refinery,1229586.207,Industrial point source,Lujan de Cuyo,Mendoza,Combustible,105000,,,,,Estimated. See sources and methodology,
+-38.9288127,-69.18736154,,Point,Plaza Huincul Refinery,YPF SA,Refinery,292758.6207,Industrial point source,Plaza Huincul,Neuquén,Combustible,25000,,,,,Estimated. See sources and methodology,
+-34.64167707,-58.33684622,,Point,Raizen Dock Sud,Raizen,Refinery,1171034.483,Industrial point source,Dock Sud,Buenos Aires,Combustible,100000,,,,,Estimated. See sources and methodology,
+-34.15453734,-58.95403325,,Point,Axion Campana Refinery,PAE,Refinery,1171034.483,Industrial point source,Campana,Buenos Aires,Combustible,100000,,,,,Estimated. See sources and methodology,
+-22.20022216,-63.66914578,,Point,REFINOR Campo Duran Refinery,,Refinery,351310.3448,Industrial point source,Campo Durán,Salta,,30000,,,,,Estimated. See sources and methodology,
+-38.72155716,-62.29859593,,Point,TRAFIGURA Bahia Blanca Refinery,,Refinery,351310.3448,Industrial point source,Bahia Blanca,Buenos Aires,,30000,,,,,Estimated. See sources and methodology,
+-32.69234971,-60.73547591,,Point,PAMPA ENERGIA SA,,Ethylene,25916,Industrial point source,Pto General San Martín,Santa Fe,Etileno,31000,,,Fish,2021,Estimated. See sources and methodology,0.836
+-38.65309984,-62.28055105,,Point,PBB Polisur S.A.,,Ethylene,229900,Industrial point source,Bahia Blanca,Buenos Aires,Etileno,275000,,,Linde,2021,Estimated. See sources and methodology,0.836
+-38.65309984,-62.28055105,,Point,PBB Polisur S.A.,,Ethylene,355300,Industrial point source,Bahia Blanca,Buenos Aires,Etileno,425000,,,CF Braun/Dow Chem.,2021,Estimated. See sources and methodology,0.836
+-27.94617937,-56.00073193,,Point,CT BIOMASA GARRUCHOS,,Biomass Power Plant,257714.3512,Biogenic point source,Gob. Virasoro,Corrientes,,36,255922.891,,,,Estimated. See sources and methodology,1.007
+-31.83992999,-63.44270922,,Point,CTBM. GENERACIÓN LAS JUNTURAS,,Biomass Power Plant,60021.67209,Biogenic point source,Las Junturas,Córdoba,,0.6,59604.441,,,,Estimated. See sources and methodology,1.007
+-27.07223015,-65.23077638,,Point,CTBM INGENIO LEALES,,Biomass Power Plant,5855.11087,Biogenic point source,Los Sueldos,Tucumán,,2,5814.41,,,,Estimated. See sources and methodology,1.007
+-28.23787262,-58.06779436,,Point,CT BIOMASA SANTA ROSA CORRIENTES,,Biomass Power Plant,122490.2061,Biogenic point source,Santa Rosa ,Corrientes,,15,121638.735,,,,Estimated. See sources and methodology,1.007
+-27.1024196,-59.44379683,,Point,CT BIOMASA LA ESCONDIDA CHACO,,Biomass Power Plant,40100.60094,Biogenic point source, La Escondida,Chaco,,10,39821.848,,,,Estimated. See sources and methodology,1.007
+-27.37139972,-59.08705038,,Point,CTBM BIOMASA UNITAN SEIS MEGA,,Biomass Power Plant,1307.533108,Biogenic point source,Puerto Tiro,Chaco,,6.7,1298.444,,,,Estimated. See sources and methodology,1.007
+-26.47536011,-54.72039929,,Point,ALTO PARANA-PTO.PIRAY,,Biomass Power Plant,88234.82331,Biogenic point source,Puerto Piray ,Misiones,,,87621.473,,,,Estimated. See sources and methodology,1.007
+-27.2644536,-65.56637912,,Point,ARCOR ING.LA PROVIDENCIA,,Biomass Power Plant,16590.35018,Biogenic point source, Río Seco ,Tucumán,,,16475.025,,,,Estimated. See sources and methodology,1.007
+-27.45834206,-65.60604599,,Point,AZUCARERA JUAN M.TERAN SA,,Biomass Power Plant,6297.718587,Biogenic point source,Santa Bárbara,Tucumán,,,6253.941,,,,Estimated. See sources and methodology,1.007
+-27.63019753,-55.43580567,,Point,CT BIOMASA MM BIOENERGÍA,,Biomass Power Plant,13977.00694,Biogenic point source,Cerro Azul,Misiones,,,13879.848,,,,Estimated. See sources and methodology,1.007
+-32.79407682,-63.86537614,,Point,CT PRODEMAN BIOENERGÍA,,Biomass Power Plant,60021.67209,Biogenic point source,General Cabrera ,Córdoba,,,59604.441,,,,Estimated. See sources and methodology,1.007
+-26.02800244,-54.58478971,,Point,ECO-ENERGIA S.A.BIOMASA,,Biomass Power Plant,18829.89501,Biogenic point source,Puerto Esperanza,Misiones,,,18699.002,,,,Estimated. See sources and methodology,1.007
+-32.70126887,-63.43327446,,Point,GENERACION TICINO BIOMASA SA,,Biomass Power Plant,25099.65022,Biogenic point source,Ticino,Córdoba,,,24925.174,,,,Estimated. See sources and methodology,1.007
+-23.2537127,-64.24116463,,Point,Ingenio y Ref.S.Martin Tabacal,,Biomass Power Plant,98553.77889,Biogenic point source,Orán,Salta,,,97868.698,,,,Estimated. See sources and methodology,1.007
+-34.1667324,-61.06726849,,Point,NIDERA SAFORCADA-Junin,,Biomass Power Plant,12.292449,Biogenic point source,Saforcada,Buenos Aires,,,12.207,,,,Estimated. See sources and methodology,1.007
+-26.93529417,-55.12206674,,Point,PAPEL MISIONERO S.A.,,Biomass Power Plant,270.788342,Biogenic point source,Puerto Leoni,Misiones,,,268.906,,,,Estimated. See sources and methodology,1.007
