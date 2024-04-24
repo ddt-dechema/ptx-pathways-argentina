@@ -217,11 +217,10 @@ function updateContent(language) {
     let translations = window['translations_' + language];
     let current_url = window.location.href;
 
-    console.log(current_url);
     if(!current_url.includes('lang')) {
         current_url+="?lang="+lang;
     }
-    console.log(current_url);
+
     let url_en, url_es;
     if (lang=="en") {
         url_en=current_url;
