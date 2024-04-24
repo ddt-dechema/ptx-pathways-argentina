@@ -217,16 +217,18 @@ function updateContent(language) {
     let translations = window['translations_' + language];
     let current_url = window.location.href;
 
+    console.log(current_url);
     if(!current_url.includes('lang')) {
         current_url+="?lang="+lang;
     }
+    console.log(current_url);
     let url_en, url_es;
     if (lang=="en") {
         url_en=current_url;
-        url_es=current_url.replace('en','es');
+        url_es=current_url.replace('=en','=es');
     } else if (lang=="es"){
         url_es=current_url;
-        url_en=current_url.replace('es','en');
+        url_en=current_url.replace('=es','=en');
     }
        
     (function ($){
