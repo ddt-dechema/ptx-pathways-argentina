@@ -1047,4 +1047,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     allLayers.forEach(data => {
         addGeoJSONLayer(data.name)
     });
+
+    // Warten, bis der Button existiert
+    const checkButton = setInterval(function () {
+        const btn = document.getElementById("toggle-industrial-button");
+        if (btn) {
+            btn.click();
+            clearInterval(checkButton); // Intervall stoppen
+        }
+    }, 200); // prüft alle 200ms
 })
