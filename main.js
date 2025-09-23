@@ -84,7 +84,7 @@ var sliderValue_old = 1;
 // Specify the property you want to find the maximum value for
 var propertyToFindMax = 'CO2_emissions_t';
 // Initialize a variable to store the maximum value
-var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
+var maxEmissions = -Infinity; // Start with negative infinity as an initial value
 // var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
 var maxRadius_kt = -Infinity; // Start with negative infinity as an initial value
 
@@ -126,7 +126,7 @@ var radius_slider = document.getElementById('radius_slider');
     radius_slider.addEventListener('input', function () {
         // Get the current slider value
         sliderValue = parseFloat(radius_slider.value);
-        maxRadius_kt=maxEmissionsArgentina/1000 * sliderValue;
+        maxRadius_kt=maxEmissions/1000 * sliderValue;
         radius_slider_output.innerHTML = sliderValue;    
         createScale(sliderValue);
         // Call the function to update circle sizes
@@ -218,31 +218,30 @@ function updateContent(language) {
     let current_url = window.location.href;
 
     if(!current_url.includes('lang')) {
-        current_url+="?lang="+lang;
+        current_url+="?lang="+language;
     }
 
     let url_en, url_es;
-    if (lang=="en") {
+    if (language=="en") {
         url_en=current_url;
         url_es=current_url.replace('=en','=es');
-    } else if (lang=="es"){
+    } else if (language=="es"){
         url_es=current_url;
         url_en=current_url.replace('=es','=en');
     }
        
     (function ($){
         $("#introduction_title").html(translations.introduction_title);
-        $("#introduction_title").html(translations.introduction_title);
         
         $("#introduction_text").html(translations.introduction_text);
         $("#project").html(translations.project);	
         $("#language_picker").html(translations.language_picker);	
-        $("#languge_switch_link").html(translations.languge_switch_link);	
+        $("#language_switch_link").html(translations.language_switch_link);	
         
         $("#sidebar_title").html(translations.sidebar_title);
         $("#sidebar_header_filters").html(translations.sidebar_header_filters);
         $("#filter_title").html(translations.filter_title);
-        $("#filter_text").html(translations.filter_text);
+        $("#filter_text_introduction").html(translations.filter_text_introduction);
         $("#filter_text").html(translations.filter_text);
         
         $("#manual_filter_title").html(translations.manual_filter_title);
@@ -263,6 +262,10 @@ function updateContent(language) {
         $("#zoom_factor").html(translations.zoom_factor);		
         $("#scale_title").html(translations.scale_title);
         $("#disclaimer_title").html(translations.disclaimer_title);
+
+        $("#biogenic_title").html(translations.biogenic_title);
+        $("#biogenic_header").html(translations.biogenic_header);
+        $("#biogenic_intro").html(translations.biogenic_intro);
 
         $("#data_title").html(translations.data_title);
         $("#methods").html(translations.methods);
@@ -298,6 +301,11 @@ function updateContent(language) {
 
         $('#link_english').attr('href', url_en);
         $('#link_spanish').attr('href', url_es);
+
+        $('#intro_title').html(translations.intro_title);
+        $('#show_intro_again').html(translations.show_intro_again);
+
+        buildTour(translations);
     })(jQuery);
 };
 
@@ -942,6 +950,41 @@ function getEmissionsSelected() {
 // var url = new URL(window.location.href)
 // if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
+function addGeoJSONLayerFromData(data, filterValue) {
+  const filteredData = data.features.filter(function (feature) {
+    const hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
+    const matchesIndustry = feature.properties.Industry === filterValue;
+    return hasValidCoordinates && matchesIndustry;
+  });
+
+  const layer = L.geoJSON(filteredData, {
+    pointToLayer: function (feature, latlng) {
+      const em = parseFloat(feature.properties.CO2_emissions_t);
+      if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && Number.isFinite(em) && em > 0) {
+        return L.circleMarker(latlng, {
+          // maxRadius_kt ist NUMERISCH!
+          radius: Math.sqrt(em / (maxRadius_kt * 1000)) * 50 * sliderValue,
+          color: emissionTypeColors_D[filterValue],
+          fillColor: emissionTypeColors_D[filterValue],
+          weight: 1,
+          opacity: 0.7,
+          fillOpacity: 0.5
+        }).bindPopup(addCO2argentinaPopupHandler(feature));
+      } else {
+        if (!(Number.isFinite(em) && em > 0)) {
+          console.log(feature.properties.Name, "(Company:", feature.properties.Company, ")", "has no CO₂ data");
+        } else if (!feature.geometry) {
+          console.error(feature.properties.Name, "(Company:", feature.properties.Company, ")", "has no coordinates");
+        }
+      }
+    }
+  });
+
+  layers[filterValue] = layer;
+  layer.addTo(map);
+  return layer;
+}
+
 /*************************************************/
 /* And finally load all json data and display it */
 /*************************************************/
@@ -956,7 +999,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     showMap();
-    // load formatSI
     loadGlobalDefs();
 
     // Fetch the GeoJSON data from the URL
@@ -984,8 +1026,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 totalEmissions[Industry] += emissions;
             } 
         });
-        let sum = 0;
         
+        let sum = 0;
         for (k in counts) {
             sum += counts[k];
         }
@@ -1030,30 +1072,92 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         data.features.forEach(function (feature) {
             var propertyValue = feature.properties[propertyToFindMax];
-            if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
-                maxEmissionsArgentina = parseFloat(propertyValue);
+            if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissions) {
+                maxEmissions = parseFloat(propertyValue);
             }
         });
-        // maxRadius_Mt = maxEmissionsArgentina / 1000000;
-        maxRadius_kt = format_nodecimal(maxEmissionsArgentina/1000);
-        
+        maxRadius_kt = maxEmissions / 1000;         // Zahl für die Radien
+        maxRadius_kt_label = format_nodecimal(maxRadius_kt); // nur für die Legende/Text
+
         // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
         createScale(1); 
+
+        return data; // Daten an den nächsten .then weiterreichen
+    })
+    // new function, to create the layers from already loaded data
+    .then(data => {
+      // Layer aus den bereits geladenen Daten erstellen (kein zweiter Fetch!)
+      allLayers.forEach(l => addGeoJSONLayerFromData(data, l.name));
+      // erst jetzt toggeln + Intro
+      toggleIndustrialLayers();
+      checkIfIntro();
     })
     .catch(error => {
         console.error(`Error loading GeoJSON data: ${error}`);
     });
-    
-    allLayers.forEach(data => {
-        addGeoJSONLayer(data.name)
-    });
 
-    // Warten, bis der Button existiert
-    const checkButton = setInterval(function () {
-        const btn = document.getElementById("toggle-industrial-button");
-        if (btn) {
-            btn.click();
-            clearInterval(checkButton); // Intervall stoppen
-        }
-    }, 200); // prüft alle 200ms
 })
+
+
+/***********************************/
+/* Helper functions (cookies etc.) */
+/***********************************/
+const setCookie = (name, value, days = 100, path = '/') => {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString()
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+}
+
+const getCookie = (name) => {
+    return document.cookie.split('; ').reduce((r, v) => {
+        const parts = v.split('=')
+        return parts[0] === name ? decodeURIComponent(parts[1]) : r
+    }, '')
+}
+
+const deleteCookie = (name, path = "/") => {
+    setCookie(name, '', -1, path)
+}
+
+/***********************************/
+/* Intro.js tour                   */
+/***********************************/
+function setCookieNoTour() {
+    setCookie('no-tour', 'true')
+    // introJs().exit()
+    if (tour) tour.exit();
+}
+
+document.getElementById('show_intro_again').addEventListener('click', () => {
+    deleteCookie('no-tour')
+    startIntro()
+})
+
+function checkIfIntro() {
+    if (!getCookie('no-tour')) {
+        startIntro()
+    }
+}
+let tour;
+
+function buildTour(translations) {
+  // Falls bereits eine Tour existiert, erst zerstören, damit Events nicht doppelt hängen
+  try { tour?.exit?.(); } catch (e) {}
+
+  tour = introJs.tour()
+    .setOptions({
+      steps: translations.tour.steps,
+      showStepNumbers: translations.tour.showStepNumbers === true ? true : false
+    })
+    .oncomplete(setCookieNoTour);
+
+  return tour;
+}
+
+function startIntro() {
+//   const lang = getCurrentLang();
+  const t = window['translations_' + lang];
+  if (!t || !t.tour) return;
+
+  buildTour(t).start();
+  map.sidebar.open('sources-content');
+}

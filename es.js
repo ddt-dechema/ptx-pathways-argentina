@@ -10,20 +10,21 @@ var translations_es = {
   project: `<h3>El International Power-to-X Hub</h3>El International PtX Hub está organizado por la Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH en nombre del Ministerio Federal Alemán de Economía y Acción por el Clima (BMWK). Financiado por la Iniciativa Internacional sobre el Clima (IKI), el International PtX Hub es una contribución a la Estrategia Nacional del Hidrógeno 2020 y es uno de los cuatro pilares del Programa de Acción PtX de la BMUV, que se lanzó en 2019.
     En Argentina, el socio político es la Secretaría de Energía de Argentina. Los socios implementadores son CEARE – Centro de Estudios de la Actividad Reguladora Energética, Fundación Torcuato Di Tella (FTDT), Agora Energiewende y DECHEMA e.V.`,
   language_picker: `<h3>Change the language</h3>`,
-  languge_switch_link: `If you want to link to the map in a specific language, use the 
+  language_switch_link: `If you want to link to the map in a specific language, use the 
   <a id="link_english">english</a>
   or <a id="link_spanish">spanish</a> link
   `,
   sidebar_header_filters: `Filtros`,
   filter_title: `Diferentes categorías/fuentes de carbono`,
-  filter_text: `Se diferencia entre fuentes industriales <span class="rect dot_industrial"></span> y biogénicas<span class="rect dot_biogenic"></span>. 
+  filter_text_introduction: `Se distingue entre fuentes de carbono industriales <span class="rect dot_industrial"></span> y biogénicas <span class="rect dot_biogenic"></span>. Puedes hacer clic en los distintos botones para alternar la visibilidad de las fuentes correspondientes en el mapa. Además, puedes seleccionar o deseleccionar manualmente tipos específicos de plantas.`,
+  filter_text: `<h2>Acerca de las fuentes de datos</h2> Fuentes industriales <span class="rect dot_industrial"></span> y biogénicas <span class="rect dot_biogenic"></span>.
   Dentro de las fuentes industriales se encuentran la manufactura de productos químicos (amoniaco, etileno, metanol) <span class="dot dot_chemicals"></span>,
   metales (aluminio y acero) y cemento <span class="dot dot_metals"></span>,
   celulosa y papel <span class="dot dot_paper"></span>
   y otros como las refinerías y centrales termoeléctricas <span class="dot dot_others"></span>.<br>
   Las fuentes biogénicas incluyen la producción de biogás, biomasa y bioetanol <span class="dot dot_bio"></span>.`,
   manual_filter_title: `O filtrar manualmente`,
-  emission_type: `Tipo de emisión de CO<sub>2</sub>:`,
+  emission_type: `<b>Tipo de emisión de CO<sub>2</sub></b>:`,
   industrial_button: `fuentes industriales/energéticas`,
   biogenic_button: `fuentes biogénicas`,
   only_selected_plants: `Sólo los tipos de plantas seleccionados:`,
@@ -86,6 +87,10 @@ var translations_es = {
   download_csv: `Descargar las fuentes de CO₂ en Argentina (csv)`,
   download_geojson: `Descargar las fuentes de CO₂ en Argentina (geojson)`,
 
+  biogenic_title: `Otros`,
+  biogenic_header: `<h3>Otras fuentes biogénicas</h3>`,
+  biogenic_intro: `Texto aún no disponible`,
+
   disclaimer_title: `Datos, licencias y privacidad`,
   map_programming: `<h3>Elaboración del mapa</h3>Este mapa fue elaborado por Dinh Du Tran (DECHEMA e.V.) con información recolectada por DECHEMA y la GIZ Argentina.`,
   contact: `<h3>Contacto</h3>
@@ -122,6 +127,28 @@ var translations_es = {
   table_header_industry_type: `Industria`,
   table_header_total_emissions: `Emisiones totales (kilotoneladas)`,
   table_header_number_entries: `Número de plantas`,
+intro_title: `Guía de introducción`,
+show_intro_again: `Mostrar la guía de nuevo`,
+
+    tour: {
+    steps: [
+      {
+        title: "Bienvenido/a",
+        intro:`¡Este mapa del PtX Hub muestra las fuentes de carbono en Sudáfrica! Si quieres, puedes seguir esta breve introducción para ver las funciones principales o saltarte la guía.<br>
+        <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="Esta es la única cookie usada en este sitio. Si no quieres usar cookies, la guía se mostrará en cada recarga. Haz clic fuera de la guía para cerrarla."><p>No mostrar la guía de nuevo</p><p style="font-size: x-small; color: #746427;">&#9432; Esto establecerá una cookie.</p></button>
+        <hr><img src="Graph1.png" />
+        El mapa muestra fuentes de CO₂ biogénicas e industriales. Aunque el CO₂ emitido por plantas industriales es alto hoy, a largo plazo las fuentes biogénicas sostenibles merecen más atención.`
+      },
+      { element: "#emitter-tab-li", intro: "En esta pestaña puedes filtrar distintos tipos de fuentes de carbono.<br>Se dividen en industriales y biogénicas.", position: "right" },
+      { element: "#biogenic-sources-tab-li", intro: "Las fuentes puntuales biogénicas disponibles no son la única fuente de carbono biogénico para PtX. Aquí puedes conocer más sobre fuentes descentralizadas adicionales, aunque no se muestren en el mapa.", position: "right" },
+      { element: "#data-tab-li", intro: "Aquí se explican los datos utilizados y la metodología.", position: "right" },
+      { element: "#info-tab-li", intro: "Aquí encuentras información sobre el mapa y los datos. <br><br>También puedes cambiar el idioma aquí.", position: "right" },
+      { element: "#disclaimer-tab-li", intro: "Aquí verás el aviso legal y el contacto. También puedes reiniciar la guía.", },
+      { title: "Cerrar", element: "#sidebar-close-sources-span", intro: "Esto cierra la barra lateral para que te concentres en el mapa." },
+      { intro: "Haz clic en cualquier burbuja para ver más información.<br>¡Listo! Ahora explora el mapa." }
+    ],
+    showStepNumbers: false
+  }
 };
 
 // Export the translations object (for use in other scripts)

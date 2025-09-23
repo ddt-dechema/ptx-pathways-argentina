@@ -11,20 +11,21 @@ var translations_en = {
   project: `<h3>The International Power-to-X Hub</h3> The International PtX Hub is implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH on behalf of the German Federal Ministry for Economic Affairs and Climate Action (BMWK). Financed by the International Climate Initiative (Internationale Klimaschutzinitiative, IKI), the International PtX Hub is a contribution to the German National Hydrogen Strategy of 2020 and represents one of the four pillars of the BMUV’s PtX action programme initiated in 2019.
     In Argentina, the political partner is the Argentine Secretariat of Energy. The implementing partners are CEARE – Centro de Estudios de la Actividad Regulatoria Energética, Fundación Torcuato Di Tella (FTDT), Agora Energiewende and DECHEMA e.V.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
-  languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
+  language_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
   <a id="link_english">inglés</a>
   o <a id="link_spanish">español</a>
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different categories/sources of carbon`,
-  filter_text: `A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
+  filter_text_introduction: `A distinction is made between industrial  <span class="rect dot_industrial"></span> and biogenic carbon sources <span class="rect dot_biogenic"></span>. You can click on the different buttons to toggle the visibility of the respective sources on the map. Additionally, you can manually select or deselect specific plant types.`,
+  filter_text: `<h2>About the data sources</h2> Industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
   Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
   metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
   Pulp and paper <span class="dot dot_paper"></span>,
   and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
   Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>`,
-  manual_filter_title: `Or filter manually`,
-  emission_type: `Type of CO<sub>2</sub> emissions:`,
+  // manual_filter_title: `Or filter manually`,
+  emission_type: `<b>Type of CO<sub>2</sub> emissions:</b>`,
   industrial_button: `industrial/energy sources`,
   biogenic_button: `biogenic sources`,
   only_selected_plants: `Only selected plant types:`,
@@ -87,6 +88,10 @@ var translations_en = {
   download_csv: `Download the sources of CO₂ in Argentina (csv)`,
   download_geojson: `Download the sources of CO₂ in Argentina (geojson)`,
 
+  biogenic_title: `Others`,
+  biogenic_header: `<h3>Other biogenic sources</h3>`,
+  biogenic_intro: `Text still missing`,  
+  
   disclaimer_title: `Data, licensing and privacy`,
   map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA and GIZ Argentina.`,
   contact: `<h3>Contact</h3>
@@ -123,6 +128,29 @@ var translations_en = {
   table_header_industry_type: `Industry`,
   table_header_total_emissions: `Total Emissions (kilotonnes)`,
   table_header_number_entries: `Number of plants`,
+
+  intro_title: `Introduction tour`,
+  show_intro_again: `Show intro again`,
+  tour: {
+    steps: [
+      {
+        title: "Welcome",
+        intro:
+        `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
+        <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
+        <hr><img src="Graph1.png" />
+        The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
+      },
+      { element: "#emitter-tab-li", intro: "In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.", position: "right"},
+      { element: "#biogenic-sources-tab-li", intro: "The available biogenic point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralized potential carbon sources here, although they are not shown on this map", position: "right" },
+      { element: "#data-tab-li", intro: "Information on data used and the methodology are explained in this tab.", position: "right" },
+      { element: "#info-tab-li", intro: "Here you find information about the map and the data. <br><br>You can also switch the language here.", position: "right" },
+      { element: "#disclaimer-tab-li", intro: "Legal or contact information are shown here. You can also restart the tour here." },
+      { title: "Close", element: "#sidebar-close-sources-span", intro: "This closes the sidebar so you can focus on the map." },
+      { intro: "Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map." }
+    ],
+    showStepNumbers: false
+  }
 };
 
 // Export the translations object (for use in other scripts)
