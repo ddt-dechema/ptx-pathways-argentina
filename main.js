@@ -267,6 +267,22 @@ function updateContent(language) {
         $("#biogenic_header").html(translations.biogenic_header);
         $("#biogenic_intro").html(translations.biogenic_intro);
 
+        $("#biogenic_figure1_text").html(translations.biogenic_figure1_text);
+        $("#biogenic_sugar").html(translations.biogenic_sugar);
+        $("#biogenic_paper").html(translations.biogenic_paper);
+        $("#biogenic_forestry").html(translations.biogenic_forestry);
+        $("#biogenic_ELT").html(translations.biogenic_ELT);
+        $("#biogenic_meat").html(translations.biogenic_meat);
+        $("#biogenic_methodology").html(translations.biogenic_methodology);
+        $("#biogenic_sources").html(translations.biogenic_sources);
+        
+        $("#img_1").attr("src", translations.img_1);
+        $("#img_2").attr("src", translations.img_2);
+        $("#img_3").attr("src", translations.img_3);
+        $("#img_4").attr("src", translations.img_4);
+        $("#img_5").attr("src", translations.img_5);
+        $("#img_6").attr("src", translations.img_6);
+
         $("#data_title").html(translations.data_title);
         $("#methods").html(translations.methods);
         $("#sources").html(translations.sources);			
