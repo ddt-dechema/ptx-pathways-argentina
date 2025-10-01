@@ -282,6 +282,7 @@ function updateContent(language) {
         $("#img_4").attr("src", translations.img_4);
         $("#img_5").attr("src", translations.img_5);
         $("#img_6").attr("src", translations.img_6);
+        $("#img_6").attr("src", translations.img_6);
 
         $("#data_title").html(translations.data_title);
         $("#methods").html(translations.methods);

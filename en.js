@@ -130,14 +130,14 @@ biogenic_sources: `
   Available: <a href="https://www.magyp.gob.ar/sitio/areas/bioenergia/biogas/_archivos/000000_Informes%20anuales%20de%20potencial%20de%20biog%C3%A1s/240800_Informe%20anual%20de%20potencial%20de%20biog%C3%A1s%20-%20Faena%20de%20bovinos,%20porcinos%20y%20aves.pdf" target="_blank">PDF</a>
 `,
 
-
   img_1: "img/Arg_EN_1.png",
   img_2: "img/Arg_EN_2.png",
   img_3: "img/Arg_EN_3.png",
   img_4: "img/Arg_EN_4.png",
   img_5: "img/Arg_EN_5.png",
   img_6: "img/Arg_EN_6.png",
-
+  img_tutorial: "img/Tutorial_ENG.png",
+  
   disclaimer_title: `Data, licensing and privacy`,
   map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA and GIZ Argentina.`,
   contact: `<h3>Contact</h3>
@@ -184,7 +184,7 @@ biogenic_sources: `
         intro:
         `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
         <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
-        <hr><img src="Graph1.png" />
+        <hr><img src="img/Tutorial_ENG.png" />
         The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
       },
       { element: "#emitter-tab-li", intro: "In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.", position: "right"},

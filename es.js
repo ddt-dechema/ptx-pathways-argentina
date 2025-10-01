@@ -130,7 +130,6 @@ biogenic_sources: `
   Available: <a href="https://www.magyp.gob.ar/sitio/areas/bioenergia/biogas/_archivos/000000_Informes%20anuales%20de%20potencial%20de%20biog%C3%A1s/240800_Informe%20anual%20de%20potencial%20de%20biog%C3%A1s%20-%20Faena%20de%20bovinos,%20porcinos%20y%20aves.pdf" target="_blank">https://www.magyp.gob.ar/sitio/areas/bioenergia/biogas/_archivos/000000_Informes%20anuales%20de%20potencial%20de%20biog%C3%A1s/240800_Informe%20anual%20de%20potencial%20de%20biog%C3%A1s%20-%20Faena%20de%20bovinos,%20porcinos%20y%20aves.pdf</a>
 `,
 
-
   img_1: "img/Arg_ES_1.png",
   img_2: "img/Arg_ES_2.png",
   img_3: "img/Arg_ES_3.png",
@@ -183,7 +182,7 @@ show_intro_again: `Mostrar la guía de nuevo`,
         title: "Bienvenido/a",
         intro:`¡Este mapa del PtX Hub muestra las fuentes de carbono en Sudáfrica! Si quieres, puedes seguir esta breve introducción para ver las funciones principales o saltarte la guía.<br>
         <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="Esta es la única cookie usada en este sitio. Si no quieres usar cookies, la guía se mostrará en cada recarga. Haz clic fuera de la guía para cerrarla."><p>No mostrar la guía de nuevo</p><p style="font-size: x-small; color: #746427;">&#9432; Esto establecerá una cookie.</p></button>
-        <hr><img src="Graph1.png" />
+        <hr><img src="img/Tutorial_ESP.png" />
         El mapa muestra fuentes de CO₂ biogénicas e industriales. Aunque el CO₂ emitido por plantas industriales es alto hoy, a largo plazo las fuentes biogénicas sostenibles merecen más atención.`
       },
       { element: "#emitter-tab-li", intro: "En esta pestaña puedes filtrar distintos tipos de fuentes de carbono.<br>Se dividen en industriales y biogénicas.", position: "right" },
