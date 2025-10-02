@@ -327,7 +327,15 @@ function updateContent(language) {
 };
 
 (function ($) {
-    $('#language-toggle').on('click', function(){
+    $('.language-toggle').on('click', function(){
+        var button_clicked = $(this).attr('id');
+        
+        if (button_clicked == "language-toggle_1") {
+            $('#language-toggle_2').prop('checked', !$('#language-toggle_2').prop('checked'));
+            } 
+        else if (button_clicked == "language-toggle_2") { 
+            $('#language-toggle_1').prop('checked', !$('#language-toggle_1').prop('checked'));
+            }
         if (lang==="en") {
             updateContent("es"); 
             lang="es";

@@ -299,6 +299,18 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
   padding: 3px;
   font: 10px sans-serif;
 }
+
+#translate {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1.5px solid rgba(0,0,0,.2);
+  z-index: 1000;
+  right: 50px;
+  top: 10px;
+  padding: 7.5px;
+  font: 10px sans-serif;
+}
 .legend path,
 .legend line {
   fill: none;

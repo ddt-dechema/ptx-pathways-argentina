@@ -189,6 +189,7 @@ show_intro_again: `Mostrar la guía de nuevo`,
       { element: "#biogenic-sources-tab-li", intro: "Las fuentes puntuales biogénicas disponibles no son la única fuente de carbono biogénico para PtX. Aquí puedes conocer más sobre fuentes descentralizadas adicionales, aunque no se muestren en el mapa.", position: "right" },
       { element: "#data-tab-li", intro: "Aquí se explican los datos utilizados y la metodología.", position: "right" },
       { element: "#info-tab-li", intro: "Aquí encuentras información sobre el mapa y los datos. <br><br>También puedes cambiar el idioma aquí.", position: "right" },
+      { element: "#translate", intro: "También puedes cambiar el idioma del contenido a través de este botón." },
       { element: "#disclaimer-tab-li", intro: "Aquí verás el aviso legal y el contacto. También puedes reiniciar la guía.", },
       { title: "Cerrar", element: "#sidebar-close-sources-span", intro: "Esto cierra la barra lateral para que te concentres en el mapa." },
       { intro: "Haz clic en cualquier burbuja para ver más información.<br>¡Listo! Ahora explora el mapa." }

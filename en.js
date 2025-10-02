@@ -191,6 +191,7 @@ biogenic_sources: `
       { element: "#biogenic-sources-tab-li", intro: "The available biogenic point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralized potential carbon sources here, although they are not shown on this map", position: "right" },
       { element: "#data-tab-li", intro: "Information on data used and the methodology are explained in this tab.", position: "right" },
       { element: "#info-tab-li", intro: "Here you find information about the map and the data. <br><br>You can also switch the language here.", position: "right" },
+      { element: "#translate", intro: "You can also change the content's language via this button." },
       { element: "#disclaimer-tab-li", intro: "Legal or contact information are shown here. You can also restart the tour here." },
       { title: "Close", element: "#sidebar-close-sources-span", intro: "This closes the sidebar so you can focus on the map." },
       { intro: "Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map." }
