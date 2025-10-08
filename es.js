@@ -180,7 +180,7 @@ show_intro_again: `Mostrar la guía de nuevo`,
     steps: [
       {
         title: "Bienvenido/a",
-        intro:`¡Este mapa del PtX Hub muestra las fuentes de carbono en Sudáfrica! Si quieres, puedes seguir esta breve introducción para ver las funciones principales o saltarte la guía.<br>
+        intro:`¡Este mapa del PtX Hub muestra las fuentes de carbono en Argentina! Si quieres, puedes seguir esta breve introducción para ver las funciones principales o saltarte la guía.<br>
         <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="Esta es la única cookie usada en este sitio. Si no quieres usar cookies, la guía se mostrará en cada recarga. Haz clic fuera de la guía para cerrarla."><p>No mostrar la guía de nuevo</p><p style="font-size: x-small; color: #746427;">&#9432; Esto establecerá una cookie.</p></button>
         <hr><img src="img/Tutorial_ESP.png" />
         El mapa muestra fuentes de CO₂ biogénicas e industriales. Aunque el CO₂ emitido por plantas industriales es alto hoy, a largo plazo las fuentes biogénicas sostenibles merecen más atención.`

@@ -182,7 +182,7 @@ biogenic_sources: `
       {
         title: "Welcome",
         intro:
-        `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
+        `This PtX Hub map displays carbon sources in Argentina! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
         <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
         <hr><img src="img/Tutorial_ENG.png" />
         The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
