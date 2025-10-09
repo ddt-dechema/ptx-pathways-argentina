@@ -217,6 +217,7 @@ function updateContent(language) {
     let translations = window['translations_' + language];
     let current_url = window.location.href;
 
+
     // if(!current_url.includes('lang')) {
     //     current_url+="?lang="+language;
     // }
@@ -229,9 +230,14 @@ function updateContent(language) {
     //     url_es=current_url;
     //     url_en=current_url.replace('=es','=en');
     // }
-    current_url = current_url.substring(0, current_url.length-3);
-    url_en=current_url+'=en';
-    url_es=current_url+'=es';
+    if (current_url.includes("lang")) {
+        current_url = current_url.substring(0, current_url.length-3);
+        url_en=current_url+'=en';
+        url_es=current_url+'=es';
+    } else {
+        url_en=current_url+'?lang=en';
+        url_es=current_url+'?lang=es';
+    }
 
     (function ($){
         $("#introduction_title").html(translations.introduction_title);
