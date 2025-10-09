@@ -217,19 +217,22 @@ function updateContent(language) {
     let translations = window['translations_' + language];
     let current_url = window.location.href;
 
-    if(!current_url.includes('lang')) {
-        current_url+="?lang="+language;
-    }
+    // if(!current_url.includes('lang')) {
+    //     current_url+="?lang="+language;
+    // }
 
-    let url_en, url_es;
-    if (language=="en") {
-        url_en=current_url;
-        url_es=current_url.replace('=en','=es');
-    } else if (language=="es"){
-        url_es=current_url;
-        url_en=current_url.replace('=es','=en');
-    }
-       
+    // let url_en, url_es;
+    // if (language=="en") {
+    //     url_en=current_url;
+    //     url_es=current_url.replace('=en','=es');
+    // } else if (language=="es"){
+    //     url_es=current_url;
+    //     url_en=current_url.replace('=es','=en');
+    // }
+    current_url = current_url.substring(0, current_url.length-3);
+    url_en=current_url+'=en';
+    url_es=current_url+'=es';
+
     (function ($){
         $("#introduction_title").html(translations.introduction_title);
         
@@ -329,7 +332,7 @@ function updateContent(language) {
 (function ($) {
     $('.language-toggle').on('click', function(){
         var button_clicked = $(this).attr('id');
-        
+        console.log("lang: ",lang)
         if (button_clicked == "language-toggle_1") {
             $('#language-toggle_2').prop('checked', !$('#language-toggle_2').prop('checked'));
             } 
@@ -1016,7 +1019,7 @@ function addGeoJSONLayerFromData(data, filterValue) {
 document.addEventListener('DOMContentLoaded', (event) => {
     if (lang=="en") {
         (function ($) {
-            $('#language-toggle').prop('checked', true);
+            $('.language-toggle').prop('checked', true);
         })(jQuery);
         updateContent('en');
     } else {
